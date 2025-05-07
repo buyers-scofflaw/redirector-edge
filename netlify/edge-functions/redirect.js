@@ -2,13 +2,10 @@ export default async (request, context) => {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
 
-  const headers = request.headers;
-  const referer = headers.get("referer") || "";
   const fbclid = url.searchParams.get("fbclid");
 
-  // Only allow real traffic: fbclid or Facebook referer
-  const isFacebookClick = fbclid || referer.includes("facebook.com");
-  if (!isFacebookClick) {
+  // Require fbclid only ? block everything else
+  if (!fbclid) {
     return Response.redirect("https://yahoo.com", 302);
   }
 
