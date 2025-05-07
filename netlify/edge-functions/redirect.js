@@ -2,6 +2,16 @@ export default async (request, context) => {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
 
+  const headers = request.headers;
+  const referer = headers.get("referer") || "";
+  const fbclid = url.searchParams.get("fbclid");
+
+  // Only allow real traffic: fbclid or Facebook referer
+  const isFacebookClick = fbclid || referer.includes("facebook.com");
+  if (!isFacebookClick) {
+    return Response.redirect("https://yahoo.com", 302);
+  }
+
   const redirectMap = {
   "100": "https://google.com",
   "101": "https://read.investingfuel.com/finance/max-out-earnings-with-bank-account-bonuses/?segment=rsoc.sd.investingfuel.001&headline=bank+account+bonus&forceKeyA=Start+a+Bank+Account+Online+with+no+Deposits+($1000+on+Opening)&forceKeyB=Start+A+Bank+Account+Online+With+No+Deposit+($1000+On+Opening)&forceKeyC=Free+Money+for+Opening+Bank+Account&forceKeyD=Banks+that+Give+You+Money+for+Opening+an+Account&forceKeyE=Start+a+Bank+Account+Online+with+no+Deposit+[$300+on+Opening]&fbid=1154354255815807&fbclick=Purchase&utm_source=facebook",
