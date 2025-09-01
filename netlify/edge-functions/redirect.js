@@ -1,15 +1,5 @@
-export default async (request, context) => {
-  const url = new URL(request.url);
-  const id = url.searchParams.get("id");
 
-  const fbclid = url.searchParams.get("fbclid");
-
-  // Require fbclid only ? block everything else
-  if (!fbclid) {
-    return Response.redirect("https://yahoo.com", 302);
-  }
-
-  const redirectMap = {
+const redirectMap = {
   "100": "https://google.com",
   "263": "https://read.investingfuel.com/shopping/nissan-rogue-suv-deals-where-to-get-the-most-savings-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=Nissan+Rogue+2025+SUV&forceKeyA=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyB=100+Accepted+|+$150/month+-+Rogue+2024+Crossover+Suvs+Nearby+no+Cost&forceKeyC=$100/month+-+Rogue+2024+Crossover+Suvs+Nearby&forceKeyD=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyE=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyF=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(no+Cost)&fbid=1154354255815807&fbclick=Purchase&utm_source=facebook",
   "283": "https://10toptips.com/careers/exploring-jobs-in-landscaping-benefits-and-roles-es-us/?segment=rsoc.sc.10toptips.001&headline=Learn+Landscaping+in+Your+City&forceKeyA=landscaping+companies+in+{city}&forceKeyB=landscaping+companies+near+me&forceKeyC=landscaping+company+hiring+now+in+{city}&forceKeyD=landscaping+contractors+needed+near+me&forceKeyE=lawn+maintenance+services+near+me&forceKeyF=landscaping+contractors+in+{city}&fbid=3184190241890375&fbclick=Purchase&utm_source=facebook",
@@ -352,29 +342,64 @@ export default async (request, context) => {
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
-  const baseUrl = redirectMap[id];
+// ======================================
 
-  if (!id || !baseUrl) {
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: "https://google.com"
-      }
-    });
+// ===============================================================
+
+const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://msn.com";
+
+function isFbIgInApp(ua) {
+  const u = (ua || "").toLowerCase();
+  return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
+}
+
+function isValidS1pcid(v) {
+  if (!v) return false;
+  const trimmed = v.trim();
+  if (trimmed.startsWith("{")) return false;     // reject "{...}"
+  return /^[0-9]{6,}$/.test(trimmed);            // numeric, at least 6 digits
+}
+
+// TEMP DEBUG: mark which edge function handled the request.
+// (Remove this once you confirm routing.)
+function redirectResponse(locationUrl) {
+  const h = new Headers({ Location: locationUrl });
+  h.set("X-Edge-Which", "redirect-v2"); // <-- temporary marker
+  return new Response(null, { status: 302, headers: h });
+}
+
+export default async (request) => {
+  const url = new URL(request.url);
+  const id = url.searchParams.get("id");
+  const base = id ? redirectMap[id] : null;
+
+  // Unknown/missing id -> soft land
+  if (!base) return redirectResponse("https://google.com");
+
+  // Build destination: copy all params except "id" (mirrors v1 behavior)
+  const dest = new URL(base);
+  url.searchParams.forEach((value, key) => {
+    if (key !== "id") dest.searchParams.set(key, value);
+  });
+
+  const ua = request.headers.get("user-agent") || "";
+  const inApp = isFbIgInApp(ua);
+  const s1pcid = url.searchParams.get("s1pcid");
+  const s1ok = isValidS1pcid(s1pcid);
+
+  // Optional marker for downstream analytics
+  if (inApp) dest.searchParams.set("iab", "1");
+
+  // Rule:
+  // - In-app -> always pass
+  // - Not in-app -> require valid s1pcid, else fallback
+  if (!inApp && !s1ok) {
+    const fb = new URL(FALLBACK_URL);
+    fb.searchParams.set("reason", "non_iab_bad_s1pcid");
+    if (id) fb.searchParams.set("id", id);
+    return redirectResponse(fb.href);
   }
 
-  const redirectUrl = new URL(baseUrl);
-
-  url.searchParams.forEach((value, key) => {
-    if (key !== "id") {
-      redirectUrl.searchParams.set(key, value);
-    }
-  });
-
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: redirectUrl.href
-    }
-  });
+  // Pass-through
+  return redirectResponse(dest.href);
 };
