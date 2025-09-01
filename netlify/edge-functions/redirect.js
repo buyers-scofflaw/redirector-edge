@@ -1,17 +1,15 @@
-// edge-functions/redirect.js
-// V2 redirect with logging
-//
-// Rules:
-// - FB/IG in-app browser: ALWAYS pass through (no s1pcid check)
-// - Non in-app: ONLY pass if s1pcid is valid (numeric, >= 6 digits, not starting with "{")
-// - Otherwise: fallback to MSN (no extra query params)
-// - Copies all query params to destination except "id". If s1pcid is invalid, it is not forwarded.
-// - Logs every decision to Netlify Edge logs.
+export default async (request, context) => {
+  // ===== V2 redirect with logging =====
+  // Rules:
+  // - FB/IG in-app browser: ALWAYS pass through (no s1pcid check)
+  // - Non in-app: ONLY pass if s1pcid is valid (numeric, >= 6 digits, not starting with "{")
+  // - Otherwise: fallback to MSN (no extra query params)
+  // - Copies all query params to destination except "id". If s1pcid is invalid, it is not forwarded.
+  // - Logs every decision to Netlify Edge logs.
 
-/////////////////////////
-// 1) Your redirect map
-/////////////////////////
+  const url = new URL(request.url);
 
+  // 1) Your redirect map (auto-filled from the sheet)
   const redirectMap = {
   "100": "https://google.com",
   "263": "https://read.investingfuel.com/shopping/nissan-rogue-suv-deals-where-to-get-the-most-savings-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=Nissan+Rogue+2025+SUV&forceKeyA=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyB=100+Accepted+|+$150/month+-+Rogue+2024+Crossover+Suvs+Nearby+no+Cost&forceKeyC=$100/month+-+Rogue+2024+Crossover+Suvs+Nearby&forceKeyD=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyE=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyF=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(no+Cost)&fbid=1154354255815807&fbclick=Purchase&utm_source=facebook",
@@ -355,40 +353,30 @@
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
- /////////////////////////
-// 2) Config
-/////////////////////////
-const FALLBACK_URL = "https://www.msn.com";
+  // 2) Config
+  const FALLBACK_URL = "https://www.msn.com";
 
-/////////////////////////
-// 3) Helpers
-/////////////////////////
-function isFbIgInApp(ua) {
-  const u = (ua || "").toLowerCase();
-  return (
-    u.includes("fban") ||      // Facebook app
-    u.includes("fbav") ||      // Facebook app version
-    u.includes("fb_iab") ||    // FB/IG in-app browser
-    u.includes("instagram")    // Instagram app
-  );
-}
+  // 3) Helpers
+  function isFbIgInApp(ua) {
+    const u = (ua || "").toLowerCase();
+    return (
+      u.includes("fban") ||      // Facebook app
+      u.includes("fbav") ||      // Facebook app version
+      u.includes("fb_iab") ||    // FB/IG in-app browser
+      u.includes("instagram")    // Instagram app
+    );
+  }
+  function isValidS1pcid(v) {
+    if (!v) return false;
+    const t = v.trim();
+    if (t.startsWith("{")) return false;     // reject "{...}"
+    return /^[0-9]{6,}$/.test(t);            // numeric, at least 6 digits
+  }
+  function redirectResponse(loc) {
+    return new Response(null, { status: 302, headers: { Location: loc } });
+  }
 
-function isValidS1pcid(v) {
-  if (!v) return false;
-  const t = v.trim();
-  if (t.startsWith("{")) return false;          // reject "{...}"
-  return /^[0-9]{6,}$/.test(t);                 // numeric, at least 6 digits
-}
-
-function redirectResponse(url) {
-  return new Response(null, { status: 302, headers: { Location: url } });
-}
-
-/////////////////////////
-// 4) Edge handler
-/////////////////////////
-export default async (request) => {
-  const url = new URL(request.url);
+  // 4) Resolve destination from id
   const id = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
@@ -396,32 +384,30 @@ export default async (request) => {
   const ua = request.headers.get("user-agent") || "";
   const inApp = isFbIgInApp(ua);
 
-  // We’ll log a trimmed s1pcid (avoid huge values in logs)
+  // We?ll log a trimmed s1pcid (avoid giant values)
   const rawS1 = url.searchParams.get("s1pcid") || "";
-  const s1pcid = rawS1.length > 64 ? rawS1.slice(0, 64) + "…" : rawS1;
+  const s1pcid = rawS1.length > 64 ? rawS1.slice(0, 64) + "?" : rawS1;
   const s1ok = isValidS1pcid(rawS1);
 
-  // Unknown/missing id → soft land
+  // Unknown/missing id -> soft land to Google
   if (!base) {
     console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "unknown id", dest: "https://google.com" });
     return redirectResponse("https://google.com");
   }
 
-  // Build destination: copy all params except "id"
+  // Build final redirect URL (copy all params except "id")
   const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
     if (key !== "id") dest.searchParams.set(key, value);
   });
 
-  // Add a tiny marker for in-app (optional; remove if not needed)
+  // Optional: mark in-app for downstream (remove if you don?t want this)
   if (inApp) dest.searchParams.set("iab", "1");
 
-  // If s1pcid invalid, do not forward it to the destination
+  // If s1pcid invalid, strip it from the forwarded query
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
-  // Decision rules:
-  // - In-app → always pass
-  // - Not in-app → require valid s1pcid, else fallback (no diagnostics)
+  // Decision rules
   if (!inApp && !s1ok) {
     console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "fallback msn (non-in-app invalid s1pcid)", dest: FALLBACK_URL });
     return redirectResponse(FALLBACK_URL);
