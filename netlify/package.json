@@ -1,0 +1,7 @@
+{
+  "name": "redirector-edge",
+  "private": true,
+  "dependencies": {
+    "@netlify/blobs": "^6.3.0"
+  }
+}
