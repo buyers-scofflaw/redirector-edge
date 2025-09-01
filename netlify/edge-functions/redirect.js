@@ -362,7 +362,7 @@ export default async (request, context) => {
 
   // 2) Config
   const FALLBACK_URL = "https://www.msn.com";
-  const COLLECT_URL  = "/.netlify/functions/log-click"; // change if logging elsewhere
+  const COLLECT_URL  = "https://script.google.com/macros/s/AKfycbwSQ-lPe5_A1c8mZ4DinBmK33xsvOdvdvLFD3fWdFI9oVDQ98IdKEv04ALvutxdK7iu/exec"; // change if logging elsewhere
 
   // 3) Helpers
   function isFbIgInApp(ua) {
