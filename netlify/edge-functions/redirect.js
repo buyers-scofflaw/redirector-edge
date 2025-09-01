@@ -1,14 +1,15 @@
 export default async (request, context) => {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
-
   const fbclid = url.searchParams.get("fbclid");
 
-  // Require fbclid only ? block everything else
-  if (!fbclid) {
-    console.log("Redirect", { id, reason: "no fbclid", dest: "https://yahoo.com" });
-    return Response.redirect("https://yahoo.com", 302);
-  }
+  // --- In-app detection helper (FB/IG) ---
+  const ua = (request.headers.get("user-agent") || "").toLowerCase();
+  const inApp =
+    ua.includes("fban") ||      // Facebook app
+    ua.includes("fbav") ||      // Facebook app version
+    ua.includes("fb_iab") ||    // Facebook/Instagram in-app browser
+    ua.includes("instagram");   // Instagram app
 
   const redirectMap = {
   "100": "https://google.com",
@@ -353,32 +354,48 @@ export default async (request, context) => {
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
+ // v1 behavior: require fbclid, else Yahoo
+  if (!fbclid) {
+    console.log("Redirect", {
+      id,
+      inApp,
+      reason: "no fbclid",
+      dest: "https://yahoo.com"
+    });
+    return Response.redirect("https://yahoo.com", 302);
+  }
+
   const baseUrl = redirectMap[id];
 
   if (!id || !baseUrl) {
-    console.log("Redirect", { id, reason: "missing id/baseUrl", dest: "https://google.com" });
+    console.log("Redirect", {
+      id,
+      inApp,
+      reason: "missing id/baseUrl",
+      dest: "https://google.com"
+    });
     return new Response(null, {
       status: 302,
-      headers: {
-        Location: "https://google.com"
-      }
+      headers: { Location: "https://google.com" }
     });
   }
 
   const redirectUrl = new URL(baseUrl);
 
+  // Copy all params except id
   url.searchParams.forEach((value, key) => {
-    if (key !== "id") {
-      redirectUrl.searchParams.set(key, value);
-    }
+    if (key !== "id") redirectUrl.searchParams.set(key, value);
   });
 
-  console.log("Redirect", { id, reason: "fbclid ok", dest: redirectUrl.href });
+  console.log("Redirect", {
+    id,
+    inApp,
+    reason: "fbclid ok",
+    dest: redirectUrl.href
+  });
 
   return new Response(null, {
     status: 302,
-    headers: {
-      Location: redirectUrl.href
-    }
+    headers: { Location: redirectUrl.href }
   });
 };
