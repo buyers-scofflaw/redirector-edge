@@ -2,9 +2,10 @@
 path = "/*"
 function = "redirect"
 
-
-# existing edge function routes are fine above/below this
+[build]
+  functions = "netlify/functions"   # <— make Functions directory explicit
 
 [functions]
-  external_node_modules = ["@netlify/blobs"]
+  directory = "netlify/functions"   # <— same here (being explicit helps)
   node_bundler = "esbuild"
+  external_node_modules = ["@netlify/blobs"]
