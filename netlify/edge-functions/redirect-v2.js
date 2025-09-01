@@ -400,8 +400,3 @@ export default async (request) => {
   return redirectResponse(dest.href);
 };
 
-function redirectResponse(locationUrl) {
-  const h = new Headers({ Location: locationUrl });
-  h.set("X-Edge-Which", "redirect-v2"); // TEMP
-  return new Response(null, { status: 302, headers: h });
-}
