@@ -346,6 +346,8 @@ const redirectMap = {
 
 // ======================================
 
+// ===============================================================
+
 const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://msn.com";
 
 function isFbIgInApp(ua) {
@@ -356,12 +358,16 @@ function isFbIgInApp(ua) {
 function isValidS1pcid(v) {
   if (!v) return false;
   const trimmed = v.trim();
-  if (trimmed.startsWith("{")) return false;         // reject "{...}"
-  return /^[0-9]{6,}$/.test(trimmed);                // numeric, at least 6 digits
+  if (trimmed.startsWith("{")) return false;     // reject "{...}"
+  return /^[0-9]{6,}$/.test(trimmed);            // numeric, at least 6 digits
 }
 
+// TEMP DEBUG: mark which edge function handled the request.
+// (Remove this once you confirm routing.)
 function redirectResponse(locationUrl) {
-  return new Response(null, { status: 302, headers: { Location: locationUrl } });
+  const h = new Headers({ Location: locationUrl });
+  h.set("X-Edge-Which", "redirect-v2"); // <-- temporary marker
+  return new Response(null, { status: 302, headers: h });
 }
 
 export default async (request) => {
@@ -369,7 +375,7 @@ export default async (request) => {
   const id = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
-  // Unknown/missing id -> soft land somewhere safe
+  // Unknown/missing id -> soft land
   if (!base) return redirectResponse("https://google.com");
 
   // Build destination: copy all params except "id" (mirrors v1 behavior)
@@ -383,10 +389,10 @@ export default async (request) => {
   const s1pcid = url.searchParams.get("s1pcid");
   const s1ok = isValidS1pcid(s1pcid);
 
-  // Optional marker so downstream can see this came from an in-app browser
+  // Optional marker for downstream analytics
   if (inApp) dest.searchParams.set("iab", "1");
 
-  // NEW RULE:
+  // Rule:
   // - In-app -> always pass
   // - Not in-app -> require valid s1pcid, else fallback
   if (!inApp && !s1ok) {
@@ -396,7 +402,6 @@ export default async (request) => {
     return redirectResponse(fb.href);
   }
 
-  // Pass-through to mapped destination
+  // Pass-through
   return redirectResponse(dest.href);
 };
-
