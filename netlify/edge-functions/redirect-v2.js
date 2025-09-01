@@ -344,27 +344,24 @@ const redirectMap = {
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
+// ======================================
+
 const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://msn.com";
 
 function isFbIgInApp(ua) {
   const u = (ua || "").toLowerCase();
-  return (
-    u.includes("fban") ||
-    u.includes("fbav") ||
-    u.includes("fb_iab") ||
-    u.includes("instagram")
-  );
+  return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
 }
 
 function isValidS1pcid(v) {
   if (!v) return false;
   const trimmed = v.trim();
+  if (trimmed.startsWith("{")) return false;         // reject "{...}"
+  return /^[0-9]{6,}$/.test(trimmed);                // numeric, at least 6 digits
+}
 
-  // Fail if starts with "{"
-  if (trimmed.startsWith("{")) return false;
-
-  // Must be numeric, min 6 digits
-  return /^[0-9]{6,}$/.test(trimmed);
+function redirectResponse(locationUrl) {
+  return new Response(null, { status: 302, headers: { Location: locationUrl } });
 }
 
 export default async (request) => {
@@ -372,14 +369,10 @@ export default async (request) => {
   const id = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
-  if (!base) {
-    return new Response(null, {
-      status: 302,
-      headers: { Location: "https://google.com" },
-    });
-  }
+  // Unknown/missing id -> soft land somewhere safe
+  if (!base) return redirectResponse("https://google.com");
 
-  // build redirect URL, copy all params except id
+  // Build destination: copy all params except "id" (mirrors v1 behavior)
   const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
     if (key !== "id") dest.searchParams.set(key, value);
@@ -390,17 +383,19 @@ export default async (request) => {
   const s1pcid = url.searchParams.get("s1pcid");
   const s1ok = isValidS1pcid(s1pcid);
 
+  // Optional marker so downstream can see this came from an in-app browser
   if (inApp) dest.searchParams.set("iab", "1");
 
-  if (inApp && !s1ok) {
+  // NEW RULE:
+  // - In-app -> always pass
+  // - Not in-app -> require valid s1pcid, else fallback
+  if (!inApp && !s1ok) {
     const fb = new URL(FALLBACK_URL);
-    fb.searchParams.set("reason", "iab_bad_s1pcid");
+    fb.searchParams.set("reason", "non_iab_bad_s1pcid");
     if (id) fb.searchParams.set("id", id);
-    return new Response(null, { status: 302, headers: { Location: fb.href } });
+    return redirectResponse(fb.href);
   }
 
-  return new Response(null, {
-    status: 302,
-    headers: { Location: dest.href },
-  });
+  // Pass-through to mapped destination
+  return redirectResponse(dest.href);
 };
