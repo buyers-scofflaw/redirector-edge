@@ -346,8 +346,14 @@ const redirectMap = {
 
 // ===============================================================
 
-const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://msn.com";
+///////////////////////
+// 2) CONFIG
+///////////////////////
+const FALLBACK_URL = "https://www.msn.com";
 
+///////////////////////
+// 3) HELPERS
+///////////////////////
 function isFbIgInApp(ua) {
   const u = (ua || "").toLowerCase();
   return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
@@ -355,26 +361,28 @@ function isFbIgInApp(ua) {
 
 function isValidS1pcid(v) {
   if (!v) return false;
-  const trimmed = v.trim();
-  if (trimmed.startsWith("{")) return false;     // reject "{...}"
-  return /^[0-9]{6,}$/.test(trimmed);            // numeric, at least 6 digits
+  const t = v.trim();
+  if (t.startsWith("{")) return false;                // reject "{...}"
+  return /^[0-9]{6,}$/.test(t);                       // numeric, at least 6 digits
 }
 
-// TEMP DEBUG: mark which edge function handled the request.
-// (Remove this once you confirm routing.)
 function redirectResponse(locationUrl) {
-  const h = new Headers({ Location: locationUrl });
-  h.set("X-Edge-Which", "redirect-v2"); // <-- temporary marker
-  return new Response(null, { status: 302, headers: h });
+  return new Response(null, { status: 302, headers: { Location: locationUrl } });
 }
 
+///////////////////////
+// 4) EDGE HANDLER
+///////////////////////
 export default async (request) => {
   const url = new URL(request.url);
+
+  // Resolve base URL from id
   const id = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
-
-  // Unknown/missing id -> soft land
-  if (!base) return redirectResponse("https://google.com");
+  if (!base) {
+    // Unknown/missing id -> soft land
+    return redirectResponse("https://google.com");
+  }
 
   // Build destination: copy all params except "id" (mirrors v1 behavior)
   const dest = new URL(base);
@@ -382,22 +390,26 @@ export default async (request) => {
     if (key !== "id") dest.searchParams.set(key, value);
   });
 
+  // Device / env
   const ua = request.headers.get("user-agent") || "";
   const inApp = isFbIgInApp(ua);
+
+  // s1pcid validity
   const s1pcid = url.searchParams.get("s1pcid");
   const s1ok = isValidS1pcid(s1pcid);
 
-  // Optional marker for downstream analytics
+  // Optional marker if you want to see in downstream logs that this came from in-app
+  // (Remove if not needed)
   if (inApp) dest.searchParams.set("iab", "1");
+
+  // If s1pcid is invalid, do not forward it to the destination
+  if (!s1ok) dest.searchParams.delete("s1pcid");
 
   // Rule:
   // - In-app -> always pass
-  // - Not in-app -> require valid s1pcid, else fallback
+  // - Not in-app -> require valid s1pcid, else fallback (no diagnostics in URL)
   if (!inApp && !s1ok) {
-    const fb = new URL(FALLBACK_URL);
-    fb.searchParams.set("reason", "non_iab_bad_s1pcid");
-    if (id) fb.searchParams.set("id", id);
-    return redirectResponse(fb.href);
+    return redirectResponse(FALLBACK_URL); // pure MSN, no ?reason or id
   }
 
   // Pass-through
