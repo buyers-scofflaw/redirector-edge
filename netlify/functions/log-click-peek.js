@@ -12,7 +12,7 @@ exports.handler = async (event) => {
     if (!text) return json200({ date, count: 0, returned: 0, rows: [] });
 
     const lines = text.split("\n").filter(Boolean);
-    const tail  = lines.slice(-limit).map((l) => { try { return JSON.parse(l); } catch { return { raw: l }; } });
+    const tail  = lines.slice(-limit).map(l => { try { return JSON.parse(l); } catch { return { raw: l }; } });
 
     return json200({ date, count: lines.length, returned: tail.length, rows: tail });
   } catch (e) {
