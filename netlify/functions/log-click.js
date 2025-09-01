@@ -32,7 +32,7 @@ exports.handler = async (event) => {
     // 3) Import blobs
     let getStore;
     try {
-      ({ getStore } = await import("@netlify/blobs"));
+      ({ getStore } = await import("netlify/blobs"));
     } catch (e) {
       return { statusCode: 500, headers: { "content-type": "text/plain" }, body: "blobs import error: " + e.message };
     }
