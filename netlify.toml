@@ -1,3 +1,7 @@
 [[edge_functions]]
 path = "/*"
 function = "redirect"
+
+[[edge_functions]]
+path = "/r2*"
+function = "redirect-v2"
