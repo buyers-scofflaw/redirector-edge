@@ -9,7 +9,6 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers: { "content-type": "text/plain" }, body: "Bad Request" };
     }
 
-    // ESM package inside CJS: dynamic import
     const { getStore } = await import("@netlify/blobs");
     const store = getStore("click-logs");
 
