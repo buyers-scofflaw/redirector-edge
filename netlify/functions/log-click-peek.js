@@ -1,45 +1,37 @@
 // netlify/functions/log-click-peek.js
 // GET /.netlify/functions/log-click-peek?date=YYYY-MM-DD&limit=20
-// Returns the last N click rows from that day's log in Netlify Blobs.
+// Returns the last N click rows from that day's JSONL log in Netlify Blobs.
 
-import { getStore } from '@netlify/blobs';
-
-export default async (req) => {
+export const handler = async (event) => {
   try {
-    const url = new URL(req.url);
-    const date = url.searchParams.get("date") || new Date().toISOString().slice(0,10); // default = today
-    const limit = Math.max(1, Math.min(200, parseInt(url.searchParams.get("limit") || "20", 10)));
-
+    const { getStore } = await import("@netlify/blobs");
     const store = getStore("click-logs");
+
+    const qs = event.queryStringParameters || {};
+    const date  = qs.date || new Date().toISOString().slice(0, 10);
+    const limit = Math.max(1, Math.min(200, parseInt(qs.limit || "20", 10)));
+
     const key = `clicks/${date}.jsonl`;
 
-    const blob = await store.get(key, { type: "stream" });
-    if (!blob) {
-      return new Response(JSON.stringify({ date, count: 0, rows: [] }, null, 2), {
-        status: 200,
-        headers: { "content-type": "application/json" }
-      });
+    // Read file as text (simpler than streaming in Functions)
+    const text = await store.get(key, { type: "text" });
+    if (!text) {
+      return json200({ date, count: 0, returned: 0, rows: [] });
     }
 
-    const reader = blob.getReader();
-    let chunks = [];
-    for (;;) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      chunks.push(new TextDecoder().decode(value));
-    }
-    const all = chunks.join("");
-    const lines = all.split("\n").filter(Boolean);
-    const tail = lines.slice(-limit).map(l => { try { return JSON.parse(l); } catch { return { raw:l }; } });
+    const lines = text.split("\n").filter(Boolean);
+    const tail = lines.slice(-limit).map((l) => {
+      try { return JSON.parse(l); } catch { return { raw: l }; }
+    });
 
-    return new Response(JSON.stringify({
-      date,
-      count: lines.length,
-      returned: tail.length,
-      rows: tail
-    }, null, 2), { status: 200, headers: { "content-type": "application/json" }});
+    return json200({ date, count: lines.length, returned: tail.length, rows: tail });
   } catch (e) {
     console.error("peek error:", e?.message || e);
-    return new Response("Server Error", { status: 500 });
+    return { statusCode: 500, headers: { "content-type": "text/plain" }, body: "Server Error" };
   }
 };
+
+// helper
+function json200(obj) {
+  return { statusCode: 200, headers: { "content-type": "application/json" }, body: JSON.stringify(obj, null, 2) };
+}
