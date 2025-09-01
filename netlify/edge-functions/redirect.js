@@ -1,15 +1,16 @@
-export default async (request, context) => {
-  const url = new URL(request.url);
-  const id = url.searchParams.get("id");
-  const fbclid = url.searchParams.get("fbclid");
+// edge-functions/redirect.js
+// V2 redirect with logging
+//
+// Rules:
+// - FB/IG in-app browser: ALWAYS pass through (no s1pcid check)
+// - Non in-app: ONLY pass if s1pcid is valid (numeric, >= 6 digits, not starting with "{")
+// - Otherwise: fallback to MSN (no extra query params)
+// - Copies all query params to destination except "id". If s1pcid is invalid, it is not forwarded.
+// - Logs every decision to Netlify Edge logs.
 
-  // --- In-app detection helper (FB/IG) ---
-  const ua = (request.headers.get("user-agent") || "").toLowerCase();
-  const inApp =
-    ua.includes("fban") ||      // Facebook app
-    ua.includes("fbav") ||      // Facebook app version
-    ua.includes("fb_iab") ||    // Facebook/Instagram in-app browser
-    ua.includes("instagram");   // Instagram app
+/////////////////////////
+// 1) Your redirect map
+/////////////////////////
 
   const redirectMap = {
   "100": "https://google.com",
@@ -354,48 +355,78 @@ export default async (request, context) => {
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
- // v1 behavior: require fbclid, else Yahoo
-  if (!fbclid) {
-    console.log("Redirect", {
-      id,
-      inApp,
-      reason: "no fbclid",
-      dest: "https://yahoo.com"
-    });
-    return Response.redirect("https://yahoo.com", 302);
+ /////////////////////////
+// 2) Config
+/////////////////////////
+const FALLBACK_URL = "https://www.msn.com";
+
+/////////////////////////
+// 3) Helpers
+/////////////////////////
+function isFbIgInApp(ua) {
+  const u = (ua || "").toLowerCase();
+  return (
+    u.includes("fban") ||      // Facebook app
+    u.includes("fbav") ||      // Facebook app version
+    u.includes("fb_iab") ||    // FB/IG in-app browser
+    u.includes("instagram")    // Instagram app
+  );
+}
+
+function isValidS1pcid(v) {
+  if (!v) return false;
+  const t = v.trim();
+  if (t.startsWith("{")) return false;          // reject "{...}"
+  return /^[0-9]{6,}$/.test(t);                 // numeric, at least 6 digits
+}
+
+function redirectResponse(url) {
+  return new Response(null, { status: 302, headers: { Location: url } });
+}
+
+/////////////////////////
+// 4) Edge handler
+/////////////////////////
+export default async (request) => {
+  const url = new URL(request.url);
+  const id = url.searchParams.get("id");
+  const base = id ? redirectMap[id] : null;
+
+  // UA / in-app detection
+  const ua = request.headers.get("user-agent") || "";
+  const inApp = isFbIgInApp(ua);
+
+  // We’ll log a trimmed s1pcid (avoid huge values in logs)
+  const rawS1 = url.searchParams.get("s1pcid") || "";
+  const s1pcid = rawS1.length > 64 ? rawS1.slice(0, 64) + "…" : rawS1;
+  const s1ok = isValidS1pcid(rawS1);
+
+  // Unknown/missing id → soft land
+  if (!base) {
+    console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "unknown id", dest: "https://google.com" });
+    return redirectResponse("https://google.com");
   }
 
-  const baseUrl = redirectMap[id];
-
-  if (!id || !baseUrl) {
-    console.log("Redirect", {
-      id,
-      inApp,
-      reason: "missing id/baseUrl",
-      dest: "https://google.com"
-    });
-    return new Response(null, {
-      status: 302,
-      headers: { Location: "https://google.com" }
-    });
-  }
-
-  const redirectUrl = new URL(baseUrl);
-
-  // Copy all params except id
+  // Build destination: copy all params except "id"
+  const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
-    if (key !== "id") redirectUrl.searchParams.set(key, value);
+    if (key !== "id") dest.searchParams.set(key, value);
   });
 
-  console.log("Redirect", {
-    id,
-    inApp,
-    reason: "fbclid ok",
-    dest: redirectUrl.href
-  });
+  // Add a tiny marker for in-app (optional; remove if not needed)
+  if (inApp) dest.searchParams.set("iab", "1");
 
-  return new Response(null, {
-    status: 302,
-    headers: { Location: redirectUrl.href }
-  });
+  // If s1pcid invalid, do not forward it to the destination
+  if (!s1ok) dest.searchParams.delete("s1pcid");
+
+  // Decision rules:
+  // - In-app → always pass
+  // - Not in-app → require valid s1pcid, else fallback (no diagnostics)
+  if (!inApp && !s1ok) {
+    console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "fallback msn (non-in-app invalid s1pcid)", dest: FALLBACK_URL });
+    return redirectResponse(FALLBACK_URL);
+  }
+
+  console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "pass", dest: dest.href });
+  return redirectResponse(dest.href);
 };
