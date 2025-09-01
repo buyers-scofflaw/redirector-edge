@@ -1,22 +1,15 @@
 export default async (request, context) => {
-  // Let Netlify Functions handle their own paths
-  const path = new URL(request.url).pathname;
-  if (path.startsWith("/.netlify/functions/")) {
+  // 0) Let Netlify Functions handle their own paths (don't intercept /log-click etc.)
+  const reqUrl0 = new URL(request.url);
+  if (reqUrl0.pathname.startsWith("/.netlify/functions/")) {
     return context.next();
   }
 
-  // ===== V2 redirect with logging + click capture =====
-  // - In-app: always pass (no s1pcid check)
-  // - Non in-app: require valid s1pcid, else MSN
-  // - Preserve ALL query params except: id, utm_medium, utm_id, utm_content, utm_term, utm_campaign, iab
-  // - Append s1padid={uid}
-  // - Capture uid, fbc/fbp, event_time, event_source_url, ua, client_ip
-  // - POST to collector and set cookies
-  // - Log decision + final URL
+  // ===== V2 redirect with logging + click capture + Meta-crawler bypass =====
 
   const url = new URL(request.url);
 
-  // 1) Map injected by Sheets
+  // 1) Redirect map (injected by your Sheet push)
   const redirectMap = {
   "100": "https://google.com",
   "263": "https://read.investingfuel.com/shopping/nissan-rogue-suv-deals-where-to-get-the-most-savings-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=Nissan+Rogue+2025+SUV&forceKeyA=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyB=100+Accepted+|+$150/month+-+Rogue+2024+Crossover+Suvs+Nearby+no+Cost&forceKeyC=$100/month+-+Rogue+2024+Crossover+Suvs+Nearby&forceKeyD=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyE=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyF=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(no+Cost)&fbid=1154354255815807&fbclick=Purchase&utm_source=facebook",
@@ -369,6 +362,10 @@ export default async (request, context) => {
     const u = (ua || "").toLowerCase();
     return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
   }
+  function isMetaCrawler(ua) {
+    const u = (ua || "").toLowerCase();
+    return u.includes("facebookexternalhit/") || u.includes("meta-externalads/");
+  }
   function isValidS1pcid(v) {
     if (!v) return false;
     const t = v.trim();
@@ -404,11 +401,20 @@ export default async (request, context) => {
     return new Response(null, { status: 302, headers: h });
   }
 
-  // 4) Resolve base destination
+  // 4) Early bypass for Meta crawlers (no logging, no cookies, no s1padid, no params)
+  const uaHead = request.headers.get("user-agent") || "";
+  if (isMetaCrawler(uaHead)) {
+    const id = url.searchParams.get("id");
+    const base = id && redirectMap[id] ? redirectMap[id] : null;
+    const target = base || "https://google.com";
+    return redirectResponse(target);
+  }
+
+  // 5) Resolve base destination
   const id   = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
-  const ua    = request.headers.get("user-agent") || "";
+  const ua    = uaHead;
   const inApp = isFbIgInApp(ua);
 
   const rawS1  = url.searchParams.get("s1pcid") || "";
@@ -420,14 +426,14 @@ export default async (request, context) => {
     return redirectResponse("https://google.com");
   }
 
-  // 5) Drop ONLY these params; preserve all others
+  // 6) Build destination: drop ONLY these params, preserve everything else (except id)
   const DROP = new Set(["utm_medium","utm_id","utm_content","utm_term","utm_campaign","iab","id"]);
   const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
     if (!DROP.has(key)) dest.searchParams.set(key, value);
   });
 
-  // 6) Click capture
+  // 7) Click capture
   const now = Math.floor(Date.now()/1000);
   const uid = uuidv4();
 
@@ -448,18 +454,18 @@ export default async (request, context) => {
   let fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
   let fbp = cookieMap._fbp || makeFbp();
 
-  // Best-effort client IP (helps CAPI match rate)
+  // Best-effort client IP
   const ipHeader =
     request.headers.get("x-forwarded-for") ||
     request.headers.get("x-real-ip") ||
     request.headers.get("x-nf-client-connection-ip") || "";
   const client_ip = ipHeader.split(",")[0].trim();
 
-  // 7) Decide final location AFTER all mutations
+  // 8) Decide final location AFTER all mutations (so logged dest is exact)
   const isFallback    = (!inApp && !s1ok);
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
-  // 8) Fire-and-forget POST to collector (includes client_ip)
+  // 9) Fire-and-forget POST to collector (includes client_ip)
   try {
     fetch(COLLECT_URL, {
       method: "POST",
@@ -468,16 +474,16 @@ export default async (request, context) => {
         uid, fbclid, fbc, fbp, id,
         s1pcid: rawS1 || null,
         inApp,
-        client_ip,                // &lt;-- added
+        client_ip,
         event_time: now,
         event_source_url: request.url,
         ua,
-        dest: finalLocation       // &lt;-- exact final URL with s1padid
+        dest: finalLocation
       })
     }).catch(() => {});
   } catch {}
 
-  // 9) Set cookies and log
+  // 10) Set cookies and log
   const cookieHeaders = new Headers();
   appendCookie(cookieHeaders, "_fbc", fbc);
   appendCookie(cookieHeaders, "_fbp", fbp);
@@ -489,6 +495,6 @@ export default async (request, context) => {
     console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "pass", dest: finalLocation });
   }
 
-  // 10) Redirect
+  // 11) Redirect
   return redirectResponse(finalLocation, cookieHeaders);
 };
