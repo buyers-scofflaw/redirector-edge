@@ -8,9 +8,11 @@ export default async (request, context) => {
   // ===== V2 redirect with logging + click capture =====
   // - In-app: always pass (no s1pcid check)
   // - Non in-app: require valid s1pcid, else MSN
-  // - Preserve all query params EXCEPT: id, utm_medium, utm_id, utm_content, utm_term, utm_campaign, iab
+  // - Preserve ALL query params except: id, utm_medium, utm_id, utm_content, utm_term, utm_campaign, iab
   // - Append s1padid={uid}
-  // - Post click to collector and set cookies
+  // - Capture uid, fbc/fbp, event_time, event_source_url, ua, client_ip
+  // - POST to collector and set cookies
+  // - Log decision + final URL
 
   const url = new URL(request.url);
 
@@ -418,9 +420,8 @@ export default async (request, context) => {
     return redirectResponse("https://google.com");
   }
 
-  // 5) Build destination with a DROP LIST (everything else is preserved)
+  // 5) Drop ONLY these params; preserve all others
   const DROP = new Set(["utm_medium","utm_id","utm_content","utm_term","utm_campaign","iab","id"]);
-
   const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
     if (!DROP.has(key)) dest.searchParams.set(key, value);
@@ -433,7 +434,7 @@ export default async (request, context) => {
   // ALWAYS add s1padid={uid}
   dest.searchParams.set("s1padid", uid);
 
-  // If s1pcid invalid, strip it
+  // If s1pcid invalid, strip it from outgoing URL
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
   // Cookies in
@@ -447,11 +448,18 @@ export default async (request, context) => {
   let fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
   let fbp = cookieMap._fbp || makeFbp();
 
-  // 7) Decide final location AFTER all mutations (so logged dest is exact)
+  // Best-effort client IP (helps CAPI match rate)
+  const ipHeader =
+    request.headers.get("x-forwarded-for") ||
+    request.headers.get("x-real-ip") ||
+    request.headers.get("x-nf-client-connection-ip") || "";
+  const client_ip = ipHeader.split(",")[0].trim();
+
+  // 7) Decide final location AFTER all mutations
   const isFallback    = (!inApp && !s1ok);
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
-  // 8) Fire-and-forget POST to collector
+  // 8) Fire-and-forget POST to collector (includes client_ip)
   try {
     fetch(COLLECT_URL, {
       method: "POST",
@@ -460,10 +468,11 @@ export default async (request, context) => {
         uid, fbclid, fbc, fbp, id,
         s1pcid: rawS1 || null,
         inApp,
+        client_ip,                // &lt;-- added
         event_time: now,
         event_source_url: request.url,
         ua,
-        dest: finalLocation
+        dest: finalLocation       // &lt;-- exact final URL with s1padid
       })
     }).catch(() => {});
   } catch {}
