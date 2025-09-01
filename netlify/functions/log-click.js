@@ -1,3 +1,21 @@
+// netlify/functions/log-click.js (sanity check)
+export const handler = async (event) => {
+  try {
+    const body = JSON.parse(event.body || "{}");
+    return {
+      statusCode: 200,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ ok: true, method: event.httpMethod, body }, null, 2)
+    };
+  } catch (e) {
+    return {
+      statusCode: 500,
+      headers: { "content-type": "text/plain" },
+      body: "JSON parse error: " + (e?.message || e)
+    };
+  }
+};
+
 // netlify/functions/log-click.js
 // Collects click data posted from the Edge redirect.
 // Appends each event as a JSON line to a daily log file in Netlify Blobs.
