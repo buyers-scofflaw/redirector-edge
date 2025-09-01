@@ -2,36 +2,35 @@
 // Collects click data posted from the Edge redirect.
 // Appends each event as a JSON line to a daily log file in Netlify Blobs.
 
-import { getStore } from '@netlify/blobs';
-
-export default async (req) => {
+export const handler = async (event) => {
   try {
     // Only accept POST requests
-    if (req.method !== "POST") {
-      return new Response("OK", { status: 200 });
+    if (event.httpMethod !== "POST") {
+      return { statusCode: 200, headers: { "content-type": "text/plain" }, body: "OK" };
     }
 
-    // Parse the incoming JSON
-    const body = await req.json().catch(() => ({}));
+    // Parse incoming JSON
+    const body = JSON.parse(event.body || "{}");
 
-    // Require at least a uid + event_time to be useful
+    // Require at least uid + event_time (unix seconds)
     if (!body || !body.uid || !body.event_time) {
-      return new Response("Bad Request", { status: 400 });
+      return { statusCode: 400, headers: { "content-type": "text/plain" }, body: "Bad Request" };
     }
 
-    // Create (or open) the "click-logs" blob store
+    // Import Blobs in Functions (v1 handler): use dynamic import
+    const { getStore } = await import("@netlify/blobs");
     const store = getStore("click-logs");
 
-    // Use event_time (unix seconds) to pick the log file by day
+    // Use event_time to choose daily file
     const day = new Date(body.event_time * 1000).toISOString().slice(0, 10); // YYYY-MM-DD
     const key = `clicks/${day}.jsonl`;
 
-    // Append the click as one JSON line
+    // Append as one JSON line
     await store.append(key, JSON.stringify(body) + "\n");
 
-    return new Response("OK", { status: 200 });
+    return { statusCode: 200, headers: { "content-type": "text/plain" }, body: "OK" };
   } catch (e) {
     console.error("log-click error:", e?.message || e);
-    return new Response("Server Error", { status: 500 });
+    return { statusCode: 500, headers: { "content-type": "text/plain" }, body: "Server Error" };
   }
 };
