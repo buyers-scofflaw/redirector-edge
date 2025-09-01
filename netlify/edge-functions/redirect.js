@@ -1,15 +1,22 @@
 export default async (request, context) => {
-  // ===== V2 redirect with logging =====
+  // --- Bypass internal/function paths so Edge doesn't intercept your Functions ---
+  const path = new URL(request.url).pathname;
+  if (path.startsWith("/.netlify/functions/")) {
+    return context.next(); // let the Netlify Function run (e.g., /log-click)
+  }
+
+  // ===== V2 redirect with logging + click capture =====
   // Rules:
-  // - FB/IG in-app browser: ALWAYS pass through (no s1pcid check)
-  // - Non in-app: ONLY pass if s1pcid is valid (numeric, >= 6 digits, not starting with "{")
-  // - Otherwise: fallback to MSN (no extra query params)
-  // - Copies all query params to destination except "id". If s1pcid is invalid, it is not forwarded.
-  // - Logs every decision to Netlify Edge logs.
+  // - FB/IG in-app: ALWAYS pass (no s1pcid check)
+  // - Non in-app: pass only if s1pcid is valid (numeric, >=6 digits, not starting with "{"); else MSN
+  // - Copies all params except "id"; strips s1pcid when invalid
+  // - Captures uid, fbc/fbp, event_time, event_source_url at click-time
+  // - Logs every decision to Netlify Edge logs
+  // - Fire-and-forget POST to your collector (/.netlify/functions/log-click by default)
 
   const url = new URL(request.url);
 
-  // 1) Your redirect map (auto-filled from the sheet)
+  // 1) Redirect map (auto-filled by Sheets)
   const redirectMap = {
   "100": "https://google.com",
   "263": "https://read.investingfuel.com/shopping/nissan-rogue-suv-deals-where-to-get-the-most-savings-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=Nissan+Rogue+2025+SUV&forceKeyA=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyB=100+Accepted+|+$150/month+-+Rogue+2024+Crossover+Suvs+Nearby+no+Cost&forceKeyC=$100/month+-+Rogue+2024+Crossover+Suvs+Nearby&forceKeyD=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+(no+Cost)&forceKeyE=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyF=100+Accepted+|+2024s+Rogue+Crossover+Suvs+Nearby+(no+Cost)&fbid=1154354255815807&fbclick=Purchase&utm_source=facebook",
@@ -355,64 +362,131 @@ export default async (request, context) => {
 
   // 2) Config
   const FALLBACK_URL = "https://www.msn.com";
+  const COLLECT_URL  = "/.netlify/functions/log-click"; // change if logging elsewhere
 
   // 3) Helpers
   function isFbIgInApp(ua) {
     const u = (ua || "").toLowerCase();
-    return (
-      u.includes("fban") ||      // Facebook app
-      u.includes("fbav") ||      // Facebook app version
-      u.includes("fb_iab") ||    // FB/IG in-app browser
-      u.includes("instagram")    // Instagram app
-    );
+    return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
   }
   function isValidS1pcid(v) {
     if (!v) return false;
     const t = v.trim();
-    if (t.startsWith("{")) return false;     // reject "{...}"
-    return /^[0-9]{6,}$/.test(t);            // numeric, at least 6 digits
+    if (t.startsWith("{")) return false;
+    return /^[0-9]{6,}$/.test(t);
   }
-  function redirectResponse(loc) {
-    return new Response(null, { status: 302, headers: { Location: loc } });
+  function makeFbcFromFbclid(fbclid) {
+    if (!fbclid) return null;
+    const ts = Math.floor(Date.now()/1000);
+    return `fb.1.${ts}.${fbclid}`;
+  }
+  function makeFbp() {
+    const ts = Math.floor(Date.now()/1000);
+    const rand = Math.random().toString(36).slice(2);
+    return `fb.1.${ts}.${rand}`;
+  }
+  function uuidv4() {
+    return crypto.randomUUID
+      ? crypto.randomUUID()
+      : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+          const r = (Math.random()*16)|0, v = c==="x" ? r : (r&0x3)|0x8;
+          return v.toString(16);
+        });
+  }
+  function appendCookie(h, name, value, maxAgeDays = 90) {
+    if (!value) return;
+    const maxAge = maxAgeDays * 24 * 3600;
+    h.append("Set-Cookie", `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; SameSite=Lax`);
+  }
+  function redirectResponse(locationUrl, extraHeaders) {
+    const h = new Headers({ Location: locationUrl });
+    if (extraHeaders) {
+      for (const [k, v] of extraHeaders.entries()) h.append(k, v);
+    }
+    return new Response(null, { status: 302, headers: h });
   }
 
   // 4) Resolve destination from id
-  const id = url.searchParams.get("id");
+  const id   = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
   // UA / in-app detection
-  const ua = request.headers.get("user-agent") || "";
+  const ua    = request.headers.get("user-agent") || "";
   const inApp = isFbIgInApp(ua);
 
-  // We?ll log a trimmed s1pcid (avoid giant values)
-  const rawS1 = url.searchParams.get("s1pcid") || "";
+  // s1pcid validity (also keep a trimmed value for logs)
+  const rawS1  = url.searchParams.get("s1pcid") || "";
   const s1pcid = rawS1.length > 64 ? rawS1.slice(0, 64) + "?" : rawS1;
-  const s1ok = isValidS1pcid(rawS1);
+  const s1ok   = isValidS1pcid(rawS1);
 
-  // Unknown/missing id -> soft land to Google
+  // Unknown/missing id ? soft land (log)
   if (!base) {
     console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "unknown id", dest: "https://google.com" });
     return redirectResponse("https://google.com");
   }
 
-  // Build final redirect URL (copy all params except "id")
+  // Build dest: copy all params except "id"
   const dest = new URL(base);
   url.searchParams.forEach((value, key) => {
     if (key !== "id") dest.searchParams.set(key, value);
   });
-
-  // Optional: mark in-app for downstream (remove if you don?t want this)
   if (inApp) dest.searchParams.set("iab", "1");
-
-  // If s1pcid invalid, strip it from the forwarded query
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
-  // Decision rules
-  if (!inApp && !s1ok) {
-    console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "fallback msn (non-in-app invalid s1pcid)", dest: FALLBACK_URL });
-    return redirectResponse(FALLBACK_URL);
+  // 5) CLICK CAPTURE (uid, fbc/fbp, timestamp, source url)
+  const now = Math.floor(Date.now()/1000);
+  const uid = uuidv4();
+
+  // cookies in
+  const rawCookie = request.headers.get("cookie") || "";
+  const cookieMap = Object.fromEntries(
+    rawCookie.split(/;\s*/).filter(Boolean).map(c => {
+      const i = c.indexOf("="); return i === -1 ? [c, ""] : [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
+    })
+  );
+
+  const fbclid = url.searchParams.get("fbclid") || null;
+  let fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
+  let fbp = cookieMap._fbp || makeFbp();
+
+  // Decide redirect target
+  const isFallback    = (!inApp && !s1ok);
+  const finalLocation = isFallback ? FALLBACK_URL : dest.href;
+
+  // 6) Fire-and-forget log to your collector (for later CAPI join)
+  try {
+    fetch(COLLECT_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        uid,
+        fbclid,
+        fbc,
+        fbp,
+        id,
+        s1pcid: rawS1 || null,
+        inApp,
+        event_time: now,
+        event_source_url: request.url,
+        ua,
+        dest: finalLocation
+      })
+    }).catch(() => {});
+  } catch {}
+
+  // 7) Set cookies so browser keeps fbc/fbp/uid
+  const cookieHeaders = new Headers();
+  appendCookie(cookieHeaders, "_fbc", fbc);
+  appendCookie(cookieHeaders, "_fbp", fbp);
+  appendCookie(cookieHeaders, "uid", uid);
+
+  // 8) Log the decision (same shape you were using)
+  if (isFallback) {
+    console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "fallback msn (non-in-app invalid s1pcid)", dest: finalLocation });
+  } else {
+    console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "pass", dest: finalLocation });
   }
 
-  console.log("Redirect", { id, inApp, s1pcid, s1ok, reason: "pass", dest: dest.href });
-  return redirectResponse(dest.href);
+  // 9) Return 302 with cookies
+  return redirectResponse(finalLocation, cookieHeaders);
 };
