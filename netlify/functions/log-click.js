@@ -1,5 +1,5 @@
 // netlify/functions/log-click.js (sanity check)
-export const handler = async (event) => {
+exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body || "{}");
     return {
@@ -11,7 +11,7 @@ export const handler = async (event) => {
     return {
       statusCode: 500,
       headers: { "content-type": "text/plain" },
-      body: "JSON parse error: " + (e?.message || e)
+      body: "JSON parse error: " + (e && e.message ? e.message : String(e))
     };
   }
 };
