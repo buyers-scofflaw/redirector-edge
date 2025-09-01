@@ -6,6 +6,7 @@ export default async (request, context) => {
 
   // Require fbclid only ? block everything else
   if (!fbclid) {
+    console.log("Redirect", { id, reason: "no fbclid", dest: "https://yahoo.com" });
     return Response.redirect("https://yahoo.com", 302);
   }
 
@@ -355,6 +356,7 @@ export default async (request, context) => {
   const baseUrl = redirectMap[id];
 
   if (!id || !baseUrl) {
+    console.log("Redirect", { id, reason: "missing id/baseUrl", dest: "https://google.com" });
     return new Response(null, {
       status: 302,
       headers: {
@@ -370,6 +372,8 @@ export default async (request, context) => {
       redirectUrl.searchParams.set(key, value);
     }
   });
+
+  console.log("Redirect", { id, reason: "fbclid ok", dest: redirectUrl.href });
 
   return new Response(null, {
     status: 302,
