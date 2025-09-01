@@ -344,7 +344,7 @@ const redirectMap = {
   "1081": "https://10toptips.com/finance/simplify-your-investments-with-a-gold-ira-kit-en-us/?segment=rsoc.sc.10toptips.001&headline=Simplify+Your+Investments+With+a+Gold+IRA+Kit&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+$0+Cost&forceKeyC=Gold+Ira+Kit+$0+Cost&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Get+a+Gold+Ira+Kit&forceKeyF=Get+Free+Gold+IRA+Kit+With+$10k&fbid=1786225912279573&fbclick=Purchase&utm_source=facebook"
 };
 
-const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://google.com";
+const FALLBACK_URL = Deno.env.get("FALLBACK_URL") || "https://msn.com";
 
 function isFbIgInApp(ua) {
   const u = (ua || "").toLowerCase();
