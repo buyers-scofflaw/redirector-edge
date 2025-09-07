@@ -462,10 +462,6 @@ export default async (request, context) => {
     const u = (ua || "").toLowerCase();
     return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
   }
-  function isMetaCrawler(ua) {
-    const u = (ua || "").toLowerCase();
-    return u.includes("facebookexternalhit/") || u.includes("meta-externalads/");
-  }
   function isValidS1pcid(v) {
     if (!v) return false;
     const t = v.trim();
@@ -503,12 +499,6 @@ export default async (request, context) => {
 
   // 4) Early bypass for Meta crawlers (no logging, no cookies, no s1padid, no params)
   const uaHead = request.headers.get("user-agent") || "";
-  if (isMetaCrawler(uaHead)) {
-    const id = url.searchParams.get("id");
-    const base = id && redirectMap[id] ? redirectMap[id] : null;
-    const target = base || "https://google.com";
-    return redirectResponse(target);
-  }
 
   // 5) Resolve base destination
   const id   = url.searchParams.get("id");
