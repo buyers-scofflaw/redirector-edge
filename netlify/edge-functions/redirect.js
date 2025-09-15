@@ -1,11 +1,11 @@
 export default async (request, context) => {
-  // 0) Let Netlify Functions handle their own paths (don't intercept /log-click etc.)
+  // 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
   const reqUrl0 = new URL(request.url);
   if (reqUrl0.pathname.startsWith("/.netlify/functions/")) {
     return context.next();
   }
 
-  // ===== V2 redirect with logging + click capture + Meta-crawler bypass =====
+  // ===== V2 redirect with logging + click capture =====
 
   const url = new URL(request.url);
 
@@ -199,7 +199,14 @@ export default async (request, context) => {
 
   // 2) Config
   const FALLBACK_URL = "https://www.msn.com";
-  const COLLECT_URL  = "https://script.google.com/macros/s/AKfycbwSQ-lPe5_A1c8mZ4DinBmK33xsvOdvdvLFD3fWdFI9oVDQ98IdKEv04ALvutxdK7iu/exec";
+
+  // Post to MULTIPLE collectors (existing Google Apps Script + NEW Cloud Run)
+  const COLLECTORS = [
+    // Existing Sheets Apps Script collector
+    "https://script.google.com/macros/s/AKfycbwSQ-lPe5_A1c8mZ4DinBmK33xsvOdvdvLFD3fWdFI9oVDQ98IdKEv04ALvutxdK7iu/exec",
+    // NEW Cloud Run -> BigQuery collector
+    "https://click-collector-583868590168.us-central1.run.app/collect"
+  ];
 
   // 3) Helpers
   function isFbIgInApp(ua) {
@@ -241,7 +248,29 @@ export default async (request, context) => {
     return new Response(null, { status: 302, headers: h });
   }
 
-  // 4) Early bypass for Meta crawlers (no logging, no cookies, no s1padid, no params)
+  // Fire-and-forget POSTs so the redirect is never blocked
+  function postToCollectors(payload, context) {
+    for (const endpoint of COLLECTORS) {
+      const controller = new AbortController();
+      const kill = setTimeout(() => controller.abort(), 1500); // 1.5s guard
+
+      // Don't await ? run in the background
+      context.waitUntil(
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+          keepalive: true,
+          redirect: "manual",
+          signal: controller.signal
+        })
+        .catch(() => {})           // swallow errors (we never block the user)
+        .finally(() => clearTimeout(kill))
+      );
+    }
+  }
+
+  // 4) UA, inputs
   const uaHead = request.headers.get("user-agent") || "";
 
   // 5) Resolve base destination
@@ -299,22 +328,18 @@ export default async (request, context) => {
   const isFallback    = (!inApp && !s1ok);
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
-  // 9) Fire-and-forget POST to collector (includes client_ip)
+  // 9) Fire-and-forget POSTs to BOTH collectors (Sheets & Cloud Run)
   try {
-    fetch(COLLECT_URL, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        uid, fbclid, fbc, fbp, id,
-        s1pcid: rawS1 || null,
-        inApp,
-        client_ip,
-        event_time: now,
-        event_source_url: request.url,
-        ua,
-        dest: finalLocation
-      })
-    }).catch(() => {});
+    postToCollectors({
+      uid, fbclid, fbc, fbp, id,
+      s1pcid: rawS1 || null,
+      inApp,
+      client_ip,
+      event_time: now,
+      event_source_url: request.url,
+      ua,
+      dest: finalLocation
+    }, context);
   } catch {}
 
   // 10) Set cookies and log
