@@ -338,7 +338,7 @@ export default async (request, context) => {
   // Post to MULTIPLE collectors (existing Google Apps Script + NEW Cloud Run)
   const COLLECTORS = [
     // Existing Sheets Apps Script collector
-    "https://script.google.com/macros/s/AKfycbwSQ-lPe5_A1c8mZ4DinBmK33xsvOdvdvLFD3fWdFI9oVDQ98IdKEv04ALvutxdK7iu/exec",
+    //"https://script.google.com/macros/s/AKfycbwSQ-lPe5_A1c8mZ4DinBmK33xsvOdvdvLFD3fWdFI9oVDQ98IdKEv04ALvutxdK7iu/exec",
     // NEW Cloud Run -> BigQuery collector
     "https://click-collector-583868590168.us-central1.run.app/collect"
   ];
