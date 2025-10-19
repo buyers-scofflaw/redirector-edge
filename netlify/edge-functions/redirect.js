@@ -457,12 +457,29 @@ export default async (request, context) => {
     return redirectResponse("https://google.com");
   }
 
-  // 9) Build final destination (preserve most params)
-  const DROP = new Set(["utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"]);
-  const dest = new URL(base);
-  url.searchParams.forEach((value, key) => {
-    if (!DROP.has(key)) dest.searchParams.set(key, value);
-  });
+// 9) Build final destination (preserve most params)
+const DROP = new Set([
+  "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
+]);
+
+// base is now an object:  { url, title, description, locale }
+if (!base || !base.url) {
+  console.log("Redirect", { id, reason: "missing base.url", dest: "https://google.com" });
+  return redirectResponse("https://google.com");
+}
+
+let dest;
+try {
+  dest = new URL(base.url);
+} catch (err) {
+  console.error("Invalid redirect URL", base, err);
+  return redirectResponse("https://google.com");
+}
+
+// copy through allowed params
+url.searchParams.forEach((value, key) => {
+  if (!DROP.has(key)) dest.searchParams.set(key, value);
+});
 
   // 10) Capture event
   const now = Math.floor(Date.now() / 1000);
