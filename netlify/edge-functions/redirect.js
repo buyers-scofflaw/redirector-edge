@@ -238,7 +238,7 @@ export default async (request, context) => {
   const ogMetaMap = {
   "https://health-helpers.com": {
     "site_name": "Health Helpers",
-    "image": "https://health-helpers.com/assets/healthhelpers-og.png",
+    "image": "https://health-helpers.com/assets/wellnessauthority-og.png",
     "image_alt": "Smiling healthcare professional providing guidance and support.",
     "type": "article"
   },
@@ -250,7 +250,7 @@ export default async (request, context) => {
   },
   "https://wellness-authority.com": {
     "site_name": "Wellness Authority",
-    "image": "https://wellness-authority.com/assets/wellnessauthority-og.png",
+    "image": "https://wellness-authority.com/assets/healthhelpers-og.png",
     "image_alt": "Peaceful wellness setting with natural light and greenery.",
     "type": "article"
   },
