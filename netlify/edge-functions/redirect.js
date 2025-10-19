@@ -445,7 +445,6 @@ export default async (request, context) => {
 
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
-  const id = url.searchParams.get("id");
   const base = id ? redirectMap[id] : null;
 
   const inApp = isFbIgInApp(uaHead);
