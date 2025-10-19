@@ -1,10 +1,16 @@
 export default async (request, context) => {
-  // 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
+// 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
   const reqUrl0 = new URL(request.url);
   if (reqUrl0.pathname.startsWith("/.netlify/functions/")) {
     return context.next();
   }
 
+  // 0a) Bypass redirects for static assets (images, CSS, etc.)
+  if (reqUrl0.pathname.startsWith("/assets/")) {
+    return context.next();
+  }
+
+  // ===== V2 redirect with logging + click capture =====
   // ===== V2 redirect with logging + click capture =====
 
   const url = new URL(request.url);
@@ -45,7 +51,8 @@ export default async (request, context) => {
   "660": "https://read.investingfuel.com/careers/explore-lucrative-careers-in-power-washing-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=power+washing&forceKeyA=pressure+cleaning+near+me&forceKeyB=100%+accepted+|+power+washing+deals+in+{City}&forceKeyC=find+pressure+washing+services+in+{State}&forceKeyD=pressure+cleaning+companies+near+me&forceKeyE=pressure+washing+companies+near+me&forceKeyF=pressure+cleaning+near+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
   "661": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
   "662": "https://read.investingfuel.com/real-estate/senior-apartments-a-perfect-blend-of-independence-and-community-for-older-adults-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "663": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook"
+  "663": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+  "664": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-es-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook"
 };
 
   // 2) Config
