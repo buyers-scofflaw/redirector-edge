@@ -12,45 +12,226 @@ export default async (request, context) => {
 
   // ===== V2 redirect with logging + click capture =====
   const url = new URL(request.url);
+  const id = url.searchParams.get("id");
 
   // 1) Redirect map (injected by your Sheet push)
   const redirectMap = {
-  "100": "https://google.com",
-  "107": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-3/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyB=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyC=Nearby+Rogue+-+Zero+Down+100+Accepted+Suvs&forceKeyD=100+Accepted+|+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost+Payment&forceKeyE=100+Accepted+-+0+Down+Options+-+Rogue+Crossover+Suvs+Nearby+-+Rogue&forceKeyF=100+Accepted+|+0+Down+Dealerships+-+Leftover+Crossover+Suvs+Nearby+no+Cost+(rogue)&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "203": "https://read.mdrntoday.com/careers/jobs-in-home-remodeling-opportunities-and-career-paths-es-us-2/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+home+remodeling+companies&forceKeyA=home+remodeling+contractors&forceKeyB=home+remodeling+companies+in+my+area&forceKeyC=painting+companies+in+my+area&forceKeyD=repair+contractors+in+{City}&forceKeyE=home+remodeling+companies+near+me&forceKeyF=&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "342": "https://read.mdrntoday.com/education/government-funded-phlebotomy-training-can-change-your-future-en-us-2/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+phlebotomy&forceKeyA=Paid+Phlebotomy+Training&forceKeyB=Phlebotomy+Training+Programs&forceKeyC=Free+Phlebotomy+Training&forceKeyD=4+Week+Phlebotomy+Classes&forceKeyE=Free+Phlebotomy+Training+Online&forceKeyF=Red+Cross+Phlebotomy+Training&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "374": "https://read.mdrntoday.com/health/egg-donation-understanding-potential-benefits-and-compensation-en-us/?segment=rsoc.sc.mdrntoday.001&headline=Learn+How+Egg+Donation+Works&forceKeyA=donor+egg+for+ivf+in+{City}&forceKeyB=egg+donor+clinic+{State}&forceKeyC=paid+egg+donors+wanted+in+{City}&forceKeyD=best+egg+donor+banks+in+{City}&forceKeyE=get+paid+to+donate+eggs+near+me&forceKeyF=egg+donor+compensation+{State}+2025&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "406": "https://read.investingfuel.com/finance/securing-your-future-the-benefits-of-including-gold-ira-kits-in-your-retirement-strategy-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=gold+ira&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+[$0+Cost]&forceKeyC=Gold+Ira+Kit+[$0+Cost]&forceKeyD=Free+Gold+IRA+Kit+U2013+[no+Cost]&forceKeyE=Free+Gold+Ira+Kits+U2013+[no+Cost]&forceKeyF=Get+a+Gold+Ira+Kit&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "470": "https://read.mdrntoday.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+Sacramento&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "495": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+sign+Up+Now&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+search+Now&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "517": "https://mdrnlocal.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-4/?segment=rsoc.sc.mdrnlocal.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "522": "https://mdrnlocal.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "569": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "575": "https://read.investingfuel.com/education/choosing-online-schools-that-provide-computers-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=online+high+school+with+laptop&forceKeyA=free+online+high+school&forceKeyB=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyC=apply+for+online+highschool+that+gives+you+$+and+a+laptop+today+no+cost&forceKeyD=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyF=free+online+high+school+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "593": "https://mdrnlocal.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "604": "https://read.mdrntoday.com/general/understanding-delivery-driving-in-the-hvac-industry-en-us/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+HVAC+delivery&forceKeyA=Air+Conditioning+Companies+in+{City}&forceKeyB=HVAC+Companies+Near+Me&forceKeyC=HVAC+Companies+in+{City}&forceKeyD=Local+HVAC+Companies&forceKeyE=Heating+and+Air+Conditioning+Companies&forceKeyF=HVAC+Services+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "630": "https://read.mdrntoday.com/general/understanding-delivery-driving-in-the-hvac-industry-en-us/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+HVAC+delivery&forceKeyA=Air+Conditioning+Companies+in+{City}&forceKeyB=HVAC+Companies+Near+Me&forceKeyC=HVAC+Companies+in+{City}&forceKeyD=Local+HVAC+Companies&forceKeyE=Heating+and+Air+Conditioning+Companies&forceKeyF=HVAC+Services+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "632": "https://read.mdrntoday.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us-3/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "645": "https://read.investingfuel.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "646": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-12/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "647": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "648": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-12/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "649": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "650": "https://read.investingfuel.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay-en-us/?segment=rsoc.sd.investingfuel.001&headline=botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "651": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "652": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-9/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "653": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "654": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-9/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "655": "https://read.mdrntoday.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay-en-us/?segment=rsoc.sc.mdrntoday.001&headline=botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "656": "https://read.investingfuel.com/careers/explore-lucrative-careers-in-power-washing-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=power+washing&forceKeyA=pressure+cleaning+near+me&forceKeyB=100%+accepted+|+power+washing+deals+in+{City}&forceKeyC=find+pressure+washing+services+in+{State}&forceKeyD=pressure+cleaning+companies+near+me&forceKeyE=pressure+washing+companies+near+me&forceKeyF=pressure+cleaning+near+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "657": "https://read.mdrntoday.com/health/earn-by-joining-diabetes-clinical-trials-en-us-4/?segment=rsoc.sc.mdrntoday.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "658": "https://read.mdrntoday.com/real-estate/senior-apartments-a-perfect-blend-of-independence-and-community-for-older-adults-en-us-2/?segment=rsoc.sc.mdrntoday.001&headline=55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "659": "https://read.mdrntoday.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sc.mdrntoday.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "660": "https://read.investingfuel.com/careers/explore-lucrative-careers-in-power-washing-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=power+washing&forceKeyA=pressure+cleaning+near+me&forceKeyB=100%+accepted+|+power+washing+deals+in+{City}&forceKeyC=find+pressure+washing+services+in+{State}&forceKeyD=pressure+cleaning+companies+near+me&forceKeyE=pressure+washing+companies+near+me&forceKeyF=pressure+cleaning+near+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "661": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "662": "https://read.investingfuel.com/real-estate/senior-apartments-a-perfect-blend-of-independence-and-community-for-older-adults-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "663": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-  "664": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-es-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook"
+  "100": {
+    "url": "https://google.com",
+    "title": "\"Exploring the Evolution and Impact of Google Search\"",
+    "description": "Google is a powerful search engine that provides quick access to information, images, and services across the web, connecting users with diverse content effortlessly.",
+    "locale": "en_US"
+  },
+  "107": {
+    "url": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-3/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyB=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+no+Cost&forceKeyC=Nearby+Rogue+-+Zero+Down+100+Accepted+Suvs&forceKeyD=100+Accepted+|+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+no+Cost+Payment&forceKeyE=100+Accepted+-+0+Down+Options+-+Rogue+Crossover+Suvs+Nearby+-+Rogue&forceKeyF=100+Accepted+|+0+Down+Dealerships+-+Leftover+Crossover+Suvs+Nearby+no+Cost+(rogue)&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "2025 Nissan Rogue Pricing: Key Insights and Comparisons",
+    "description": "Explore the pricing and features of the 2025 Nissan Rogue, examining how it compares to competitors and what to anticipate in the upcoming model.",
+    "locale": "en_US"
+  },
+  "203": {
+    "url": "https://read.mdrntoday.com/careers/jobs-in-home-remodeling-opportunities-and-career-paths-es-us-2/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+home+remodeling+companies&forceKeyA=home+remodeling+contractors&forceKeyB=home+remodeling+companies+in+my+area&forceKeyC=painting+companies+in+my+area&forceKeyD=repair+contractors+in+{City}&forceKeyE=home+remodeling+companies+near+me&forceKeyF=&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Oportunidades laborales en la remodelaci?n del hogar en EE. UU.",
+    "description": "Descubre las oportunidades y trayectorias profesionales en el sector de la remodelaci?n del hogar, incluyendo empresas y contratistas relevantes en tu ?rea.",
+    "locale": "es_ES"
+  },
+  "342": {
+    "url": "https://read.mdrntoday.com/education/government-funded-phlebotomy-training-can-change-your-future-en-us-2/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+phlebotomy&forceKeyA=Paid+Phlebotomy+Training&forceKeyB=Phlebotomy+Training+Programs&forceKeyC=Free+Phlebotomy+Training&forceKeyD=4+Week+Phlebotomy+Classes&forceKeyE=Free+Phlebotomy+Training+Online&forceKeyF=Red+Cross+Phlebotomy+Training&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Transform Your Future with Government-Funded Phlebotomy Training",
+    "description": "Explore how government-funded phlebotomy training can open new career opportunities and transform your future in the healthcare field.",
+    "locale": "en_US"
+  },
+  "374": {
+    "url": "https://read.mdrntoday.com/health/egg-donation-understanding-potential-benefits-and-compensation-en-us/?segment=rsoc.sc.mdrntoday.001&headline=Learn+How+Egg+Donation+Works&forceKeyA=donor+egg+for+ivf+in+{City}&forceKeyB=egg+donor+clinic+{State}&forceKeyC=paid+egg+donors+wanted+in+{City}&forceKeyD=best+egg+donor+banks+in+{City}&forceKeyE=get+paid+to+donate+eggs+near+me&forceKeyF=egg+donor+compensation+{State}+2025&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding Egg Donation: Benefits and Compensation Insights",
+    "description": "Explore the potential benefits and compensation associated with egg donation, along with a comprehensive understanding of the process and its implications.",
+    "locale": "en_US"
+  },
+  "406": {
+    "url": "https://read.investingfuel.com/finance/securing-your-future-the-benefits-of-including-gold-ira-kits-in-your-retirement-strategy-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=gold+ira&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+[$0+Cost]&forceKeyC=Gold+Ira+Kit+[$0+Cost]&forceKeyD=Free+Gold+IRA+Kit+U2013+[no+Cost]&forceKeyE=Free+Gold+Ira+Kits+U2013+[no+Cost]&forceKeyF=Get+a+Gold+Ira+Kit&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Advantages of Gold IRA Kits for Retirement Planning\"",
+    "description": "Explore the advantages of incorporating gold IRA kits into your retirement strategy, highlighting how they can enhance your financial security and long-term planning.",
+    "locale": "en_US"
+  },
+  "470": {
+    "url": "https://read.mdrntoday.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+Sacramento&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "The Growing Need for Home Caregivers in Today's Society",
+    "description": "Explore the rising demand for home caregivers, driven by an aging population and a preference for in-home support as a viable health care option.",
+    "locale": "en_US"
+  },
+  "495": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+sign+Up+Now&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+search+Now&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Dental Implant Trials: Cost Savings and Smile Benefits\"",
+    "description": "Discover how participating in dental implant trials can reduce costs and enhance your smile, providing valuable insights into innovative dental solutions.",
+    "locale": "en_US"
+  },
+  "517": {
+    "url": "https://mdrnlocal.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-4/?segment=rsoc.sc.mdrnlocal.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Saving on Dental Implants: Benefits of Participating in Clinical Trials",
+    "description": "Discover how participating in dental implant trials can reduce costs and enhance your smile while contributing to important dental research.",
+    "locale": "en_US"
+  },
+  "522": {
+    "url": "https://mdrnlocal.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "How to Participate in Paid Sleep Apnea Research Trials",
+    "description": "Explore how to participate in paid sleep apnea trials, including eligibility criteria and potential benefits for those seeking treatment options.",
+    "locale": "en_US"
+  },
+  "569": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Dental Implant Trials: Cost Savings and Smile Benefits\"",
+    "description": "Discover how participating in dental implant trials can reduce costs and enhance your smile, offering a unique opportunity for dental care improvement.",
+    "locale": "en_US"
+  },
+  "575": {
+    "url": "https://read.investingfuel.com/education/choosing-online-schools-that-provide-computers-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=online+high+school+with+laptop&forceKeyA=free+online+high+school&forceKeyB=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyC=apply+for+online+highschool+that+gives+you+$+and+a+laptop+today+no+cost&forceKeyD=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyF=free+online+high+school+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Choosing Online Schools That Provide Computers for Students",
+    "description": "Explore key factors for selecting online schools that provide computers, ensuring a comprehensive educational experience for students.",
+    "locale": "en_US"
+  },
+  "593": {
+    "url": "https://mdrnlocal.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "The Rising Demand for Home Caregivers: Key Insights and Trends",
+    "description": "Explore the growing demand for home caregivers, driven by an aging population and the need for personalized care in familiar environments.",
+    "locale": "en_US"
+  },
+  "604": {
+    "url": "https://read.mdrntoday.com/general/understanding-delivery-driving-in-the-hvac-industry-en-us/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+HVAC+delivery&forceKeyA=Air+Conditioning+Companies+in+{City}&forceKeyB=HVAC+Companies+Near+Me&forceKeyC=HVAC+Companies+in+{City}&forceKeyD=Local+HVAC+Companies&forceKeyE=Heating+and+Air+Conditioning+Companies&forceKeyF=HVAC+Services+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding Delivery Driving in the HVAC Sector",
+    "description": "Explore the role of delivery driving in the HVAC industry, including its challenges and importance in ensuring timely service and customer satisfaction.",
+    "locale": "en_US"
+  },
+  "630": {
+    "url": "https://read.mdrntoday.com/general/understanding-delivery-driving-in-the-hvac-industry-en-us/?segment=rsoc.sc.mdrntoday.001&headline=learn+about+HVAC+delivery&forceKeyA=Air+Conditioning+Companies+in+{City}&forceKeyB=HVAC+Companies+Near+Me&forceKeyC=HVAC+Companies+in+{City}&forceKeyD=Local+HVAC+Companies&forceKeyE=Heating+and+Air+Conditioning+Companies&forceKeyF=HVAC+Services+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding Delivery Driving in the HVAC Sector",
+    "description": "Explore the role of delivery driving in the HVAC industry, including its challenges and the importance of timely service in maintaining customer satisfaction.",
+    "locale": "en_US"
+  },
+  "632": {
+    "url": "https://read.mdrntoday.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us-3/?segment=rsoc.sc.mdrntoday.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding the Rising Demand for Home Caregivers",
+    "description": "Explore the factors driving the increasing demand for home caregivers, highlighting the vital role they play in supporting individuals and families.",
+    "locale": "en_US"
+  },
+  "645": {
+    "url": "https://read.investingfuel.com/health/understanding-why-home-caregivers-are-in-high-demand-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=Learn+about+caregiving&forceKeyA=Caregiver+Needed+Immediately&forceKeyB=Care+Homes+in+My+Area&forceKeyC=Private+Caregiver+Nearby&forceKeyD=Care+Homes+in+{City}&forceKeyE=Caregiver+Jobs+Near+Me+Full+Time&forceKeyF=Private+Sitters+for+Elderly+Near+Me&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "The Rising Demand for Home Caregivers: Key Insights Explained",
+    "description": "Explore the factors driving the increasing demand for home caregivers, highlighting the essential role they play in providing support and care for individuals.",
+    "locale": "en_US"
+  },
+  "646": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-12/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Costs\"",
+    "description": "Learn how participating in dental implant trials can reduce costs and enhance your smile, offering potential savings and access to advanced dental solutions.",
+    "locale": "en_US"
+  },
+  "647": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Dental Implant Trials: Cost Savings and Enhanced Smiles\"",
+    "description": "Explore how participating in dental implant trials can lead to significant savings and enhance your smile through innovative treatments and research opportunities.",
+    "locale": "en_US"
+  },
+  "648": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-12/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Saving on Dental Implants: Benefits of Joining Clinical Trials\"",
+    "description": "Discover how participating in dental implant trials can provide cost savings and enhance your smile through innovative treatments and research opportunities.",
+    "locale": "en_US"
+  },
+  "649": {
+    "url": "https://read.investingfuel.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-15/?segment=rsoc.sd.investingfuel.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Dental Implant Trials: Cost Savings and Smile Enhancements\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile and potentially reduce costs associated with dental procedures.",
+    "locale": "en_US"
+  },
+  "650": {
+    "url": "https://read.investingfuel.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay-en-us/?segment=rsoc.sd.investingfuel.001&headline=botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding Botox Pricing: Key Factors to Consider",
+    "description": "Explore the factors influencing Botox pricing, including treatment costs, factors affecting price variations, and what to consider before your appointment.",
+    "locale": "en_US"
+  },
+  "651": {
+    "url": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Saving on Dental Implants: Benefits of Participating in Trials",
+    "description": "Explore how participating in dental implant trials can enhance your smile and provide financial benefits, offering an innovative approach to dental care.",
+    "locale": "en_US"
+  },
+  "652": {
+    "url": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-9/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Benefits of Dental Implant Trials for Cost Savings\"",
+    "description": "Discover how participating in dental implant trials can lower costs while enhancing your smile, providing valuable insights into the latest dental advancements.",
+    "locale": "en_US"
+  },
+  "653": {
+    "url": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Participating in Dental Implant Trials: Benefits and Savings",
+    "description": "Explore how participating in dental implant trials can enhance your smile while providing a cost-effective solution for dental care.",
+    "locale": "en_US"
+  },
+  "654": {
+    "url": "https://read.mdrntoday.com/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-9/?segment=rsoc.sc.mdrntoday.001&headline=dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Benefits of Dental Implant Trials for Your Smile\"",
+    "description": "Explore how participating in dental implant trials can lead to significant savings and enhance your smile, while contributing to dental research advancements.",
+    "locale": "en_US"
+  },
+  "655": {
+    "url": "https://read.mdrntoday.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay-en-us/?segment=rsoc.sc.mdrntoday.001&headline=botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Understanding Botox Pricing: Key Insights Before You Decide",
+    "description": "Explore the essential factors influencing Botox pricing, including treatment costs, factors affecting price variations, and what to consider before your appointment.",
+    "locale": "en_US"
+  },
+  "656": {
+    "url": "https://read.investingfuel.com/careers/explore-lucrative-careers-in-power-washing-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=power+washing&forceKeyA=pressure+cleaning+near+me&forceKeyB=100%+accepted+|+power+washing+deals+in+{City}&forceKeyC=find+pressure+washing+services+in+{State}&forceKeyD=pressure+cleaning+companies+near+me&forceKeyE=pressure+washing+companies+near+me&forceKeyF=pressure+cleaning+near+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Exploring Profitable Opportunities in Power Washing Careers",
+    "description": "Discover lucrative career opportunities in power washing, exploring the benefits and potential earnings in this growing industry.",
+    "locale": "en_US"
+  },
+  "657": {
+    "url": "https://read.mdrntoday.com/health/earn-by-joining-diabetes-clinical-trials-en-us-4/?segment=rsoc.sc.mdrntoday.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Exploring Opportunities in Diabetes Clinical Trials",
+    "description": "Explore opportunities to participate in diabetes clinical trials, where individuals can contribute to research on new treatments while potentially earning compensation.",
+    "locale": "en_US"
+  },
+  "658": {
+    "url": "https://read.mdrntoday.com/real-estate/senior-apartments-a-perfect-blend-of-independence-and-community-for-older-adults-en-us-2/?segment=rsoc.sc.mdrntoday.001&headline=55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Senior Apartments: Balancing Independence and Community Living\"",
+    "description": "Discover how senior apartments provide a harmonious blend of independence and community for older adults, promoting a fulfilling lifestyle.",
+    "locale": "en_US"
+  },
+  "659": {
+    "url": "https://read.mdrntoday.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sc.mdrntoday.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Opportunities in Diabetes Clinical Trials\"",
+    "description": "Explore the benefits and opportunities of participating in diabetes clinical trials, including potential earnings and advancements in treatment options.",
+    "locale": "en_US"
+  },
+  "660": {
+    "url": "https://read.investingfuel.com/careers/explore-lucrative-careers-in-power-washing-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=power+washing&forceKeyA=pressure+cleaning+near+me&forceKeyB=100%+accepted+|+power+washing+deals+in+{City}&forceKeyC=find+pressure+washing+services+in+{State}&forceKeyD=pressure+cleaning+companies+near+me&forceKeyE=pressure+washing+companies+near+me&forceKeyF=pressure+cleaning+near+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Lucrative Career Opportunities in Power Washing Services",
+    "description": "Discover the diverse and rewarding career opportunities in the power washing industry, highlighting the skills and benefits of becoming a professional in this field.",
+    "locale": "en_US"
+  },
+  "661": {
+    "url": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Opportunities in Diabetes Clinical Trials\"",
+    "description": "Explore how participating in diabetes clinical trials can contribute to medical research while potentially providing financial compensation for your involvement.",
+    "locale": "en_US"
+  },
+  "662": {
+    "url": "https://read.investingfuel.com/real-estate/senior-apartments-a-perfect-blend-of-independence-and-community-for-older-adults-en-us-4/?segment=rsoc.sd.investingfuel.001&headline=55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Senior Apartments: Balancing Independence and Community for Seniors\"",
+    "description": "Discover the benefits of senior apartments, offering a harmonious blend of independence and community for older adults seeking a supportive living environment.",
+    "locale": "en_US"
+  },
+  "663": {
+    "url": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-en-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Opportunities in Diabetes Clinical Trials\"",
+    "description": "Explore the potential benefits of participating in diabetes clinical trials, including access to new treatments and medications while contributing to medical research.",
+    "locale": "en_US"
+  },
+  "664": {
+    "url": "https://read.investingfuel.com/health/earn-by-joining-diabetes-clinical-trials-es-us-5/?segment=rsoc.sd.investingfuel.001&headline=diabetes+clinical+trials&forceKeyA=Diabetes+Clinical+Studies+Testing+New+Treatments+$13675+Near+Me&forceKeyB=Diabetes+Studies+Testing+New+Medications+$1500+Near+Me&forceKeyC=Clinical+Studies+for+Diabetes&forceKeyD=Participate+in+Diabetes+Research+Trial+Sign+Up+Today&forceKeyE=Diabetes+Studies+Testing+New+Medication&forceKeyF=Type+2+Diabetes+Advancements&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Participaci?n en ensayos cl?nicos para diabetes: una opci?n interesante",
+    "description": "Descubre c?mo participar en ensayos cl?nicos sobre la diabetes puede ofrecer oportunidades de compensaci?n mientras contribuyes a la investigaci?n m?dica.",
+    "locale": "es_ES"
+  }
 };
 
   // 2) OG metadata map (injected from your domain_settings tab)
@@ -169,14 +350,15 @@ export default async (request, context) => {
           <head>
             <meta charset="utf-8">
             <title>${meta.site_name}</title>
-            <meta property="og:site_name" content="${meta.site_name}">
-            <meta property="og:title" content="${meta.site_name}">
-            <meta property="og:description" content="${meta.image_alt}">
+            <meta property="og:url" content="${request.url}">
+            <meta property="og:type" content="${meta.type}">
+            <meta property="og:title" content="${redirectMap[id]?.title || meta.site_name}">
+            <meta property="og:description" content="${redirectMap[id]?.description || meta.image_alt}">
             <meta property="og:image" content="${meta.image}">
             <meta property="og:image:alt" content="${meta.image_alt}">
-            <meta property="og:type" content="${meta.type}">
-            <meta property="og:url" content="${request.url}">
-            <meta property="fb:app_id" content="1786225912279573">
+            <meta property="og:site_name" content="${meta.site_name}">
+            <meta property="og:locale" content="${redirectMap[id]?.locale || 'en_US'}">
+            <meta property="og:updated_time" content="${Math.floor(Date.now() / 1000)}">
           </head>
           <body>
             <p>Preview for ${meta.site_name}</p>
