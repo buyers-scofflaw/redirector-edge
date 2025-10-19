@@ -175,6 +175,8 @@ export default async (request, context) => {
             <meta property="og:image" content="${meta.image}">
             <meta property="og:image:alt" content="${meta.image_alt}">
             <meta property="og:type" content="${meta.type}">
+            <meta property="og:url" content="${request.url}">
+            <meta property="fb:app_id" content="1786225912279573">
           </head>
           <body>
             <p>Preview for ${meta.site_name}</p>
