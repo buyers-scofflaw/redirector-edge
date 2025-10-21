@@ -267,6 +267,78 @@ export default async (request, context) => {
     "title": "How to Participate in Paid Sleep Apnea Research Trials",
     "description": "Learn how to participate in paid sleep apnea trials, exploring eligibility requirements and potential benefits of joining these important studies.",
     "locale": "en_US"
+  },
+  "671": {
+    "url": "https://10toptips.com/careers/explore-promising-careers-in-truck-driving-en-us-4/?segment=rsoc.sc.10toptips.001&headline=pickup+driver&forceKeyA=Independent+Work+as+Pickup+Driver&forceKeyB=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyC=Small+Truck+Driver+Jobs&forceKeyD=Driver+Hiring&forceKeyE=Hiring+Drivers+Now&forceKeyF=Van+Driving+Jobs+Near+Me+Full+Time&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Promising Career Paths in Truck Driving Explained",
+    "description": "Discover the potential of a career in truck driving, exploring various roles, pay scales, and the growing demand for drivers in today's job market.",
+    "locale": "en_US"
+  },
+  "672": {
+    "url": "https://10toptips.com/careers/why-pickup-driver-jobs-are-a-great-career-choice-en-us-7/?segment=rsoc.sc.10toptips.001&headline=Learn+About+Working+As+A+Truck+Driver&forceKeyA=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyB=Small+Truck+Delivery+Service&forceKeyC=Non+Cdl+Truck+Driving+Jobs&forceKeyD=Van+Driving+Jobs+Near+Me+Full+Time&forceKeyE=Small+Truck+Driver+Jobs&forceKeyF=Highest+Paying+Pickup+Truck+Driver+Jobs+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Benefits of a Career as a Pickup Driver\"",
+    "description": "Explore the benefits of pickup driver jobs, including flexibility, competitive pay, and opportunities in the growing transportation sector.",
+    "locale": "en_US"
+  },
+  "673": {
+    "url": "https://10toptips.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.10toptips.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "How to Participate in Paid Sleep Apnea Trials in Your Area",
+    "description": "Discover how to participate in paid sleep apnea trials, including eligibility requirements and potential benefits of joining these research studies.",
+    "locale": "en_US"
+  },
+  "674": {
+    "url": "https://10toptips.com/careers/explore-promising-careers-in-truck-driving-en-us-4/?segment=rsoc.sc.10toptips.001&headline=pickup+driver&forceKeyA=Independent+Work+as+Pickup+Driver&forceKeyB=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyC=Small+Truck+Driver+Jobs&forceKeyD=Driver+Hiring&forceKeyE=Hiring+Drivers+Now&forceKeyF=Van+Driving+Jobs+Near+Me+Full+Time&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Lucrative Career Paths in Truck Driving\"",
+    "description": "Discover the potential of truck driving careers, including independent work and high-paying opportunities in various driving roles. Explore options for pickup and van drivers.",
+    "locale": "en_US"
+  },
+  "675": {
+    "url": "https://10toptips.com/careers/why-pickup-driver-jobs-are-a-great-career-choice-en-us-7/?segment=rsoc.sc.10toptips.001&headline=Learn+About+Working+As+A+Truck+Driver&forceKeyA=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyB=Small+Truck+Delivery+Service&forceKeyC=Non+Cdl+Truck+Driving+Jobs&forceKeyD=Van+Driving+Jobs+Near+Me+Full+Time&forceKeyE=Small+Truck+Driver+Jobs&forceKeyF=Highest+Paying+Pickup+Truck+Driver+Jobs+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Benefits of Pickup Driver Jobs as a Career Choice\"",
+    "description": "Explore the benefits of pickup driver jobs, including job stability, competitive pay, and the flexibility they offer for those seeking a rewarding career path.",
+    "locale": "en_US"
+  },
+  "676": {
+    "url": "https://10toptips.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.10toptips.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "How to Participate in Paid Sleep Apnea Research Trials",
+    "description": "Discover how to participate in paid sleep apnea trials, including eligibility criteria, benefits, and tips for finding studies in your area.",
+    "locale": "en_US"
+  },
+  "677": {
+    "url": "https://read.mdrntoday.com/careers/explore-promising-careers-in-truck-driving-en-us-4/?segment=rsoc.sc.mdrntoday.001&headline=pickup+driver&forceKeyA=Independent+Work+as+Pickup+Driver&forceKeyB=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyC=Small+Truck+Driver+Jobs&forceKeyD=Driver+Hiring&forceKeyE=Hiring+Drivers+Now&forceKeyF=Van+Driving+Jobs+Near+Me+Full+Time&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Promising Career Paths in Truck Driving: Opportunities and Insights",
+    "description": "Explore the diverse and lucrative career opportunities in truck driving, including roles for pickup and van drivers, and learn about the job market and hiring trends.",
+    "locale": "en_US"
+  },
+  "678": {
+    "url": "https://read.mdrntoday.com/careers/why-pickup-driver-jobs-are-a-great-career-choice-en-us-5/?segment=rsoc.sc.mdrntoday.001&headline=Learn+About+Working+As+A+Truck+Driver&forceKeyA=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyB=Small+Truck+Delivery+Service&forceKeyC=Non+Cdl+Truck+Driving+Jobs&forceKeyD=Van+Driving+Jobs+Near+Me+Full+Time&forceKeyE=Small+Truck+Driver+Jobs&forceKeyF=Highest+Paying+Pickup+Truck+Driver+Jobs+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "The Benefits of Choosing a Career as a Pickup Truck Driver",
+    "description": "Explore the benefits of pickup driver jobs, including competitive pay and flexible opportunities, making it an appealing career choice for many.",
+    "locale": "en_US"
+  },
+  "679": {
+    "url": "https://read.mdrntoday.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.mdrntoday.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "How to Participate in Paid Sleep Apnea Research Trials",
+    "description": "Discover how to participate in paid sleep apnea trials, exploring eligibility, benefits, and the application process for studies in your area.",
+    "locale": "en_US"
+  },
+  "680": {
+    "url": "https://read.mdrntoday.com/careers/explore-promising-careers-in-truck-driving-en-us-4/?segment=rsoc.sc.mdrntoday.001&headline=pickup+driver&forceKeyA=Independent+Work+as+Pickup+Driver&forceKeyB=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyC=Small+Truck+Driver+Jobs&forceKeyD=Driver+Hiring&forceKeyE=Hiring+Drivers+Now&forceKeyF=Van+Driving+Jobs+Near+Me+Full+Time&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Promising Career Opportunities in Truck Driving",
+    "description": "Explore the diverse and rewarding career opportunities in truck driving, including pickup and van driving jobs with competitive pay and flexible options.",
+    "locale": "en_US"
+  },
+  "681": {
+    "url": "https://read.mdrntoday.com/careers/why-pickup-driver-jobs-are-a-great-career-choice-en-us-5/?segment=rsoc.sc.mdrntoday.001&headline=Learn+About+Working+As+A+Truck+Driver&forceKeyA=Highest+Paying+Pickup+Truck+Driver+Jobs&forceKeyB=Small+Truck+Delivery+Service&forceKeyC=Non+Cdl+Truck+Driving+Jobs&forceKeyD=Van+Driving+Jobs+Near+Me+Full+Time&forceKeyE=Small+Truck+Driver+Jobs&forceKeyF=Highest+Paying+Pickup+Truck+Driver+Jobs+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "The Benefits of Choosing a Career as a Pickup Truck Driver",
+    "description": "Explore the benefits of pickup driver jobs, including flexibility, competitive pay, and opportunities for growth in the transportation industry.",
+    "locale": "en_US"
+  },
+  "682": {
+    "url": "https://read.mdrntoday.com/health/how-to-join-paid-sleep-apnea-trials-en-us/?segment=rsoc.sc.mdrntoday.001&headline=sleep+apnea&forceKeyA=join+sleep+apnea+studies+near+me+{State}&forceKeyB=see+paid+sleep+apnea+studies+in+{State}&forceKeyC={State}+paid+sleep+apnea+studies+near+me&forceKeyD=join+paid+sleep+apnea+studies+in+{City}&forceKeyE=join+paid+sleep+apnea+studies+near+me&forceKeyF=join+sleep+apnea+studies+near++{State}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "How to Participate in Paid Sleep Apnea Research Trials",
+    "description": "Explore how to participate in paid sleep apnea trials, including eligibility criteria and potential benefits for those seeking treatment options.",
+    "locale": "en_US"
   }
 };
 
