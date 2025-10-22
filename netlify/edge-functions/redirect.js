@@ -423,6 +423,30 @@ export default async (request, context) => {
     "title": "2025 Nissan Rogue Pricing: Expectations and Comparisons",
     "description": "Explore the anticipated pricing and features of the 2025 Nissan Rogue, along with comparisons to its competitors in the SUV market.",
     "locale": "en_US"
+  },
+  "697": {
+    "url": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-18/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+[no+Cost]&forceKeyB=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+[no+Cost]&forceKeyC=Nearby+Rogue+-+Zero+Down+100+Accepted+Suvs&forceKeyD=100+Accepted+|+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+[no+Cost+Payment]&forceKeyE=100+Accepted+-+0+Down+Options+-+Rogue+Crossover+Suvs+Nearby+-+Rogue&forceKeyF=100+Accepted+|+0+Down+Dealerships+-+Leftover+Crossover+Suvs+Nearby+no+Cost+(rogue)&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "2025 Nissan Rogue Pricing: What to Expect and Comparisons",
+    "description": "Explore the expected pricing and features of the 2025 Nissan Rogue, and see how it compares to other SUVs in its class.",
+    "locale": "en_US"
+  },
+  "698": {
+    "url": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-17/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyB=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyC=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyD=100+accepted+|+0+down+options+-+rogue+2024+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyE=for+seniors+2024+rogue+crossover+suvs+nearby+no+cost&forceKeyF=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "2025 Nissan Rogue: Pricing Insights and Competitive Overview",
+    "description": "Discover the expected pricing and features of the 2025 Nissan Rogue, and see how it compares to other SUVs in its class.",
+    "locale": "en_US"
+  },
+  "699": {
+    "url": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-18/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=For+Seniors:+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+[no+Cost]&forceKeyB=100+Accepted+|+0+Down+Options+-+Rogue+2024+Crossover+Suvs+Nearby+(rogue)+[no+Cost]&forceKeyC=Nearby+Rogue+-+Zero+Down+100+Accepted+Suvs&forceKeyD=100+Accepted+|+2024+Rogue+Crossover+Suvs+Nearby+(rogue)+[no+Cost+Payment]&forceKeyE=100+Accepted+-+0+Down+Options+-+Rogue+Crossover+Suvs+Nearby+-+Rogue&forceKeyF=100+Accepted+|+0+Down+Dealerships+-+Leftover+Crossover+Suvs+Nearby+no+Cost+(rogue)&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "2025 Nissan Rogue: Pricing Insights and Competitive Comparison",
+    "description": "Explore the anticipated pricing and features of the 2025 Nissan Rogue, and see how it compares to competitors in the automotive market.",
+    "locale": "en_US"
+  },
+  "700": {
+    "url": "https://read.mdrntoday.com/automotive/2025-nissan-rogue-pricing-what-to-expect-and-how-it-stacks-up-en-us-17/?segment=rsoc.sc.mdrntoday.001&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyB=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyC=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyD=100+accepted+|+0+down+options+-+rogue+2024+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyE=for+seniors+2024+rogue+crossover+suvs+nearby+no+cost&forceKeyF=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "2025 Nissan Rogue Pricing and Features: What to Anticipate",
+    "description": "Explore the expected pricing and features of the 2025 Nissan Rogue, and see how it compares to other SUVs in its class.",
+    "locale": "en_US"
   }
 };
 
