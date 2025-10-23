@@ -495,6 +495,54 @@ export default async (request, context) => {
     "title": "\"Exploring Cost-Effective Options for Fat Removal Surgery\"",
     "description": "Explore how participating in clinical trials can help reduce the costs of fat removal surgery, including options like CoolSculpting and other treatments.",
     "locale": "en_US"
+  },
+  "709": {
+    "url": "https://10toptips.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us-6/?segment=rsoc.sc.10toptips.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=Start+a+Bank+Account+Online+with+no+Deposits+($1000+on+Opening)&forceKeyB=Start+a+Bank+Account+Online+with+no+Deposit+($1000+on+Opening)&forceKeyC=Banks+that+Give+You+Money+for+Opening+an+Account&forceKeyD=Bank+that+Gives+You+Money+for+Opening+an+Account&forceKeyE=Start+a+Bank+Account+Online+With+No+Deposit+($1000+on+Opening+W+Deposit)&forceKeyF=Start+a+Bank+Account+Online+with+no+Deposit+[$300+on+Opening]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Understanding Bonus-Eligible Bank Accounts: A Comprehensive Guide\"",
+    "description": "Discover essential insights on opening a bank account that offers cash bonuses, including eligibility requirements and tips for maximizing your benefits.",
+    "locale": "en_US"
+  },
+  "710": {
+    "url": "https://10toptips.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us-2/?segment=rsoc.sc.10toptips.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=start+a+bank+account+online+with+no+deposits+($1000)+free&forceKeyB=start+a+bank+account+online+with+no+deposit+[$1000+on+opening]&forceKeyC=start+a+bank+account+online+with+no+deposits+$1000+on+opening&forceKeyD=start+a+checking+account+online+with+no+deposits+($1000+on+opening)&forceKeyE=start+a+bank+account+online+with+no+deposit+$1000+on+opening&forceKeyF=start+a+bank+account+online+with+no+deposits+($1000)+free+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Comprehensive Guide to Bonus-Eligible Bank Accounts\"",
+    "description": "Discover essential insights on how to open a bonus-eligible bank account, including tips on maximizing cash bonuses and understanding account requirements.",
+    "locale": "en_US"
+  },
+  "711": {
+    "url": "https://search-ace.com/health/how-to-find-tummy-tuck-trials-en-us/?segment=rsoc.sc.searchace.001&headline=How+to+Find+Tummy+Tuck+Trials&forceKeyA=$1500+for+Tummy+Tuck+Participation+{State}&forceKeyB=$1500+for+Tummy+Tuck+Participation+near+me&forceKeyC=Free+Tummy+Tuck&forceKeyD=$2200+for+Tummy+Tuck+Participation+{State}&forceKeyE=$2200+for+Tummy+Tuck+Participation+near+me&forceKeyF=Tummy+Tuck+Clinical+Trials+Nearby&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Finding Tummy Tuck Clinical Trials: A Comprehensive Guide",
+    "description": "Discover how to locate tummy tuck clinical trials, including participation options and potential compensation in your area.",
+    "locale": "en_US"
+  },
+  "712": {
+    "url": "https://read.investingfuel.com/health/how-to-save-money-on-fat-removal-surgery-with-clinical-trials-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=How+to+Save+Money+On+Fat+Removal+Surgery+Through+Clinical+Trials&forceKeyA=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+My+Zipcode+[+Coolsculpting+]&forceKeyB=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me&forceKeyC=$1500+for+Belly+Fat+Reduction+Treatment+Participation&forceKeyD=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me+[+Coolsculpting+]&forceKeyE=$1500+for+Belly+Fat+Reduction+Treatment+Participation+in+{state}&forceKeyF=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Nearby+[+Coolsculpting+]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Saving on Fat Removal Surgery: Benefits of Clinical Trials",
+    "description": "Explore how participating in clinical trials can reduce the costs of fat removal surgery, including options like CoolSculpting for belly fat reduction.",
+    "locale": "en_US"
+  },
+  "713": {
+    "url": "https://read.mdrntoday.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us-3/?segment=rsoc.sc.mdrntoday.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=Start+a+Bank+Account+Online+with+no+Deposits+($1000+on+Opening)&forceKeyB=Start+a+Bank+Account+Online+with+no+Deposit+($1000+on+Opening)&forceKeyC=Banks+that+Give+You+Money+for+Opening+an+Account&forceKeyD=Bank+that+Gives+You+Money+for+Opening+an+Account&forceKeyE=Start+a+Bank+Account+Online+With+No+Deposit+($1000+on+Opening+W+Deposit)&forceKeyF=Start+a+Bank+Account+Online+with+no+Deposit+[$300+on+Opening]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Bonus-Eligible Bank Accounts: A Comprehensive Guide\"",
+    "description": "Discover key insights on how to open a bonus-eligible bank account, including tips on maximizing cash bonuses and selecting the right bank for your needs.",
+    "locale": "en_US"
+  },
+  "714": {
+    "url": "https://read.mdrntoday.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us-6/?segment=rsoc.sc.mdrntoday.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=start+a+bank+account+online+with+no+deposits+($1000)+free&forceKeyB=start+a+bank+account+online+with+no+deposit+[$1000+on+opening]&forceKeyC=start+a+bank+account+online+with+no+deposits+$1000+on+opening&forceKeyD=start+a+checking+account+online+with+no+deposits+($1000+on+opening)&forceKeyE=start+a+bank+account+online+with+no+deposit+$1000+on+opening&forceKeyF=start+a+bank+account+online+with+no+deposits+($1000)+free+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Bank Accounts with Cash Bonuses: A Comprehensive Guide\"",
+    "description": "Discover comprehensive insights on how to open a bonus-eligible bank account, including tips on maximizing cash bonuses and understanding different account options.",
+    "locale": "en_US"
+  },
+  "715": {
+    "url": "https://search-ace.com/health/how-to-find-tummy-tuck-trials-en-us/?segment=rsoc.sc.searchace.001&headline=How+to+Find+Tummy+Tuck+Trials&forceKeyA=$1500+for+Tummy+Tuck+Participation+{State}&forceKeyB=$1500+for+Tummy+Tuck+Participation+near+me&forceKeyC=Free+Tummy+Tuck&forceKeyD=$2200+for+Tummy+Tuck+Participation+{State}&forceKeyE=$2200+for+Tummy+Tuck+Participation+near+me&forceKeyF=Tummy+Tuck+Clinical+Trials+Nearby&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Finding Tummy Tuck Clinical Trials: A Comprehensive Guide",
+    "description": "Explore the process of finding tummy tuck clinical trials, including participation details, eligibility criteria, and potential compensation in your area.",
+    "locale": "en_US"
+  },
+  "716": {
+    "url": "https://read.investingfuel.com/health/how-to-save-money-on-fat-removal-surgery-with-clinical-trials-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=How+to+Save+Money+On+Fat+Removal+Surgery+Through+Clinical+Trials&forceKeyA=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+My+Zipcode+[+Coolsculpting+]&forceKeyB=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me&forceKeyC=$1500+for+Belly+Fat+Reduction+Treatment+Participation&forceKeyD=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me+[+Coolsculpting+]&forceKeyE=$1500+for+Belly+Fat+Reduction+Treatment+Participation+in+{state}&forceKeyF=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Nearby+[+Coolsculpting+]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Saving on Fat Removal Surgery: The Role of Clinical Trials",
+    "description": "Discover how participating in clinical trials can reduce the costs of fat removal surgery, offering an affordable option for those seeking treatment.",
+    "locale": "en_US"
   }
 };
 
