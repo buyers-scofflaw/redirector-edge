@@ -471,6 +471,30 @@ export default async (request, context) => {
     "title": "2025 Nissan Rogue Pricing: Expectations and Comparisons",
     "description": "Explore the anticipated pricing and features of the 2025 Nissan Rogue, comparing it to competitors in the compact SUV market.",
     "locale": "en_US"
+  },
+  "705": {
+    "url": "https://mdrnlocal.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us-3/?segment=rsoc.sc.mdrnlocal.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=Start+a+Bank+Account+Online+with+no+Deposits+($1000+on+Opening)&forceKeyB=Start+a+Bank+Account+Online+with+no+Deposit+($1000+on+Opening)&forceKeyC=Banks+that+Give+You+Money+for+Opening+an+Account&forceKeyD=Bank+that+Gives+You+Money+for+Opening+an+Account&forceKeyE=Start+a+Bank+Account+Online+With+No+Deposit+($1000+on+Opening+W+Deposit)&forceKeyF=Start+a+Bank+Account+Online+with+no+Deposit+[$300+on+Opening]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Bank Accounts with Cash Bonuses: A Comprehensive Guide\"",
+    "description": "Discover key insights on selecting a bank account that offers cash bonuses, including eligibility requirements and essential tips for maximizing your benefits.",
+    "locale": "en_US"
+  },
+  "706": {
+    "url": "https://mdrnlocal.com/finance/the-ultimate-guide-to-opening-a-bonus-eligible-bank-account-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=Bank+Accounts+With+Cash+Bonuses&forceKeyA=start+a+bank+account+online+with+no+deposits+($1000)+free&forceKeyB=start+a+bank+account+online+with+no+deposit+[$1000+on+opening]&forceKeyC=start+a+bank+account+online+with+no+deposits+$1000+on+opening&forceKeyD=start+a+checking+account+online+with+no+deposits+($1000+on+opening)&forceKeyE=start+a+bank+account+online+with+no+deposit+$1000+on+opening&forceKeyF=start+a+bank+account+online+with+no+deposits+($1000)+free+{state}&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Your Guide to Bonus-Eligible Bank Accounts\"",
+    "description": "Explore the benefits and requirements of opening a bonus-eligible bank account, including tips on maximizing cash bonuses and choosing the right institution.",
+    "locale": "en_US"
+  },
+  "707": {
+    "url": "https://mdrnlocal.com/health/how-to-find-tummy-tuck-trials-en-us/?segment=rsoc.sc.mdrnlocal.001&headline=How+to+Find+Tummy+Tuck+Trials&forceKeyA=$1500+for+Tummy+Tuck+Participation+{State}&forceKeyB=$1500+for+Tummy+Tuck+Participation+near+me&forceKeyC=Free+Tummy+Tuck&forceKeyD=$2200+for+Tummy+Tuck+Participation+{State}&forceKeyE=$2200+for+Tummy+Tuck+Participation+near+me&forceKeyF=Tummy+Tuck+Clinical+Trials+Nearby&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Finding Tummy Tuck Clinical Trials: A Comprehensive Guide",
+    "description": "Discover how to locate tummy tuck clinical trials in the U.S., including potential financial incentives and participation details.",
+    "locale": "en_US"
+  },
+  "708": {
+    "url": "https://read.investingfuel.com/health/how-to-save-money-on-fat-removal-surgery-with-clinical-trials-en-us-2/?segment=rsoc.sd.investingfuel.001&headline=How+to+Save+Money+On+Fat+Removal+Surgery+Through+Clinical+Trials&forceKeyA=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+My+Zipcode+[+Coolsculpting+]&forceKeyB=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me&forceKeyC=$1500+for+Belly+Fat+Reduction+Treatment+Participation&forceKeyD=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Near+Me+[+Coolsculpting+]&forceKeyE=$1500+for+Belly+Fat+Reduction+Treatment+Participation+in+{state}&forceKeyF=$1500+for+Belly+Fat+Reduction+Treatment+Participation+Nearby+[+Coolsculpting+]&fbid=1786225912279573&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring Cost-Effective Options for Fat Removal Surgery\"",
+    "description": "Explore how participating in clinical trials can help reduce the costs of fat removal surgery, including options like CoolSculpting and other treatments.",
+    "locale": "en_US"
   }
 };
 
