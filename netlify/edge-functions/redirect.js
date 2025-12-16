@@ -29,9 +29,9 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "108": {
-    "url": "https://thefinancefile.com/health/are-dental-implant-trials-a-viable-option-en-us/?segment=rsoc.sc.eu.thefinancefile.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-    "title": "Evaluating the Viability of Dental Implant Trials",
-    "description": "Explore the viability of participating in dental implant trials, examining their potential benefits and considerations for those seeking dental solutions.",
+    "url": "https://thefinancefile.com/health/how-dental-implants-are-evolving-with-trials-en-us/?segment=rsoc.sc.eu.thefinancefile.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"The Evolution of Dental Implants: Insights from Recent Trials\"",
+    "description": "Explore the latest advancements in dental implants, including new trials and evolving techniques that enhance patient outcomes and improve oral health.",
     "locale": "en_US"
   }
 };
