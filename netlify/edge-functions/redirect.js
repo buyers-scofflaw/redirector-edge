@@ -29,15 +29,15 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "108": {
-    "url": "https://economicminds.com/health/how-are-dental-implant-trials-transforming-care-en-us-2/?segment=rsoc.sc.economicminds.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-    "title": "\"The Evolution of Dental Implants: Insights from Recent Trials\"",
-    "description": "Explore the latest advancements in dental implants, including new trials and evolving techniques that enhance patient outcomes and improve oral health.",
+    "url": "https://economicminds.com/health/what-are-the-affordable-dental-implant-options-en-us/?segment=rsoc.sc.economicminds.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "Affordable Options for Dental Implants: What You Need to Know",
+    "description": "Explore affordable dental implant options, including cost-effective solutions and key considerations for enhancing your dental health without breaking the bank.",
     "locale": "en_US"
   },
   "109": {
-    "url": "https://your-moneylife.com/health/what-are-your-affordable-dental-implant-options-en-us/?segment=rsoc.sc.yourmoneylife.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
-    "title": "Evaluating the Viability of Dental Implant Trials",
-    "description": "Explore the viability of participating in dental implant trials, including potential benefits and considerations for those seeking affordable dental solutions.",
+    "url": "https://your-moneylife.com/health/how-do-dental-implant-trials-improve-oral-health-en-us/?segment=rsoc.sc.yourmoneylife.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "title": "\"Exploring the Impact of Dental Implant Trials on Oral Health\"",
+    "description": "Explore how dental implant trials contribute to improved oral health, examining their benefits, processes, and impact on dental care advancements.",
     "locale": "en_US"
   }
 };
