@@ -29,13 +29,13 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "108": {
-    "url": "https://economicminds.com/health/what-are-the-affordable-dental-implant-options-en-us/?segment=rsoc.sc.economicminds.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "url": "https://economicminds.com/health/how-are-affordable-dental-implants-changing-smiles-en-us/?segment=rsoc.sc.economicminds.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{City}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
     "title": "Affordable Options for Dental Implants: What You Need to Know",
     "description": "Explore affordable dental implant options, including cost-effective solutions and key considerations for enhancing your dental health without breaking the bank.",
     "locale": "en_US"
   },
   "109": {
-    "url": "https://your-moneylife.com/health/how-do-dental-implant-trials-improve-oral-health-en-us/?segment=rsoc.sc.yourmoneylife.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{city}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=1183923030591604&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "url": "https://your-moneylife.com/health/how-are-dental-implant-trials-transforming-care-en-us/?segment=rsoc.sc.yourmoneylife.001&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{City}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
     "title": "\"Exploring the Impact of Dental Implant Trials on Oral Health\"",
     "description": "Explore how dental implant trials contribute to improved oral health, examining their benefits, processes, and impact on dental care advancements.",
     "locale": "en_US"
@@ -138,6 +138,12 @@ export default async (request, context) => {
     "site_name": "SavvyScope",
     "image": "https://savvy-scope.com/assets/savvyscope-og.png",
     "image_alt": "A magnifying glass highlighting insights and discoveries.",
+    "type": "article"
+  },
+  "https://last-call-tech.com": {
+    "site_name": "Last Call Tech",
+    "image": "https://last-call-tech.com/assets/lastcalltech-og.png",
+    "image_alt": "Dark tech illustration symbolizing late-night automation, systems, and infrastructure.",
     "type": "article"
   }
 };
