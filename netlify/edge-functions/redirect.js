@@ -29,7 +29,7 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "108": {
-    "url": "https://economicminds.com/health/how-are-affordable-dental-implants-changing-smiles-en-us/?segment=rsoc.sc.economicminds.002&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{City}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
+    "url": "https://economicminds.com/health/how-are-affordable-dental-implants-changing-smiles-en-us/?segment=rsoc.sc.economicminds.003&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{City}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
     "title": "Affordable Options for Dental Implants: What You Need to Know",
     "description": "Explore affordable dental implant options, including cost-effective solutions and key considerations for enhancing your dental health without breaking the bank.",
     "locale": "en_US"
@@ -38,6 +38,18 @@ export default async (request, context) => {
     "url": "https://your-moneylife.com/health/how-are-dental-implant-trials-transforming-care-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=Dental+Implants+Participation&forceKeyA=$1500+for+Dental+Implants+Participation+Near+Me&forceKeyB=$1500+for+Dental+Implants+Participation+in+{City}&forceKeyC=Get+$1500+for+Dental+Implants+Participation&forceKeyD=$1500+for+Dental+Implants+Participation+{month}+{year}&forceKeyE=No-Fee+Dental+Implants&forceKeyF=$1500+for+Dental+Implants+Participation+[search+Now]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook",
     "title": "\"Exploring the Impact of Dental Implant Trials on Oral Health\"",
     "description": "Explore how dental implant trials contribute to improved oral health, examining their benefits, processes, and impact on dental care advancements.",
+    "locale": "en_US"
+  },
+  "110": {
+    "url": "https://insightfinds.com/health/how-can-dental-implant-trials-save-you-money-en-us-2/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "\"Exploring the Cost Benefits of Dental Implant Trials\"",
+    "description": "Explore how dental implant trials can provide cost-saving opportunities, offering insights into potential financial benefits and innovative dental solutions.",
+    "locale": "en_US"
+  },
+  "111": {
+    "url": "https://insightfinds.com/health/affordable-dental-implant-solutions-explored-en-us-1/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&utm_source=facebook&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "Exploring Affordable Options for Dental Implants",
+    "description": "Explore various affordable dental implant solutions, focusing on accessible options and innovative approaches to enhance dental health without breaking the bank.",
     "locale": "en_US"
   }
 };
