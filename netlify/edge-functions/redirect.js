@@ -157,6 +157,12 @@ export default async (request, context) => {
     "image": "https://last-call-tech.com/assets/lastcalltech-og.png",
     "image_alt": "Dark tech illustration symbolizing late-night automation, systems, and infrastructure.",
     "type": "article"
+  },
+  "https://everything-today.com": {
+    "site_name": "Everything Today",
+    "image": "https://everything-today.com/assets/everythingtoday-og.jpg",
+    "image_alt": "Glowing systems illustrate automation, productivity, and interconnected technology working continuously.",
+    "type": "article"
   }
 };
 
