@@ -63,6 +63,12 @@ export default async (request, context) => {
     "title": "Exploring Affordable Solutions for Dental Implants",
     "description": "Explore various affordable dental implant solutions, examining options and innovations that make dental care more accessible and cost-effective.",
     "locale": "en_US"
+  },
+  "114": {
+    "url": "https://insightfinds.com/automotive/what-makes-the-2026-nissan-rogue-a-smart-buy-en-us-2/?segment=rsoc.sc.insightfinds.003&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyB=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyC=100+accepted+|+0+down+dealerships+-+leftover+crossover+suvs+nearby+no+cost+(rogue)&forceKeyD=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyE=for+seniors+2025+rogue+crossover+suv+nearby+rogue+no+cost&forceKeyF=nissan+rogue+lease+deals+$0+down&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "\"Exploring the 2026 Nissan Rogue: Key Features and Benefits\"",
+    "description": "Discover the features and benefits of the 2026 Nissan Rogue, highlighting why it stands out as a practical choice for drivers seeking reliability and comfort.",
+    "locale": "en_US"
   }
 };
 
