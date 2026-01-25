@@ -60,8 +60,8 @@ export default async (request, context) => {
   },
   "113": {
     "url": "https://insightfinds.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=free+dental+implants+near+me&forceKeyB=no+fee+dental+implant&forceKeyC=no-fee+dental+implants&forceKeyD=participate+in+dental+implants+trial+[sign+up+now]&forceKeyE=participate+in+dental+implants+trial+sign+up+now&forceKeyF=get+$1950+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
-    "title": "",
-    "description": "",
+    "title": "Exploring Affordable Solutions for Dental Implants",
+    "description": "Explore various affordable dental implant solutions, examining options and innovations that make dental care more accessible and cost-effective.",
     "locale": "en_US"
   }
 };
