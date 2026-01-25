@@ -81,6 +81,12 @@ export default async (request, context) => {
     "title": "Comparing Features of the 2026 Nissan Rogue SUV",
     "description": "Explore the features and specifications of the 2026 Nissan Rogue, comparing it with previous models and its competitors in the SUV market.",
     "locale": "en_US"
+  },
+  "117": {
+    "url": "https://insightfinds.com/health/how-do-diabetes-trials-shape-future-care-en-us/?segment=rsoc.sc.insightfinds.003&headline=diabetes+clinical+trials&forceKeyA=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=best+diabetes+study+testing+new+treatments+$26700&forceKeyC=best+diabetes+study+testing+new+treatments+$26700+near+{state}&forceKeyD=diabetes+clinical+studies+testing+new+treatments+$13675+near+me&forceKeyE=paid+clinical+trials+for+type+2+diabetes&forceKeyF=best+diabetes+study+testing+new+treatments+$13675+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "The Impact of Diabetes Trials on Future Treatment Approaches",
+    "description": "Explore how diabetes clinical trials are shaping future treatments and patient care, highlighting their impact on medical advancements and healthcare strategies.",
+    "locale": "en_US"
   }
 };
 
