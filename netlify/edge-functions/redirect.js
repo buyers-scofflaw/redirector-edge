@@ -41,15 +41,21 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "110": {
-    "url": "https://insightfinds.com/health/how-can-dental-implant-trials-save-you-money-en-us-2/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase",
+    "url": "https://insightfinds.com/health/how-can-dental-implant-trials-save-you-money-en-us-2/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
     "title": "\"Exploring the Cost Benefits of Dental Implant Trials\"",
     "description": "Explore how dental implant trials can provide cost-saving opportunities, offering insights into potential financial benefits and innovative dental solutions.",
     "locale": "en_US"
   },
   "111": {
-    "url": "https://insightfinds.com/health/affordable-dental-implant-solutions-explored-en-us-1/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase",
+    "url": "https://insightfinds.com/health/affordable-dental-implant-solutions-explored-en-us-1/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
     "title": "Exploring Affordable Options for Dental Implants",
     "description": "Explore various affordable dental implant solutions, focusing on accessible options and innovative approaches to enhance dental health without breaking the bank.",
+    "locale": "en_US"
+  },
+  "112": {
+    "url": "https://insightfinds.com/health/how-can-dental-implant-trials-save-you-money-en-us/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=no-fee+dental+implants&forceKeyD=participate+in+dental+implants+trial+[sign+up+now]&forceKeyE=no+fee+dental+implant&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Saving Money Through Dental Implant Trials: A Practical Guide",
+    "description": "Discover how participating in dental implant trials can reduce costs and provide access to innovative treatments while contributing to dental research.",
     "locale": "en_US"
   }
 };
