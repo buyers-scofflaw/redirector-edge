@@ -66,14 +66,20 @@ export default async (request, context) => {
   },
   "114": {
     "url": "https://insightfinds.com/automotive/what-makes-the-2026-nissan-rogue-a-smart-buy-en-us-2/?segment=rsoc.sc.insightfinds.003&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyB=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyC=100+accepted+|+0+down+dealerships+-+leftover+crossover+suvs+nearby+no+cost+(rogue)&forceKeyD=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyE=for+seniors+2025+rogue+crossover+suv+nearby+rogue+no+cost&forceKeyF=nissan+rogue+lease+deals+$0+down&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
-    "title": "\"Exploring the 2026 Nissan Rogue: Key Features and Benefits\"",
-    "description": "Discover the features and benefits of the 2026 Nissan Rogue, highlighting why it stands out as a practical choice for drivers seeking reliability and comfort.",
+    "title": "\"Exploring the Benefits of the 2026 Nissan Rogue SUV\"",
+    "description": "Discover the features and advantages of the 2026 Nissan Rogue, highlighting its practicality and innovative technology for modern drivers.",
     "locale": "en_US"
   },
   "115": {
     "url": "https://insightfinds.com/real-estate/choosing-senior-apartments-for-independent-living-en-us/?segment=rsoc.sc.insightfinds.003&headline=55+and+older+apartments&forceKeyA=senior+apartments+for+$300+a+month+near+me&forceKeyB=apartments+55+and+older+near+me&forceKeyC=see+55+and+older+apartment+near+me&forceKeyD=over+62+apartments+near+me&forceKeyE=62+and+over+apartments+near+me&forceKeyF=see+55+and+older+apartment+near+me+{state}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
     "title": "Choosing Senior Apartments for Independent Living: Key Considerations",
     "description": "Explore essential considerations for choosing senior apartments designed for independent living, focusing on affordability, amenities, and community features.",
+    "locale": "en_US"
+  },
+  "116": {
+    "url": "https://insightfinds.com/automotive/how-does-the-2026-nissan-rogue-compare-en-us/?segment=rsoc.sc.insightfinds.003&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyB=for+seniors+2025+rogue+crossover+suvs+nearby+rogue+no+cost&forceKeyC=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyD=for+seniors:+2025+rogue+crossover+suv+nearby+(rogue)+no+cost&forceKeyE=100+accepted+|+0+down+dealerships+-+leftover+crossover+suvs+nearby+no+cost+(rogue)&forceKeyF=for+seniors+2025+rogue+crossover+suvs+nearby+rogue+no+cost+january+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Comparing Features of the 2026 Nissan Rogue SUV",
+    "description": "Explore the features and specifications of the 2026 Nissan Rogue, comparing it with previous models and its competitors in the SUV market.",
     "locale": "en_US"
   }
 };
