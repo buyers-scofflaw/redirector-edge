@@ -57,6 +57,12 @@ export default async (request, context) => {
     "title": "Saving Money Through Dental Implant Trials: A Practical Guide",
     "description": "Discover how participating in dental implant trials can reduce costs and provide access to innovative treatments while contributing to dental research.",
     "locale": "en_US"
+  },
+  "113": {
+    "url": "https://insightfinds.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.insightfinds.003&headline=dental+implants+trial&forceKeyA=free+dental+implants+near+me&forceKeyB=no+fee+dental+implant&forceKeyC=no-fee+dental+implants&forceKeyD=participate+in+dental+implants+trial+[sign+up+now]&forceKeyE=participate+in+dental+implants+trial+sign+up+now&forceKeyF=get+$1950+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "",
+    "description": "",
+    "locale": "en_US"
   }
 };
 
