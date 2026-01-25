@@ -69,6 +69,12 @@ export default async (request, context) => {
     "title": "\"Exploring the 2026 Nissan Rogue: Key Features and Benefits\"",
     "description": "Discover the features and benefits of the 2026 Nissan Rogue, highlighting why it stands out as a practical choice for drivers seeking reliability and comfort.",
     "locale": "en_US"
+  },
+  "115": {
+    "url": "https://insightfinds.com/real-estate/choosing-senior-apartments-for-independent-living-en-us/?segment=rsoc.sc.insightfinds.003&headline=55+and+older+apartments&forceKeyA=senior+apartments+for+$300+a+month+near+me&forceKeyB=apartments+55+and+older+near+me&forceKeyC=see+55+and+older+apartment+near+me&forceKeyD=over+62+apartments+near+me&forceKeyE=62+and+over+apartments+near+me&forceKeyF=see+55+and+older+apartment+near+me+{state}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Choosing Senior Apartments for Independent Living: Key Considerations",
+    "description": "Explore essential considerations for choosing senior apartments designed for independent living, focusing on affordability, amenities, and community features.",
+    "locale": "en_US"
   }
 };
 
@@ -222,7 +228,7 @@ export default async (request, context) => {
   }
 
   // 5) Normal redirect configuration
-  const FALLBACK_URL = "https://www.msn.com";
+  const FALLBACK_URL = "https://www.facebook.com";
 
   // Post to MULTIPLE collectors (existing Apps Script + Cloud Run)
   const COLLECTORS = [
@@ -303,8 +309,8 @@ export default async (request, context) => {
 
   // 8) Handle unknown IDs
   if (!base) {
-    console.log("Redirect", { id, inApp, s1ok, reason: "unknown id", dest: "https://google.com" });
-    return redirectResponse("https://google.com");
+    console.log("Redirect", { id, inApp, s1ok, reason: "unknown id", dest: "https://facebook.com" });
+    return redirectResponse("https://facebook.com");
   }
 
 // 9) Build final destination (preserve most params)
@@ -314,8 +320,8 @@ const DROP = new Set([
 
 // base is now an object:  { url, title, description, locale }
 if (!base || !base.url) {
-  console.log("Redirect", { id, reason: "missing base.url", dest: "https://google.com" });
-  return redirectResponse("https://google.com");
+  console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
+  return redirectResponse("https://facebook.com");
 }
 
 let dest;
@@ -323,7 +329,7 @@ try {
   dest = new URL(base.url);
 } catch (err) {
   console.error("Invalid redirect URL", base, err);
-  return redirectResponse("https://google.com");
+  return redirectResponse("https://facebook.com");
 }
 
 // copy through allowed params
