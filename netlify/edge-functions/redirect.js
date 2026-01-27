@@ -117,6 +117,54 @@ export default async (request, context) => {
     "title": "Exploring Affordable Options for Dental Implants in the U.S.",
     "description": "Discover cost-effective options for dental implants, including potential trials and programs that may reduce expenses for those seeking dental solutions.",
     "locale": "en_US"
+  },
+  "123": {
+    "url": "https://your-moneylife.com/health/how-can-dental-implant-trials-save-you-money-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "\"Exploring How Dental Implant Trials Can Reduce Costs\"",
+    "description": "Explore how participating in dental implant trials can lead to significant savings on dental care while contributing to valuable research in oral health.",
+    "locale": "en_US"
+  },
+  "124": {
+    "url": "https://your-moneylife.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+$1950+for+dental+implant+participation+nearby&forceKeyD=free+dental+implants+nearby&forceKeyE=get+$1950+for+dental+implants+participation+near+me&forceKeyF=free+dental+implant+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Exploring Affordable Solutions for Dental Implants",
+    "description": "Explore various affordable solutions for dental implants, including innovative programs and financial options to enhance your oral health.",
+    "locale": "en_US"
+  },
+  "125": {
+    "url": "https://your-moneylife.com/health/how-can-dental-implant-trials-save-you-money-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=no-fee+dental+implants&forceKeyD=participate+in+dental+implants+trial+[sign+up+now]&forceKeyE=no+fee+dental+implant&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "\"Exploring Cost-Saving Benefits of Dental Implant Trials\"",
+    "description": "Explore how participating in dental implant trials can provide significant cost savings while contributing to advancements in dental care and technology.",
+    "locale": "en_US"
+  },
+  "126": {
+    "url": "https://your-moneylife.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=free+dental+implants+near+me&forceKeyB=no+fee+dental+implant&forceKeyC=no-fee+dental+implants&forceKeyD=participate+in+dental+implants+trial+[sign+up+now]&forceKeyE=participate+in+dental+implants+trial+sign+up+now&forceKeyF=get+$1950+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Exploring Affordable Solutions for Dental Implants",
+    "description": "Explore various affordable dental implant solutions, focusing on options that reduce costs and improve access to dental care for those in need.",
+    "locale": "en_US"
+  },
+  "127": {
+    "url": "https://economicminds.com/automotive/what-makes-the-2026-nissan-rogue-a-smart-buy-en-us/?segment=rsoc.sc.economicminds.002&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyB=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyC=100+accepted+|+0+down+dealerships+-+leftover+crossover+suvs+nearby+no+cost+(rogue)&forceKeyD=for+seniors:+2024+rogue+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyE=for+seniors+2025+rogue+crossover+suv+nearby+rogue+no+cost&forceKeyF=nissan+rogue+lease+deals+$0+down&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "\"Exploring the 2026 Nissan Rogue: Key Features and Benefits\"",
+    "description": "Discover the key features and advantages of the 2026 Nissan Rogue, exploring why it stands out as a practical choice in today's automotive market.",
+    "locale": "en_US"
+  },
+  "128": {
+    "url": "https://economicminds.com/real-estate/choosing-senior-apartments-for-independent-living-en-us/?segment=rsoc.sc.economicminds.002&headline=55+and+older+apartments&forceKeyA=senior+apartments+for+$300+a+month+near+me&forceKeyB=apartments+55+and+older+near+me&forceKeyC=see+55+and+older+apartment+near+me&forceKeyD=over+62+apartments+near+me&forceKeyE=62+and+over+apartments+near+me&forceKeyF=see+55+and+older+apartment+near+me+{state}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Choosing the Right Senior Apartments for Independent Living",
+    "description": "Explore the key considerations for selecting senior apartments designed for independent living, focusing on affordability, amenities, and community features.",
+    "locale": "en_US"
+  },
+  "129": {
+    "url": "https://economicminds.com/automotive/how-does-the-2025-nissan-rogue-compare-en-us/?segment=rsoc.sc.economicminds.002&headline=nissan+rogue+suv&forceKeyA=for+seniors:+2025+rogue+crossover+suvs+nearby+(rogue)+no+cost&forceKeyB=for+seniors+2025+rogue+crossover+suvs+nearby+rogue+no+cost&forceKeyC=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyD=for+seniors:+2025+rogue+crossover+suv+nearby+(rogue)+no+cost&forceKeyE=100+accepted+|+0+down+dealerships+-+leftover+crossover+suvs+nearby+no+cost+(rogue)&forceKeyF=for+seniors+2025+rogue+crossover+suvs+nearby+rogue+no+cost+january+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "Comparing Features of the 2025 Nissan Rogue SUV",
+    "description": "Explore the features and updates of the 2025 Nissan Rogue, comparing its performance, design, and technology to its predecessors in the SUV market.",
+    "locale": "en_US"
+  },
+  "130": {
+    "url": "https://economicminds.com/health/how-do-diabetes-trials-shape-future-treatments-en-us/?segment=rsoc.sc.economicminds.002&headline=diabetes+clinical+trials&forceKeyA=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=best+diabetes+study+testing+new+treatments+$26700&forceKeyC=best+diabetes+study+testing+new+treatments+$26700+near+{state}&forceKeyD=diabetes+clinical+studies+testing+new+treatments+$13675+near+me&forceKeyE=paid+clinical+trials+for+type+2+diabetes&forceKeyF=best+diabetes+study+testing+new+treatments+$13675+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout",
+    "title": "\"How Diabetes Trials Influence Future Treatment Developments\"",
+    "description": "Explore how diabetes clinical trials influence the development of future treatments, highlighting their role in advancing medical research and patient care.",
+    "locale": "en_US"
   }
 };
 
