@@ -87,6 +87,36 @@ export default async (request, context) => {
     "title": "The Impact of Diabetes Trials on Future Treatment Approaches",
     "description": "Explore how diabetes clinical trials are shaping future treatments and patient care, highlighting their impact on medical advancements and healthcare strategies.",
     "locale": "en_US"
+  },
+  "118": {
+    "url": "https://your-moneylife.com/health/how-can-dental-implant-trials-save-you-money-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=no-fee+dental+implants&forceKeyD=free+dental+implants+near+me&forceKeyE=get+paid+to+get+dental+implants&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "\"Saving on Dental Implants: The Benefits of Trial Participation\"",
+    "description": "Discover how participating in dental implant trials can offer significant savings on dental care, potentially covering costs while contributing to groundbreaking research.",
+    "locale": "en_US"
+  },
+  "119": {
+    "url": "https://economicminds.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.economicminds.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+paid+to+get+dental+implants&forceKeyD=no+fee+dental+implant&forceKeyE=dental+assistant+program+near+me+{month}+2026&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "Exploring Affordable Solutions for Dental Implants",
+    "description": "Explore various affordable dental implant solutions, including options for trials and financial assistance, to help you achieve a healthier smile.",
+    "locale": "en_US"
+  },
+  "120": {
+    "url": "https://economicminds.com/health/finding-cost-effective-dental-implants-en-us-4/?segment=rsoc.sc.economicminds.002&headline=dental+implants+trial&forceKeyA=free+dental+implants+near+me&forceKeyB=get+paid+to+get+dental+implants&forceKeyC=paid+clinical+trials+for+dental+implants+near+me&forceKeyD=free+dental+implants+for+seniors&forceKeyE=no+cost+dental+implants&forceKeyF=free+dental+implants+clinical+trials+near+me+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "Cost-Effective Options for Dental Implants in the U.S.",
+    "description": "Explore strategies for finding affordable dental implants in the U.S., including options for clinical trials and cost-effective solutions for various needs.",
+    "locale": "en_US"
+  },
+  "121": {
+    "url": "https://your-moneylife.com/health/affordable-dental-implant-solutions-explored-en-us/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=free+dental+implants+near+me&forceKeyC=get+paid+to+get+dental+implants&forceKeyD=no+fee+dental+implant&forceKeyE=dental+assistant+program+near+me+{month}+2026&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "Exploring Affordable Dental Implant Options and Solutions",
+    "description": "Explore affordable dental implant solutions, including innovative programs and trials that may provide cost-effective options for those in need of dental care.",
+    "locale": "en_US"
+  },
+  "122": {
+    "url": "https://your-moneylife.com/health/finding-cost-effective-dental-implants-en-us-3/?segment=rsoc.sc.yourmoneylife.002&headline=dental+implants+trial&forceKeyA=free+dental+implants+near+me&forceKeyB=get+paid+to+get+dental+implants&forceKeyC=paid+clinical+trials+for+dental+implants+near+me&forceKeyD=free+dental+implants+for+seniors&forceKeyE=no+cost+dental+implants&forceKeyF=free+dental+implants+clinical+trials+near+me+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk&s1pcid={trackingField3}&subid={campaign_id}&nonrevsubid={cf_click_id}&impression_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dland&search_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dsearch&click_track_url=https%3A%2F%2Ftk.todays-last-call.com%2Fcf%2Fcv%3Fclick_id%3D{cf_click_id}%26ct%3Dconversion",
+    "title": "Exploring Affordable Options for Dental Implants in the U.S.",
+    "description": "Discover cost-effective options for dental implants, including potential trials and programs that may reduce expenses for those seeking dental solutions.",
+    "locale": "en_US"
   }
 };
 
