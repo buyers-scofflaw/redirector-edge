@@ -1,15 +1,14 @@
-<script type="module">
 export default async (request, context) => {
-  // 0) Let Netlify Functions handle their own paths
+  // 0) Ignore Netlify internals / static assets
   const reqUrl0 = new URL(request.url);
   if (reqUrl0.pathname.startsWith("/.netlify/functions/")) return context.next();
   if (reqUrl0.pathname.startsWith("/assets/")) return context.next();
 
-  // ===== V2 redirect with logging + click capture =====
+  // 1) Parse request
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
 
-  // Injected maps
+  // Injected dynamically by Apps Script
   const redirectMap = {
   "100": {
     "url": "https://google.com",
@@ -162,7 +161,7 @@ export default async (request, context) => {
     "locale": "en_US"
   }
 };
-  const ogMetaMap = {
+  const ogMetaMap   = {
   "https://health-helpers.com": {
     "site_name": "Health Helpers",
     "image": "https://health-helpers.com/assets/wellnessauthority-og.png",
@@ -273,18 +272,19 @@ export default async (request, context) => {
   }
 };
 
-  // Detect crawler
+  // Detect crawlers (for OG previews)
   const ua = (request.headers.get("user-agent") || "").toLowerCase();
   const isCrawler =
     /(facebookexternalhit|facebot|twitterbot|linkedinbot|slackbot|discordbot|embedly|whatsapp|telegram|preview)/i.test(ua);
 
-  // Serve OG metadata to crawlers (UNCHANGED)
+  // 2) Serve OG HTML to crawlers (UNCHANGED BEHAVIOR)
   if (isCrawler) {
     const host = reqUrl0.hostname.replace(/^www\./, "");
     const meta = ogMetaMap["https://" + host] || ogMetaMap[host];
 
     if (meta) {
-      const row = redirectMap && id ? redirectMap[id] : null;
+      const row = (redirectMap && id && redirectMap[id]) ? redirectMap[id] : null;
+
       const html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -293,15 +293,16 @@ export default async (request, context) => {
   <title>${meta.site_name}</title>
   <meta property="og:url" content="${request.url}">
   <meta property="og:type" content="${meta.type}">
-  <meta property="og:title" content="${row?.title || meta.site_name}">
-  <meta property="og:description" content="${row?.description || meta.image_alt}">
+  <meta property="og:title" content="${row && row.title ? row.title : meta.site_name}">
+  <meta property="og:description" content="${row && row.description ? row.description : meta.image_alt}">
   <meta property="og:image" content="${meta.image}">
   <meta property="og:image:alt" content="${meta.image_alt}">
   <meta property="og:site_name" content="${meta.site_name}">
-  <meta property="og:locale" content="${row?.locale || "en_US"}">
+  <meta property="og:locale" content="${row && row.locale ? row.locale : "en_US"}">
 </head>
 <body></body>
 </html>`;
+
       return new Response(html, {
         status: 200,
         headers: { "Content-Type": "text/html; charset=utf-8" }
@@ -309,11 +310,9 @@ export default async (request, context) => {
     }
   }
 
-  // ===== Normal redirect =====
+  // 3) Redirect logic (UNCHANGED)
   const FALLBACK_URL = "https://www.facebook.com";
-  const COLLECTORS = [
-    "https://click-collector-583868590168.us-central1.run.app/collect"
-  ];
+  const COLLECTOR    = "https://click-collector-583868590168.us-central1.run.app/collect";
 
   function isFbIgInApp(uaStr) {
     const u = (uaStr || "").toLowerCase();
@@ -348,45 +347,42 @@ export default async (request, context) => {
 
   function appendCookie(h, name, value) {
     if (!value) return;
-    h.append("Set-Cookie", `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=7776000; SameSite=Lax`);
+    h.append(
+      "Set-Cookie",
+      `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=7776000; SameSite=Lax`
+    );
   }
 
   function redirectResponse(locationUrl, extraHeaders) {
     const h = new Headers({ Location: locationUrl });
-    if (extraHeaders) for (const [k, v] of extraHeaders.entries()) h.append(k, v);
+    if (extraHeaders) {
+      for (const [k, v] of extraHeaders.entries()) h.append(k, v);
+    }
     return new Response(null, { status: 302, headers: h });
   }
 
-  function postToCollectors(payload) {
-    for (const endpoint of COLLECTORS) {
-      context.waitUntil(
-        fetch(endpoint, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(payload),
-          keepalive: true
-        }).catch(() => {})
-      );
-    }
-  }
-
-  // ? SINGLE CHANGE ? attribution fix
+  // ? ONLY NEW BEHAVIOR
+  // Derive event_source_url as: https://search.<domain>.com/
   function deriveEventSourceUrl(destUrl) {
     try {
-      const parts = new URL(destUrl).hostname.replace(/^www\./, "").split(".");
-      if (parts.length < 2) return null;
+      const parts = new URL(destUrl)
+        .hostname
+        .replace(/^www\./, "")
+        .split(".");
+      if (!parts || parts.length < 2) return null;
       return "https://search." + parts[parts.length - 2] + ".com/";
     } catch {
       return null;
     }
   }
 
-  const base = id ? redirectMap[id] : null;
+  // 4) Resolve redirect target
+  const base = (id && redirectMap && redirectMap[id]) ? redirectMap[id] : null;
   if (!base || !base.url) return redirectResponse(FALLBACK_URL);
 
   const inApp = isFbIgInApp(request.headers.get("user-agent") || "");
   const rawS1 = url.searchParams.get("s1pcid") || "";
-  const s1ok = isValidS1pcid(rawS1);
+  const s1ok  = isValidS1pcid(rawS1);
 
   let dest;
   try {
@@ -395,8 +391,11 @@ export default async (request, context) => {
     return redirectResponse(FALLBACK_URL);
   }
 
-  const DROP = ["utm_medium","utm_id","utm_content","utm_term","utm_campaign","iab","id"];
-  url.searchParams.forEach((v,k) => { if (!DROP.includes(k)) dest.searchParams.set(k,v); });
+  // Preserve most params
+  const DROP = new Set(["utm_medium","utm_id","utm_content","utm_term","utm_campaign","iab","id"]);
+  url.searchParams.forEach((value, key) => {
+    if (!DROP.has(key)) dest.searchParams.set(key, value);
+  });
 
   const uid = uuidv4();
   dest.searchParams.set("s1padid", uid);
@@ -404,35 +403,45 @@ export default async (request, context) => {
 
   const finalLocation = (!inApp && !s1ok) ? FALLBACK_URL : dest.href;
 
-  const cookiesRaw = request.headers.get("cookie") || "";
-  const cookies = Object.fromEntries(
-    cookiesRaw.split(/;\s*/).filter(Boolean).map(c => {
-      const i = c.indexOf("="); return i === -1 ? [c,""] : [c.slice(0,i), decodeURIComponent(c.slice(i+1))];
+  // Cookies
+  const cookieRaw = request.headers.get("cookie") || "";
+  const cookieMap = Object.fromEntries(
+    cookieRaw.split(/;\s*/).filter(Boolean).map(c => {
+      const i = c.indexOf("=");
+      return i === -1 ? [c, ""] : [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
     })
   );
 
   const fbclid = url.searchParams.get("fbclid") || null;
-  const fbc = cookies._fbc || makeFbcFromFbclid(fbclid);
-  const fbp = cookies._fbp || makeFbp();
+  const fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
+  const fbp = cookieMap._fbp || makeFbp();
 
-  // ? ONLY behavior change
+  // ? NEW event_source_url
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
 
-  postToCollectors({
-    uid,
-    id,
-    fbclid,
-    fbc,
-    fbp,
-    event_time: Math.floor(Date.now() / 1000),
-    event_source_url
-  });
+  // Fire-and-forget log
+  context.waitUntil(
+    fetch(COLLECTOR, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        uid,
+        id,
+        fbclid,
+        fbc,
+        fbp,
+        event_time: Math.floor(Date.now() / 1000),
+        event_source_url
+      }),
+      keepalive: true
+    }).catch(() => {})
+  );
 
-  const headers = new Headers();
-  appendCookie(headers, "_fbc", fbc);
-  appendCookie(headers, "_fbp", fbp);
-  appendCookie(headers, "uid", uid);
+  // Redirect
+  const cookieHeaders = new Headers();
+  appendCookie(cookieHeaders, "_fbc", fbc);
+  appendCookie(cookieHeaders, "_fbp", fbp);
+  appendCookie(cookieHeaders, "uid", uid);
 
-  return redirectResponse(finalLocation, headers);
+  return redirectResponse(finalLocation, cookieHeaders);
 };
-</script>
