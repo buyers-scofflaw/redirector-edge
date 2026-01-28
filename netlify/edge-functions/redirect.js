@@ -329,55 +329,48 @@ export default async (request, context) => {
   ];
 
   // 6) Helpers
-  function isFbIgInApp(uaStr) {
-    const u = (uaStr || "").toLowerCase();
+  function isFbIgInApp(ua) {
+    const u = (ua || "").toLowerCase();
     return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
   }
-
   function isValidS1pcid(v) {
     if (!v) return false;
-    const t = String(v).trim();
+    const t = v.trim();
     if (t.startsWith("{")) return false;
     return /^[0-9]{6,}$/.test(t);
   }
-
   function makeFbcFromFbclid(fbclid) {
     if (!fbclid) return null;
     const ts = Math.floor(Date.now() / 1000);
-    return "fb.1." + ts + "." + fbclid;
+    return `fb.1.${ts}.${fbclid}`;
   }
-
   function makeFbp() {
     const ts = Math.floor(Date.now() / 1000);
     const rand = Math.random().toString(36).slice(2);
-    return "fb.1." + ts + "." + rand;
+    return `fb.1.${ts}.${rand}`;
   }
-
   function uuidv4() {
-    if (crypto && crypto.randomUUID) return crypto.randomUUID();
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-      const r = (Math.random() * 16) | 0;
-      const v = c === "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
+    return crypto.randomUUID
+      ? crypto.randomUUID()
+      : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+          const r = (Math.random() * 16) | 0,
+            v = c === "x" ? r : (r & 0x3) | 0x8;
+          return v.toString(16);
+        });
   }
-
   function appendCookie(h, name, value, maxAgeDays = 90) {
     if (!value) return;
     const maxAge = maxAgeDays * 24 * 3600;
     h.append("Set-Cookie", `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; SameSite=Lax`);
   }
-
   function redirectResponse(locationUrl, extraHeaders) {
     const h = new Headers({ Location: locationUrl });
-    if (extraHeaders) {
-      for (const [k, v] of extraHeaders.entries()) h.append(k, v);
-    }
+    if (extraHeaders) for (const [k, v] of extraHeaders.entries()) h.append(k, v);
     return new Response(null, { status: 302, headers: h });
   }
 
   // Fire-and-forget POSTs (we don?t wait for them)
-  function postToCollectors(payloadObj) {
+  function postToCollectors(payload, context) {
     for (const endpoint of COLLECTORS) {
       const controller = new AbortController();
       const kill = setTimeout(() => controller.abort(), 1500);
@@ -385,7 +378,7 @@ export default async (request, context) => {
         fetch(endpoint, {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify(payloadObj),
+          body: JSON.stringify(payload),
           keepalive: true,
           redirect: "manual",
           signal: controller.signal
@@ -396,52 +389,7 @@ export default async (request, context) => {
     }
   }
 
-  // ===== NEW: clean attribution URL derived from destination =====
-  function safeURL(u) {
-    try {
-      return new URL(u);
-    } catch (e) {
-      return null;
-    }
-  }
-
-  // Your rule: always https://search.<domain>.com/
-  // <domain> = second-to-last hostname label of the destination
-  // economicminds.com -> search.economicminds.com
-  // read.mdrntoday.com -> search.mdrntoday.com
-  function searchRootFromDestUrl(destUrl) {
-    try {
-      var u = new URL(destUrl);
-      var host = (u.hostname || "").toLowerCase();
-      host = host.replace(/^www\./, "");
-      var parts = host.split(".");
-      if (parts.length &lt; 2) {
-        return null;
-      }
-      var root = parts[parts.length - 2];
-      return "https://search." + root + ".com/";
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function cleanRootUrl(destUrl) {
-    var u = safeURL(destUrl);
-    if (!u) return null;
-    var host = (u.hostname || "").toLowerCase();
-    host = host.replace(/^www\./, "");
-    return "https://" + host + "/";
-  }
-
-  function cleanPathUrl(destUrl) {
-    var u = safeURL(destUrl);
-    if (!u) return null;
-    var host = (u.hostname || "").toLowerCase();
-    host = host.replace(/^www\./, "");
-    var path = u.pathname || "/";
-    return "https://" + host + path;
-  }
-  // ===== END NEW =====
+  
 
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
@@ -457,29 +405,29 @@ export default async (request, context) => {
     return redirectResponse("https://facebook.com");
   }
 
-  // 9) Build final destination (preserve most params)
-  const DROP = new Set([
-    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
-  ]);
+// 9) Build final destination (preserve most params)
+const DROP = new Set([
+  "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
+]);
 
-  // base is now an object:  { url, title, description, locale }
-  if (!base || !base.url) {
-    console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
-    return redirectResponse("https://facebook.com");
-  }
+// base is now an object:  { url, title, description, locale }
+if (!base || !base.url) {
+  console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
+  return redirectResponse("https://facebook.com");
+}
 
-  let dest;
-  try {
-    dest = new URL(base.url);
-  } catch (err) {
-    console.error("Invalid redirect URL", base, err);
-    return redirectResponse("https://facebook.com");
-  }
+let dest;
+try {
+  dest = new URL(base.url);
+} catch (err) {
+  console.error("Invalid redirect URL", base, err);
+  return redirectResponse("https://facebook.com");
+}
 
-  // copy through allowed params
-  url.searchParams.forEach((value, key) => {
-    if (!DROP.has(key)) dest.searchParams.set(key, value);
-  });
+// copy through allowed params
+url.searchParams.forEach((value, key) => {
+  if (!DROP.has(key)) dest.searchParams.set(key, value);
+});
 
   // 10) Capture event
   const now = Math.floor(Date.now() / 1000);
@@ -495,7 +443,6 @@ export default async (request, context) => {
       return i === -1 ? [c, ""] : [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
     })
   );
-
   const fbclid = url.searchParams.get("fbclid") || null;
   let fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
   let fbp = cookieMap._fbp || makeFbp();
@@ -510,50 +457,23 @@ export default async (request, context) => {
   const isFallback = !inApp && !s1ok;
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
-  // 11) Log to collectors (FIXED)
-  // derive a stable event_source_url from the destination (no params)
-  const router_url = request.url;
-  const dest_url_full = finalLocation;
-
-  const dest_search_root_url = searchRootFromDestUrl(dest_url_full);
-  const dest_root_url = cleanRootUrl(dest_url_full);
-  const dest_path_url = cleanPathUrl(dest_url_full);
-
-  var _u = safeURL(dest_url_full);
-  const dest_host = (_u && _u.hostname) ? String(_u.hostname).toLowerCase() : null;
-
-  // what we log as event_source_url going forward:
-  const event_source_url_to_log = dest_search_root_url || dest_root_url || router_url;
-
+  // 11) Log to collectors
   try {
     postToCollectors({
-      uid: uid,
-      fbclid: fbclid,
-      fbc: fbc,
-      fbp: fbp,
-      id: id,
+      uid,
+      fbclid,
+      fbc,
+      fbp,
+      id,
       s1pcid: rawS1 || null,
-      inApp: inApp,
-      client_ip: client_ip,
+      inApp,
+      client_ip,
       event_time: now,
-
-      // ? FIX: attribution context is now destination-derived
-      event_source_url: event_source_url_to_log,
-
-      // Clean debug fields (no huge param strings)
-      router_url: router_url,
-      dest_host: dest_host,
-      dest_root_url: dest_root_url,
-      dest_search_root_url: dest_search_root_url,
-      dest_path_url: dest_path_url,
-
-      ua: uaHead
-
-      // NOTE: intentionally NOT logging full dest URL with params (no `dest: finalLocation`)
-    });
-  } catch (e) {
-    // swallow
-  }
+      event_source_url: request.url,
+      ua: uaHead,
+      dest: finalLocation
+    }, context);
+  } catch {}
 
   // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
@@ -561,6 +481,6 @@ export default async (request, context) => {
   appendCookie(cookieHeaders, "_fbp", fbp);
   appendCookie(cookieHeaders, "uid", uid);
 
-  console.log("Redirect", { id, inApp, s1ok, dest: finalLocation, event_source_url: event_source_url_to_log });
+  console.log("Redirect", { id, inApp, s1ok, dest: finalLocation });
   return redirectResponse(finalLocation, cookieHeaders);
 };
