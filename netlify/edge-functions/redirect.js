@@ -389,6 +389,46 @@ export default async (request, context) => {
     }
   }
 
+  // ========= NEW HELPERS (added) =========
+  function safeURL(u) {
+    try { return new URL(u); } catch { return null; }
+  }
+
+  // Your rule:
+  // event_source_url should always be https://search.<domain>.com/
+  // where <domain> is the root label of the destination host (second-to-last label),
+  // even if the destination is a subdomain.
+  // Examples:
+  // - economicminds.com -> https://search.economicminds.com/
+  // - read.mdrntoday.com -> https://search.mdrntoday.com/
+  function searchRootFromDestUrl(destUrl) {
+    const u = safeURL(destUrl);
+    if (!u) return null;
+
+    let host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
+    const parts = host.split(".");
+    if (parts.length &lt; 2) return null;
+
+    const root = parts[parts.length - 2]; // second-to-last label
+    return `https://search.${root}.com/`;
+  }
+
+  // Clean helpers for debug logging (no query params)
+  function cleanRootUrl(destUrl) {
+    const u = safeURL(destUrl);
+    if (!u) return null;
+    const host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
+    return `https://${host}/`;
+  }
+  function cleanPathUrl(destUrl) {
+    const u = safeURL(destUrl);
+    if (!u) return null;
+    const host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
+    const path = u.pathname || "/";
+    return `https://${host}${path}`;
+  }
+  // ========= END NEW HELPERS =========
+
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
   const base = id ? redirectMap[id] : null;
@@ -403,29 +443,29 @@ export default async (request, context) => {
     return redirectResponse("https://facebook.com");
   }
 
-// 9) Build final destination (preserve most params)
-const DROP = new Set([
-  "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
-]);
+  // 9) Build final destination (preserve most params)
+  const DROP = new Set([
+    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
+  ]);
 
-// base is now an object:  { url, title, description, locale }
-if (!base || !base.url) {
-  console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
-  return redirectResponse("https://facebook.com");
-}
+  // base is now an object:  { url, title, description, locale }
+  if (!base || !base.url) {
+    console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
+    return redirectResponse("https://facebook.com");
+  }
 
-let dest;
-try {
-  dest = new URL(base.url);
-} catch (err) {
-  console.error("Invalid redirect URL", base, err);
-  return redirectResponse("https://facebook.com");
-}
+  let dest;
+  try {
+    dest = new URL(base.url);
+  } catch (err) {
+    console.error("Invalid redirect URL", base, err);
+    return redirectResponse("https://facebook.com");
+  }
 
-// copy through allowed params
-url.searchParams.forEach((value, key) => {
-  if (!DROP.has(key)) dest.searchParams.set(key, value);
-});
+  // copy through allowed params
+  url.searchParams.forEach((value, key) => {
+    if (!DROP.has(key)) dest.searchParams.set(key, value);
+  });
 
   // 10) Capture event
   const now = Math.floor(Date.now() / 1000);
@@ -455,6 +495,21 @@ url.searchParams.forEach((value, key) => {
   const isFallback = !inApp && !s1ok;
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
+  // ========= NEW: destination-derived logging values (added) =========
+  const router_url = request.url;
+  const dest_url_full = finalLocation;
+
+  // canonical URL used for attribution context
+  const dest_search_root_url = searchRootFromDestUrl(dest_url_full);
+  const dest_root_url = cleanRootUrl(dest_url_full);
+  const dest_path_url = cleanPathUrl(dest_url_full);
+  const dest_host = safeURL(dest_url_full)?.hostname?.toLowerCase() || null;
+
+  // This is the key fix: log event_source_url based on destination, not the router URL.
+  // Fallbacks ensure we always log something usable.
+  const event_source_url_to_log = dest_search_root_url || dest_root_url || router_url;
+  // ========= END NEW =========
+
   // 11) Log to collectors
   try {
     postToCollectors({
@@ -467,9 +522,22 @@ url.searchParams.forEach((value, key) => {
       inApp,
       client_ip,
       event_time: now,
-      event_source_url: request.url,
-      ua: uaHead,
-      dest: finalLocation
+
+      // ? FIXED: destination-based attribution context
+      event_source_url: event_source_url_to_log,
+
+      // Debug fields (clean, low-cardinality; no huge param strings)
+      router_url,
+      dest_host,
+      dest_root_url,
+      dest_search_root_url,
+      dest_path_url,
+
+      ua: uaHead
+
+      // NOTE: we intentionally do NOT send `dest: finalLocation` anymore
+      // because it contains tons of parameters and explodes cardinality.
+      // If you really want it back, add: dest: finalLocation
     }, context);
   } catch {}
 
