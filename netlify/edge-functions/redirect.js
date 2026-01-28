@@ -389,46 +389,7 @@ export default async (request, context) => {
     }
   }
 
-    // ===== NEW: clean attribution URL derived from destination =====
-  function safeURL(u) {
-    try { return new URL(u); } catch { return null; }
-  }
-
-  // Your rule: always https://search.<domain>.com/
-  // <domain> = second-to-last hostname label of the destination
-  // economicminds.com -> search.economicminds.com
-  // read.mdrntoday.com -> search.mdrntoday.com
-  function searchRootFromDestUrl(destUrl) {
-    try {
-      const u = new URL(destUrl);
-      let host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
-      const parts = host.split(".");
-      if (parts.length &lt; 2) return null;
-      const root = parts[parts.length - 2];
-      return `https://search.${root}.com/`;
-    } catch {
-      return null;
-    }
-  }
-
-  // Clean debug helpers (no query string)
-  function cleanRootUrl(destUrl) {
-    const u = safeURL(destUrl);
-    if (!u) return null;
-    const host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
-    return `https://${host}/`;
-  }
-
-  function cleanPathUrl(destUrl) {
-    const u = safeURL(destUrl);
-    if (!u) return null;
-    const host = (u.hostname || "").toLowerCase().replace(/^www\./, "");
-    const path = u.pathname || "/";
-    return `https://${host}${path}`;
-  }
-  // ===== END NEW =====
-
-
+  
 
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
@@ -497,18 +458,6 @@ url.searchParams.forEach((value, key) => {
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
   // 11) Log to collectors
-  // NEW: derive a stable event_source_url from the destination (no params)
-  const router_url = request.url;
-  const dest_url_full = finalLocation;
-
-  const dest_search_root_url = searchRootFromDestUrl(dest_url_full);
-  const dest_root_url = cleanRootUrl(dest_url_full);
-  const dest_path_url = cleanPathUrl(dest_url_full);
-  const dest_host = safeURL(dest_url_full)?.hostname?.toLowerCase() || null;
-
-  // what we log as event_source_url going forward:
-  const event_source_url_to_log = dest_search_root_url || dest_root_url || router_url;
-
   try {
     postToCollectors({
       uid,
@@ -520,20 +469,9 @@ url.searchParams.forEach((value, key) => {
       inApp,
       client_ip,
       event_time: now,
-
-      // ? FIX: attribution context is now destination-derived
-      event_source_url: event_source_url_to_log,
-
-      // Clean debug fields (no huge param strings)
-      router_url,
-      dest_host,
-      dest_root_url,
-      dest_search_root_url,
-      dest_path_url,
-
-      ua: uaHead
-
-      // NOTE: do NOT send `dest: finalLocation` (too many params / high cardinality)
+      event_source_url: request.url,
+      ua: uaHead,
+      dest: finalLocation
     }, context);
   } catch {}
 
