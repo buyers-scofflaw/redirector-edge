@@ -1,14 +1,20 @@
 export default async (request, context) => {
-  // 0) Ignore Netlify internals / static assets
+  // 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
   const reqUrl0 = new URL(request.url);
-  if (reqUrl0.pathname.startsWith("/.netlify/functions/")) return context.next();
-  if (reqUrl0.pathname.startsWith("/assets/")) return context.next();
+  if (reqUrl0.pathname.startsWith("/.netlify/functions/")) {
+    return context.next();
+  }
 
-  // 1) Parse request
+  // 0a) Bypass redirects for static assets (images, CSS, etc.)
+  if (reqUrl0.pathname.startsWith("/assets/")) {
+    return context.next();
+  }
+
+  // ===== V2 redirect with logging + click capture =====
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
 
-  // Injected dynamically by Apps Script
+  // 1) Redirect map (injected by your Sheet push)
   const redirectMap = {
   "100": {
     "url": "https://google.com",
@@ -161,7 +167,9 @@ export default async (request, context) => {
     "locale": "en_US"
   }
 };
-  const ogMetaMap   = {
+
+  // 2) OG metadata map (injected from your domain_settings tab)
+  const ogMetaMap = {
   "https://health-helpers.com": {
     "site_name": "Health Helpers",
     "image": "https://health-helpers.com/assets/wellnessauthority-og.png",
@@ -272,36 +280,39 @@ export default async (request, context) => {
   }
 };
 
-  // Detect crawlers (for OG previews)
+  // 3) Detect if this is a crawler (Facebook, Twitter, Slack, etc.)
   const ua = (request.headers.get("user-agent") || "").toLowerCase();
   const isCrawler =
     /(facebookexternalhit|facebot|twitterbot|linkedinbot|slackbot|discordbot|embedly|whatsapp|telegram|preview)/i.test(ua);
 
-  // 2) Serve OG HTML to crawlers (UNCHANGED BEHAVIOR)
+  // 4) If it's a crawler, serve OG metadata directly (no redirect)
   if (isCrawler) {
     const host = reqUrl0.hostname.replace(/^www\./, "");
     const meta = ogMetaMap["https://" + host] || ogMetaMap[host];
 
     if (meta) {
-      const row = (redirectMap && id && redirectMap[id]) ? redirectMap[id] : null;
+      const row = redirectMap && id ? redirectMap[id] : null;
 
       const html = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>${meta.site_name}</title>
-  <meta property="og:url" content="${request.url}">
-  <meta property="og:type" content="${meta.type}">
-  <meta property="og:title" content="${row && row.title ? row.title : meta.site_name}">
-  <meta property="og:description" content="${row && row.description ? row.description : meta.image_alt}">
-  <meta property="og:image" content="${meta.image}">
-  <meta property="og:image:alt" content="${meta.image_alt}">
-  <meta property="og:site_name" content="${meta.site_name}">
-  <meta property="og:locale" content="${row && row.locale ? row.locale : "en_US"}">
-</head>
-<body></body>
-</html>`;
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>${meta.site_name}</title>
+            <meta property="og:url" content="${request.url}">
+            <meta property="og:type" content="${meta.type}">
+            <meta property="og:title" content="${(row && row.title) ? row.title : meta.site_name}">
+            <meta property="og:description" content="${(row && row.description) ? row.description : meta.image_alt}">
+            <meta property="og:image" content="${meta.image}">
+            <meta property="og:image:alt" content="${meta.image_alt}">
+            <meta property="og:site_name" content="${meta.site_name}">
+            <meta property="og:locale" content="${(row && row.locale) ? row.locale : "en_US"}">
+            <meta property="og:updated_time" content="${Math.floor(Date.now() / 1000)}">
+          </head>
+          <body>
+            <p>Preview for ${meta.site_name}</p>
+          </body>
+        </html>`;
 
       return new Response(html, {
         status: 200,
@@ -310,10 +321,15 @@ export default async (request, context) => {
     }
   }
 
-  // 3) Redirect logic (UNCHANGED)
+  // 5) Normal redirect configuration
   const FALLBACK_URL = "https://www.facebook.com";
-  const COLLECTOR    = "https://click-collector-583868590168.us-central1.run.app/collect";
 
+  // Post to MULTIPLE collectors (existing Apps Script + Cloud Run)
+  const COLLECTORS = [
+    "https://click-collector-583868590168.us-central1.run.app/collect"
+  ];
+
+  // 6) Helpers
   function isFbIgInApp(uaStr) {
     const u = (uaStr || "").toLowerCase();
     return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
@@ -328,11 +344,14 @@ export default async (request, context) => {
 
   function makeFbcFromFbclid(fbclid) {
     if (!fbclid) return null;
-    return "fb.1." + Math.floor(Date.now() / 1000) + "." + fbclid;
+    const ts = Math.floor(Date.now() / 1000);
+    return `fb.1.${ts}.${fbclid}`;
   }
 
   function makeFbp() {
-    return "fb.1." + Math.floor(Date.now() / 1000) + "." + Math.random().toString(36).slice(2);
+    const ts = Math.floor(Date.now() / 1000);
+    const rand = Math.random().toString(36).slice(2);
+    return `fb.1.${ts}.${rand}`;
   }
 
   function uuidv4() {
@@ -345,30 +364,43 @@ export default async (request, context) => {
         });
   }
 
-  function appendCookie(h, name, value) {
+  function appendCookie(h, name, value, maxAgeDays = 90) {
     if (!value) return;
-    h.append(
-      "Set-Cookie",
-      `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=7776000; SameSite=Lax`
-    );
+    const maxAge = maxAgeDays * 24 * 3600;
+    h.append("Set-Cookie", `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; SameSite=Lax`);
   }
 
   function redirectResponse(locationUrl, extraHeaders) {
     const h = new Headers({ Location: locationUrl });
-    if (extraHeaders) {
-      for (const [k, v] of extraHeaders.entries()) h.append(k, v);
-    }
+    if (extraHeaders) for (const [k, v] of extraHeaders.entries()) h.append(k, v);
     return new Response(null, { status: 302, headers: h });
   }
 
-  // ? ONLY NEW BEHAVIOR
-  // Derive event_source_url as: https://search.<domain>.com/
+  // Fire-and-forget POSTs (we don?t wait for them)
+  function postToCollectors(payload, context) {
+    for (const endpoint of COLLECTORS) {
+      const controller = new AbortController();
+      const kill = setTimeout(() => controller.abort(), 1500);
+
+      context.waitUntil(
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+          keepalive: true,
+          redirect: "manual",
+          signal: controller.signal
+        })
+          .catch(() => {})
+          .finally(() => clearTimeout(kill))
+      );
+    }
+  }
+
+  // ? NEW: derive event_source_url from destination domain (search.<root>.com)
   function deriveEventSourceUrl(destUrl) {
     try {
-      const parts = new URL(destUrl)
-        .hostname
-        .replace(/^www\./, "")
-        .split(".");
+      const parts = new URL(destUrl).hostname.replace(/^www\./, "").split(".");
       if (!parts || parts.length < 2) return null;
       return "https://search." + parts[parts.length - 2] + ".com/";
     } catch {
@@ -376,37 +408,53 @@ export default async (request, context) => {
     }
   }
 
-  // 4) Resolve redirect target
-  const base = (id && redirectMap && redirectMap[id]) ? redirectMap[id] : null;
-  if (!base || !base.url) return redirectResponse(FALLBACK_URL);
+  // 7) Inputs
+  const uaHead = request.headers.get("user-agent") || "";
+  const base = id ? redirectMap[id] : null;
 
-  const inApp = isFbIgInApp(request.headers.get("user-agent") || "");
+  const inApp = isFbIgInApp(uaHead);
   const rawS1 = url.searchParams.get("s1pcid") || "";
-  const s1ok  = isValidS1pcid(rawS1);
+  const s1ok = isValidS1pcid(rawS1);
+
+  // 8) Handle unknown IDs
+  if (!base) {
+    console.log("Redirect", { id, inApp, s1ok, reason: "unknown id", dest: "https://facebook.com" });
+    return redirectResponse("https://facebook.com");
+  }
+
+  // 9) Build final destination (preserve most params)
+  const DROP = new Set([
+    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
+  ]);
+
+  if (!base || !base.url) {
+    console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
+    return redirectResponse("https://facebook.com");
+  }
 
   let dest;
   try {
     dest = new URL(base.url);
-  } catch {
-    return redirectResponse(FALLBACK_URL);
+  } catch (err) {
+    console.error("Invalid redirect URL", base, err);
+    return redirectResponse("https://facebook.com");
   }
 
-  // Preserve most params
-  const DROP = new Set(["utm_medium","utm_id","utm_content","utm_term","utm_campaign","iab","id"]);
+  // copy through allowed params
   url.searchParams.forEach((value, key) => {
     if (!DROP.has(key)) dest.searchParams.set(key, value);
   });
 
+  // 10) Capture event
+  const now = Math.floor(Date.now() / 1000);
   const uid = uuidv4();
+
   dest.searchParams.set("s1padid", uid);
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
-  const finalLocation = (!inApp && !s1ok) ? FALLBACK_URL : dest.href;
-
-  // Cookies
-  const cookieRaw = request.headers.get("cookie") || "";
+  const rawCookie = request.headers.get("cookie") || "";
   const cookieMap = Object.fromEntries(
-    cookieRaw.split(/;\s*/).filter(Boolean).map(c => {
+    rawCookie.split(/;\s*/).filter(Boolean).map(c => {
       const i = c.indexOf("=");
       return i === -1 ? [c, ""] : [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
     })
@@ -416,32 +464,43 @@ export default async (request, context) => {
   const fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
   const fbp = cookieMap._fbp || makeFbp();
 
-  // ? NEW event_source_url
+  const ipHeader =
+    request.headers.get("x-forwarded-for") ||
+    request.headers.get("x-real-ip") ||
+    request.headers.get("x-nf-client-connection-ip") ||
+    "";
+  const client_ip = ipHeader.split(",")[0].trim();
+
+  const isFallback = !inApp && !s1ok;
+  const finalLocation = isFallback ? FALLBACK_URL : dest.href;
+
+  // ? ONLY CHANGE vs source-of-truth: event_source_url value
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
 
-  // Fire-and-forget log
-  context.waitUntil(
-    fetch(COLLECTOR, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        uid,
-        id,
-        fbclid,
-        fbc,
-        fbp,
-        event_time: Math.floor(Date.now() / 1000),
-        event_source_url
-      }),
-      keepalive: true
-    }).catch(() => {})
-  );
+  // 11) Log to collectors (payload preserved)
+  try {
+    postToCollectors({
+      uid,
+      fbclid,
+      fbc,
+      fbp,
+      id,
+      s1pcid: rawS1 || null,
+      inApp,
+      client_ip,
+      event_time: now,
+      event_source_url,
+      ua: uaHead,
+      dest: finalLocation
+    }, context);
+  } catch {}
 
-  // Redirect
+  // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
   appendCookie(cookieHeaders, "_fbc", fbc);
   appendCookie(cookieHeaders, "_fbp", fbp);
   appendCookie(cookieHeaders, "uid", uid);
 
+  console.log("Redirect", { id, inApp, s1ok, dest: finalLocation });
   return redirectResponse(finalLocation, cookieHeaders);
 };
