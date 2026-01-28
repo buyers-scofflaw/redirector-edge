@@ -290,6 +290,12 @@ export default async (request, context) => {
     const meta = ogMetaMap["https://" + host] || ogMetaMap[host];
 
     if (meta) {
+      // avoid optional chaining for bundler compatibility
+      const rm = redirectMap && id && redirectMap[id] ? redirectMap[id] : null;
+      const ogTitle = (rm && rm.title) ? rm.title : meta.site_name;
+      const ogDesc = (rm && rm.description) ? rm.description : meta.image_alt;
+      const ogLocale = (rm && rm.locale) ? rm.locale : "en_US";
+
       const html = `
         <!DOCTYPE html>
         <html lang="en">
@@ -298,12 +304,12 @@ export default async (request, context) => {
             <title>${meta.site_name}</title>
             <meta property="og:url" content="${request.url}">
             <meta property="og:type" content="${meta.type}">
-            <meta property="og:title" content="${redirectMap[id]?.title || meta.site_name}">
-            <meta property="og:description" content="${redirectMap[id]?.description || meta.image_alt}">
+            <meta property="og:title" content="${ogTitle}">
+            <meta property="og:description" content="${ogDesc}">
             <meta property="og:image" content="${meta.image}">
             <meta property="og:image:alt" content="${meta.image_alt}">
             <meta property="og:site_name" content="${meta.site_name}">
-            <meta property="og:locale" content="${redirectMap[id]?.locale || 'en_US'}">
+            <meta property="og:locale" content="${ogLocale}">
             <meta property="og:updated_time" content="${Math.floor(Date.now() / 1000)}">
           </head>
           <body>
@@ -344,22 +350,23 @@ export default async (request, context) => {
   function makeFbcFromFbclid(fbclid) {
     if (!fbclid) return null;
     const ts = Math.floor(Date.now() / 1000);
-    return "fb.1." + ts + "." + fbclid;
+    return `fb.1.${ts}.${fbclid}`;
   }
 
   function makeFbp() {
     const ts = Math.floor(Date.now() / 1000);
     const rand = Math.random().toString(36).slice(2);
-    return "fb.1." + ts + "." + rand;
+    return `fb.1.${ts}.${rand}`;
   }
 
   function uuidv4() {
-    if (crypto && crypto.randomUUID) return crypto.randomUUID();
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-      const r = (Math.random() * 16) | 0;
-      const v = c === "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
+    return crypto.randomUUID
+      ? crypto.randomUUID()
+      : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+          const r = (Math.random() * 16) | 0;
+          const v = c === "x" ? r : (r & 0x3) | 0x8;
+          return v.toString(16);
+        });
   }
 
   function appendCookie(h, name, value, maxAgeDays = 90) {
@@ -377,7 +384,7 @@ export default async (request, context) => {
   }
 
   // Fire-and-forget POSTs (we don?t wait for them)
-  function postToCollectors(payloadObj) {
+  function postToCollectors(payload) {
     for (const endpoint of COLLECTORS) {
       const controller = new AbortController();
       const kill = setTimeout(() => controller.abort(), 1500);
@@ -385,7 +392,7 @@ export default async (request, context) => {
         fetch(endpoint, {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify(payloadObj),
+          body: JSON.stringify(payload),
           keepalive: true,
           redirect: "manual",
           signal: controller.signal
@@ -407,8 +414,6 @@ export default async (request, context) => {
 
   // Your rule: always https://search.<domain>.com/
   // <domain> = second-to-last hostname label of the destination
-  // economicminds.com -> search.economicminds.com
-  // read.mdrntoday.com -> search.mdrntoday.com
   function searchRootFromDestUrl(destUrl) {
     try {
       var u = new URL(destUrl);
@@ -445,7 +450,7 @@ export default async (request, context) => {
 
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
-  const base = id ? redirectMap[id] : null;
+  const base = id && redirectMap && redirectMap[id] ? redirectMap[id] : null;
 
   const inApp = isFbIgInApp(uaHead);
   const rawS1 = url.searchParams.get("s1pcid") || "";
@@ -458,11 +463,8 @@ export default async (request, context) => {
   }
 
   // 9) Build final destination (preserve most params)
-  const DROP = new Set([
-    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
-  ]);
+  const DROP = new Set(["utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"]);
 
-  // base is now an object:  { url, title, description, locale }
   if (!base || !base.url) {
     console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
     return redirectResponse("https://facebook.com");
@@ -511,7 +513,6 @@ export default async (request, context) => {
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
   // 11) Log to collectors (FIXED)
-  // derive a stable event_source_url from the destination (no params)
   const router_url = request.url;
   const dest_url_full = finalLocation;
 
@@ -522,7 +523,6 @@ export default async (request, context) => {
   var _u = safeURL(dest_url_full);
   const dest_host = (_u && _u.hostname) ? String(_u.hostname).toLowerCase() : null;
 
-  // what we log as event_source_url going forward:
   const event_source_url_to_log = dest_search_root_url || dest_root_url || router_url;
 
   try {
@@ -537,10 +537,10 @@ export default async (request, context) => {
       client_ip: client_ip,
       event_time: now,
 
-      // ? FIX: attribution context is now destination-derived
+      // ? FIXED
       event_source_url: event_source_url_to_log,
 
-      // Clean debug fields (no huge param strings)
+      // Clean debug fields
       router_url: router_url,
       dest_host: dest_host,
       dest_root_url: dest_root_url,
@@ -548,12 +548,9 @@ export default async (request, context) => {
       dest_path_url: dest_path_url,
 
       ua: uaHead
-
-      // NOTE: intentionally NOT logging full dest URL with params (no `dest: finalLocation`)
-    });
-  } catch (e) {
-    // swallow
-  }
+      // NOTE: do NOT log full dest URL; it?s high-cardinality
+    }, context);
+  } catch (e) {}
 
   // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
