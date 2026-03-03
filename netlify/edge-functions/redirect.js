@@ -23,7 +23,7 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "107": {
-    "url": "https://etoptip.com/health/are-dental-implant-trials-a-viable-option-en-us/?segment=rsoc.sc.etoptip.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=$1500+for+dental+implant+participation+search+now+near+me+{Month}+2026&forceKeyB=$1500+for+dental+implant+participation+near+me+{Month}+2026&forceKeyC=get+$1950+for+dental+implant+participation+near+me&forceKeyD=$1500+for+dental+implant+participation+search+now+near+me&forceKeyE=paid+clinical+trials+for+dental+implants+near+me&forceKeyF=$1500+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "url": "https://etoptip.com/health/are-dental-implant-trials-a-viable-option-en-us/?segment=rsoc.sc.etoptip.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=$1500+for+dental+implant+participation+search+now+near+me+{Month}+2026&forceKeyB=$1500+for+dental+implant+participation+near+me+{Month}+2026&forceKeyC=get+$1950+for+dental+implant+participation+near+me&forceKeyD=$1500+for+dental+implant+participation+search+now+near+me&forceKeyE=paid+clinical+trials+for+dental+implants+near+me&forceKeyF=$1500+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&s1pplacement=fbk",
     "title": "2025 Nissan Rogue Pricing: Key Insights and Comparisons",
     "description": "Explore the pricing and features of the 2025 Nissan Rogue, examining how it compares to competitors and what to anticipate in the upcoming model.",
     "locale": "en_US"
