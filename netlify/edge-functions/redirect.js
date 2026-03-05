@@ -57,6 +57,12 @@ export default async (request, context) => {
     "title": "\"Recent Breakthroughs in Weight Loss Clinical Trials\"",
     "description": "Explore the latest advancements in weight loss clinical trials, focusing on innovative treatments and their effectiveness in fat reduction.",
     "locale": "en_US"
+  },
+  "113": {
+    "url": "https://etoptip.com/health/how-do-diabetes-trials-shape-future-treatments-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Diabetes+Clinical+Trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyC=best+diabetes+study+testing+new+treatments+$26700&forceKeyD=best+diabetes+study+testing+new+treatments+$13675+near+me&forceKeyE=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyF=paid+clinical+trials+for+type+2+diabetes&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "The Impact of Diabetes Trials on Future Treatment Options",
+    "description": "Explore how diabetes clinical trials contribute to the development of innovative treatments, shaping the future of diabetes care and management.",
+    "locale": "en_US"
   }
 };
 
