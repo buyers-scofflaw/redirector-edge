@@ -18,38 +18,44 @@ export default async (request, context) => {
   const redirectMap = {
   "100": {
     "url": "https://google.com",
-    "title": "\"Exploring the Evolution and Impact of Google Search\"",
-    "description": "Google is a powerful search engine that provides quick access to information, images, and services across the web, connecting users with diverse content effortlessly.",
+    "title": "\"Exploring Google's Evolution and Impact on the Digital World\"",
+    "description": "Google is a leading search engine that provides users with quick access to information, images, and news from across the web. Explore a vast array of content effortlessly.",
     "locale": "en_US"
   },
   "107": {
     "url": "https://etoptip.com/health/are-dental-implant-trials-a-viable-option-en-us/?segment=rsoc.sc.etoptip.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=$1500+for+dental+implant+participation+search+now+near+me+{Month}+2026&forceKeyB=$1500+for+dental+implant+participation+near+me+{Month}+2026&forceKeyC=get+$1950+for+dental+implant+participation+near+me&forceKeyD=$1500+for+dental+implant+participation+search+now+near+me&forceKeyE=paid+clinical+trials+for+dental+implants+near+me&forceKeyF=$1500+for+dental+implant+participation+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=Purchase&s1pplacement=fbk",
-    "title": "2025 Nissan Rogue Pricing: Key Insights and Comparisons",
-    "description": "Explore the pricing and features of the 2025 Nissan Rogue, examining how it compares to competitors and what to anticipate in the upcoming model.",
+    "title": "Evaluating the Viability of Dental Implant Trials",
+    "description": "Explore the viability of dental implant trials as a treatment option, including potential participation benefits and financial incentives for participants.",
     "locale": "en_US"
   },
   "108": {
     "url": "https://etoptip.com/automotive/is-the-2026-rogue-the-right-suv-for-you-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Crossover+SUVs+Nearby&forceKeyA=$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyB=$100/month+-+rogue+2026+crossover+suvs+nearby&forceKeyC=$100/month+-+rogue+2025+crossover+suvs+around+me+{Month}+2026&forceKeyD=for+seniors+2025+rogue+crossover+suvs+nearby+rogue+no+cost&forceKeyE=$100/month+rogue+2025+crossover+suvs+nearby&forceKeyF=car+payments+100+dollars+a+month&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
-    "title": "Affordable Options for Dental Implants: What You Need to Know",
-    "description": "Explore affordable dental implant options, including cost-effective solutions and key considerations for enhancing your dental health without breaking the bank.",
+    "title": "Is the 2026 Rogue the Ideal SUV for Your Needs?",
+    "description": "Explore the features and specifications of the 2026 Nissan Rogue to determine if it's the ideal SUV for your needs and lifestyle.",
     "locale": "en_US"
   },
   "109": {
     "url": "https://etoptip.com/technology/programs-that-help-seniors-get-affordable-internet-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Best+Internet+Providers&forceKeyA=internet+for+seniors+in+my+area&forceKeyB=no+cost+internet+for+seniors&forceKeyC=get+$0+internet+providers+in+my+zip+code+availability&forceKeyD=no+cost+internet+plans+by+zip+code+-+for+seniors&forceKeyE=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyF=no+cost+internet+plans+by+zip+code+(for+seniors)&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
-    "title": "\"Exploring the Impact of Dental Implant Trials on Oral Health\"",
-    "description": "Explore how dental implant trials contribute to improved oral health, examining their benefits, processes, and impact on dental care advancements.",
+    "title": "Affordable Internet Options for Seniors: Key Programs and Providers",
+    "description": "Discover programs that provide affordable internet options for seniors, including no-cost plans based on your location and specific needs.",
     "locale": "en_US"
   },
   "110": {
     "url": "https://etoptip.com/finance/how-can-you-finance-your-next-cell-phone-en-us/?segment=rsoc.sc.etoptip.001&headline=Get+New+Phone&forceKeyA=get+new+phone+for+seniors+[at+no+cost]&forceKeyB=new+phone+for+seniors+[at+no+cost]&forceKeyC=100%+free+phones+for+seniors&forceKeyD=get+a+new+phone&forceKeyE=i+need+a+new+phone&forceKeyF=get+new+phones+for+seniors+[at+no+cost]&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
-    "title": "\"Exploring the Cost Benefits of Dental Implant Trials\"",
-    "description": "Explore how dental implant trials can provide cost-saving opportunities, offering insights into potential financial benefits and innovative dental solutions.",
+    "title": "Financing Options for Your Next Cell Phone Purchase",
+    "description": "Discover various financing options for your next cell phone, including programs tailored for seniors to acquire new devices at no cost.",
     "locale": "en_US"
   },
   "111": {
     "url": "https://etoptip.com/real-estate/affordable-housing-for-low-income-seniors-en-us-2/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=senior+apartments+for+$300+a+month+near+me&forceKeyB=apartments+for+senior+citizens+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=62+and+over+apartments+near+me&forceKeyE=seniors+residences+near+me&forceKeyF=55+and+older+communities+in+{State}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
-    "title": "Exploring Affordable Options for Dental Implants",
-    "description": "Explore various affordable dental implant solutions, focusing on accessible options and innovative approaches to enhance dental health without breaking the bank.",
+    "title": "Affordable Housing Options for Low-Income Seniors",
+    "description": "Discover affordable housing options tailored for low-income seniors, including 55 and older apartment communities designed for comfort and accessibility.",
+    "locale": "en_US"
+  },
+  "112": {
+    "url": "https://etoptip.com/health/latest-advances-in-weight-loss-clinical-trials-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Weight+Loss&forceKeyA=$1500+for+fat+reduction+treatment+participation+near+me&forceKeyB=$6000+for+belly+fat+reduction+treatment+participation+near+my+zipcode+coolsculpting&forceKeyC=locate+$1500+for+belly+fat+reduction+treatment+participation+appointment+near+me&forceKeyD=get+$1500+for+belly+fat+reduction+treatment+participation+appointment&forceKeyE=$6000+for+belly+fat+reduction+treatment+participation+in+near+my+zipcode+coolsculpting&forceKeyF=$1500+for+belly+fat+reduction+treatments+participation+appointment&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "\"Recent Breakthroughs in Weight Loss Clinical Trials\"",
+    "description": "Explore the latest advancements in weight loss clinical trials, focusing on innovative treatments and their effectiveness in fat reduction.",
     "locale": "en_US"
   }
 };
