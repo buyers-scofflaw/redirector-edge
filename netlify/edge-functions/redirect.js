@@ -63,6 +63,42 @@ export default async (request, context) => {
     "title": "The Impact of Diabetes Trials on Future Treatment Options",
     "description": "Explore how diabetes clinical trials contribute to the development of innovative treatments, shaping the future of diabetes care and management.",
     "locale": "en_US"
+  },
+  "114": {
+    "url": "https://10toptips.com/education/choosing-online-schools-that-provide-computers-en-us-3/?segment=rsoc.sc.10toptips.002&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyB=apply+for+online+schools+that+give+you+$+and+laptops+today+{Month}+2026&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+schools+that+give+you+$+and+laptops+near+me&forceKeyE=best+apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyF=get+paid+to+go+back+to+school&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "\"Choosing Online Schools That Include Computers for Students\"",
+    "description": "Discover how to choose online schools that provide laptops, enhancing your educational experience with essential technology for success.",
+    "locale": "en_US"
+  },
+  "115": {
+    "url": "https://etoptip.com/health/how-are-asthma-clinical-trials-transforming-care-en-us-2/?segment=rsoc.sc.etoptip.001&headline=Asthma+Clinical+Trials&forceKeyA=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=asthma+clinical+studies+$6000+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+paid+for+best+asthma+treatments+participation+near+my+zipcode&forceKeyE=$6000+paid+for+verified+asthma+treatments+participation+near+my+zipcode&forceKeyF=adult+asthma&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "Transforming Asthma Care: The Impact of Clinical Trials",
+    "description": "Explore how asthma clinical trials are revolutionizing patient care, offering innovative treatments and insights into managing this chronic condition.",
+    "locale": "en_US"
+  },
+  "116": {
+    "url": "https://etoptip.com/automotive/choosing-the-right-suv-for-seniors-en-us/?segment=rsoc.sc.etoptip.001&headline=Read+More+About+SUV+For+Seniors&forceKeyA=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+(no+cost)&forceKeyB=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyC=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyD=$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyE=$100/month+-+rogue+2025+crossover+suvs+around+me+{Month}+2026&forceKeyF=$100/month+-+rogue+2025+crossover+suvs+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "Choosing the Best SUVs for Seniors: A Comprehensive Guide",
+    "description": "Discover key considerations for selecting the perfect SUV for seniors, focusing on comfort, accessibility, and safety features tailored to their needs.",
+    "locale": "en_US"
+  },
+  "117": {
+    "url": "https://10toptips.com/health/how-dental-implant-trials-advance-oral-health-en-us-3/?segment=rsoc.sc.10toptips.002&headline=Learn+About+Studies+For+Dental+Implants&forceKeyA=$6000+for+dental+implants+participation+near+me+{State}&forceKeyB=$6000+for+dental+implants+participations+near+my+zipcode+{State}&forceKeyC=get+paid+to+get+dental+implants&forceKeyD=get+$1500+for+dental+implant+participation+in+{State}&forceKeyE=paid+clinical+trials+for+dental+implants+near+me&forceKeyF=join+$6000+hiv+clinical+study+{Month}+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "Advancements in Oral Health Through Dental Implant Trials",
+    "description": "Discover how dental implant trials contribute to advancements in oral health and the potential benefits for participants in these studies.",
+    "locale": "en_US"
+  },
+  "118": {
+    "url": "https://goatdealo.online/health/key-factors-in-joining-neuropathy-trials-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=Neuropathy+Clinical+Trials&forceKeyA=neuropathy+compensation+near+me&forceKeyB=neuropathy+compensation+in+{State}&forceKeyC=neuropathy+compensation+{State}&forceKeyD=neurology+clinical+trials&forceKeyE=neuropathy+trial+eligibility&forceKeyF=neurological+clinical+trials&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "Key Factors to Consider When Joining Neuropathy Trials",
+    "description": "Explore key factors to consider when joining neuropathy clinical trials, including eligibility, compensation, and the benefits of participation in research.",
+    "locale": "en_US"
+  },
+  "119": {
+    "url": "https://goatdealo.online/finance/how-to-maximize-your-earnings-with-bank-account-bonuses-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+bank+account+bonus&forceKeyA=start+bank+accounts+online+with+no+deposits+($1000+on+opening)&forceKeyB=start+a+bank+account+online+with+no+deposits+($1000+on+opening)&forceKeyC=start+a+bank+accounts+online+with+no+deposits+($1000+on+opening)&forceKeyD=start+a+bank+account+online+with+no+deposit+($1000+on+opening)&forceKeyE=opening+bank+accounts+for+free+money&forceKeyF=banks+that+pay+you+to+open+an+account+with+no+deposit&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement=fbk",
+    "title": "Maximizing Earnings Through Bank Account Bonuses Explained",
+    "description": "Discover strategies to maximize your earnings through bank account bonuses, including options for accounts with no initial deposits.",
+    "locale": "en_US"
   }
 };
 
