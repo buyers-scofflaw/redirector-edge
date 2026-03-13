@@ -395,8 +395,29 @@ function postToCollectors(payload, context) {
   // ? ONLY CHANGE vs source-of-truth: event_source_url value
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
 
-  // 11) Log to collectors (payload preserved)
-// capture temporarily disabled for debugging
+  // 11) Log fallback reason for users not sent to article
+  if (isFallback) {
+    const failure_reason =
+      !id ? "missing_id" :
+      !redirectMap[id] ? "unknown_id" :
+      (!inApp && !s1ok) ? "not_in_app_and_invalid_s1pcid" :
+      !inApp ? "not_in_app" :
+      !s1ok ? "invalid_s1pcid" :
+      "other";
+
+    console.log("FallbackDecision", {
+      id,
+      failure_reason,
+      inApp,
+      s1ok,
+      has_fbclid: !!fbclid,
+      has_fbc: !!fbc,
+      has_fbp: !!fbp,
+      host: url.hostname,
+      path: url.pathname,
+      event_source_url
+    });
+  }
 
   // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
@@ -404,6 +425,6 @@ function postToCollectors(payload, context) {
   appendCookie(cookieHeaders, "_fbp", fbp);
   appendCookie(cookieHeaders, "uid", uid);
 
-  console.log("Redirect", { id, inApp, s1ok, dest: finalLocation });
+  console.log("Redirect", { id, inApp, s1ok, isFallback, dest: finalLocation });
   return redirectResponse(finalLocation, cookieHeaders);
 };
