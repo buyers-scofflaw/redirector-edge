@@ -311,25 +311,9 @@ export default async (request, context) => {
   }
 
   // Fire-and-forget POSTs (we don?t wait for them)
-  function postToCollectors(payload, context) {
-    for (const endpoint of COLLECTORS) {
-      const controller = new AbortController();
-      const kill = setTimeout(() => controller.abort(), 1500);
-
-      context.waitUntil(
-        fetch(endpoint, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(payload),
-          keepalive: true,
-          redirect: "manual",
-          signal: controller.signal
-        })
-          .catch(() => {})
-          .finally(() => clearTimeout(kill))
-      );
-    }
-  }
+function postToCollectors(payload, context) {
+  return;
+}
 
   // ? NEW: derive event_source_url from destination domain (search.<root>.com)
   function deriveEventSourceUrl(destUrl) {
@@ -412,22 +396,7 @@ export default async (request, context) => {
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
 
   // 11) Log to collectors (payload preserved)
-  try {
-    postToCollectors({
-      uid,
-      fbclid,
-      fbc,
-      fbp,
-      id,
-      s1pcid: rawS1 || null,
-      inApp,
-      client_ip,
-      event_time: now,
-      event_source_url,
-      ua: uaHead,
-      dest: finalLocation
-    }, context);
-  } catch {}
+// capture temporarily disabled for debugging
 
   // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
