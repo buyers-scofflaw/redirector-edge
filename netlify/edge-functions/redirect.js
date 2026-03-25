@@ -312,8 +312,24 @@ export default async (request, context) => {
 
   // Fire-and-forget POSTs (we don?t wait for them)
 function postToCollectors(payload, context) {
-  return;
-}
+    for (const endpoint of COLLECTORS) {
+      const controller = new AbortController();
+      const kill = setTimeout(() => controller.abort(), 1500);
+
+      context.waitUntil(
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+          keepalive: true,
+          redirect: "manual",
+          signal: controller.signal
+        })
+          .catch(() => {})
+          .finally(() => clearTimeout(kill))
+      );
+    }
+  }
 
   // ? NEW: derive event_source_url from destination domain (search.<root>.com)
   function deriveEventSourceUrl(destUrl) {
@@ -394,6 +410,24 @@ function postToCollectors(payload, context) {
 
   // ? ONLY CHANGE vs source-of-truth: event_source_url value
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
+
+// 10b) Send click data to collector(s) for BigQuery ingestion
+  try {
+    postToCollectors({
+      uid,
+      fbclid,
+      fbc,
+      fbp,
+      id,
+      s1pcid: rawS1 || null,
+      inApp,
+      client_ip,
+      event_time: now,
+      event_source_url,
+      ua: uaHead,
+      dest: finalLocation
+    }, context);
+  } catch {}
 
   // 11) Log fallback reason for users not sent to article
   if (isFallback) {
