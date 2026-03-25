@@ -387,6 +387,16 @@ function postToCollectors(payload, context) {
   dest.searchParams.set("s1padid", uid);
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
+// ?? S1 Postback URL Injection ??????????????????????????????
+  // click_track_url: fires immediately on monetization (no revenue)
+  const postbackBase = `https://${url.hostname}/api/s1-postback`;
+  const clickTrackUrl = `${postbackBase}?click_id=${uid}&type=click`;
+  dest.searchParams.set("click_track_url", clickTrackUrl);
+  // rev_click_track_url: fires ~6hrs later with estimated revenue
+  const revClickTrackUrl = `${postbackBase}?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`;
+  dest.searchParams.set("rev_click_track_url", revClickTrackUrl);
+  // ?? End S1 Postback URL Injection ??????????????????????????
+
   const rawCookie = request.headers.get("cookie") || "";
   const cookieMap = Object.fromEntries(
     rawCookie.split(/;\s*/).filter(Boolean).map(c => {
