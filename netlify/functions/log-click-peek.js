@@ -1,6 +1,6 @@
 exports.handler = async (event) => {
   try {
-    const { getStore } = await import("@netlify/blobs");
+    const { getStore } = require("@netlify/blobs");
     const store = getStore("click-logs");
 
     const qs = event.queryStringParameters || {};
