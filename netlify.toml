@@ -4,6 +4,7 @@ function = "redirect"
 
 [build]
   functions = "netlify/functions"   # <— make Functions directory explicit
+  command = "cd netlify/functions && npm install"
 
 [functions]
   directory = "netlify/functions"   # <— same here (being explicit helps)
