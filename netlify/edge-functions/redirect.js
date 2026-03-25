@@ -5,6 +5,10 @@ export default async (request, context) => {
     return context.next();
   }
 
+if (reqUrl0.pathname.startsWith("/api/")) {
+    return context.next();
+}
+
   // 0a) Bypass redirects for static assets (images, CSS, etc.)
   if (reqUrl0.pathname.startsWith("/assets/")) {
     return context.next();
