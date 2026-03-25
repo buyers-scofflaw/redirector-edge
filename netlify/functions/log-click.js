@@ -9,7 +9,7 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers: { "content-type": "text/plain" }, body: "Bad Request" };
     }
 
-    const { getStore } = await import("@netlify/blobs");
+    const { getStore } = require("@netlify/blobs");
     const store = getStore("click-logs");
 
     const day = new Date(body.event_time * 1000).toISOString().slice(0, 10); // YYYY-MM-DD
