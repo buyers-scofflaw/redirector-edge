@@ -1,23 +1,33 @@
-exports.handler = async (event) => {
+import { getStore } from "@netlify/blobs";
+
+export default async (req) => {
   try {
-    if (event.httpMethod !== "POST") {
-      return { statusCode: 200, headers: { "content-type": "text/plain" }, body: "OK" };
+    if (req.method !== "POST") {
+      return new Response("OK", { status: 200 });
     }
 
-    const body = JSON.parse(event.body || "{}");
+    const body = await req.json();
     if (!body || !body.uid || !body.event_time) {
-      return { statusCode: 400, headers: { "content-type": "text/plain" }, body: "Bad Request" };
+      return new Response("Bad Request", { status: 400 });
     }
 
-    const { getStore } = require("@netlify/blobs");
-    const store = getStore("click-logs");
+    const store = getStore({ name: "click-logs", consistency: "strong" });
+    const day = new Date(body.event_time * 1000).toISOString().slice(0, 10);
+    const key = `clicks/${day}.jsonl`;
 
-    const day = new Date(body.event_time * 1000).toISOString().slice(0, 10); // YYYY-MM-DD
-    await store.append(`clicks/${day}.jsonl`, JSON.stringify(body) + "\n");
+    // Read existing data, append new line, write back
+    const existing = await store.get(key, { type: "text" });
+    const line = JSON.stringify(body) + "\n";
+    await store.set(key, (existing || "") + line);
 
-    return { statusCode: 200, headers: { "content-type": "text/plain" }, body: "OK" };
+    return new Response("OK", { status: 200 });
   } catch (e) {
     console.error("log-click error:", e && e.message ? e.message : e);
-    return { statusCode: 500, headers: { "content-type": "text/plain" }, body: "Server Error" };
+    return new Response("Server Error", { status: 500 });
   }
+};
+
+export const config = {
+  path: "/.netlify/functions/log-click",
+  method: "POST",
 };
