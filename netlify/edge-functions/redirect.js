@@ -259,9 +259,10 @@ export default async (request, context) => {
   const FALLBACK_URL = "https://www.facebook.com";
 
   // Post to MULTIPLE collectors (existing Apps Script + Cloud Run)
-  const COLLECTORS = [
-    "https://click-collector-583868590168.us-central1.run.app/collect"
-  ];
+const COLLECTORS = [
+  "https://click-collector-583868590168.us-central1.run.app/collect",
+  "https://www.everything-today.com/.netlify/functions/log-click"
+];
 
   // 6) Helpers
   function isFbIgInApp(uaStr) {
