@@ -8,4 +8,4 @@ function = "redirect"
 [functions]
   directory = "netlify/functions"   # <— same here (being explicit helps)
   node_bundler = "esbuild"
-  external_node_modules = ["@netlify/blobs"]
+
