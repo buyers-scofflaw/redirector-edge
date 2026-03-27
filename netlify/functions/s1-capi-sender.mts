@@ -289,7 +289,18 @@ export default async (req: Request) => {
     );
 
     // ── 1. Query for unsent revenue postbacks with FB params ──
+    // Dedup: S1 occasionally double-fires rev_click_track_url,
+    // so we take only the latest postback per click_id.
     const query = `
+      WITH deduped_postbacks AS (
+        SELECT click_id, revenue, received_at
+        FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_postbacks\`
+        WHERE type = 'revenue'
+          AND revenue IS NOT NULL
+          AND revenue > 0
+          AND inserted_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 2 DAY))
+        QUALIFY ROW_NUMBER() OVER (PARTITION BY click_id ORDER BY inserted_at DESC) = 1
+      )
       SELECT
         p.click_id,
         p.revenue,
@@ -307,17 +318,13 @@ export default async (req: Request) => {
             ELSE TIMESTAMP_ADD(c.event_time, INTERVAL 5 MINUTE)
           END
         ) AS event_time_epoch
-      FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_postbacks\` p
+      FROM deduped_postbacks p
       JOIN \`${BQ_PROJECT}.rsoc_clicks.click_events\` c
         ON p.click_id = c.uid
         AND c.event_time >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
       LEFT JOIN \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\` s
         ON p.click_id = s.uid
-      WHERE p.type = 'revenue'
-        AND p.revenue IS NOT NULL
-        AND p.revenue > 0
-        AND s.uid IS NULL
-        AND p.inserted_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 2 DAY))
+      WHERE s.uid IS NULL
     `;
 
     const rows = await queryBigQuery(bqToken, query);
