@@ -103,6 +103,54 @@ if (reqUrl0.pathname.startsWith("/api/")) {
     "title": "Maximizing Earnings Through Bank Account Bonuses Explained",
     "description": "Discover strategies to maximize your earnings through bank account bonuses, including options for accounts with no initial deposits.",
     "locale": "en_US"
+  },
+  "120": {
+    "url": "https://goatdealo.online/health/understanding-type-2-diabetes-clinical-trials-what-to-know-about-eligibility-safety-and-compensation-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=Diabetes+Clinical+Trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyC=diabetes+studies+near+me&forceKeyD=paid+clinical+trials+for+type+2+diabetes&forceKeyE=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyF=type+2+diabetes+clinical+trials+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Type 2 Diabetes: Insights on Clinical Trials and Safety",
+    "description": "Explore key insights on type 2 diabetes clinical trials, including eligibility criteria, safety measures, and potential compensation for participants.",
+    "locale": "en_US"
+  },
+  "121": {
+    "url": "https://goatdealo.online/real-estate/affordable-housing-for-low-income-seniors-en-us-3/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=senior+apartments+for+$300+a+month+near+me&forceKeyB=apartments+for+senior+citizens+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=55+and+older+communities+{State}&forceKeyE=62+and+older+apartments+near+me&forceKeyF=65+and+older+apartments+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Low-Income Seniors",
+    "description": "Discover affordable housing options for low-income seniors, including 55 and older apartments, tailored to meet the needs of older adults.",
+    "locale": "en_US"
+  },
+  "122": {
+    "url": "https://goatdealo.online/education/choosing-online-schools-that-provide-computers-en-us-4/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+schools+that+give+you+$+and+laptops+today+{Month}+2026&forceKeyE=online+schools+that+give+refund+checks+and+laptops&forceKeyF=$6000+grant+for+online+classes&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Choosing Online Schools That Provide Computers and Support",
+    "description": "Discover how to choose online schools that provide laptops, financial support, and quality education, making learning more accessible and convenient.",
+    "locale": "en_US"
+  },
+  "123": {
+    "url": "https://goatdealo.online/shopping/how-to-get-a-smartphone-at-no-cost-iphones-available-en-us-3/?segment=rsoc.sc.goatdealoonline.001&headline=Get+New+Phone&forceKeyA=apply+for+free+phones+for+seniors&forceKeyB=100%+free+phones+for+senior&forceKeyC=100%+free+phones+for+seniors&forceKeyD=100+free+phones+for+seniors&forceKeyE=100%+free+phones+for+senior+near+me&forceKeyF=get+new+phone+for+seniors+{Month}+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"How to Obtain a Free Smartphone: Options for Seniors in the US\"",
+    "description": "Discover options for obtaining smartphones at no cost, including available iPhones for seniors in the U.S., and learn about eligibility and application details.",
+    "locale": "en_US"
+  },
+  "124": {
+    "url": "https://goatdealo.online/finance/how-to-get-a-0-down-payment-and-an-affordable-payment-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=Crossover+SUVs+Nearby&forceKeyA=best+$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyB=$100/month+best+rogue+2025+crossover+suvs+nearby&forceKeyC=$100/month+-+rogue+2026+crossover+suvs+nearby&forceKeyD=$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyE=$100/month+-+rogue+2025+crossover+suvs&forceKeyF=$100/month+rogue+2025+crossover+suvs+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Securing a 0% Down Payment for Affordable Crossover SUVs\"",
+    "description": "Explore how to secure a 0% down payment and manage affordable monthly payments for financing options on crossover SUVs.",
+    "locale": "en_US"
+  },
+  "125": {
+    "url": "https://goatdealo.online/health/how-are-asthma-clinical-trials-transforming-care-en-us-4/?segment=rsoc.sc.goatdealoonline.001&headline=Asthma+Clinical+Trials&forceKeyA=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=asthma+clinical+studies+$6000+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=asthma+near+me&forceKeyE=$6000+asthma+treatments+participation+near+me&forceKeyF=paid+asthma+studies+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Transforming Asthma Care: The Impact of Clinical Trials",
+    "description": "Discover how asthma clinical trials are revolutionizing patient care and treatment options, offering new insights and advancements in management strategies.",
+    "locale": "en_US"
+  },
+  "126": {
+    "url": "https://goatdealo.online/health/how-participating-in-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1950+for+dental+implants+participations+near+me+{Month}+2026&forceKeyB=get+$1950+for+dental+implants+participations+near+me&forceKeyC=paid+clinical+trials+for+dental+implants+near+me&forceKeyD=free+dental+implants+clinical+trials+near+me+2026&forceKeyE=free+dental+implants+near+me&forceKeyF=access+$1500+for+dental+implant+participation+nearby+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Saving Money and Enhancing Smiles: Dental Implant Trials Explained\"",
+    "description": "Discover how participating in dental implant trials can provide significant savings and enhance your smile through innovative dental solutions.",
+    "locale": "en_US"
+  },
+  "127": {
+    "url": "https://etoptip.com/finance/future-proof-your-retirement-the-rise-of-gold-ira-kits-in-smart-investing-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+gold+ira&forceKeyA=get+gold+ira+kits+[$0+cost]&forceKeyB=gold+ira+kits+[$0+cost]&forceKeyC=free+gold+ira+kit&forceKeyD=free+gold+ira+kit+u2013+no+cost&forceKeyE=physical+gold&forceKeyF=free+gold+ira+kit+with+free+gold+bar&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Gold IRA Kits for a Secure Retirement Future\"",
+    "description": "Explore the benefits of Gold IRA kits as a strategic option for securing your retirement, amid the growing interest in smart investing.",
+    "locale": "en_US"
   }
 };
 
