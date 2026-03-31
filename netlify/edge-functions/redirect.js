@@ -177,7 +177,7 @@ if (reqUrl0.pathname.startsWith("/api/")) {
     "locale": "en_US"
   },
   "132": {
-    "url": "https://etoptip.com/finance/how-to-get-a-0-down-payment-and-an-affordable-payment-en-us/?segment=rsoc.sc.etoptip.001&headline=Crossover+SUVs+Nearby&forceKeyA=best+$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyB=$100/month+best+rogue+2025+crossover+suvs+nearby&forceKeyC=$100/month+-+rogue+2026+crossover+suvs+nearby&forceKeyD=$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyE=$100/month+-+rogue+2025+crossover+suvs&forceKeyF=$100/month+rogue+2025+crossover+suvs+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "url": "https://etoptip.com/automotive/is-the-2026-rogue-the-right-suv-for-you-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Crossover+SUVs+Nearby&forceKeyA=best+$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyB=$100/month+best+rogue+2025+crossover+suvs+nearby&forceKeyC=$100/month+-+rogue+2026+crossover+suvs+nearby&forceKeyD=$100/month+-+rogue+2025+crossover+suvs+around+me&forceKeyE=$100/month+-+rogue+2025+crossover+suvs&forceKeyF=$100/month+rogue+2025+crossover+suvs+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
     "title": "\"Exploring Zero Down Payment Options for Affordable SUV Financing\"",
     "description": "Explore options for obtaining a vehicle with zero down payment and manageable monthly payments, focusing on affordable crossover SUVs in your area.",
     "locale": "en_US"
