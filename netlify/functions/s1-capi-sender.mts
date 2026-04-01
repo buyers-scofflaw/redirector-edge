@@ -289,17 +289,18 @@ export default async (req: Request) => {
     );
 
     // ── 1. Query for unsent revenue postbacks with FB params ──
-    // Dedup: S1 occasionally double-fires rev_click_track_url,
-    // so we take only the latest postback per click_id.
+    // SUM revenue per click_id: S1 fires multiple rev_click_track_url
+    // postbacks when a single click generates multiple monetization events.
+    // Each postback represents real revenue, so we sum them all.
     const query = `
-      WITH deduped_postbacks AS (
-        SELECT click_id, revenue, received_at
+      WITH summed_postbacks AS (
+        SELECT click_id, SUM(revenue) AS revenue, MAX(received_at) AS received_at
         FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_postbacks\`
         WHERE type = 'revenue'
           AND revenue IS NOT NULL
           AND revenue > 0
           AND inserted_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 2 DAY))
-        QUALIFY ROW_NUMBER() OVER (PARTITION BY click_id ORDER BY inserted_at DESC) = 1
+        GROUP BY click_id
       )
       SELECT
         p.click_id,
@@ -318,7 +319,7 @@ export default async (req: Request) => {
             ELSE TIMESTAMP_ADD(c.event_time, INTERVAL 5 MINUTE)
           END
         ) AS event_time_epoch
-      FROM deduped_postbacks p
+      FROM summed_postbacks p
       JOIN \`${BQ_PROJECT}.rsoc_clicks.click_events\` c
         ON p.click_id = c.uid
         AND c.event_time >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
