@@ -247,6 +247,54 @@ if (reqUrl0.pathname.startsWith("/api/")) {
     "title": "\"Understanding Gold IRA Kits for a Secure Retirement Future\"",
     "description": "Discover the growing trend of Gold IRA kits as a secure investment strategy to enhance your retirement portfolio and safeguard your financial future.",
     "locale": "en_US"
+  },
+  "144": {
+    "url": "https://goatdealo.online/real-estate/affordable-housing-for-low-income-seniors-en-us-6/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Seniors 55 and Older",
+    "description": "Discover affordable housing options for low-income seniors aged 55 and older, featuring a range of apartments tailored to meet their needs.",
+    "locale": "en_US"
+  },
+  "145": {
+    "url": "https://goatdealo.online/education/choosing-online-schools-that-provide-computers-en-us-6/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=Apply+for+Online+School+High+School+that+Gives+You+a+Computer+Now&forceKeyB=Apply+for+Online+School+High+School+that+Give+You+a+Computer+Now&forceKeyC=Apply+for+Online+School+High+School+that+Gives+You+a+Computer&forceKeyD=Apply+for+Online+School+High+Schools+that+Give+You+a+Computer&forceKeyE=Apply+for+Online+School+High+School+that+Give+You+a+Computer&forceKeyF=Apply+for+Online+School+High+Schools+that+Gives+You+a+Computer&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Choosing Online Schools That Provide Computers for Students\"",
+    "description": "Explore the benefits of choosing online schools that provide computers, enhancing your educational experience and access to resources.",
+    "locale": "en_US"
+  },
+  "146": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-6/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Dental Implant Trials: Save Money and Enhance Your Smile\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile while saving you money, offering an innovative solution for dental care.",
+    "locale": "en_US"
+  },
+  "147": {
+    "url": "https://goatdealo.online/real-estate/where-can-seniors-find-affordable-housing-es-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Opciones de vivienda asequible para mayores de 55 a?os en EE. UU.",
+    "description": "Descubre opciones de vivienda asequible para personas mayores de 55 a?os en EE. UU., con informaci?n sobre apartamentos y recursos disponibles.",
+    "locale": "es_ES"
+  },
+  "148": {
+    "url": "https://goatdealo.online/health/juvederm-non-surgical-facelift-studies-explained/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+About+Trials+on+Facial+Aesthetic+Care&forceKeyA=juv?derm+clinic+near+me&forceKeyB=find+juv?derm+clinic+near+me+{Month}+2026&forceKeyC=find+juv?derm+clinics+near+me&forceKeyD=juv?derm+clinics+near+me&forceKeyE=find+juv?derm+clinic+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Studies on Juvederm for Non-Surgical Facelifts\"",
+    "description": "Explore comprehensive studies on Juv?derm and its effectiveness as a non-surgical facelift, highlighting advancements in facial aesthetic care.",
+    "locale": "en_US"
+  },
+  "149": {
+    "url": "https://goatdealo.online/finance/future-proof-your-retirement-the-rise-of-gold-ira-kits-in-smart-investing-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+gold+ira&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+[$0+Cost]&forceKeyC=Gold+Ira+Kit+[$0+Cost]&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Free+Gold+Ira+Kits+U2013+no+Cost&forceKeyF=Get+a+Gold+Ira+Kit&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Gold IRA Kits for a Secure Retirement Investment\"",
+    "description": "Explore the benefits of Gold IRA kits as a smart investment strategy to secure your retirement future, highlighting their rising popularity and advantages.",
+    "locale": "en_US"
+  },
+  "150": {
+    "url": "https://goatdealo.online/automotive/senior-car-insurance-what-you-need-to-know-en-us-5/?segment=rsoc.sc.goatdealoonline.001&headline=Senior+car+insurance+options&forceKeyA=State+Farm+Auto+Insurance+for+Seniors&forceKeyB=Senior+Car+Insurance+Near+Me&forceKeyC=Best+Car+Insurance+for+Seniors&forceKeyD=Cheapest+Car+Insurance+for+Seniors&forceKeyE=Cheapest+Auto+Insurance+Quote&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Essential Guide to Senior Car Insurance Options",
+    "description": "Explore essential insights on senior car insurance, covering options, affordability, and top providers tailored for older drivers.",
+    "locale": "en_US"
+  },
+  "151": {
+    "url": "https://goatdealo.online/health/does-medicare-cover-your-glucose-monitor-en-us-6/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+glucose+monitors&forceKeyA=Medicare+Glucose+Monitor+Coverage&forceKeyB=Diabetes+Monitors+Medicare+Coverage&forceKeyC=Blood+Sugar+Monitors+Covered+by+Medicare&forceKeyD=Continuous+Glucose+Monitors+Covered+by+Medicare&forceKeyE=Diabetes+Monitors+Covered+by+Medicare&forceKeyF=Diabetes+Monitors+with+Medicare+Coverage&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Medicare Coverage for Glucose Monitors: What You Need to Know",
+    "description": "Discover how Medicare covers glucose monitors, including options for diabetes management and continuous monitoring, to support your health needs.",
+    "locale": "en_US"
   }
 };
 
