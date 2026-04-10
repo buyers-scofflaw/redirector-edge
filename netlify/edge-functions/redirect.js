@@ -298,50 +298,50 @@ if (reqUrl0.pathname.startsWith("/api/")) {
   },
   "152": {
     "url": "https://etoptip.com/real-estate/affordable-housing-for-low-income-seniors-en-us-5/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "Affordable Housing Options for Low-Income Seniors Over 55",
+    "description": "Discover affordable housing options for low-income seniors aged 55 and older, featuring accessible apartments tailored to meet their needs.",
     "locale": "en_US"
   },
   "153": {
     "url": "https://etoptip.com/education/choosing-online-schools-that-provide-computers-en-us-6/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=Apply+for+Online+School+High+School+that+Gives+You+a+Computer+Now&forceKeyB=Apply+for+Online+School+High+School+that+Give+You+a+Computer+Now&forceKeyC=Apply+for+Online+School+High+School+that+Gives+You+a+Computer&forceKeyD=Apply+for+Online+School+High+Schools+that+Give+You+a+Computer&forceKeyE=Apply+for+Online+School+High+School+that+Give+You+a+Computer&forceKeyF=Apply+for+Online+School+High+Schools+that+Gives+You+a+Computer&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "\"Selecting Online Schools That Provide Laptops for Students\"",
+    "description": "Discover how to choose online schools that provide computers, ensuring students have the necessary tools for effective learning in a digital environment.",
     "locale": "en_US"
   },
   "154": {
     "url": "https://etoptip.com/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-6/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Costs\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile while potentially reducing costs, offering a valuable opportunity for oral health improvement.",
     "locale": "en_US"
   },
   "155": {
     "url": "https://etoptip.com/real-estate/where-can-seniors-find-affordable-housing-en-us-6/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "Affordable Housing Options for Seniors: A Comprehensive Guide",
+    "description": "Discover options for affordable housing tailored to seniors, including insights on 55 and older apartments across the U.S. for comfortable living.",
     "locale": "en_US"
   },
   "156": {
     "url": "https://etoptip.com/health/juvederm-non-surgical-facelift-studies-explained/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Trials+on+Facial+Aesthetic+Care&forceKeyA=juv?derm+clinic+near+me&forceKeyB=find+juv?derm+clinic+near+me+{Month}+2026&forceKeyC=find+juv?derm+clinics+near+me&forceKeyD=juv?derm+clinics+near+me&forceKeyE=find+juv?derm+clinic+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "Understanding Juv?derm: Insights from Non-Surgical Facelift Studies",
+    "description": "Explore the latest studies on Juvederm for non-surgical facelifts, highlighting its effectiveness and safety in enhancing facial aesthetics.",
     "locale": "en_US"
   },
   "157": {
     "url": "https://etoptip.com/finance/future-proof-your-retirement-the-rise-of-gold-ira-kits-in-smart-investing-en-us-2/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+gold+ira&forceKeyA=Get+Free+Gold+IRA+Kit+With+$10k&forceKeyB=Gold+Ira+Kits+[$0+Cost]&forceKeyC=Gold+Ira+Kit+[$0+Cost]&forceKeyD=Free+Gold+IRA+Kit+U2013+No+Cost&forceKeyE=Free+Gold+Ira+Kits+U2013+no+Cost&forceKeyF=Get+a+Gold+Ira+Kit&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "\"Understanding Gold IRA Kits for a Secure Retirement\"",
+    "description": "Discover the benefits of Gold IRA kits and how they can help secure your retirement in an evolving financial landscape. Learn about smart investing strategies.",
     "locale": "en_US"
   },
   "158": {
     "url": "https://etoptip.com/automotive/senior-car-insurance-what-you-need-to-know-en-us-5/?segment=rsoc.sc.etoptip.001&headline=Senior+car+insurance+options&forceKeyA=State+Farm+Auto+Insurance+for+Seniors&forceKeyB=Senior+Car+Insurance+Near+Me&forceKeyC=Best+Car+Insurance+for+Seniors&forceKeyD=Cheapest+Car+Insurance+for+Seniors&forceKeyE=Cheapest+Auto+Insurance+Quote&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "Understanding Senior Car Insurance: Key Considerations",
+    "description": "Discover essential information about senior car insurance, including coverage options, affordability, and factors to consider when choosing the best policy.",
     "locale": "en_US"
   },
   "159": {
     "url": "https://etoptip.com/health/does-medicare-cover-your-glucose-monitor-en-us-6/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+glucose+monitors&forceKeyA=Medicare+Glucose+Monitor+Coverage&forceKeyB=Diabetes+Monitors+Medicare+Coverage&forceKeyC=Blood+Sugar+Monitors+Covered+by+Medicare&forceKeyD=Continuous+Glucose+Monitors+Covered+by+Medicare&forceKeyE=Diabetes+Monitors+Covered+by+Medicare&forceKeyF=Diabetes+Monitors+with+Medicare+Coverage&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
-    "title": "",
-    "description": "",
+    "title": "Medicare Coverage for Glucose Monitors: What You Need to Know",
+    "description": "Discover whether Medicare covers glucose monitors, including continuous and blood sugar monitoring devices, and learn about eligibility and coverage options.",
     "locale": "en_US"
   }
 };
