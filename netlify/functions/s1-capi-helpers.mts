@@ -239,7 +239,23 @@ interface CapiEvent {
     client_ip_address?: string;
     client_user_agent?: string;
     external_id?: string;
+    country?: string;
   };
+  custom_data?: {
+    content_category?: string;
+    search_string?: string;
+  };
+  data_processing_options?: string[];
+}
+
+// Country hash cache — sha256 is async and we don't want to recompute per fire.
+// Populated lazily on the first call to getHashedCountry().
+// Per Meta spec: country codes are lowercase ISO 3166-1 alpha-2 before hashing.
+let _countryHashCache: string | null = null;
+async function getHashedUsCountry(): Promise<string> {
+  if (_countryHashCache) return _countryHashCache;
+  _countryHashCache = await sha256("us");
+  return _countryHashCache;
 }
 
 async function fireCapiEvent(
@@ -361,7 +377,28 @@ export async function handleInstantEvent(
           ? Math.max(now, match.event_time_epoch + 1)
           : now;
 
-        const hashedExternalId = await sha256(cfg.clickId);
+        // external_id: use sha256(fbp) so repeat visitors from the same browser
+        // get a stable identifier Meta can cross-reference across sessions.
+        // Fall back to sha256(click_id) only if fbp is somehow missing — still
+        // better than omitting external_id entirely.
+        const hashedExternalId = match.fbp
+          ? await sha256(match.fbp)
+          : await sha256(cfg.clickId);
+
+        const hashedCountry = await getHashedUsCountry();
+
+        // Event-specific custom_data:
+        //   Lead   → content_category (ad vertical: insurance/loans/solar/etc.)
+        //   Search → search_string (the actual search query the user typed)
+        const category = cfg.rawParams.cat?.trim();
+        const searchString = cfg.rawParams.q?.trim();
+        const customData: { content_category?: string; search_string?: string } = {};
+        if (cfg.eventName === "Lead" && category) {
+          customData.content_category = category;
+        }
+        if (cfg.eventName === "Search" && searchString) {
+          customData.search_string = searchString;
+        }
 
         const event: CapiEvent = {
           event_name: cfg.eventName,
@@ -375,7 +412,12 @@ export async function handleInstantEvent(
             ...(match.client_ip_address && { client_ip_address: match.client_ip_address }),
             ...(match.client_user_agent && { client_user_agent: match.client_user_agent }),
             external_id: hashedExternalId,
+            country: hashedCountry,
           },
+          // Explicit empty LDU array tells Meta "no Limited Data Use restrictions
+          // apply" — avoids ambiguity with CCPA-sensitive traffic.
+          data_processing_options: [],
+          ...(Object.keys(customData).length > 0 && { custom_data: customData }),
         };
 
         // 3. Fire to Meta
