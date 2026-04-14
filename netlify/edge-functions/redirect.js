@@ -651,23 +651,34 @@ export default async (request, context) => {
   // of the postback. Purchase (revenue) still uses the 15-min batch cron.
   const originBase = `https://${url.hostname}`;
 
+  // content_category for Lead CAPI events. Pull from the redirectMap row so
+  // each campaign's vertical (insurance/loans/solar/etc.) is stamped on the
+  // Lead fire. Falls back to the campaign id if the row has no category.
+  const leadCategory = encodeURIComponent(
+    (base && base.category) ? base.category : (id || "unknown")
+  );
+
   // impression_track_url: fires when the widget loads (Meta "PageView")
   dest.searchParams.set(
     "impression_track_url",
     `${originBase}/api/s1-impression?click_id=${uid}`
   );
 
-  // search_track_url: fires when the user searches (Meta "Search")
+  // search_track_url: fires when the user searches (Meta "Search").
+  // &q=OMKEYWORD is an S1 macro ? S1 replaces OMKEYWORD with the actual
+  // search query at fire time, and our receiver forwards it to Meta as
+  // custom_data.search_string.
   dest.searchParams.set(
     "search_track_url",
-    `${originBase}/api/s1-search?click_id=${uid}`
+    `${originBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
   );
 
   // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
   // This is the instant-fire event campaigns will optimize on.
+  // &cat=... carries the ad vertical through to custom_data.content_category.
   dest.searchParams.set(
     "click_track_url",
-    `${originBase}/api/s1-lead?click_id=${uid}`
+    `${originBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
   );
 
   // rev_click_track_url: unchanged ? still routes to the batch-fire Purchase pipeline.
