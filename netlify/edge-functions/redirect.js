@@ -10,6 +10,14 @@ export default async (request, context) => {
     return context.next();
   }
 
+  // 0b) Bypass redirects for API endpoints (S1 postback receivers live here).
+  // Without this, a postback ping like /api/s1-impression?click_id=XXX would
+  // be treated as a redirect request, fail the redirectMap lookup, and 302
+  // the request to facebook.com before the receiver ever runs.
+  if (reqUrl0.pathname.startsWith("/api/")) {
+    return context.next();
+  }
+
   // ===== V2 redirect with logging + click capture =====
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
