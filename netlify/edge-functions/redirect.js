@@ -5,10 +5,6 @@ export default async (request, context) => {
     return context.next();
   }
 
-if (reqUrl0.pathname.startsWith("/api/")) {
-    return context.next();
-}
-
   // 0a) Bypass redirects for static assets (images, CSS, etc.)
   if (reqUrl0.pathname.startsWith("/assets/")) {
     return context.next();
@@ -503,10 +499,9 @@ if (reqUrl0.pathname.startsWith("/api/")) {
   const FALLBACK_URL = "https://www.facebook.com";
 
   // Post to MULTIPLE collectors (existing Apps Script + Cloud Run)
-const COLLECTORS = [
-  "https://click-collector-583868590168.us-central1.run.app/collect",
-  "https://www.everything-today.com/.netlify/functions/log-click"
-];
+  const COLLECTORS = [
+    "https://click-collector-583868590168.us-central1.run.app/collect"
+  ];
 
   // 6) Helpers
   function isFbIgInApp(uaStr) {
@@ -556,7 +551,7 @@ const COLLECTORS = [
   }
 
   // Fire-and-forget POSTs (we don?t wait for them)
-function postToCollectors(payload, context) {
+  function postToCollectors(payload, context) {
     for (const endpoint of COLLECTORS) {
       const controller = new AbortController();
       const kill = setTimeout(() => controller.abort(), 1500);
@@ -631,14 +626,36 @@ function postToCollectors(payload, context) {
   dest.searchParams.set("s1padid", uid);
   if (!s1ok) dest.searchParams.delete("s1pcid");
 
-// ?? S1 Postback URL Injection ??????????????????????????????
-  // click_track_url: fires immediately on monetization (no revenue)
-  const postbackBase = `https://${url.hostname}/api/s1-postback`;
-  const clickTrackUrl = `${postbackBase}?click_id=${uid}&type=click`;
-  dest.searchParams.set("click_track_url", clickTrackUrl);
-  // rev_click_track_url: fires ~6hrs later with estimated revenue
-  const revClickTrackUrl = `${postbackBase}?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`;
-  dest.searchParams.set("rev_click_track_url", revClickTrackUrl);
+  // ?? S1 Postback URL Injection ??????????????????????????????
+  // Upper-funnel events fire instantly via dedicated endpoints;
+  // each receiver fires the corresponding Meta CAPI event within ~300ms
+  // of the postback. Purchase (revenue) still uses the 15-min batch cron.
+  const originBase = `https://${url.hostname}`;
+
+  // impression_track_url: fires when the widget loads (Meta "PageView")
+  dest.searchParams.set(
+    "impression_track_url",
+    `${originBase}/api/s1-impression?click_id=${uid}`
+  );
+
+  // search_track_url: fires when the user searches (Meta "Search")
+  dest.searchParams.set(
+    "search_track_url",
+    `${originBase}/api/s1-search?click_id=${uid}`
+  );
+
+  // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
+  // This is the instant-fire event campaigns will optimize on.
+  dest.searchParams.set(
+    "click_track_url",
+    `${originBase}/api/s1-lead?click_id=${uid}`
+  );
+
+  // rev_click_track_url: unchanged ? still routes to the batch-fire Purchase pipeline.
+  dest.searchParams.set(
+    "rev_click_track_url",
+    `${originBase}/api/s1-postback?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`
+  );
   // ?? End S1 Postback URL Injection ??????????????????????????
 
   const rawCookie = request.headers.get("cookie") || "";
@@ -666,7 +683,7 @@ function postToCollectors(payload, context) {
   // ? ONLY CHANGE vs source-of-truth: event_source_url value
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
 
-// 10b) Send click data to collector(s) for BigQuery ingestion
+  // 10b) Send click data to collector(s) for BigQuery ingestion
   try {
     postToCollectors({
       uid,
