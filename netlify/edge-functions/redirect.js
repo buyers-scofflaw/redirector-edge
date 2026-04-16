@@ -347,6 +347,66 @@ export default async (request, context) => {
     "title": "Medicare Coverage for Glucose Monitors: What You Need to Know",
     "description": "Discover whether Medicare covers glucose monitors, including continuous and blood sugar monitoring devices, and learn about eligibility and coverage options.",
     "locale": "en_US"
+  },
+  "160": {
+    "url": "https://goatdealo.online/education/choosing-online-schools-that-provide-computers-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=Apply+for+Online+School+High+School+that+Gives+You+a+Computer+Now&forceKeyB=Apply+for+Online+School+High+School+that+Give+You+a+Computer+Now&forceKeyC=Apply+for+Online+School+High+School+that+Gives+You+a+Computer&forceKeyD=Apply+for+Online+School+High+Schools+that+Give+You+a+Computer&forceKeyE=Apply+for+Online+School+High+School+that+Give+You+a+Computer&forceKeyF=Apply+for+Online+School+High+Schools+that+Gives+You+a+Computer&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Choosing Online Schools That Provide Computers for Students\"",
+    "description": "Explore how to choose online schools that provide computers, ensuring students have the necessary tools for a successful educational experience.",
+    "locale": "en_US"
+  },
+  "161": {
+    "url": "https://goatdealo.online/real-estate/affordable-housing-for-low-income-seniors-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Seniors Aged 55 and Older",
+    "description": "Discover affordable housing options tailored for low-income seniors aged 55 and older, featuring accessible apartments and community resources.",
+    "locale": "en_US"
+  },
+  "162": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+substance+abuse+treatment+trial+near+me&forceKeyB=addiction+treatment+trials&forceKeyC=implant+specialists+near+me&forceKeyD=$1500+for+substance+abuse+treatment+trials+near+me&forceKeyE=paid+high+blood+pressure+trials&forceKeyF=paid+weight+loss+trials+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Costs\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile while potentially reducing costs associated with dental care.",
+    "locale": "en_US"
+  },
+  "163": {
+    "url": "https://goatdealo.online/health/juvederm-non-surgical-facelift-studies-explained/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+About+Trials+on+Facial+Aesthetic+Care&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinics+near+me&forceKeyC=find+juv?derm+clinic+near+me&forceKeyD=juv?derm+clinic+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=find+juv?derm+clinics+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Juv?derm: Insights from Non-Surgical Facelift Studies",
+    "description": "Explore comprehensive studies on Juv?derm and its effectiveness in non-surgical facelifts, highlighting advances in facial aesthetic care.",
+    "locale": "en_US"
+  },
+  "164": {
+    "url": "https://goatdealo.online/health/key-factors-in-joining-neuropathy-trials-en-us-5/?segment=rsoc.sc.goatdealoonline.001&headline=Neuropathy+Clinical+Trials&forceKeyA=chronic+low+back+pain+and+stress&forceKeyB=diabetes+neuropathy+trial&forceKeyC=best+chronic+low+back+pain+and+stress&forceKeyD=diabetes+neuropathy+trials&forceKeyE=best+diabetes+neuropathy+trials&forceKeyF=best+chronic+low+back+pain+and+stress+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Key Considerations for Participating in Neuropathy Trials",
+    "description": "Explore key factors to consider when joining neuropathy clinical trials, focusing on chronic low back pain and diabetes-related conditions.",
+    "locale": "en_US"
+  },
+  "165": {
+    "url": "https://goatdealo.online/health/does-medicare-cover-your-glucose-monitor-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+glucose+monitors&forceKeyA=Medicare+Glucose+Monitor+Coverage&forceKeyB=Diabetes+Monitors+Medicare+Coverage&forceKeyC=Blood+Sugar+Monitors+Covered+by+Medicare&forceKeyD=Continuous+Glucose+Monitors+Covered+by+Medicare&forceKeyE=Diabetes+Monitors+Covered+by+Medicare&forceKeyF=Diabetes+Monitors+with+Medicare+Coverage&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Medicare Coverage for Glucose Monitors: What You Need to Know",
+    "description": "Discover if Medicare covers glucose monitors, including continuous and diabetes monitors, to help manage your blood sugar effectively.",
+    "locale": "en_US"
+  },
+  "166": {
+    "url": "https://goatdealo.online/health/how-is-dental-restoration-evolving-today-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+About+Dental+Implant+Clinical+Research&forceKeyA=$1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=$1950+for+dental+implants+participation+[search+now]&forceKeyE=get+$1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+free+dental+implants&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "The Evolution of Dental Restoration Techniques Today",
+    "description": "Explore the latest advancements in dental restoration, focusing on innovative techniques and research in dental implants transforming patient care today.",
+    "locale": "en_US"
+  },
+  "167": {
+    "url": "https://goatdealo.online/health/botox-pricing-explained-what-you-need-to-know-before-you-pay/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Botox Pricing: Key Points to Consider Before Paying",
+    "description": "Discover essential insights on Botox pricing, including factors that influence costs and what to consider before your treatment.",
+    "locale": "en_US"
+  },
+  "168": {
+    "url": "https://goatdealo.online/health/innovative-tinnitus-trials-in-the-u-s-en-us-3/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+more+about+tinnitus+trials&forceKeyA=$6000+in+{State}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyB=$6000+in+{City}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyC=$1500+in+{State}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyD=$1500+in+{City}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyE=tinnitus+treatment+centers+near+me+{State}&forceKeyF=tinnitus+treatment+centers+near+me+{City}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Innovative Tinnitus Trials Advancing Treatment Options in the U.S.",
+    "description": "Discover the latest innovative tinnitus trials in the U.S., exploring potential treatment options and financial support for participants.",
+    "locale": "en_US"
+  },
+  "169": {
+    "url": "https://goatdealo.online/education/what-do-practical-nursing-programs-offer-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+About+Fast-Track+LPN+Programs&forceKeyA=become+an+lpn+in+3+weeks+[state+approved]&forceKeyB=government+lpn+program&forceKeyC=3+weeks+lpn+online+course+with+certification+(government+funded)&forceKeyD=online+lpn+programs+6-12+months&forceKeyE=online+lpn+programs&forceKeyF=online+lpn+programs&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "What Practical Nursing Programs Provide for Future LPNs",
+    "description": "Discover the offerings of practical nursing programs, including fast-track LPN options and online courses, designed to help you become a licensed practical nurse efficiently.",
+    "locale": "en_US"
   }
 };
 
