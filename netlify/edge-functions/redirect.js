@@ -407,6 +407,66 @@ export default async (request, context) => {
     "title": "What Practical Nursing Programs Provide for Future LPNs",
     "description": "Discover the offerings of practical nursing programs, including fast-track LPN options and online courses, designed to help you become a licensed practical nurse efficiently.",
     "locale": "en_US"
+  },
+  "170": {
+    "url": "https://etoptip.com/education/choosing-online-schools-that-provide-computers-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=Apply+for+Online+School+High+School+that+Gives+You+a+Computer+Now&forceKeyB=Apply+for+Online+School+High+School+that+Give+You+a+Computer+Now&forceKeyC=Apply+for+Online+School+High+School+that+Gives+You+a+Computer&forceKeyD=Apply+for+Online+School+High+Schools+that+Give+You+a+Computer&forceKeyE=Apply+for+Online+School+High+School+that+Give+You+a+Computer&forceKeyF=Apply+for+Online+School+High+Schools+that+Gives+You+a+Computer&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Choosing Online Schools That Include Computers for Students",
+    "description": "Explore the key factors in selecting online schools that provide computers, ensuring students have the necessary tools for effective learning.",
+    "locale": "en_US"
+  },
+  "171": {
+    "url": "https://etoptip.com/real-estate/affordable-housing-for-low-income-seniors-en-us-6/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Low-Income Seniors",
+    "description": "Discover affordable housing options for low-income seniors, focusing on 55 and older apartments that cater to their unique needs and lifestyle.",
+    "locale": "en_US"
+  },
+  "172": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+substance+abuse+treatment+trial+near+me&forceKeyB=addiction+treatment+trials&forceKeyC=implant+specialists+near+me&forceKeyD=$1500+for+substance+abuse+treatment+trials+near+me&forceKeyE=paid+high+blood+pressure+trials&forceKeyF=paid+weight+loss+trials+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Costs\"",
+    "description": "Discover how dental implant trials can reduce costs and enhance your smile while providing insight into effective treatment options.",
+    "locale": "en_US"
+  },
+  "173": {
+    "url": "https://etoptip.com/health/juvederm-non-surgical-facelift-studies-explained/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Trials+on+Facial+Aesthetic+Care&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinics+near+me&forceKeyC=find+juv?derm+clinic+near+me&forceKeyD=juv?derm+clinic+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=find+juv?derm+clinics+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Juv?derm's Role in Non-Surgical Facelifts",
+    "description": "Explore the latest studies on Juv?derm non-surgical facelifts, highlighting their effectiveness and safety in enhancing facial aesthetics.",
+    "locale": "en_US"
+  },
+  "174": {
+    "url": "https://etoptip.com/health/key-factors-in-joining-neuropathy-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=Neuropathy+Clinical+Trials&forceKeyA=chronic+low+back+pain+and+stress&forceKeyB=diabetes+neuropathy+trial&forceKeyC=best+chronic+low+back+pain+and+stress&forceKeyD=diabetes+neuropathy+trials&forceKeyE=best+diabetes+neuropathy+trials&forceKeyF=best+chronic+low+back+pain+and+stress+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Key Considerations for Participating in Neuropathy Trials",
+    "description": "Explore the key factors involved in joining neuropathy clinical trials, focusing on conditions like chronic low back pain and diabetes neuropathy.",
+    "locale": "en_US"
+  },
+  "175": {
+    "url": "https://etoptip.com/health/does-medicare-cover-your-glucose-monitor-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+glucose+monitors&forceKeyA=Medicare+Glucose+Monitor+Coverage&forceKeyB=Diabetes+Monitors+Medicare+Coverage&forceKeyC=Blood+Sugar+Monitors+Covered+by+Medicare&forceKeyD=Continuous+Glucose+Monitors+Covered+by+Medicare&forceKeyE=Diabetes+Monitors+Covered+by+Medicare&forceKeyF=Diabetes+Monitors+with+Medicare+Coverage&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Does Medicare Cover Glucose Monitors for Diabetes Management?",
+    "description": "Discover whether Medicare covers glucose monitors, including continuous and diabetes monitors, to help manage your health effectively.",
+    "locale": "en_US"
+  },
+  "176": {
+    "url": "https://etoptip.com/health/how-is-dental-restoration-evolving-today-en-us-2/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Dental+Implant+Clinical+Research&forceKeyA=$1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=$1950+for+dental+implants+participation+[search+now]&forceKeyE=get+$1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+free+dental+implants&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "The Evolution of Dental Restoration: Trends and Innovations Today",
+    "description": "Discover the latest advancements in dental restoration, focusing on innovative techniques and research in dental implants and their evolving clinical applications.",
+    "locale": "en_US"
+  },
+  "177": {
+    "url": "https://etoptip.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Botox Pricing: Key Factors to Consider Before Paying",
+    "description": "Discover essential insights on Botox pricing, including factors that influence costs and what to consider before making a financial commitment.",
+    "locale": "en_US"
+  },
+  "178": {
+    "url": "https://etoptip.com/health/innovative-tinnitus-trials-in-the-u-s-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Learn+more+about+tinnitus+trials&forceKeyA=$6000+in+{State}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyB=$6000+in+{City}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyC=$1500+in+{State}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyD=$1500+in+{City}+for+Tinnitus+Treatment+Participation+Near+My+Zipcode&forceKeyE=tinnitus+treatment+centers+near+me+{State}&forceKeyF=tinnitus+treatment+centers+near+me+{City}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Innovative Tinnitus Trials in the U.S. Offer New Hope for Patients",
+    "description": "Explore the latest innovative tinnitus trials in the U.S., offering potential new treatments and insights into managing this challenging condition.",
+    "locale": "en_US"
+  },
+  "179": {
+    "url": "https://etoptip.com/education/what-do-practical-nursing-programs-offer-en-us/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Fast-Track+LPN+Programs&forceKeyA=become+an+lpn+in+3+weeks+[state+approved]&forceKeyB=government+lpn+program&forceKeyC=3+weeks+lpn+online+course+with+certification+(government+funded)&forceKeyD=online+lpn+programs+6-12+months&forceKeyE=online+lpn+programs&forceKeyF=online+lpn+programs&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Exploring the Benefits of Practical Nursing Programs",
+    "description": "Explore the offerings of practical nursing programs, including fast-track LPN options, online courses, and government-funded certifications.",
+    "locale": "en_US"
   }
 };
 
