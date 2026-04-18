@@ -467,6 +467,66 @@ export default async (request, context) => {
     "title": "Exploring the Benefits of Practical Nursing Programs",
     "description": "Explore the offerings of practical nursing programs, including fast-track LPN options, online courses, and government-funded certifications.",
     "locale": "en_US"
+  },
+  "180": {
+    "url": "https://goatdealo.online/education/which-online-schools-offer-laptops-en-us-7/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyB=apply+for+online+schools+that+give+you+$+and+laptops+today+{Month}+2026&forceKeyC=best+apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Top Online Schools That Provide Free Laptops for Students\"",
+    "description": "Discover online schools that provide laptops to students, enhancing their learning experience with essential technology for education.",
+    "locale": "en_US"
+  },
+  "181": {
+    "url": "https://goatdealo.online/real-estate/where-can-seniors-find-affordable-housing-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Seniors in the U.S.",
+    "description": "Discover options for affordable housing specifically tailored for seniors, including 55 and older apartments, in your area.",
+    "locale": "en_US"
+  },
+  "182": {
+    "url": "https://goatdealo.online/health/how-can-dental-implant-trials-save-you-money-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Help Save on Costs\"",
+    "description": "Discover how participating in dental implant trials can provide significant savings and potentially free dental care options. Explore the benefits now.",
+    "locale": "en_US"
+  },
+  "183": {
+    "url": "https://goatdealo.online/real-estate/two-bedroom-senior-living-modern-comfort-for-your-golden-years-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=Two-Bedroom+Senior+Living%3A+Modern+Comfort+for+Your+Golden+Years&forceKeyA={State}:+Stunning+New+2-bed+Senior+Apartments:+Take+a+Peek+Inside&forceKeyB=Two+Bedroom+Senior+Houses&forceKeyC={State}:+Two+Bedroom+Senior+Houses&forceKeyD=Senior+Living+2-bedroom+$150/month&forceKeyE=2+Bedroom+Senior+Homes&forceKeyF=Modern+2-bed+Senior+Housing&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Modern Two-Bedroom Senior Living: Comfort for Your Golden Years",
+    "description": "Explore modern two-bedroom senior living options designed for comfort and convenience in your golden years, featuring stunning apartments and houses.",
+    "locale": "en_US"
+  },
+  "184": {
+    "url": "https://goatdealo.online/health/how-veterinary-services-aid-animal-welfare-es-us/?segment=rsoc.sc.goatdealoonline.001&headline=Learn+About+Community+Veterinary+Clinics&forceKeyA=free+vet+care+near+me&forceKeyB=low+cost+spay+and+neuter+clinics&forceKeyC=emergency+vet+financial+assistance&forceKeyD=free+vaccinations+for+pets&forceKeyE=affordable+pet+dental+care&forceKeyF=nonprofit+animal+hospitals&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Servicios veterinarios y su impacto en el bienestar animal",
+    "description": "Descubre c?mo los servicios veterinarios contribuyen al bienestar animal, abordando cl?nicas comunitarias, cuidados asequibles y asistencia financiera en emergencias.",
+    "locale": "es_ES"
+  },
+  "185": {
+    "url": "https://goatdealo.online/health/what-are-the-benefits-of-paid-neuropathy-trials-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+neuropathy+clinical+trials&forceKeyA=neuropathy+compensation+in+{State}&forceKeyB=diabetes+study+testing+new+treatments+$26700+in+{City}&forceKeyC=$1500+for+substance+abuse+treatment+trials+near+me&forceKeyD=best+diabetes+study+testing+new+treatments+$26700+{City}&forceKeyE=diabetic+neuropathy+treatment+trials+near+me&forceKeyF=best+$1500+for+tinnitus+participation+near+my+zipcode&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Benefits of Participating in Paid Neuropathy Clinical Trials",
+    "description": "Discover the benefits of participating in paid neuropathy trials, including potential compensation and access to new treatments for diabetic neuropathy.",
+    "locale": "en_US"
+  },
+  "186": {
+    "url": "https://goatdealo.online/health/why-join-dental-implant-trials-es-us/?segment=rsoc.sc.goatdealoonline.001&headline=Dental%20Implants%20Participation&forceKeyA=Get+$1950+for+Dental+Implants+Participation+Near+Me&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=Get+$1950+for+Dental+Implant+Participation+Near+Me&forceKeyD=Participate+in+Dental+Implants+Trial+Sign+Up+Now+{Month}+2026&forceKeyE=Participate+in+Dental+Implants+Trial+Sign+Up+Now&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Beneficios de participar en ensayos de implantes dentales",
+    "description": "Descubre los beneficios de participar en ensayos cl?nicos de implantes dentales y c?mo pueden mejorar tu salud dental y bienestar.",
+    "locale": "es_ES"
+  },
+  "187": {
+    "url": "https://goatdealo.online/health/affordable-dental-implant-solutions-explained-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Dental Implant Solutions: What You Need to Know",
+    "description": "Explore affordable dental implant solutions and learn about participation options in clinical trials, including potential financial assistance for treatments.",
+    "locale": "en_US"
+  },
+  "188": {
+    "url": "https://goatdealo.online/health/how-to-find-affordable-botox-without-compromising-safety/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Finding Affordable Botox: Balancing Cost and Safety",
+    "description": "Discover tips for finding affordable Botox options while ensuring safety, without sacrificing quality or care. Explore pricing insights and local providers.",
+    "locale": "en_US"
+  },
+  "189": {
+    "url": "https://goatdealo.online/health/finding-cost-effective-dental-implants-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Cost-Effective Options for Dental Implants in the US",
+    "description": "Discover affordable options for dental implants and learn about trial participation opportunities that can help reduce costs significantly.",
+    "locale": "en_US"
   }
 };
 
