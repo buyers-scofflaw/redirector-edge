@@ -527,6 +527,66 @@ export default async (request, context) => {
     "title": "Cost-Effective Options for Dental Implants in the US",
     "description": "Discover affordable options for dental implants and learn about trial participation opportunities that can help reduce costs significantly.",
     "locale": "en_US"
+  },
+  "190": {
+    "url": "https://etoptip.com/education/which-online-schools-offer-laptops-en-us-7/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyB=apply+for+online+schools+that+give+you+$+and+laptops+today+{Month}+2026&forceKeyC=best+apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{Month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Online Schools That Provide Laptops for Students\"",
+    "description": "Explore online schools that provide laptops to students, offering valuable insights into educational opportunities and resources available for remote learning.",
+    "locale": "en_US"
+  },
+  "191": {
+    "url": "https://etoptip.com/real-estate/where-can-seniors-find-affordable-housing-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Seniors Over 55",
+    "description": "Discover options for affordable housing tailored for seniors, focusing on 55 and older apartments across the U.S. Find suitable living arrangements for your needs.",
+    "locale": "en_US"
+  },
+  "192": {
+    "url": "https://etoptip.com/health/how-can-dental-implant-trials-save-you-money-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Help Reduce Your Costs\"",
+    "description": "Discover how participating in dental implant trials can help reduce costs and provide access to advanced dental care without the financial burden.",
+    "locale": "en_US"
+  },
+  "193": {
+    "url": "https://etoptip.com/real-estate/two-bedroom-senior-living-modern-comfort-for-your-golden-years-en-us-2/?segment=rsoc.sc.etoptip.001&headline=Two-Bedroom+Senior+Living%3A+Modern+Comfort+for+Your+Golden+Years&forceKeyA={State}:+Stunning+New+2-bed+Senior+Apartments:+Take+a+Peek+Inside&forceKeyB=Two+Bedroom+Senior+Houses&forceKeyC={State}:+Two+Bedroom+Senior+Houses&forceKeyD=Senior+Living+2-bedroom+$150/month&forceKeyE=2+Bedroom+Senior+Homes&forceKeyF=Modern+2-bed+Senior+Housing&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Two-Bedroom Options in Modern Senior Living\"",
+    "description": "Discover modern two-bedroom senior living options designed for comfort and convenience, perfect for enjoying your golden years in style.",
+    "locale": "en_US"
+  },
+  "194": {
+    "url": "https://etoptip.com/health/how-do-veterinary-services-aid-animal-welfare-en-us/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Community+Veterinary+Clinics&forceKeyA=free+vet+care+near+me&forceKeyB=low+cost+spay+and+neuter+clinics&forceKeyC=emergency+vet+financial+assistance&forceKeyD=free+vaccinations+for+pets&forceKeyE=affordable+pet+dental+care&forceKeyF=nonprofit+animal+hospitals&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "The Role of Veterinary Services in Promoting Animal Welfare",
+    "description": "Discover how veterinary services contribute to animal welfare, focusing on community clinics, affordable care options, and essential health programs for pets.",
+    "locale": "en_US"
+  },
+  "195": {
+    "url": "https://etoptip.com/health/what-are-the-benefits-of-paid-neuropathy-trials-en-us-3/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+neuropathy+clinical+trials&forceKeyA=neuropathy+compensation+in+{State}&forceKeyB=diabetes+study+testing+new+treatments+$26700+in+{City}&forceKeyC=$1500+for+substance+abuse+treatment+trials+near+me&forceKeyD=best+diabetes+study+testing+new+treatments+$26700+{City}&forceKeyE=diabetic+neuropathy+treatment+trials+near+me&forceKeyF=best+$1500+for+tinnitus+participation+near+my+zipcode&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Benefits of Participating in Paid Neuropathy Clinical Trials",
+    "description": "Discover the benefits of participating in paid neuropathy clinical trials, including potential compensation and access to new treatment options for managing diabetes and related conditions.",
+    "locale": "en_US"
+  },
+  "196": {
+    "url": "https://etoptip.com/health/why-join-dental-implant-trials-en-us-3/?segment=rsoc.sc.etoptip.001&headline=Dental%20Implants%20Participation&forceKeyA=Get+$1950+for+Dental+Implants+Participation+Near+Me&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=Get+$1950+for+Dental+Implant+Participation+Near+Me&forceKeyD=Participate+in+Dental+Implants+Trial+Sign+Up+Now+{Month}+2026&forceKeyE=Participate+in+Dental+Implants+Trial+Sign+Up+Now&forceKeyF=&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Benefits of Joining Dental Implant Trials Explained",
+    "description": "Discover the benefits of participating in dental implant trials, including potential financial compensation and access to advanced dental care solutions.",
+    "locale": "en_US"
+  },
+  "197": {
+    "url": "https://etoptip.com/health/affordable-dental-implant-solutions-explained-en-us-2/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Dental Implant Solutions: What You Need to Know",
+    "description": "Explore affordable dental implant solutions and learn about cost-effective options for enhancing your oral health. Discover various trial participation opportunities.",
+    "locale": "en_US"
+  },
+  "198": {
+    "url": "https://etoptip.com/health/how-to-find-affordable-botox-without-compromising-safety/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+botox+deals+and+pricing&forceKeyA=Get+$149+Botox+Doctor+Near+Me+Full+Botox&forceKeyB=Best+Botox+Injector+Near+Me&forceKeyC=$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyD=See+$119+Botox+Doctor+Near+Me+Full+Botox&forceKeyE=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&forceKeyF=Get+$119+Botox+Doctor+Near+{City}+Full+Botox&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Finding Affordable Botox: Tips for Safety and Savings",
+    "description": "Discover how to locate affordable Botox options while ensuring safety and quality in your treatment choices.",
+    "locale": "en_US"
+  },
+  "199": {
+    "url": "https://etoptip.com/health/finding-cost-effective-dental-implants-en-us-2/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+Dental+Implants+Participation&forceKeyB=Participate+in+Dental+Implants+Trial+[sign+Up+Now]&forceKeyC=No-fee+Dental+Implants&forceKeyD=Get+$1500+for+Dental+Implants+Participation&forceKeyE=$1950+for+Dental+Implants+Participation+[search+Now]&forceKeyF=Participate+in+Dental+Implants+Trial+Sign+Up+Now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Cost-Effective Options for Dental Implants in the U.S.",
+    "description": "Discover insights into cost-effective dental implants, including participation opportunities and potential financial benefits for those seeking dental solutions.",
+    "locale": "en_US"
   }
 };
 
