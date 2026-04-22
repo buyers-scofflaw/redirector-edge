@@ -123,6 +123,7 @@ interface ClickMatchRow {
   client_user_agent: string | null;
   event_source_url: string | null;
   event_time_epoch: number | null;
+  placement: string | null;
 }
 
 async function lookupClickMatchParams(
@@ -134,6 +135,9 @@ async function lookupClickMatchParams(
   // click_events is partitioned/clustered on uid + event_time.
   // 7-day lookback is generous; upper-funnel events almost always
   // fire within minutes-to-hours of the click.
+  // placement column was added as part of the AN filtering work.
+  // COALESCE falls back to parsing s1pplacement from the dest URL
+  // for older rows that predate the schema change.
   const query = `
     SELECT
       fbc,
@@ -141,7 +145,11 @@ async function lookupClickMatchParams(
       client_ip AS client_ip_address,
       ua AS client_user_agent,
       event_source_url,
-      UNIX_SECONDS(event_time) AS event_time_epoch
+      UNIX_SECONDS(event_time) AS event_time_epoch,
+      COALESCE(
+        placement,
+        REGEXP_EXTRACT(dest, r's1pplacement=([^&]+)')
+      ) AS placement
     FROM \`${BQ_PROJECT}.rsoc_clicks.click_events\`
     WHERE uid = @click_id
       AND event_time >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
@@ -193,6 +201,7 @@ async function lookupClickMatchParams(
     client_user_agent: obj.client_user_agent,
     event_source_url: obj.event_source_url,
     event_time_epoch: obj.event_time_epoch ? parseInt(obj.event_time_epoch, 10) : null,
+    placement: obj.placement || null,
   };
 }
 
@@ -363,6 +372,28 @@ export async function handleInstantEvent(
             uid: cfg.clickId,
             event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
             status: "skipped_no_match",
+            raw_params: JSON.stringify(cfg.rawParams),
+          });
+          return;
+        }
+
+        // 1b. Audience Network filter (safety net)
+        // The edge function already strips upper-funnel postback URLs for
+        // AN traffic, so this should rarely fire. But if a postback slips
+        // through (macro didn't resolve, cached redirect, etc.), block it
+        // here. We still allow Purchase events via s1-postback.mts — this
+        // filter only applies to upper-funnel receivers.
+        if (match.placement && match.placement.toLowerCase().startsWith("an")) {
+          console.warn(
+            `${logPrefix}: ${cfg.clickId} is Audience Network (${match.placement}) — skipping CAPI fire`
+          );
+          await insertLogRow(bqToken, {
+            sent_at: Date.now() / 1000,
+            event_name: cfg.eventName,
+            uid: cfg.clickId,
+            event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
+            status: "skipped_an_placement",
+            placement: match.placement,
             raw_params: JSON.stringify(cfg.rawParams),
           });
           return;
