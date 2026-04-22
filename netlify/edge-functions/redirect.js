@@ -883,7 +883,22 @@ export default async (request, context) => {
   // "unknown" so S1 still has a categorizable value instead of a blank.
   const siteSourceName = url.searchParams.get("site_source_name") || "unknown";
   const placement = url.searchParams.get("placement") || "unknown";
-  dest.searchParams.set("s1pplacement", `${siteSourceName}-${placement}`);
+  const s1pplacement = `${siteSourceName}-${placement}`;
+  dest.searchParams.set("s1pplacement", s1pplacement);
+
+  // ?? Audience Network detection ?????????????????????????????
+  // Meta's {{site_source_name}} macro returns "an" for Audience Network
+  // placements (rewarded video, interstitials in third-party apps, etc.).
+  // AN traffic converts poorly on RSOC ? users tap through game rewards
+  // with zero search intent. We STILL redirect AN users to the article
+  // (they can still generate revenue) but we do NOT inject upper-funnel
+  // postback URLs. Without those URLs, S1 never pings our CAPI receivers,
+  // so Meta never sees PageView/Search/Lead events from AN traffic.
+  // This starves Meta's algorithm of positive signal from AN and pushes
+  // spend toward Feed, Reels, and Stories where intent is higher.
+  // Purchase (rev_click_track_url) is ALWAYS injected so revenue
+  // attribution remains complete regardless of placement.
+  const isAudienceNetwork = siteSourceName.toLowerCase() === "an";
 
   // ?? S1 Postback URL Injection ??????????????????????????????
   // Upper-funnel events fire instantly via dedicated endpoints;
@@ -898,30 +913,36 @@ export default async (request, context) => {
     (base && base.category) ? base.category : (id || "unknown")
   );
 
-  // impression_track_url: fires when the widget loads (Meta "PageView")
-  dest.searchParams.set(
-    "impression_track_url",
-    `${originBase}/api/s1-impression?click_id=${uid}`
-  );
+  // Upper-funnel postback URLs: only injected for non-AN placements.
+  // AN traffic still reaches the article and can earn revenue, but Meta
+  // won't receive optimization signal from these low-intent clicks.
+  if (!isAudienceNetwork) {
+    // impression_track_url: fires when the widget loads (Meta "PageView")
+    dest.searchParams.set(
+      "impression_track_url",
+      `${originBase}/api/s1-impression?click_id=${uid}`
+    );
 
-  // search_track_url: fires when the user searches (Meta "Search").
-  // &q=OMKEYWORD is an S1 macro ? S1 replaces OMKEYWORD with the actual
-  // search query at fire time, and our receiver forwards it to Meta as
-  // custom_data.search_string.
-  dest.searchParams.set(
-    "search_track_url",
-    `${originBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
-  );
+    // search_track_url: fires when the user searches (Meta "Search").
+    // &q=OMKEYWORD is an S1 macro ? S1 replaces OMKEYWORD with the actual
+    // search query at fire time, and our receiver forwards it to Meta as
+    // custom_data.search_string.
+    dest.searchParams.set(
+      "search_track_url",
+      `${originBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
+    );
 
-  // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
-  // This is the instant-fire event campaigns will optimize on.
-  // &cat=... carries the ad vertical through to custom_data.content_category.
-  dest.searchParams.set(
-    "click_track_url",
-    `${originBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
-  );
+    // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
+    // This is the instant-fire event campaigns will optimize on.
+    // &cat=... carries the ad vertical through to custom_data.content_category.
+    dest.searchParams.set(
+      "click_track_url",
+      `${originBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
+    );
+  }
 
-  // rev_click_track_url: unchanged ? still routes to the batch-fire Purchase pipeline.
+  // rev_click_track_url: ALWAYS injected (even for AN) ? revenue attribution
+  // must remain complete. Purchase events still flow through the batch cron.
   dest.searchParams.set(
     "rev_click_track_url",
     `${originBase}/api/s1-postback?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`
@@ -967,7 +988,8 @@ export default async (request, context) => {
       event_time: now,
       event_source_url,
       ua: uaHead,
-      dest: finalLocation
+      dest: finalLocation,
+      placement: s1pplacement
     }, context);
   } catch {}
 
