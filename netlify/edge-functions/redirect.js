@@ -653,6 +653,72 @@ export default async (request, context) => {
     "title": "\"Understanding Gold IRA Kits for Retirement Security\"",
     "description": "Discover how gold IRA kits can enhance your retirement strategy by providing a secure investment option that diversifies your portfolio.",
     "locale": "en_US"
+  },
+  "211": {
+    "url": "https://etoptip.com/real-estate/why-choose-senior-apartments-for-independence-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=see+55+and+older+apartment+near+me+{State}&forceKeyB=see+55+and+older+apartment+near+me&forceKeyC=55++{State}+communities&forceKeyD=apartments+55+and+older+near+me&forceKeyE=55+and+older+communities+{State}&forceKeyF=seniors+residence+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Benefits of Choosing Senior Apartments for Independent Living\"",
+    "description": "Discover the benefits of senior apartments, offering independence and community for those aged 55 and older, tailored to enhance your lifestyle.",
+    "locale": "en_US"
+  },
+  "212": {
+    "url": "https://etoptip.com/education/which-online-schools-offer-free-laptops-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{Month}+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+a+laptop+today&forceKeyE=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Online Schools Offering Free Laptops for Students\"",
+    "description": "Discover online schools that provide free laptops to students, exploring options for accessible education and technology support.",
+    "locale": "en_US"
+  },
+  "213": {
+    "url": "https://etoptip.com/real-estate/how-can-seniors-access-affordable-housing-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=apartments+55+and+older+near+me&forceKeyB=apartments+for+senior+citizens+near+me&forceKeyC=senior+apartments+$300+a+month+near+me&forceKeyD=55++{State}+communities&forceKeyE=62+and+older+apartments+near+me&forceKeyF=new+homes+55++{State}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Affordable Housing Options for Seniors: A Comprehensive Guide",
+    "description": "Explore options for seniors seeking affordable housing, including 55+ communities and budget-friendly apartments tailored to older adults.",
+    "locale": "en_US"
+  },
+  "214": {
+    "url": "https://etoptip.com/health/how-does-scalp-health-influence-hair-growth-en-us/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Clinical+Research+on+Hair+Loss&forceKeyA=nearby+hair+clinic+near+me&forceKeyB=hair+regrowth+clinical+studies+near+me+{Month}+2026&forceKeyC=hair+growth+clinic+near+me&forceKeyD=how+to+qualify+for+a+hair+regrowth+clinical+trial+near+me&forceKeyE=hair+regrowth+clinical+trials+with+compensation&forceKeyF=how+to+qualify+for+a+paid+clinical+trial+for+hair+regrowth+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "The Connection Between Scalp Health and Hair Growth",
+    "description": "Explore the connection between scalp health and hair growth, backed by clinical research on hair loss and regrowth. Discover insights into effective treatments.",
+    "locale": "en_US"
+  },
+  "215": {
+    "url": "https://etoptip.com/health/can-dental-implant-trials-improve-your-smile-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=get+$1950+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+near+me&forceKeyC=dental+implant+trial+eligibility&forceKeyD=free+dental+implants+near+me&forceKeyE=get+$1950+for+dental+implants+participation+in+{State}&forceKeyF=full+mouth+dental+implants+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring the Benefits of Dental Implant Trials for Your Smile\"",
+    "description": "Discover how dental implant trials can enhance your smile while exploring eligibility and potential benefits of participation in local studies.",
+    "locale": "en_US"
+  },
+  "216": {
+    "url": "https://etoptip.com/health/what-drives-participation-in-neuropathy-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=Neuropathy+Clinical+Trials&forceKeyA=neuropathy+clinics+near+me&forceKeyB=diabetes+neuropathy+trial&forceKeyC=diabetes+neuropathy+trial+{Month}+2026&forceKeyD=diabetes+neuropathy+trials&forceKeyE=neuropathy+compensation+in+{State}&forceKeyF=neuropathy+compensation+near+me+in+{State}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Factors Influencing Participation in Neuropathy Clinical Trials",
+    "description": "Explore the factors influencing participation in neuropathy clinical trials, focusing on diabetes-related studies and patient engagement.",
+    "locale": "en_US"
+  },
+  "217": {
+    "url": "https://etoptip.com/health/can-dental-implant-trials-cut-your-costs-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=get+$1950+for+dental+implants+participations+near+me&forceKeyB=dental+implant+clinic+near+me&forceKeyC=full+mouth+dental+implants+near+me&forceKeyD=starting+a+dental+implant+practice&forceKeyE=free+dental+implants+near+me&forceKeyF=$6000+in+{State}+for+substance+abuse+treatment+participation+near+me+{Month}+2026&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Exploring Cost-Saving Options for Dental Implant Trials\"",
+    "description": "Discover how participating in dental implant trials can significantly reduce your costs while exploring innovative solutions for dental restoration.",
+    "locale": "en_US"
+  },
+  "218": {
+    "url": "https://etoptip.com/health/juvederm-non-surgical-facelift-studies-explained/?segment=rsoc.sc.etoptip.001&headline=Learn+About+Trials+on+Facial+Aesthetic+Care&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinics+near+me&forceKeyC=participate+in+juvederm+facelift+trials+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me+{Month}+2026&forceKeyE=juv?derm+clinical+trials+near+me&forceKeyF=free+botox+trials&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Juv?derm and Non-Surgical Facelift Studies",
+    "description": "Explore the latest studies on Juvederm and its role in non-surgical facelifts, highlighting its effectiveness and safety in facial aesthetic care.",
+    "locale": "en_US"
+  },
+  "219": {
+    "url": "https://etoptip.com/health/what-are-the-benefits-of-screwless-dental-implants-en-us/?segment=rsoc.sc.etoptip.001&headline=Discover+Screwless+Dental+Implants%3A+Benefits%2C+Costs+and+More&forceKeyA=full+mouth+teeth+replacement+cost&forceKeyB=what+is+the+cost+of+dental+implants+for+seniors&forceKeyC=full+mouth+implant+cost&forceKeyD=how+much+does+it+cost+to+get+new+teeth&forceKeyE=how+much+does+a+full+set+of+implants+cost&forceKeyF=screwless+dental+implants+cost&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Benefits of Screwless Dental Implants: A Comprehensive Overview",
+    "description": "Explore the advantages of screwless dental implants, including their benefits, costs, and more, for a seamless dental restoration experience.",
+    "locale": "en_US"
+  },
+  "220": {
+    "url": "https://etoptip.com/health/how-to-access-depression-trial-opportunities-en-us/?segment=rsoc.sc.etoptip.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+for+depression+participation+near+me&forceKeyB=$6000+for+depression+participation+{State}&forceKeyC=$6000+for+depression+participation+in+{State}&forceKeyD=paid+depression+studies+near+me&forceKeyE=depression+clinic+near+me&forceKeyF=depression+research+and+treatment&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Exploring Opportunities for Depression Research Participation",
+    "description": "Explore opportunities for participating in depression trials, including potential financial compensation and access to specialized treatment centers.",
+    "locale": "en_US"
+  },
+  "221": {
+    "url": "https://goatdealo.online/finance/how-do-gold-ira-kits-secure-your-retirement-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+gold+ira&forceKeyA=get+gold+ira+kits+$0+cost+{Month}+2026&forceKeyB=get+gold+ira+kits+$0+cost&forceKeyC=free+gold+ira+kit&forceKeyD=gold+ira+kits+[$0+cost]&forceKeyE=get+gold+ira+kits+[$0+cost]+{Month}+2026&forceKeyF=free+gold+ira+kit+with+free+gold+bar&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Understanding Gold IRA Kits for Retirement Security\"",
+    "description": "Discover how gold IRA kits can enhance your retirement strategy by providing a secure and stable investment option for your financial future.",
+    "locale": "en_US"
   }
 };
 
