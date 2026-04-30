@@ -1160,6 +1160,18 @@ export default async (request, context) => {
     "";
   const client_ip = ipHeader.split(",")[0].trim();
 
+  // ?? Geo capture from Netlify edge context ?????????????????
+  // context.geo is populated by Netlify's edge runtime from the IP
+  // (MaxMind under the hood). Free, no extra API call. Used to enrich
+  // Meta CAPI user_data with city/state/zip/country to lift event
+  // match quality. Fields default to null when geo lookup fails
+  // (rare ? usually only on private/unroutable IPs).
+  const geo = (context && context.geo) || {};
+  const geo_city = geo.city || null;
+  const geo_region = (geo.subdivision && geo.subdivision.code) || null;       // ISO 3166-2 subdivision (e.g. "CA")
+  const geo_postal_code = geo.postalCode || null;
+  const geo_country = (geo.country && geo.country.code) || null;              // ISO 3166-1 alpha-2 (e.g. "US")
+
   const isFallback = !inApp && !s1ok;
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
 
@@ -1181,7 +1193,12 @@ export default async (request, context) => {
       event_source_url,
       ua: uaHead,
       dest: finalLocation,
-      placement: s1pplacement
+      placement: s1pplacement,
+      // Geo (from context.geo) ? enriches Meta CAPI user_data for EMQ
+      geo_city,
+      geo_region,
+      geo_postal_code,
+      geo_country
     }, context);
   } catch {}
 
