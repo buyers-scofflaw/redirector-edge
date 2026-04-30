@@ -779,6 +779,66 @@ export default async (request, context) => {
     "title": "\"Revolutionizing Lives: The Impact of Fat Removal Trials\"",
     "description": "Discover how fat removal trials are changing lives and advancing medical techniques in body contouring, offering new hope for those seeking transformation.",
     "locale": "en_US"
+  },
+  "232": {
+    "url": "https://etoptip.com/health/how-does-dupixent-help-manage-asthma-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+dupixent&forceKeyA=$6000+asthma+clinical+studies+near+my+zipcode&forceKeyB=best+asthma+clinical+studies+$6000+near+my+zipcode+{Month}+2026&forceKeyC=best+$6000+asthma+clinical+study+near+my+zipcode&forceKeyD=diabetes+study+testing+new+treatments+$22746+near+me&forceKeyE=best+$6000+asthma+clinical+studies+near+my+zipcode&forceKeyF=best+$6000+asthma+clinical+studies+near+me&s1pplacement={{placement}}",
+    "title": "How Dupixent Aids in Asthma Management",
+    "description": "Discover how Dupixent effectively manages asthma symptoms and improves quality of life through its innovative treatment approach.",
+    "locale": "en_US"
+  },
+  "233": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+dental+implants+participation&forceKeyB=participate+in+dental+implants+trial+[sign+up+now]&forceKeyC=no-fee+dental+implants&forceKeyD=get+$1500+for+dental+implants+participation&forceKeyE=$1950+for+dental+implants+participation+[search+now]&forceKeyF=participate+in+dental+implants+trial+sign+up+now&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Money\"",
+    "description": "Discover how participating in dental implant trials can reduce costs and enhance your smile, offering financial incentives and innovative treatment options.",
+    "locale": "en_US"
+  },
+  "234": {
+    "url": "https://etoptip.com/education/which-online-schools-offer-free-laptops-en-us-3/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyD=apply+for+online+school+high+schools+that+give+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer&forceKeyF=apply+for+online+school+high+schools+that+gives+you+a+computer&s1pplacement={{placement}}",
+    "title": "\"Online Schools That Provide Free Laptops for Students\"",
+    "description": "Discover online schools that provide free laptops to students, enhancing the learning experience and accessibility for high school education.",
+    "locale": "en_US"
+  },
+  "235": {
+    "url": "https://etoptip.com/health/what-are-the-benefits-of-diabetes-clinical-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=diabetes+clinical+trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyC=diabetes+studies+near+me&forceKeyD=paid+clinical+trials+for+type+2+diabetes&forceKeyE=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyF=type+2+diabetes+clinical+trials+near+me&s1pplacement={{placement}}",
+    "title": "The Benefits of Participating in Diabetes Clinical Trials",
+    "description": "Discover the benefits of participating in diabetes clinical trials, including access to new treatments and contributions to medical research advancements.",
+    "locale": "en_US"
+  },
+  "236": {
+    "url": "https://etoptip.com/technology/free-phone-programs-for-seniors-explained-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+phones+for+seniors&forceKeyA=100%+free+phones+for+senior&forceKeyB=100%+free+phones+for+senior&forceKeyC=apply+for+free+phones+for+seniors&forceKeyD=100%+free+phone+for+seniors&forceKeyE=100+free+phones+for+seniors&forceKeyF=free+phones+for+seniors&s1pplacement={{placement}}",
+    "title": "Understanding Free Phone Programs for Seniors",
+    "description": "Discover various free phone programs available for seniors, detailing eligibility, benefits, and how these resources can enhance connectivity and support.",
+    "locale": "en_US"
+  },
+  "237": {
+    "url": "https://etoptip.com/health/what-to-know-about-neuropathy-trial-compensation-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+neuropathy+clinical+trials&forceKeyA=clinical+trials+for+neuropathy+near+me+{state}&forceKeyB=clinical+trials+for+neuropathy+near+me+{city}&forceKeyC=$1500+for+neuropathy+research+{state}&forceKeyD=$1500+for+neuropathy+research+{city}&forceKeyE=$1500+for+neuropathy+research+trials+{state}&forceKeyF=$1500+for+neuropathy+research+trials+{city}&s1pplacement={{placement}}",
+    "title": "Understanding Neuropathy Trial Compensation: Key Insights",
+    "description": "Discover essential information about neuropathy clinical trials and the compensation available for participants, including potential financial benefits.",
+    "locale": "en_US"
+  },
+  "238": {
+    "url": "https://etoptip.com/health/how-is-modern-dentistry-transforming-restorations-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+dental+implant+clinical+research&forceKeyA=$1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=$1950+for+dental+implants+participation+[search+now]&forceKeyE=get+$1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+free+dental+implants&s1pplacement={{placement}}",
+    "title": "\"Advancements in Modern Dentistry: Transforming Dental Restorations\"",
+    "description": "Discover how modern dentistry is revolutionizing dental restorations with advanced techniques and research, enhancing patient outcomes and experiences.",
+    "locale": "en_US"
+  },
+  "239": {
+    "url": "https://etoptip.com/real-estate/how-do-senior-apartments-enhance-independence-en-us-2/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=see+55+and+older+apartment+nearby&s1pplacement={{placement}}",
+    "title": "How Senior Apartments Promote Independence for Older Adults",
+    "description": "Discover how senior apartments promote independence for individuals aged 55 and older, enhancing their quality of life and personal freedom.",
+    "locale": "en_US"
+  },
+  "240": {
+    "url": "https://etoptip.com/automotive/what-makes-an-suv-ideal-for-seniors-en-us/?segment=rsoc.sc.etoptip.001&headline=read+more+about+suv+for+seniors&forceKeyA=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyB=$100/month+-+nissan+rogue+deals+for+seniors&forceKeyC=$100/month+-+rogue+2025+crossover+suvs+nearby&forceKeyD=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+(no+cost)&forceKeyE=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyF=nissan+rogue+deals+for+seniors&s1pplacement={{placement}}",
+    "title": "Ideal SUVs for Seniors: Key Features and Benefits",
+    "description": "Discover the key features that make SUVs an ideal choice for seniors, focusing on comfort, safety, and convenience for a more enjoyable driving experience.",
+    "locale": "en_US"
+  },
+  "241": {
+    "url": "https://etoptip.com/health/how-are-fat-removal-trials-transforming-lives/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+fat+removal+surgery+clinical+trials&forceKeyA=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyB=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+coolsculpting&forceKeyC=$1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyD=$1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyE=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+{state}&forceKeyF=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+(coolsculpting)&s1pplacement={{placement}}",
+    "title": "\"How Fat Removal Trials Are Changing Lives for the Better\"",
+    "description": "Explore how fat removal trials are transforming lives through innovative techniques and effective treatments, paving the way for improved health and wellness.",
+    "locale": "en_US"
   }
 };
 
