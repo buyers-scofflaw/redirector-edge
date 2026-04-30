@@ -104,14 +104,49 @@ async function getAccessToken(
   return data.access_token;
 }
 
-// ── SHA-256 (for external_id hashing) ──
+// ── SHA-256 helpers ──
+// Meta CAPI requires field-specific normalization before hashing.
+// Spec: https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters
 
-async function sha256(value: string): Promise<string> {
-  const data = new TextEncoder().encode(value.trim().toLowerCase());
+async function sha256Raw(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value);
   const hash = await crypto.subtle.digest("SHA-256", data);
   return Array.from(new Uint8Array(hash))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
+}
+
+// external_id: trim + lowercase (matches existing behavior).
+async function sha256(value: string): Promise<string> {
+  return sha256Raw(value.trim().toLowerCase());
+}
+
+// City: lowercase, strip non-alphanumeric. "New York" -> "newyork".
+async function hashCity(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return norm ? sha256Raw(norm) : null;
+}
+
+// State: lowercase 2-char ISO 3166-2 subdivision code (e.g. "ca").
+async function hashState(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.trim().toLowerCase();
+  return norm ? sha256Raw(norm) : null;
+}
+
+// Zip: US 5-digit only. Strip +4 extension and non-digits.
+async function hashZip(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const digits = value.replace(/\D/g, "").slice(0, 5);
+  return digits.length === 5 ? sha256Raw(digits) : null;
+}
+
+// Country: lowercase ISO 3166-1 alpha-2 ("US" -> "us").
+async function hashCountry(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.trim().toLowerCase();
+  return /^[a-z]{2}$/.test(norm) ? sha256Raw(norm) : null;
 }
 
 // ── BigQuery: look up FB match params for a click_id ──
@@ -124,6 +159,10 @@ interface ClickMatchRow {
   event_source_url: string | null;
   event_time_epoch: number | null;
   placement: string | null;
+  geo_city: string | null;
+  geo_region: string | null;          // ISO 3166-2 subdivision code (e.g. "CA")
+  geo_postal_code: string | null;
+  geo_country: string | null;         // ISO 3166-1 alpha-2 (e.g. "US")
 }
 
 async function lookupClickMatchParams(
@@ -149,7 +188,14 @@ async function lookupClickMatchParams(
       COALESCE(
         placement,
         REGEXP_EXTRACT(dest, r's1pplacement=([^&]+)')
-      ) AS placement
+      ) AS placement,
+      -- Per-click geo from Netlify edge context.geo (added 2026-04-29).
+      -- Older click rows pre-deploy have NULL — the helper will skip
+      -- those fields rather than send empty/bad data.
+      geo_city,
+      geo_region,
+      geo_postal_code,
+      geo_country
     FROM \`${BQ_PROJECT}.rsoc_clicks.click_events\`
     WHERE uid = @click_id
       AND event_time >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
@@ -202,6 +248,10 @@ async function lookupClickMatchParams(
     event_source_url: obj.event_source_url,
     event_time_epoch: obj.event_time_epoch ? parseInt(obj.event_time_epoch, 10) : null,
     placement: obj.placement || null,
+    geo_city: obj.geo_city,
+    geo_region: obj.geo_region,
+    geo_postal_code: obj.geo_postal_code,
+    geo_country: obj.geo_country,
   };
 }
 
@@ -249,6 +299,9 @@ interface CapiEvent {
     client_user_agent?: string;
     external_id?: string;
     country?: string;
+    ct?: string;        // hashed city
+    st?: string;        // hashed state (subdivision code)
+    zp?: string;        // hashed zip
   };
   custom_data?: {
     content_category?: string;
@@ -257,15 +310,10 @@ interface CapiEvent {
   data_processing_options?: string[];
 }
 
-// Country hash cache — sha256 is async and we don't want to recompute per fire.
-// Populated lazily on the first call to getHashedCountry().
-// Per Meta spec: country codes are lowercase ISO 3166-1 alpha-2 before hashing.
-let _countryHashCache: string | null = null;
-async function getHashedUsCountry(): Promise<string> {
-  if (_countryHashCache) return _countryHashCache;
-  _countryHashCache = await sha256("us");
-  return _countryHashCache;
-}
+// (Removed 2026-04-29) The previous getHashedUsCountry() helper is gone —
+// country now comes per-click from match.geo_country (Netlify edge MaxMind
+// lookup, persisted on click_events). hashCountry() handles normalization
+// and skips the field when geo couldn't be resolved.
 
 async function fireCapiEvent(
   pixelId: string,
@@ -416,7 +464,12 @@ export async function handleInstantEvent(
           ? await sha256(match.fbp)
           : await sha256(cfg.clickId);
 
-        const hashedCountry = await getHashedUsCountry();
+        // Geo from the click row — each helper returns null when input is
+        // missing/invalid, and the spread guards below skip null fields.
+        const hashedCountry = await hashCountry(match.geo_country);
+        const hashedCity    = await hashCity(match.geo_city);
+        const hashedState   = await hashState(match.geo_region);
+        const hashedZip     = await hashZip(match.geo_postal_code);
 
         // Event-specific custom_data:
         //   Lead   → content_category (ad vertical: insurance/loans/solar/etc.)
@@ -443,7 +496,10 @@ export async function handleInstantEvent(
             ...(match.client_ip_address && { client_ip_address: match.client_ip_address }),
             ...(match.client_user_agent && { client_user_agent: match.client_user_agent }),
             external_id: hashedExternalId,
-            country: hashedCountry,
+            ...(hashedCountry && { country: hashedCountry }),
+            ...(hashedCity    && { ct: hashedCity }),
+            ...(hashedState   && { st: hashedState }),
+            ...(hashedZip     && { zp: hashedZip }),
           },
           // Explicit empty LDU array tells Meta "no Limited Data Use restrictions
           // apply" — avoids ambiguity with CCPA-sensitive traffic.
