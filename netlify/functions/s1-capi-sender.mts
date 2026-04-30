@@ -117,6 +117,10 @@ interface PostbackRow {
   client_user_agent: string | null;
   event_source_url: string | null;
   event_time_epoch: number;
+  geo_city: string | null;
+  geo_region: string | null;          // ISO 3166-2 subdivision code (e.g. "CA")
+  geo_postal_code: string | null;
+  geo_country: string | null;         // ISO 3166-1 alpha-2 (e.g. "US")
 }
 
 async function queryBigQuery(
@@ -167,6 +171,10 @@ async function queryBigQuery(
       client_user_agent: obj.client_user_agent as string | null,
       event_source_url: obj.event_source_url as string | null,
       event_time_epoch: parseInt(obj.event_time_epoch as string, 10),
+      geo_city: obj.geo_city as string | null,
+      geo_region: obj.geo_region as string | null,
+      geo_postal_code: obj.geo_postal_code as string | null,
+      geo_country: obj.geo_country as string | null,
     };
   });
 }
@@ -208,6 +216,10 @@ interface CapiEvent {
     client_ip_address?: string;
     client_user_agent?: string;
     external_id?: string;
+    ct?: string;        // hashed city
+    st?: string;        // hashed state (subdivision code)
+    zp?: string;        // hashed zip
+    country?: string;   // hashed country (ISO 3166-1 alpha-2)
   };
   custom_data: {
     value: number;
@@ -249,14 +261,51 @@ async function sendToMetaCapi(
   };
 }
 
-// ── SHA-256 hash helper for external_id ──
+// ── SHA-256 hash helpers for user_data fields ──
+// Meta CAPI requires lowercase + field-specific normalization before hashing.
+// Spec: https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters
 
-async function sha256(value: string): Promise<string> {
-  const data = new TextEncoder().encode(value.trim().toLowerCase());
+async function sha256Raw(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value);
   const hash = await crypto.subtle.digest("SHA-256", data);
   return Array.from(new Uint8Array(hash))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
+}
+
+// external_id: trim + lowercase (matches existing behavior pre-patch).
+async function sha256(value: string): Promise<string> {
+  return sha256Raw(value.trim().toLowerCase());
+}
+
+// City: lowercase, strip all non-alphanumeric (Meta strips spaces/punct).
+// "New York" → "newyork", "St. Louis" → "stlouis"
+async function hashCity(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return norm ? sha256Raw(norm) : null;
+}
+
+// State: lowercase 2-char subdivision code. Netlify gives ISO 3166-2 ("CA"),
+// which is already the right format — just lowercase.
+async function hashState(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.trim().toLowerCase();
+  return norm ? sha256Raw(norm) : null;
+}
+
+// Zip: US 5-digit only. Strip any "+4" extension and non-digits.
+async function hashZip(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const digits = value.replace(/\D/g, "").slice(0, 5);
+  return digits.length === 5 ? sha256Raw(digits) : null;
+}
+
+// Country: lowercase ISO 3166-1 alpha-2 ("US" → "us").
+async function hashCountry(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  const norm = value.trim().toLowerCase();
+  return /^[a-z]{2}$/.test(norm) ? sha256Raw(norm) : null;
 }
 
 // ── Main handler ──
@@ -311,6 +360,10 @@ export default async (req: Request) => {
         c.client_ip AS client_ip_address,
         c.ua        AS client_user_agent,
         c.event_source_url,
+        c.geo_city,
+        c.geo_region,
+        c.geo_postal_code,
+        c.geo_country,
         UNIX_SECONDS(
           CASE
             WHEN TIMESTAMP_ADD(c.event_time, INTERVAL 5 MINUTE)
@@ -349,6 +402,15 @@ export default async (req: Request) => {
 
       const hashedExternalId = await sha256(row.click_id);
 
+      // Geo fields — derived from context.geo at click time, stored on
+      // click_events. Hash each field with its CAPI-spec normalizer; any
+      // field that fails normalization (or wasn't captured) returns null
+      // and is omitted from user_data via the spread below.
+      const hashedCity    = await hashCity(row.geo_city);
+      const hashedState   = await hashState(row.geo_region);
+      const hashedZip     = await hashZip(row.geo_postal_code);
+      const hashedCountry = await hashCountry(row.geo_country);
+
       const event: CapiEvent = {
         event_name: "Purchase",
         event_time: row.event_time_epoch,
@@ -361,6 +423,10 @@ export default async (req: Request) => {
           ...(row.client_ip_address && { client_ip_address: row.client_ip_address }),
           ...(row.client_user_agent && { client_user_agent: row.client_user_agent }),
           external_id: hashedExternalId,
+          ...(hashedCity    && { ct: hashedCity }),
+          ...(hashedState   && { st: hashedState }),
+          ...(hashedZip     && { zp: hashedZip }),
+          ...(hashedCountry && { country: hashedCountry }),
         },
         custom_data: {
           value: row.revenue,
