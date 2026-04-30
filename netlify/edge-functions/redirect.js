@@ -719,6 +719,66 @@ export default async (request, context) => {
     "title": "\"Understanding Gold IRA Kits for Retirement Security\"",
     "description": "Discover how gold IRA kits can enhance your retirement strategy by providing a secure and stable investment option for your financial future.",
     "locale": "en_US"
+  },
+  "222": {
+    "url": "https://goatdealo.online/health/how-does-dupixent-help-manage-severe-asthma-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+dupixent&forceKeyA=$6000+asthma+clinical+studies+near+my+zipcode&forceKeyB=best+asthma+clinical+studies+$6000+near+my+zipcode+{Month}+2026&forceKeyC=best+$6000+asthma+clinical+study+near+my+zipcode&forceKeyD=diabetes+study+testing+new+treatments+$22746+near+me&forceKeyE=best+$6000+asthma+clinical+studies+near+my+zipcode&forceKeyF=best+$6000+asthma+clinical+studies+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Understanding Dupixent's Role in Severe Asthma Management",
+    "description": "Discover how Dupixent effectively manages severe asthma, highlighting its benefits and role in treatment for those affected by this condition.",
+    "locale": "en_US"
+  },
+  "223": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-en-us-8/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+dental+implants+participation&forceKeyB=participate+in+dental+implants+trial+[sign+up+now]&forceKeyC=no-fee+dental+implants&forceKeyD=get+$1500+for+dental+implants+participation&forceKeyE=$1950+for+dental+implants+participation+[search+now]&forceKeyF=participate+in+dental+implants+trial+sign+up+now&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Saving on Dental Implants: Benefits of Clinical Trials\"",
+    "description": "Discover how participating in dental implant trials can reduce costs and enhance your smile, offering potential savings and quality dental care options.",
+    "locale": "en_US"
+  },
+  "224": {
+    "url": "https://goatdealo.online/education/which-online-schools-offer-free-laptops-en-us-3/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyD=apply+for+online+school+high+schools+that+give+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer&forceKeyF=apply+for+online+school+high+schools+that+gives+you+a+computer&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Online Schools Offering Free Laptops for Students\"",
+    "description": "Discover online schools that provide free laptops to students, enhancing access to education and technology for a better learning experience.",
+    "locale": "en_US"
+  },
+  "225": {
+    "url": "https://goatdealo.online/health/who-can-join-type-2-diabetes-clinical-trials-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=diabetes+clinical+trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyC=diabetes+studies+near+me&forceKeyD=paid+clinical+trials+for+type+2+diabetes&forceKeyE=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyF=type+2+diabetes+clinical+trials+near+me&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Who Can Participate in Type 2 Diabetes Clinical Trials?",
+    "description": "Discover who is eligible to participate in clinical trials for type 2 diabetes, exploring new treatment options and potential benefits.",
+    "locale": "en_US"
+  },
+  "226": {
+    "url": "https://goatdealo.online/technology/free-phone-programs-for-seniors-explore-your-options-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+phones+for+seniors&forceKeyA=100%+free+phones+for+senior&forceKeyB=100%+free+phones+for+senior&forceKeyC=apply+for+free+phones+for+seniors&forceKeyD=100%+free+phone+for+seniors&forceKeyE=100+free+phones+for+seniors&forceKeyF=free+phones+for+seniors&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Free Phone Programs for Seniors: A Guide to Your Options",
+    "description": "Discover various programs that provide free phones for seniors, helping them stay connected with loved ones and access essential services.",
+    "locale": "en_US"
+  },
+  "227": {
+    "url": "https://goatdealo.online/health/what-are-the-benefits-of-neuropathy-trials-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+neuropathy+clinical+trials&forceKeyA=clinical+trials+for+neuropathy+near+me+{state}&forceKeyB=clinical+trials+for+neuropathy+near+me+{city}&forceKeyC=$1500+for+neuropathy+research+{state}&forceKeyD=$1500+for+neuropathy+research+{city}&forceKeyE=$1500+for+neuropathy+research+trials+{state}&forceKeyF=$1500+for+neuropathy+research+trials+{city}&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Exploring the Benefits of Neuropathy Clinical Trials",
+    "description": "Explore the advantages of participating in neuropathy clinical trials, including potential benefits for treatment and research contributions in your area.",
+    "locale": "en_US"
+  },
+  "228": {
+    "url": "https://goatdealo.online/health/how-are-dental-restorations-advancing-today-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+dental+implant+clinical+research&forceKeyA=$1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=$1950+for+dental+implants+participation+[search+now]&forceKeyE=get+$1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+free+dental+implants&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Innovations in Dental Restorations: What's New Today?",
+    "description": "Explore the latest advancements in dental restorations, focusing on innovative techniques and clinical research in dental implants and their benefits.",
+    "locale": "en_US"
+  },
+  "229": {
+    "url": "https://goatdealo.online/real-estate/how-do-senior-apartments-enhance-independence-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+55+and+older+apartments&forceKeyA=55+and+older+apartments+near+me&forceKeyB=55+and+older+apartment+near+me&forceKeyC=see+55+and+older+apartments+near+me&forceKeyD=find+55+and+older+apartments+near+me&forceKeyE=see+55+and+older+apartment+near+me&forceKeyF=see+55+and+older+apartment+nearby&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "How Senior Apartments Foster Independence for Older Adults",
+    "description": "Discover how senior apartments promote independence for those aged 55 and older, enhancing quality of life and providing tailored living solutions.",
+    "locale": "en_US"
+  },
+  "230": {
+    "url": "https://goatdealo.online/automotive/which-suv-models-best-suit-senior-drivers-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=read+more+about+suv+for+seniors&forceKeyA=100+accepted+|+$50/month+-+rogue+2025+crossover+suvs+nearby+[no+cost]&forceKeyB=$100/month+-+nissan+rogue+deals+for+seniors&forceKeyC=$100/month+-+rogue+2025+crossover+suvs+nearby&forceKeyD=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+(no+cost)&forceKeyE=100+accepted+|+0+down+options+-+rogue+2025+crossover+suvs+nearby+(rogue)+[no+cost]&forceKeyF=nissan+rogue+deals+for+seniors&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "Best SUV Models for Senior Drivers: A Comprehensive Guide",
+    "description": "Discover the top SUV models ideal for senior drivers, focusing on comfort, safety, and ease of use for a smoother driving experience.",
+    "locale": "en_US"
+  },
+  "231": {
+    "url": "https://goatdealo.online/health/how-are-fat-removal-trials-transforming-lives/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+fat+removal+surgery+clinical+trials&forceKeyA=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyB=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+coolsculpting&forceKeyC=$1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyD=$1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyE=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+{state}&forceKeyF=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+(coolsculpting)&fbid=872536505175912&fbland=PageView&fbserp=AddToCart&fbclick=InitiateCheckout&s1pplacement={{placement}}",
+    "title": "\"Revolutionizing Lives: The Impact of Fat Removal Trials\"",
+    "description": "Discover how fat removal trials are changing lives and advancing medical techniques in body contouring, offering new hope for those seeking transformation.",
+    "locale": "en_US"
   }
 };
 
