@@ -839,6 +839,60 @@ export default async (request, context) => {
     "title": "\"How Fat Removal Trials Are Changing Lives for the Better\"",
     "description": "Explore how fat removal trials are transforming lives through innovative techniques and effective treatments, paving the way for improved health and wellness.",
     "locale": "en_US"
+  },
+  "242": {
+    "url": "https://goatdealo.online/health/how-to-participate-in-depression-trials-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=depression+treatment+centers&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$3000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "Participating in Depression Trials: A Guide to Opportunities",
+    "description": "Explore the process of participating in depression trials, including eligibility criteria, benefits, and insights into treatment advancements in mental health.",
+    "locale": "en_US"
+  },
+  "243": {
+    "url": "https://goatdealo.online/health/can-dental-implant-trials-improve-your-smile-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+dental+implants+participation&forceKeyB=participate+in+dental+implants+trial+[sign+up+now]&forceKeyC=no-fee+dental+implants&forceKeyD=get+$1500+for+dental+implants+participation&forceKeyE=$1950+for+dental+implants+participation+[search+now]&forceKeyF=participate+in+dental+implants+trial+sign+up+now&s1pplacement={{placement}}",
+    "title": "\"Exploring the Benefits of Dental Implant Trials for Your Smile\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile while exploring potential financial incentives for involvement.",
+    "locale": "en_US"
+  },
+  "244": {
+    "url": "https://goatdealo.online/health/how-to-find-paid-diabetes-clinical-trials-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+diabetes+clinical+trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyC=best+diabetes+study+testing+new+treatments+$26700&forceKeyD=best+diabetes+study+testing+new+treatments+$13675+near+me&forceKeyE=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyF=diabetes+clinical+studies+testing+new+treatments+$13675+near+me&s1pplacement={{placement}}",
+    "title": "Finding Paid Clinical Trials for Diabetes Treatments Near You",
+    "description": "Discover essential insights on locating paid diabetes clinical trials, including information on testing new treatments and potential compensation opportunities.",
+    "locale": "en_US"
+  },
+  "245": {
+    "url": "https://etoptip.com/health/how-to-find-paid-asthma-clinical-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+asthma+studies&forceKeyA=asthma+clinical+studies+$6000+near+my+zipcode&forceKeyB=$6000+for+copd+treatments+participation+near+my+zipcode&forceKeyC=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+for+copd+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyF=$6000+paid+for+best+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "Finding Paid Asthma Clinical Trials: A How-To Guide",
+    "description": "Discover how to locate paid asthma clinical trials in your area, including potential compensation options for participation and insights on available studies.",
+    "locale": "en_US"
+  },
+  "246": {
+    "url": "https://goatdealo.online/education/which-online-schools-offer-free-laptops-en-us-5/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyD=apply+for+online+school+high+schools+that+give+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer&forceKeyF=apply+for+online+school+high+schools+that+gives+you+a+computer&s1pplacement={{placement}}",
+    "title": "\"Exploring Online Schools That Provide Free Laptops\"",
+    "description": "Discover online schools that provide students with free laptops, enhancing access to education and learning resources in the digital age.",
+    "locale": "en_US"
+  },
+  "247": {
+    "url": "https://goatdealo.online/health/affordable-juvederm-options-and-trials/?segment=rsoc.sc.goatdealoonline.001&headline=explore+juvederm+options+and+specials&forceKeyA=participate+in+juvederm+facelift+trials&forceKeyB=paid+juvederm+fillers+nearby+trials&forceKeyC=juvederm+voluma+near+me&forceKeyD=juvederm+voluma+specials+near+me&forceKeyE=juvederm+for+under+eyes&forceKeyF=how+to+get+juvederm+voluma+specials+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Options for Juvederm Treatments and Trials",
+    "description": "Discover affordable Juvederm options, including trials and specials for various treatments like Voluma and under-eye fillers, tailored to your needs.",
+    "locale": "en_US"
+  },
+  "248": {
+    "url": "https://goatdealo.online/health/what-are-the-latest-tinnitus-treatment-trials-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=understanding+tinnitus+clinical+trials&forceKeyA=$6000+in+{state}+for+tinnitus+treatments+participation+near+my+zipcode+{month}+2026&forceKeyB=$6000+in+{state}+for+tinnitus+treatments+participation+near+my+zipcode&forceKeyC=$1500+for+tinnitus+participations+near+my+zipcode+lenire+device+trial&forceKeyD=$1500+for+tinnitus+participation+near+my+zipcode+lenire+device+trial+{month}+2026&forceKeyE=tinnitus+clinic+near+me&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Latest Advances in Tinnitus Treatment Trials and Research",
+    "description": "Explore the latest clinical trials for tinnitus treatments, including participation opportunities and potential financial compensation for those seeking relief.",
+    "locale": "en_US"
+  },
+  "249": {
+    "url": "https://goatdealo.online/health/how-does-scalp-health-influence-hair-growth-en-us-3/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+clinical+research+on+hair+loss&forceKeyA=how+to+qualify+for+a+paid+clinical+trial+for+hair+regrowth+near+me&forceKeyB=best+paid+hair+regrowth+clinical+trials+near+me+2025&forceKeyC=how+to+qualify+for+a+hair+regrowth+clinical+trial+near+me&forceKeyD=hair+regrowth+clinical+trials+with+compensation&forceKeyE=best+paid+hair+regrowth+clinical+trials+in+2025&forceKeyF=paid+hair+regrowth+clinical+trials&s1pplacement={{placement}}",
+    "title": "\"Exploring the Link Between Scalp Health and Hair Growth\"",
+    "description": "Explore the connection between scalp health and hair growth, supported by clinical research on hair loss and regrowth trials.",
+    "locale": "en_US"
+  },
+  "250": {
+    "url": "https://goatdealo.online/health/what-are-non-surgical-fat-removal-options-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+studies+for+fat+removal&forceKeyA=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[coolsculpting]&forceKeyB=$1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyC=$1500+for+belly+fat+removal+without+surgery+participation&forceKeyD=$1500+for+belly+fat+reduction+treatment+participation+near+me+[coolsculpting]&forceKeyE=$1500+for+belly+fat+reduction+treatment+participation&forceKeyF=$1500+for+belly+fat+reduction+treatment+participation+near+me&s1pplacement={{placement}}",
+    "title": "Exploring Non-Surgical Options for Fat Removal Techniques",
+    "description": "Explore various non-surgical fat removal options, including innovative treatments and their effectiveness, to help you achieve your body goals.",
+    "locale": "en_US"
   }
 };
 
