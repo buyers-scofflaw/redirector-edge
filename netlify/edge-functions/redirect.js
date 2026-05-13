@@ -893,6 +893,60 @@ export default async (request, context) => {
     "title": "Exploring Non-Surgical Options for Fat Removal Techniques",
     "description": "Explore various non-surgical fat removal options, including innovative treatments and their effectiveness, to help you achieve your body goals.",
     "locale": "en_US"
+  },
+  "251": {
+    "url": "https://etoptip.com/health/how-to-join-depression-clinical-trials-en-us-2/?segment=rsoc.sc.etoptip.001&headline=depression+treatment+centers&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$3000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Guide to Participating in Depression Clinical Trials\"",
+    "description": "Discover how to participate in depression clinical trials and explore potential benefits, including financial compensation, while contributing to important research.",
+    "locale": "en_US"
+  },
+  "252": {
+    "url": "https://goatdealo.online/health/can-dental-implant-trials-improve-your-smile-en-us-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+dental+implants+participation&forceKeyB=participate+in+dental+implants+trial+[sign+up+now]&forceKeyC=no-fee+dental+implants&forceKeyD=get+$1500+for+dental+implants+participation&forceKeyE=$1950+for+dental+implants+participation+[search+now]&forceKeyF=participate+in+dental+implants+trial+sign+up+now&s1pplacement={{placement}}",
+    "title": "\"Exploring the Benefits of Dental Implant Trials for Your Smile\"",
+    "description": "Explore how dental implant trials can enhance your smile, offering insights into their benefits and potential financial incentives for participation.",
+    "locale": "en_US"
+  },
+  "253": {
+    "url": "https://etoptip.com/health/how-to-find-paid-diabetes-clinical-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+diabetes+clinical+trials&forceKeyA=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyB=best+diabetes+study+testing+new+treatments+$26700+near+me&forceKeyC=best+diabetes+study+testing+new+treatments+$26700&forceKeyD=best+diabetes+study+testing+new+treatments+$13675+near+me&forceKeyE=diabetes+clinical+studies+testing+new+treatments+$26700+near+me&forceKeyF=diabetes+clinical+studies+testing+new+treatments+$13675+near+me&s1pplacement={{placement}}",
+    "title": "Finding Paid Diabetes Clinical Trials: A Guide",
+    "description": "Discover how to find paid diabetes clinical trials in your area, exploring opportunities for new treatments and research participation.",
+    "locale": "en_US"
+  },
+  "254": {
+    "url": "https://etoptip.com/health/how-to-find-paid-asthma-clinical-trials-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+asthma+studies&forceKeyA=asthma+clinical+studies+$6000+near+my+zipcode&forceKeyB=$6000+for+copd+treatments+participation+near+my+zipcode&forceKeyC=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+for+copd+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyF=$6000+paid+for+best+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "Finding Paid Clinical Trials for Asthma Near You",
+    "description": "Discover how to locate paid clinical trials for asthma treatments, including participation opportunities and potential compensation near your area.",
+    "locale": "en_US"
+  },
+  "255": {
+    "url": "https://etoptip.com/education/which-online-schools-offer-free-laptops-en-us-5/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+online+high+school+with+laptop&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+high+school+that+give+you+a+computer+now&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer&forceKeyD=apply+for+online+school+high+schools+that+give+you+a+computer&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer&forceKeyF=apply+for+online+school+high+schools+that+gives+you+a+computer&s1pplacement={{placement}}",
+    "title": "\"Online Schools Offering Free Laptops for Students\"",
+    "description": "Explore online schools that provide free laptops to students, enhancing access to education and technology for a successful learning experience.",
+    "locale": "en_US"
+  },
+  "256": {
+    "url": "https://etoptip.com/health/affordable-juvederm-options-and-trials/?segment=rsoc.sc.etoptip.001&headline=explore+juvederm+options+and+specials&forceKeyA=participate+in+juvederm+facelift+trials&forceKeyB=paid+juvederm+fillers+nearby+trials&forceKeyC=juvederm+voluma+near+me&forceKeyD=juvederm+voluma+specials+near+me&forceKeyE=juvederm+for+under+eyes&forceKeyF=how+to+get+juvederm+voluma+specials+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Options and Trials for Juvederm Products",
+    "description": "Discover affordable options and trials for Juvederm, including specials for Voluma and treatments for under-eye areas, to enhance your beauty.",
+    "locale": "en_US"
+  },
+  "257": {
+    "url": "https://etoptip.com/health/are-tinnitus-trials-the-future-of-relief-en-us/?segment=rsoc.sc.etoptip.001&headline=understanding+tinnitus+clinical+trials&forceKeyA=$6000+in+{state}+for+tinnitus+treatments+participation+near+my+zipcode+{month}+2026&forceKeyB=$6000+in+{state}+for+tinnitus+treatments+participation+near+my+zipcode&forceKeyC=$1500+for+tinnitus+participations+near+my+zipcode+lenire+device+trial&forceKeyD=$1500+for+tinnitus+participation+near+my+zipcode+lenire+device+trial+{month}+2026&forceKeyE=tinnitus+clinic+near+me&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Exploring the Future of Tinnitus Relief Through Clinical Trials",
+    "description": "Explore the potential of tinnitus clinical trials as a promising avenue for relief, highlighting current research and patient participation opportunities.",
+    "locale": "en_US"
+  },
+  "258": {
+    "url": "https://etoptip.com/health/how-does-scalp-health-influence-hair-growth-en-us-3/?segment=rsoc.sc.etoptip.001&headline=learn+about+clinical+research+on+hair+loss&forceKeyA=how+to+qualify+for+a+paid+clinical+trial+for+hair+regrowth+near+me&forceKeyB=best+paid+hair+regrowth+clinical+trials+near+me+2025&forceKeyC=how+to+qualify+for+a+hair+regrowth+clinical+trial+near+me&forceKeyD=hair+regrowth+clinical+trials+with+compensation&forceKeyE=best+paid+hair+regrowth+clinical+trials+in+2025&forceKeyF=paid+hair+regrowth+clinical+trials&s1pplacement={{placement}}",
+    "title": "\"Understanding the Link Between Scalp Health and Hair Growth\"",
+    "description": "Explore the connection between scalp health and hair growth, backed by clinical research on hair loss and regrowth treatments.",
+    "locale": "en_US"
+  },
+  "259": {
+    "url": "https://etoptip.com/health/what-are-non-surgical-fat-removal-options-en-us/?segment=rsoc.sc.etoptip.001&headline=learn+about+studies+for+fat+removal&forceKeyA=$1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[coolsculpting]&forceKeyB=$1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyC=$1500+for+belly+fat+removal+without+surgery+participation&forceKeyD=$1500+for+belly+fat+reduction+treatment+participation+near+me+[coolsculpting]&forceKeyE=$1500+for+belly+fat+reduction+treatment+participation&forceKeyF=$1500+for+belly+fat+reduction+treatment+participation+near+me&s1pplacement={{placement}}",
+    "title": "Exploring Non-Surgical Options for Fat Removal: An Overview",
+    "description": "Explore various non-surgical fat removal options, including innovative treatments like CoolSculpting, and learn about their effectiveness and benefits.",
+    "locale": "en_US"
   }
 };
 
