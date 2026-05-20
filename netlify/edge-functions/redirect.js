@@ -947,6 +947,48 @@ export default async (request, context) => {
     "title": "Exploring Non-Surgical Options for Fat Removal: An Overview",
     "description": "Explore various non-surgical fat removal options, including innovative treatments like CoolSculpting, and learn about their effectiveness and benefits.",
     "locale": "en_US"
+  },
+  "260": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-can-save-you-money-and-improve-your-smile-2/?segment=rsoc.sc.goatdealoonline.001&headline=learn+more+about+dental+implants+trial&forceKeyA=$1500+for+dental+implants+participation&forceKeyB=participate+in+dental+implants+trial+[sign+up+now]&forceKeyC=no-fee+dental+implants&forceKeyD=get+$1500+for+dental+implants+participation&forceKeyE=$1950+for+dental+implants+participation+[search+now]&forceKeyF=participate+in+dental+implants+trial+sign+up+now&s1pplacement={{placement}}",
+    "title": "\"How Dental Implant Trials Can Enhance Your Smile and Save Costs\"",
+    "description": "Discover how participating in dental implant trials can enhance your smile while potentially saving you money on dental care.",
+    "locale": "en_US"
+  },
+  "261": {
+    "url": "https://goatdealo.online/health/how-to-participate-in-asthma-trials-for-pay-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+asthma+studies&forceKeyA=asthma+clinical+studies+$6000+near+my+zipcode&forceKeyB=$6000+for+copd+treatments+participation+near+my+zipcode&forceKeyC=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+for+copd+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyF=$6000+paid+for+best+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "\"Guidelines for Joining Paid Asthma Clinical Trials\"",
+    "description": "Discover how to participate in asthma trials that offer compensation, including insights on eligibility and the potential benefits of joining these studies.",
+    "locale": "en_US"
+  },
+  "262": {
+    "url": "https://goatdealo.online/health/key-factors-in-joining-neuropathy-trials/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+neuropathy+clinical+trials&forceKeyA=neuropathy+treatment+centers+of+{state}&forceKeyB=best+treatment+for+foot+neuropathy&forceKeyC=low+back+pain+study&forceKeyD=how+to+relieve+neuropathy+pain+in+feet&forceKeyE=$1500+for+neuropathy+research+{state}&forceKeyF=top+diabetes+neuropathy+trial&s1pplacement={{placement}}",
+    "title": "Key Factors to Consider When Joining Neuropathy Trials",
+    "description": "Explore key factors to consider when joining neuropathy clinical trials, including treatment options and potential benefits for managing symptoms.",
+    "locale": "en_US"
+  },
+  "263": {
+    "url": "https://goatdealo.online/health/affordable-juvederm-options-and-trials/?segment=rsoc.sc.goatdealoonline.001&headline=explore+juvederm+options+and+specials&forceKeyA=participate+in+juvederm+facelift+trials&forceKeyB=paid+juvederm+fillers+nearby+trials&forceKeyC=juvederm+voluma+near+me&forceKeyD=juvederm+voluma+specials+near+me&forceKeyE=juvederm+for+under+eyes&forceKeyF=how+to+get+juvederm+voluma+specials+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Juvederm Options and Trials Near You",
+    "description": "Discover affordable options and trials for Juvederm, including specials for fillers and treatments, tailored to enhance your beauty journey.",
+    "locale": "en_US"
+  },
+  "264": {
+    "url": "https://etoptip.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay/?segment=rsoc.sc.etoptip.001&headline=learn+more+about+botox+deals+and+pricing&forceKeyA=get+$149+botox+doctor+near+me+full+botox&forceKeyB=best+botox+injector+near+me&forceKeyC=$119+botox+doctor+near+me+full+botox&forceKeyD=see+$119+botox+doctor+near+me+full+botox&forceKeyE=get+$119+botox+doctor+near+{city}+full+botox&forceKeyF=get+$119+botox+doctor+near+{city}+full+botox&s1pplacement={{placement}}",
+    "title": "Understanding Botox Pricing: Key Insights Before You Decide",
+    "description": "Discover essential insights on Botox pricing, factors affecting costs, and what to consider before your treatment to make informed decisions.",
+    "locale": "en_US"
+  },
+  "265": {
+    "url": "https://goatdealo.online/technology/are-free-government-phones-for-seniors-available-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=learn+about+phones+for+seniors&forceKeyA=100%+free+phones+for+senior&forceKeyB=100%+free+phones+for+senior&forceKeyC=apply+for+free+phones+for+seniors&forceKeyD=100%+free+phone+for+seniors&forceKeyE=100+free+phones+for+seniors&forceKeyF=free+phones+for+seniors&s1pplacement={{placement}}",
+    "title": "Availability of Free Government Phones for Seniors in the U.S.",
+    "description": "Discover the availability of free government phones for seniors, including eligibility requirements and options for assistance in staying connected.",
+    "locale": "en_US"
+  },
+  "266": {
+    "url": "https://goatdealo.online/health/are-new-diabetes-studies-enhancing-care-en-us/?segment=rsoc.sc.goatdealoonline.001&headline=diabetes+treatment+trial&forceKeyA=diabetes+studies+testing+new+treatments+$26700+near+me&forceKeyB=diabetes+study+testing+new+treatments+$26700&forceKeyC=diabetes+study+testing+new+medications+$26700+near+{state}&forceKeyD=diabetes+study+testing+new+treatments+$26700+near+me&forceKeyE=diabetes+studies+using+new+treatments+$26700+near+me&forceKeyF=new+diabetes+studies+new+treatments+$26700+{state}&s1pplacement={{placement}}",
+    "title": "New Diabetes Studies: Advancements in Treatment and Care",
+    "description": "Explore how recent diabetes studies are improving treatment options and patient care, focusing on innovative therapies and their potential benefits.",
+    "locale": "en_US"
   }
 };
 
