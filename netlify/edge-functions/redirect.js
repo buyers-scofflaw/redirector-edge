@@ -137,6 +137,12 @@ export default async (request, context) => {
     "title": "Affordable Juvederm Options and Clinical Trials Explained",
     "description": "Discover affordable options and trials for Juvederm treatments, focusing on budget-friendly solutions for enhancing your beauty without breaking the bank.",
     "locale": "en_US"
+  },
+  "244": {
+    "url": "https://etoptip.com/health/how-clinical-trials-are-transforming-dental-implants-en-us/?segment=rsoc.sc.etoptip.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+near+me&forceKeyB=$1500+for+dental+implants+participation+in+{city}&forceKeyC=get+$1500+for+dental+implant+participation+near+me&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participations+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Explore how clinical trials are advancing dental implant technology and improving patient outcomes in the field of dentistry.",
+    "locale": "en_US"
   }
 };
 
