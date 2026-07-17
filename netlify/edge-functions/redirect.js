@@ -143,6 +143,12 @@ export default async (request, context) => {
     "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
     "description": "Explore how clinical trials are advancing dental implant technology and improving patient outcomes in the field of dentistry.",
     "locale": "en_US"
+  },
+  "245": {
+    "url": "https://findfact.net/health/how-clinical-trials-are-transforming-dental-implants-en-us/?segment=rsoc.sc.findfact.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+near+me&forceKeyB=$1500+for+dental+implants+participation+in+{city}&forceKeyC=get+$1500+for+dental+implant+participation+near+me&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participations+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"How Clinical Trials Are Innovating Dental Implant Solutions\"",
+    "description": "Explore how clinical trials are revolutionizing dental implants, enhancing effectiveness and patient outcomes in the field of dentistry.",
+    "locale": "en_US"
   }
 };
 
