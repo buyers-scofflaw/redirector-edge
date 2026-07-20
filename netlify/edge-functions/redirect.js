@@ -233,6 +233,90 @@ export default async (request, context) => {
     "title": "Understanding Botox Pricing: Key Factors to Consider",
     "description": "Explore essential insights on Botox pricing, including factors that influence costs and what to consider before your treatment.",
     "locale": "en_US"
+  },
+  "260": {
+    "url": "https://goatdealo.online/careers/how-online-courses-boost-career-growth-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+more+about+Apply+for+Online+School+that+Gives+You+%24+and+Laptops+Today&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+summer+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=online+colleges+that+give+you+a+computer&forceKeyF=online+colleges+that+give+you+a+computer+{state}&s1pplacement={{placement}}",
+    "title": "How Online Courses Can Enhance Your Career Prospects",
+    "description": "Discover how online courses can enhance your career growth by providing valuable skills and knowledge tailored to today?s job market.",
+    "locale": "en_US"
+  },
+  "261": {
+    "url": "https://goatdealo.online/education/how-to-earn-a-high-school-diploma-online-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=What%20to%20Know%20About%20Graduating%20Online&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Earning Your High School Diploma Online: Key Insights and Steps",
+    "description": "Discover essential information about earning a high school diploma online, including benefits, requirements, and the graduation process.",
+    "locale": "en_US"
+  },
+  "262": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-advance-care-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental+implant+clinic+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+vista&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+vista&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Discover how dental implant trials are improving patient care and outcomes, featuring insights on advancements in treatment and participant benefits.",
+    "locale": "en_US"
+  },
+  "263": {
+    "url": "https://goatdealo.online/education/how-to-earn-a-high-school-diploma-online-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=What%20to%20Know%20About%20Graduating%20Online&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Essential Guide to Earning Your High School Diploma Online\"",
+    "description": "Discover essential information on earning a high school diploma online, including program details and benefits tailored for your educational journey.",
+    "locale": "en_US"
+  },
+  "264": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-advance-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=free+dental+implants+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Explore how dental implant trials are advancing patient care, improving outcomes, and enhancing the future of dental health practices.",
+    "locale": "en_US"
+  },
+  "265": {
+    "url": "https://goatdealo.online/health/diabetes-studies-show-better-treatment-results-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=diabetes+treatment+trial&forceKeyA=diabetes+management+programs&forceKeyB=diabetes+studies+testing+new+treatments+$3000+near+me&forceKeyC=diabetes+study+testing+new+treatments&forceKeyD=diabetes+study+testing+new+medications+$3000+near+{state}&forceKeyE=diabetes+study+testing+new+treatments+$3000+near+me&forceKeyF=diabetes+studies+using+new+treatments+$3000+near+me&s1pplacement={{placement}}",
+    "title": "\"New Diabetes Studies Reveal Improved Treatment Outcomes\"",
+    "description": "Explore recent studies highlighting advancements in diabetes treatment and management, showcasing promising results for patients seeking improved care options.",
+    "locale": "en_US"
+  },
+  "266": {
+    "url": "https://goatdealo.online/health/benefits-of-joining-dental-implant-trials-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Dental%20Implant%20Participation&forceKeyA=dental+implant+trials+near+me&forceKeyB=get+$1500+for+dental+implant+participation+near+{city}&forceKeyC=get+$1950+for+dental+implants+participations+in+{city}&forceKeyD=teeth+fixing+near+me&forceKeyE=get+$1500+for+dental+implants+participation+near+{city}&forceKeyF=dental+implant+trials+in+{city}&s1pplacement={{placement}}",
+    "title": "Exploring the Benefits of Dental Implant Clinical Trials",
+    "description": "Explore the advantages of participating in dental implant trials, including potential financial benefits and access to cutting-edge dental care.",
+    "locale": "en_US"
+  },
+  "267": {
+    "url": "https://goatdealo.online/automotive/what-makes-full-size-pickup-trucks-versatile-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the versatility of full-size pickup trucks, exploring their features and benefits that make them ideal for various driving needs and lifestyles.",
+    "locale": "en_US"
+  },
+  "268": {
+    "url": "https://goatdealo.online/technology/how-do-major-internet-providers-compare-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Affordable+Internet+Plans&forceKeyA=senior+internet+program+(available+at+my+address)&forceKeyB=10+internet+in+my+zip+code&forceKeyC=what+is+the+best+internet+service+for+seniors+(see+prices)&forceKeyD=low+cost+internet+plans+by+zip+code+-+for+seniors&forceKeyE=10+internet+providers+in+my+zip+code&forceKeyF=high-speed+internet+for+seniors&s1pplacement={{placement}}",
+    "title": "Comparing Major Internet Providers in the U.S.",
+    "description": "Explore a comparison of major internet providers in the U.S., focusing on affordable plans, senior options, and service availability by zip code.",
+    "locale": "en_US"
+  },
+  "269": {
+    "url": "https://goatdealo.online/health/what-drives-the-surge-in-body-contouring-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyB=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyD=1500+for+belly+fat+removal+without+surgery+participation&forceKeyE=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyF=1500+for+belly+fat+reduction+treatment+participation&s1pplacement={{placement}}",
+    "title": "Understanding the Rise of Body Contouring Treatments",
+    "description": "Explore the factors behind the increasing popularity of body contouring, including advancements in fat removal techniques and clinical research insights.",
+    "locale": "en_US"
+  },
+  "270": {
+    "url": "https://goatdealo.online/education/why-choose-online-high-school-for-your-diploma-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&s1pplacement={{placement}}",
+    "title": "\"Benefits of Choosing Online High School for Your Diploma\"",
+    "description": "Discover the benefits of choosing online high school for your diploma, including flexibility, personalized learning, and access to resources to enhance your education.",
+    "locale": "en_US"
+  },
+  "271": {
+    "url": "https://goatdealo.online/health/why-asthma-clinical-trials-matter-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "The Importance of Asthma Clinical Trials in Advancing Treatment",
+    "description": "Explore the significance of asthma clinical trials and their impact on treatment advancements, highlighting the benefits of participation for patients.",
+    "locale": "en_US"
+  },
+  "272": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-advance-patient-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+More+About+Senior+Housing+Apartments+Today&forceKeyA=seniors+residence+near+me&forceKeyB=62+and+older+apartments+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=see+55+and+older+apartments+near+me&forceKeyE=55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials for Enhanced Patient Care",
+    "description": "Discover how dental implant trials are improving patient care, enhancing outcomes, and shaping the future of dental health treatments.",
+    "locale": "en_US"
+  },
+  "273": {
+    "url": "https://goatdealo.online/lifestyle/how-do-senior-apartments-enhance-well-being-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+More+About+Botox+and+Juvederm&forceKeyA=botox+special+near+me&forceKeyB=get+$99+botox+doctor+near+me+full+botox&forceKeyC=botox+special+near+me&forceKeyD=botox+clinics+near+me&forceKeyE=cosmetic+injections+near+me&forceKeyF=best+botox+injector+near+me&s1pplacement={{placement}}",
+    "title": "\"How Senior Apartments Support Enhanced Well-Being\"",
+    "description": "Discover how senior apartments contribute to enhanced well-being, promoting a fulfilling lifestyle and community engagement for older adults.",
+    "locale": "en_US"
   }
 };
 
