@@ -149,6 +149,90 @@ export default async (request, context) => {
     "title": "\"How Clinical Trials Are Innovating Dental Implant Solutions\"",
     "description": "Explore how clinical trials are revolutionizing dental implants, enhancing effectiveness and patient outcomes in the field of dentistry.",
     "locale": "en_US"
+  },
+  "246": {
+    "url": "https://etoptip.com/education/how-online-courses-boost-career-growth-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+more+about+Apply+for+Online+School+that+Gives+You+%24+and+Laptops+Today&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+summer+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=online+colleges+that+give+you+a+computer&forceKeyF=online+colleges+that+give+you+a+computer+{state}&s1pplacement={{placement}}",
+    "title": "How Online Courses Enhance Career Advancement Opportunities",
+    "description": "Discover how online courses can enhance your career prospects and provide valuable skills for professional growth in today's competitive job market.",
+    "locale": "en_US"
+  },
+  "247": {
+    "url": "https://etoptip.com/education/how-to-earn-a-high-school-diploma-online-en-us-2/?segment=rsoc.sc.etoptip.002&headline=What%20to%20Know%20About%20Graduating%20Online&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Earning Your High School Diploma Online: Key Information",
+    "description": "Discover essential information on earning a high school diploma online, including program options, benefits, and tips for success.",
+    "locale": "en_US"
+  },
+  "248": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-advance-care-en-us/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental+implant+clinic+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+vista&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+vista&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Discover how dental implant trials are improving patient care and advancing treatment options in the field of dentistry.",
+    "locale": "en_US"
+  },
+  "249": {
+    "url": "https://etoptip.com/education/how-to-earn-a-high-school-diploma-online-en-us/?segment=rsoc.sc.etoptip.002&headline=What%20to%20Know%20About%20Graduating%20Online&forceKeyA=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyC=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Earning Your High School Diploma Online: Key Insights and Tips",
+    "description": "Discover essential information about earning a high school diploma online, including options, requirements, and benefits for a flexible educational path.",
+    "locale": "en_US"
+  },
+  "250": {
+    "url": "https://etoptip.com/health/how-are-dental-implant-trials-advancing-care-en-us/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=free+dental+implants+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Explore how dental implant trials are advancing patient care and improving outcomes in dental health, highlighting innovative approaches and research developments.",
+    "locale": "en_US"
+  },
+  "251": {
+    "url": "https://etoptip.com/health/are-diabetes-studies-improving-treatment-en-us/?segment=rsoc.sc.etoptip.002&headline=diabetes+treatment+trial&forceKeyA=diabetes+management+programs&forceKeyB=diabetes+studies+testing+new+treatments+$3000+near+me&forceKeyC=diabetes+study+testing+new+treatments&forceKeyD=diabetes+study+testing+new+medications+$3000+near+{state}&forceKeyE=diabetes+study+testing+new+treatments+$3000+near+me&forceKeyF=diabetes+studies+using+new+treatments+$3000+near+me&s1pplacement={{placement}}",
+    "title": "Advancements in Diabetes Studies: Enhancing Treatment Options",
+    "description": "Explore the latest advancements in diabetes studies and how they are enhancing treatment options for better management of the condition.",
+    "locale": "en_US"
+  },
+  "252": {
+    "url": "https://etoptip.com/health/benefits-of-joining-dental-implant-trials-en-us-2/?segment=rsoc.sc.etoptip.002&headline=Dental%20Implant%20Participation&forceKeyA=dental+implant+trials+near+me&forceKeyB=get+$1500+for+dental+implant+participation+near+{city}&forceKeyC=get+$1950+for+dental+implants+participations+in+{city}&forceKeyD=teeth+fixing+near+me&forceKeyE=get+$1500+for+dental+implants+participation+near+{city}&forceKeyF=dental+implant+trials+in+{city}&s1pplacement={{placement}}",
+    "title": "\"Exploring the Benefits of Dental Implant Trials\"",
+    "description": "Discover the advantages of participating in dental implant trials, including potential financial incentives and access to innovative treatments for oral health.",
+    "locale": "en_US"
+  },
+  "253": {
+    "url": "https://etoptip.com/automotive/what-makes-full-size-pickup-trucks-versatile-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the factors that contribute to the versatility of full-size pickup trucks, highlighting their capabilities, features, and top models in the market.",
+    "locale": "en_US"
+  },
+  "254": {
+    "url": "https://etoptip.com/technology/how-do-major-internet-providers-compare-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Affordable+Internet+Plans&forceKeyA=senior+internet+program+(available+at+my+address)&forceKeyB=10+internet+in+my+zip+code&forceKeyC=what+is+the+best+internet+service+for+seniors+(see+prices)&forceKeyD=low+cost+internet+plans+by+zip+code+-+for+seniors&forceKeyE=10+internet+providers+in+my+zip+code&forceKeyF=high-speed+internet+for+seniors&s1pplacement={{placement}}",
+    "title": "Comparing Major Internet Providers: Options for Seniors",
+    "description": "Discover how major internet providers compare in the U.S., focusing on affordability and options tailored for seniors and specific zip codes.",
+    "locale": "en_US"
+  },
+  "255": {
+    "url": "https://etoptip.com/health/what-drives-the-surge-in-body-contouring-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyB=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyD=1500+for+belly+fat+removal+without+surgery+participation&forceKeyE=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyF=1500+for+belly+fat+reduction+treatment+participation&s1pplacement={{placement}}",
+    "title": "\"Exploring the Rise of Body Contouring Trends and Technologies\"",
+    "description": "Explore the factors driving the rise in body contouring, including innovative fat removal techniques and the latest clinical research findings.",
+    "locale": "en_US"
+  },
+  "256": {
+    "url": "https://etoptip.com/education/why-choose-online-high-school-for-your-diploma-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&s1pplacement={{placement}}",
+    "title": "Benefits of Choosing Online High School for Your Diploma",
+    "description": "Discover the benefits of choosing an online high school for your diploma, including flexibility, personalized learning, and access to resources tailored to your needs.",
+    "locale": "en_US"
+  },
+  "257": {
+    "url": "https://etoptip.com/health/why-asthma-clinical-trials-matter-en-us/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "The Importance of Asthma Clinical Trials in Advancing Treatments",
+    "description": "Discover the importance of asthma clinical trials and how they contribute to advancing treatment options and improving patient outcomes.",
+    "locale": "en_US"
+  },
+  "258": {
+    "url": "https://etoptip.com/lifestyle/how-senior-apartments-enhance-well-being-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+More+About+Senior+Housing+Apartments+Today&forceKeyA=seniors+residence+near+me&forceKeyB=62+and+older+apartments+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=see+55+and+older+apartments+near+me&forceKeyE=55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "\"How Senior Apartments Promote Enhanced Well-Being\"",
+    "description": "Discover how senior apartments can improve well-being and foster a vibrant lifestyle for older adults, promoting community and independence.",
+    "locale": "en_US"
+  },
+  "259": {
+    "url": "https://etoptip.com/health/botox-pricing-explained-what-you-need-to-know-before-you-pay/?segment=rsoc.sc.etoptip.002&headline=Learn+More+About+Botox+and+Juvederm&forceKeyA=botox+special+near+me&forceKeyB=get+$99+botox+doctor+near+me+full+botox&forceKeyC=botox+special+near+me&forceKeyD=botox+clinics+near+me&forceKeyE=cosmetic+injections+near+me&forceKeyF=best+botox+injector+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Botox Pricing: Key Factors to Consider",
+    "description": "Explore essential insights on Botox pricing, including factors that influence costs and what to consider before your treatment.",
+    "locale": "en_US"
   }
 };
 
