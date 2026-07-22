@@ -29,7 +29,7 @@ import type { Config } from "@netlify/functions";
 const BQ_PROJECT = "carbon-storm-422904-n0";
 const BQ_DATASET = "my_dataset";
 const GRAPH_VERSION = "v19.0";
-const ADJ_THRESHOLD = 0.25; // 25% threshold
+const ADJ_THRESHOLD = 0.10; // 10% threshold
 
 // ── JWT / Google Auth helpers (shared with s1-capi-sender.mts) ──
 
