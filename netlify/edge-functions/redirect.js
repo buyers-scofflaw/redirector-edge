@@ -317,6 +317,54 @@ export default async (request, context) => {
     "title": "\"How Senior Apartments Support Enhanced Well-Being\"",
     "description": "Discover how senior apartments contribute to enhanced well-being, promoting a fulfilling lifestyle and community engagement for older adults.",
     "locale": "en_US"
+  },
+  "274": {
+    "url": "https://goatdealo.online/health/how-are-clinical-trials-changing-dental-implants-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+near+me&forceKeyB=$1500+for+dental+implants+participation+in+{city}&forceKeyC=get+$1500+for+dental+implant+participation+near+me&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participations+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants: The Role of Clinical Trials\"",
+    "description": "Explore how clinical trials are revolutionizing dental implants, enhancing treatment options, and improving patient outcomes in modern dentistry.",
+    "locale": "en_US"
+  },
+  "275": {
+    "url": "https://goatdealo.online/education/why-choose-online-high-school-for-your-diploma-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+more+about+Apply+for+Online+School+that+Gives+You+%24+and+Laptops+Today&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+may+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=online+colleges+that+give+you+a+computer&forceKeyF=online+colleges+that+give+you+a+computer+{state}&s1pplacement={{placement}}",
+    "title": "Benefits of Pursuing an Online High School Diploma",
+    "description": "Discover the benefits of choosing an online high school for your diploma, including flexibility, accessibility, and personalized learning experiences.",
+    "locale": "en_US"
+  },
+  "276": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-advance-patient-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=free+dental+implants+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Patient Care Through Dental Implant Trials",
+    "description": "Discover how dental implant trials are advancing patient care by improving treatment methods and outcomes for individuals seeking dental solutions.",
+    "locale": "en_US"
+  },
+  "277": {
+    "url": "https://goatdealo.online/automotive/what-makes-full-size-pickup-trucks-versatile-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the versatility of full-size pickup trucks, exploring their features, benefits, and why they remain a popular choice for drivers.",
+    "locale": "en_US"
+  },
+  "278": {
+    "url": "https://goatdealo.online/health/what-drives-the-surge-in-body-contouring-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyB=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyD=1500+for+belly+fat+removal+without+surgery+participation&forceKeyE=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyF=1500+for+belly+fat+reduction+treatment+participation&s1pplacement={{placement}}",
+    "title": "Understanding the Rise in Popularity of Body Contouring Treatments",
+    "description": "Explore the factors driving the rise in body contouring procedures, with a focus on advancements in fat removal techniques and clinical research.",
+    "locale": "en_US"
+  },
+  "279": {
+    "url": "https://goatdealo.online/health/why-asthma-clinical-trials-are-important-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "The Importance of Asthma Clinical Trials in Advancing Treatment",
+    "description": "Discover the significance of asthma clinical trials in advancing treatment options and improving patient outcomes in this informative article.",
+    "locale": "en_US"
+  },
+  "280": {
+    "url": "https://goatdealo.online/health/how-do-senior-apartments-enhance-well-being-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+More+About+Senior+Housing+Apartments+Today&forceKeyA=seniors+residence+near+me&forceKeyB=62+and+older+apartments+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=see+55+and+older+apartments+near+me&forceKeyE=55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "\"How Senior Apartments Improve Quality of Life for Older Adults\"",
+    "description": "Discover how senior apartments can improve overall well-being, offering a supportive environment that fosters community and enhances quality of life for older adults.",
+    "locale": "en_US"
+  },
+  "281": {
+    "url": "https://goatdealo.online/health/affordable-juvederm-options-and-trials/?segment=rsoc.sc.goatdealoonline.002&headline=Botox+Treatments&forceKeyA=$1500+botox+participation+near+me&forceKeyB=$1500+in+[state]+for+botox+participation+near+my+zipcode&forceKeyC=$1500+for+botox+participation+near+my+zipcode&forceKeyD=$1500+in+[city]+for+botox+participation+near+my+zipcode&forceKeyE=$1500+for+botox+participation+in+[city]&forceKeyF=$1500+paid+for+botox+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "Affordable Juvederm Options: Trials and Treatments Explained",
+    "description": "Discover affordable Juvederm options and trial information, providing insights on cost-effective treatments for enhancing your beauty and confidence.",
+    "locale": "en_US"
   }
 };
 
