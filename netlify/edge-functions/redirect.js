@@ -365,6 +365,54 @@ export default async (request, context) => {
     "title": "Affordable Juvederm Options: Trials and Treatments Explained",
     "description": "Discover affordable Juvederm options and trial information, providing insights on cost-effective treatments for enhancing your beauty and confidence.",
     "locale": "en_US"
+  },
+  "282": {
+    "url": "https://etoptip.com/health/how-clinical-trials-are-changing-dental-implants-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+near+me&forceKeyB=$1500+for+dental+implants+participation+in+{city}&forceKeyC=get+$1500+for+dental+implant+participation+near+me&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participations+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Discover how clinical trials are innovating dental implants, enhancing treatment options, and improving patient outcomes in modern dentistry.",
+    "locale": "en_US"
+  },
+  "283": {
+    "url": "https://etoptip.com/education/why-choose-online-high-school-for-your-diploma-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+more+about+Apply+for+Online+School+that+Gives+You+%24+and+Laptops+Today&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+may+2026&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=online+colleges+that+give+you+a+computer&forceKeyF=online+colleges+that+give+you+a+computer+{state}&s1pplacement={{placement}}",
+    "title": "Benefits of Choosing Online High School for Your Diploma",
+    "description": "Discover the benefits of choosing an online high school for your diploma, including flexibility, personalized learning, and unique resources.",
+    "locale": "en_US"
+  },
+  "284": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-advance-care-en-us-2/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=free+dental+implants+near+me&forceKeyB=get+$1950+for+dental+implants+participation+near+me&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participation+near+me&forceKeyE=best+get+$1950+for+dental+implants+participation+near+me&forceKeyF=$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Explore how dental implant trials contribute to advancements in patient care, improving outcomes and accessibility in dental treatments.",
+    "locale": "en_US"
+  },
+  "285": {
+    "url": "https://etoptip.com/automotive/what-makes-full-size-pickup-trucks-versatile-en-us-2/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the versatility of full-size pickup trucks, exploring their features, capabilities, and the top models that make them a popular choice for drivers.",
+    "locale": "en_US"
+  },
+  "286": {
+    "url": "https://etoptip.com/health/body-contouring-for-belly-fat-reduction-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+me&forceKeyB=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyD=1500+for+belly+fat+removal+without+surgery+participation&forceKeyE=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyF=1500+for+belly+fat+reduction+treatment+participation&s1pplacement={{placement}}",
+    "title": "Understanding Body Contouring for Belly Fat Reduction",
+    "description": "Discover insights into body contouring techniques for belly fat reduction, including innovative fat removal methods and clinical research findings.",
+    "locale": "en_US"
+  },
+  "287": {
+    "url": "https://etoptip.com/health/asthma-clinical-trials-offer-up-to-6000-en-us/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "\"Asthma Clinical Trials: Earn Up to $6,000 for Participation\"",
+    "description": "Discover opportunities for participation in asthma clinical trials that offer compensation up to $6000, tailored to your location and needs.",
+    "locale": "en_US"
+  },
+  "288": {
+    "url": "https://etoptip.com/lifestyle/how-do-senior-apartments-enhance-well-being-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+More+About+Senior+Housing+Apartments+Today&forceKeyA=seniors+residence+near+me&forceKeyB=62+and+older+apartments+near+me&forceKeyC=apartments+55+and+older+near+me&forceKeyD=see+55+and+older+apartments+near+me&forceKeyE=55+and+older+apartment+near+me&forceKeyF=55+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "\"How Senior Apartments Promote Enhanced Well-Being\"",
+    "description": "Discover how senior apartments contribute to enhanced well-being through community, accessibility, and tailored amenities for older adults.",
+    "locale": "en_US"
+  },
+  "289": {
+    "url": "https://etoptip.com/health/affordable-juvederm-options-and-trials/?segment=rsoc.sc.etoptip.002&headline=Botox+Treatments&forceKeyA=$1500+botox+participation+near+me&forceKeyB=$1500+in+[state]+for+botox+participation+near+my+zipcode&forceKeyC=$1500+for+botox+participation+near+my+zipcode&forceKeyD=$1500+in+[city]+for+botox+participation+near+my+zipcode&forceKeyE=$1500+for+botox+participation+in+[city]&forceKeyF=$1500+paid+for+botox+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "Affordable Juvederm Options and Clinical Trials Explained",
+    "description": "Discover affordable options and trial opportunities for Juvederm, enhancing your beauty treatments without breaking the bank. Explore various choices tailored to your needs.",
+    "locale": "en_US"
   }
 };
 
