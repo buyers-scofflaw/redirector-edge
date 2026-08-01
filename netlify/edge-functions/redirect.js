@@ -525,6 +525,24 @@ export default async (request, context) => {
     "image": "https://everything-today.com/assets/everythingtoday-og.jpg",
     "image_alt": "Glowing systems illustrate automation, productivity, and interconnected technology working continuously.",
     "type": "article"
+  },
+  "https://last-chance-lane.com": {
+    "site_name": "Last Chance Lane",
+    "image": "https://last-chance-lane.com/assets/lastchancelane-og.png",
+    "image_alt": "An open road at dusk lit by warm amber lines, suggesting offers that are close to ending.",
+    "type": "article"
+  },
+  "https://clearance-radar.com": {
+    "site_name": "Clearance Radar",
+    "image": "https://clearance-radar.com/assets/clearanceradar-og.png",
+    "image_alt": "A teal radar display sweeping across tracked points, representing price drops detected in real time.",
+    "type": "article"
+  },
+  "https://daily-closeouts.com": {
+    "site_name": "Daily Closeouts",
+    "image": "https://daily-closeouts.com/assets/dailycloseouts-og.png",
+    "image_alt": "Overlapping crimson price tags on a dark background, representing fresh markdowns posted each day.",
+    "type": "article"
   }
 };
 
