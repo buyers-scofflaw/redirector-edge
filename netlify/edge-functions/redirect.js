@@ -461,6 +461,54 @@ export default async (request, context) => {
     "title": "The Rising Popularity of Body Contouring Treatments",
     "description": "Explore the factors contributing to the rise in body contouring, including advancements in fat removal techniques and their impact on aesthetic treatments.",
     "locale": "en_US"
+  },
+  "298": {
+    "url": "https://etoptip.com/education/online-high-school-programs-with-cash-and-laptops-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Discover Online High Schools Offering Cash and Laptops\"",
+    "description": "Discover online high school programs that offer cash incentives and laptops, designed to enhance your educational experience and support your learning journey.",
+    "locale": "en_US"
+  },
+  "299": {
+    "url": "https://etoptip.com/health/how-are-clinical-trials-changing-dental-implants-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=$1500+for+dental+implants+participations+in+{city}&forceKeyB=get+$1500+for+dental+implant+participation+near+me&forceKeyC=get+$1500+for+dental+implant+participation+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participation+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "How Clinical Trials Are Revolutionizing Dental Implants",
+    "description": "Discover how clinical trials are innovating dental implants, enhancing their effectiveness and accessibility for patients.",
+    "locale": "en_US"
+  },
+  "300": {
+    "url": "https://etoptip.com/technology/how-can-seniors-save-on-internet-in-2026-en-us-2/?segment=rsoc.sc.etoptip.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "Ways Seniors Can Save on Internet Costs in 2026",
+    "description": "Discover ways for seniors to save on internet costs in 2026, including no-cost plans and tips for finding affordable options in your area.",
+    "locale": "en_US"
+  },
+  "301": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-advance-patient-care-en-us-3/?segment=rsoc.sc.etoptip.002&headline=how+dental+implant+trials+advance+patient+care&forceKeyA=$1500+for+dental+implants+participations+in+{city}&forceKeyB=best+$1500+for+dental+implants+participations+in+{city}&forceKeyC=$1000+dental+implants+near+me&forceKeyD=$1500+for+dental+implants+participations+near+me&forceKeyE=dental+implants+trials+in+{city}&forceKeyF=full+dental+implants+in+one+day&s1pplacement={{placement}}",
+    "title": "Advancements in Patient Care Through Dental Implant Trials",
+    "description": "Explore how dental implant trials are transforming patient care, improving outcomes, and advancing dental technology for better oral health solutions.",
+    "locale": "en_US"
+  },
+  "302": {
+    "url": "https://etoptip.com/lifestyle/senior-apartments-that-fit-your-budget-en-us-2/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+senior+apartments&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments That Suit Your Budget",
+    "description": "Explore budget-friendly senior apartments that cater to your needs, offering comfort and convenience in your living space. Discover options tailored for seniors.",
+    "locale": "en_US"
+  },
+  "303": {
+    "url": "https://etoptip.com/health/how-are-dental-implant-trials-advancing-care-en-us-2/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=get+$1950+for+dental+implants+participation+near+me&forceKeyB=$1500+for+dental+implants+participations+in+vista&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+vista&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Patient Care",
+    "description": "Explore how dental implant trials are advancing patient care through innovative techniques and research, enhancing outcomes and accessibility in dental health.",
+    "locale": "en_US"
+  },
+  "304": {
+    "url": "https://etoptip.com/health/how-asthma-studies-improve-patient-care-en-us/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=$4445+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyB=$3000+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyC=paid+asthma+studies+near+me&forceKeyD=practical+study+asthma&forceKeyE=asthma+clinical+trials&forceKeyF=$4445+2+night+asthma+treatments+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"How Asthma Research Enhances Patient Care and Treatment Options\"",
+    "description": "Explore how asthma studies enhance patient care, focusing on advancements in treatment options and improved management for individuals living with asthma.",
+    "locale": "en_US"
+  },
+  "305": {
+    "url": "https://etoptip.com/health/body-contouring-for-belly-fat-options-and-costs-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyB=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation&forceKeyD=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyE=1500+for+belly+fat+reduction+treatment+participation&forceKeyF=1500+for+belly+fat+reduction+treatment+participation+near+me&s1pplacement={{placement}}",
+    "title": "Body Contouring Options and Costs for Belly Fat Reduction",
+    "description": "Explore various body contouring options for belly fat reduction, including costs and effective non-surgical treatments like CoolSculpting.",
+    "locale": "en_US"
   }
 };
 
