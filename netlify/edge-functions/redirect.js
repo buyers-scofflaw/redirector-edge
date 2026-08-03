@@ -557,6 +557,54 @@ export default async (request, context) => {
     "title": "Advancements in Dental Implant Trials and Patient Care",
     "description": "Explore how dental implant trials are shaping advancements in dental care, improving outcomes and accessibility for patients.",
     "locale": "en_US"
+  },
+  "314": {
+    "url": "https://etoptip.com/health/what-to-know-about-non-surgical-facelifts-en-us-2/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+cosmetic+injectables&forceKeyA=botox+special+near+me&forceKeyB=best+botox+clinics+near+me&forceKeyC=botox+special+near+me+{month}+2026&forceKeyD=get+botox+doctor+near+me+full+botox&forceKeyE=botox+clinics+near+me&forceKeyF=botox+promotions+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Explore the benefits and options of non-surgical facelifts, including popular cosmetic injectables like Botox, for a youthful appearance without surgery.",
+    "locale": "en_US"
+  },
+  "315": {
+    "url": "https://etoptip.com/health/how-do-copd-studies-shape-future-care-en-us/?segment=rsoc.sc.etoptip.002&headline=copd+study&forceKeyA=copd+early+diagnosis+and+treatment+to+slow+disease+progression&forceKeyB=$6000+study+for+copd+treatment+near+my+zipcode+[state]&forceKeyC=$6000+study+for+copd+treatment+near+my+zipcode&forceKeyD=$6000+for+new+copd+treatment+study+near+my+zipcode&forceKeyE=$6000+study+for+new+copd+treatment+near+my+zipcode&forceKeyF=inhaled+therapy+copd&s1pplacement={{placement}}",
+    "title": "\"Impact of COPD Studies on Future Treatment Approaches\"",
+    "description": "Explore how COPD studies are shaping future care approaches, focusing on early diagnosis and innovative treatment strategies to improve patient outcomes.",
+    "locale": "en_US"
+  },
+  "316": {
+    "url": "https://etoptip.com/health/dental-implant-clinical-trials-what-to-know-en-us/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+dental+implant+clinical+trials&forceKeyA=dental+implant+clinic+near+me&forceKeyB=dental+implant+trials+near+me&forceKeyC=full+mouth+dental+implants+near+me&forceKeyD=participate+in+dental+implants+trial+sign+up+now+near+me&forceKeyE=dental+implant+trial+eligibility&forceKeyF=patient+selection+for+dental+implants&s1pplacement={{placement}}",
+    "title": "Understanding Dental Implant Clinical Trials: Key Insights",
+    "description": "Explore essential information about dental implant clinical trials, including eligibility, patient selection, and what to expect during the process.",
+    "locale": "en_US"
+  },
+  "317": {
+    "url": "https://goatdealo.online/health/non-surgical-facelifts-what-to-know-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Discover essential information about non-surgical facelifts, including benefits, procedures, and what to expect for youthful, rejuvenated skin.",
+    "locale": "en_US"
+  },
+  "318": {
+    "url": "https://etoptip.com/health/what-to-know-about-non-surgical-facelifts-en-us/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Benefits and Options",
+    "description": "Discover essential insights about non-surgical facelifts, including techniques, benefits, and what to expect from this popular cosmetic procedure.",
+    "locale": "en_US"
+  },
+  "319": {
+    "url": "https://etoptip.com/health/how-asthma-clinical-trials-advance-treatment-en-us/?segment=rsoc.sc.etoptip.002&headline=Asthma+Clinical+Trials&forceKeyA=$1500+asthma+treatments+participation+near+me&forceKeyB=asthma+treatments+participation+near+me&forceKeyC=asthma+near+me&forceKeyD=start+study+asthma&forceKeyE=best+asthma+clinical+studies+near+my+zipcode&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Advancing Asthma Treatment Through Clinical Trials",
+    "description": "Explore how asthma clinical trials are shaping the future of treatment, enhancing therapies, and improving patient outcomes in asthma management.",
+    "locale": "en_US"
+  },
+  "320": {
+    "url": "https://etoptip.com/technology/senior-internet-adoption-trends-and-challenges-en-us/?segment=rsoc.sc.etoptip.002&headline=Senior+Internet+plans&forceKeyA=internet+for+seniors+near+me&forceKeyB=internet+deals+for+seniors&forceKeyC=senior+internet+plans+in+my+area&forceKeyD=senior+internet+providers+near+me&forceKeyE=internet+service+for+seniors+in+my+area&forceKeyF=best+internet+plans+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Exploring Internet Adoption Trends Among Seniors\"",
+    "description": "Explore the trends and challenges of internet adoption among seniors, highlighting the evolving needs and preferences in digital connectivity for older adults.",
+    "locale": "en_US"
+  },
+  "321": {
+    "url": "https://etoptip.com/health/how-dental-implant-trials-advance-patient-care-en-us-2/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=get+$1950+for+dental+implants+participation+near+me&forceKeyB=$1500+for+dental+implants+participations+in+{city}&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Advancements in Patient Care Through Dental Implant Trials",
+    "description": "Explore how dental implant trials contribute to improved patient care, enhancing treatment options and outcomes for individuals seeking dental solutions.",
+    "locale": "en_US"
   }
 };
 
