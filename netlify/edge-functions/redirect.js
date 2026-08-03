@@ -413,6 +413,54 @@ export default async (request, context) => {
     "title": "Affordable Juvederm Options and Clinical Trials Explained",
     "description": "Discover affordable options and trial opportunities for Juvederm, enhancing your beauty treatments without breaking the bank. Explore various choices tailored to your needs.",
     "locale": "en_US"
+  },
+  "290": {
+    "url": "https://etoptip.com/education/online-high-school-programs-with-cash-and-laptops-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring Online High School Programs with Cash and Laptops\"",
+    "description": "Discover online high school programs that offer cash incentives and laptops to enhance your learning experience. Explore flexible education options tailored for you.",
+    "locale": "en_US"
+  },
+  "291": {
+    "url": "https://goatdealo.online/health/how-clinical-trials-are-changing-dental-implants-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=$1500+for+dental+implants+participations+in+{city}&forceKeyB=get+$1500+for+dental+implant+participation+near+me&forceKeyC=get+$1500+for+dental+implant+participation+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1950+for+dental+implants+participation+in+{city}&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Transforming Dental Care: The Impact of Clinical Trials on Implants\"",
+    "description": "Discover how clinical trials are revolutionizing dental implants, improving outcomes and accessibility for patients in need of dental solutions.",
+    "locale": "en_US"
+  },
+  "292": {
+    "url": "https://goatdealo.online/technology/how-can-seniors-save-on-internet-in-2026-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Affordable Internet Options for Seniors in 2026\"",
+    "description": "Discover how seniors can save on internet costs in 2026 with tips on finding affordable plans and checking availability by address.",
+    "locale": "en_US"
+  },
+  "293": {
+    "url": "https://goatdealo.online/health/how-dental-implant-trials-advance-patient-care-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=how+dental+implant+trials+advance+patient+care&forceKeyA=$1500+for+dental+implants+participations+in+{city}&forceKeyB=best+$1500+for+dental+implants+participations+in+{city}&forceKeyC=$1000+dental+implants+near+me&forceKeyD=$1500+for+dental+implants+participations+near+me&forceKeyE=dental+implants+trials+in+{city}&forceKeyF=full+dental+implants+in+one+day&s1pplacement={{placement}}",
+    "title": "Advancements in Patient Care Through Dental Implant Trials",
+    "description": "Discover how dental implant trials are improving patient care and advancing dental technology, offering insights into innovative treatments and outcomes.",
+    "locale": "en_US"
+  },
+  "294": {
+    "url": "https://goatdealo.online/lifestyle/senior-apartments-that-fit-your-budget-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=learn+more+about+senior+apartments&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments That Meet Your Budget Needs",
+    "description": "Discover budget-friendly senior apartments that cater to your lifestyle needs, helping you find the perfect home for your golden years.",
+    "locale": "en_US"
+  },
+  "295": {
+    "url": "https://goatdealo.online/health/how-are-dental-implant-trials-advancing-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=get+$1950+for+dental+implants+participation+near+me&forceKeyB=$1500+for+dental+implants+participations+in+vista&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+vista&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials: Improving Patient Care",
+    "description": "Explore how dental implant trials are advancing patient care and enhancing treatment options through innovative research and developments in dentistry.",
+    "locale": "en_US"
+  },
+  "296": {
+    "url": "https://goatdealo.online/health/how-asthma-studies-improve-patient-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=$4445+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyB=$3000+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyC=paid+asthma+studies+near+me&forceKeyD=practical+study+asthma&forceKeyE=asthma+clinical+trials&forceKeyF=$4445+2+night+asthma+treatments+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Advancements in Asthma Research Enhance Patient Care\"",
+    "description": "Discover how recent asthma studies enhance patient care and treatment options, improving outcomes for those living with this condition.",
+    "locale": "en_US"
+  },
+  "297": {
+    "url": "https://goatdealo.online/health/what-drives-the-surge-in-body-contouring-en-us-3/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=1500+for+belly+fat+reduction+treatment+participation+near+my+zipcode+[+coolsculpting+]&forceKeyB=1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyC=1500+for+belly+fat+removal+without+surgery+participation&forceKeyD=1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyE=1500+for+belly+fat+reduction+treatment+participation&forceKeyF=1500+for+belly+fat+reduction+treatment+participation+near+me&s1pplacement={{placement}}",
+    "title": "The Rising Popularity of Body Contouring Treatments",
+    "description": "Explore the factors contributing to the rise in body contouring, including advancements in fat removal techniques and their impact on aesthetic treatments.",
+    "locale": "en_US"
   }
 };
 
