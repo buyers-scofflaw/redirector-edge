@@ -665,6 +665,66 @@ export default async (request, context) => {
     "title": "\"How Tooth Regeneration is Transforming Modern Dentistry\"",
     "description": "Discover how tooth regeneration techniques are transforming dentistry, offering innovative solutions for dental health and future treatments.",
     "locale": "en_US"
+  },
+  "332": {
+    "url": "https://goatdealo.online/education/online-high-school-benefits-for-your-diploma-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring the Advantages of Online High School for Graduates\"",
+    "description": "Discover the advantages of earning your high school diploma online, including flexibility, personalized learning, and access to essential resources.",
+    "locale": "en_US"
+  },
+  "333": {
+    "url": "https://goatdealo.online/health/how-clinical-trials-are-changing-dental-implants-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Discover how clinical trials are revolutionizing dental implants, enhancing techniques and outcomes for patients seeking improved oral health solutions.",
+    "locale": "en_US"
+  },
+  "334": {
+    "url": "https://goatdealo.online/health/benefits-of-joining-asthma-clinical-trials-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Asthma+Study+Some+studies+on+asthma+explore+the+condition+through+structured+monitoring.+Learn+more.&forceKeyA=start+study+asthma&forceKeyB=asthma+near+me&forceKeyC=asthma+clinical+trials&forceKeyD=asthma+research+studies+near+me&forceKeyE=asthma+clinical+trials+near+me&forceKeyF=paid+asthma+studies+near+me&s1pplacement={{placement}}",
+    "title": "Understanding the Benefits of Participating in Asthma Clinical Trials",
+    "description": "Discover the benefits of participating in asthma clinical trials, exploring structured monitoring and research advancements in asthma treatment options.",
+    "locale": "en_US"
+  },
+  "335": {
+    "url": "https://goatdealo.online/health/what-to-know-about-non-surgical-facelifts-en-us-3/?segment=rsoc.sc.goatdealoonline.002&headline=Non-Surgical+Facelift+Guide+Explore+facelift+options+designed+to+support+skin+firmness+and+elasticity.+Learn+more.&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Options for Skin Firmness",
+    "description": "Discover essential information about non-surgical facelifts, including options for enhancing skin firmness and elasticity without invasive procedures.",
+    "locale": "en_US"
+  },
+  "336": {
+    "url": "https://goatdealo.online/health/how-do-clinical-trials-impact-addiction-treatment-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Substance+Abuse+Clinical+Trials&forceKeyA=$6000+in+my+city+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyB=$6000+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+substance+abuse+treatment+participation+near+my+zip+code&forceKeyD=$6000+for+substance+abuse+treatments+participation+trials+near+me&forceKeyE=$6000+for+substance+abuse+treatments+participation+near+me+{month}&forceKeyF=substance+abuse+research+and+treatment&s1pplacement={{placement}}",
+    "title": "The Role of Clinical Trials in Advancing Addiction Treatment",
+    "description": "Explore how clinical trials shape addiction treatment, offering insights into innovative approaches and the potential benefits for participants in substance abuse recovery.",
+    "locale": "en_US"
+  },
+  "337": {
+    "url": "https://goatdealo.online/lifestyle/senior-apartments-that-fit-your-budget-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=learn+more+about+senior+apartments&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments to Suit Your Lifestyle and Budget",
+    "description": "Discover affordable senior apartments tailored to fit your budget, providing comfortable living options for those aged 62 and older.",
+    "locale": "en_US"
+  },
+  "338": {
+    "url": "https://goatdealo.online/technology/how-can-seniors-save-on-internet-in-2026-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "Affordable Internet Options for Seniors in 2026",
+    "description": "Discover how seniors can save on internet costs in 2026, including options for no-cost plans and availability based on their location.",
+    "locale": "en_US"
+  },
+  "339": {
+    "url": "https://goatdealo.online/health/what-to-know-about-non-surgical-facelifts-en-us-4/?segment=rsoc.sc.goatdealoonline.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Discover the essentials of non-surgical facelifts, including benefits, procedures, and what to expect for a rejuvenated appearance.",
+    "locale": "en_US"
+  },
+  "340": {
+    "url": "https://goatdealo.online/education/online-high-schools-offering-cash-and-laptops-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Online High Schools Offering Cash Incentives and Free Laptops\"",
+    "description": "Discover online high schools that offer cash incentives and laptops, providing a unique educational opportunity for students. Explore your options today.",
+    "locale": "en_US"
+  },
+  "341": {
+    "url": "https://goatdealo.online/health/how-is-tooth-regeneration-changing-dentistry-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Implant+Research&forceKeyA=1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=1950+for+dental+implants+participation+[search+now]&forceKeyE=get+1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+no+fee+dental+implants&s1pplacement={{placement}}",
+    "title": "Tooth Regeneration: A Breakthrough in Modern Dentistry",
+    "description": "Discover how tooth regeneration is revolutionizing dentistry, exploring advancements in implant research and their impact on dental care.",
+    "locale": "en_US"
   }
 };
 
