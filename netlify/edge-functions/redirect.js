@@ -725,6 +725,66 @@ export default async (request, context) => {
     "title": "Tooth Regeneration: A Breakthrough in Modern Dentistry",
     "description": "Discover how tooth regeneration is revolutionizing dentistry, exploring advancements in implant research and their impact on dental care.",
     "locale": "en_US"
+  },
+  "342": {
+    "url": "https://etoptip.com/education/online-high-school-programs-with-cash-and-laptops-en-us-2/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Explore Online High School Programs Offering Cash and Laptops\"",
+    "description": "Discover online high school programs that offer financial incentives and free laptops, designed to support students in their educational journey.",
+    "locale": "en_US"
+  },
+  "343": {
+    "url": "https://etoptip.com/health/how-clinical-trials-are-changing-dental-implants-en-us-4/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Innovations in Dental Implants Through Clinical Trials",
+    "description": "Discover how clinical trials are revolutionizing dental implants, enhancing treatment options and outcomes for patients in need of dental restoration.",
+    "locale": "en_US"
+  },
+  "344": {
+    "url": "https://etoptip.com/health/benefits-of-joining-asthma-clinical-trials-en-us/?segment=rsoc.sc.etoptip.002&headline=Asthma+Study+Some+studies+on+asthma+explore+the+condition+through+structured+monitoring.+Learn+more.&forceKeyA=start+study+asthma&forceKeyB=asthma+near+me&forceKeyC=asthma+clinical+trials&forceKeyD=asthma+research+studies+near+me&forceKeyE=asthma+clinical+trials+near+me&forceKeyF=paid+asthma+studies+near+me&s1pplacement={{placement}}",
+    "title": "Benefits of Participating in Asthma Clinical Trials",
+    "description": "Explore the benefits of participating in asthma clinical trials, including insights into structured monitoring and advancements in asthma research.",
+    "locale": "en_US"
+  },
+  "345": {
+    "url": "https://etoptip.com/health/what-to-know-about-non-surgical-facelifts-en-us-4/?segment=rsoc.sc.etoptip.002&headline=Non-Surgical+Facelift+Guide+Explore+facelift+options+designed+to+support+skin+firmness+and+elasticity.+Learn+more.&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Options for Skin Firmness",
+    "description": "Discover essential insights into non-surgical facelifts, including benefits, techniques, and how they can enhance skin firmness and elasticity.",
+    "locale": "en_US"
+  },
+  "346": {
+    "url": "https://etoptip.com/health/how-do-clinical-trials-impact-addiction-treatment-en-us/?segment=rsoc.sc.etoptip.002&headline=Substance+Abuse+Clinical+Trials&forceKeyA=$6000+in+my+city+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyB=$6000+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+substance+abuse+treatment+participation+near+my+zip+code&forceKeyD=$6000+for+substance+abuse+treatments+participation+trials+near+me&forceKeyE=$6000+for+substance+abuse+treatments+participation+near+me+{month}&forceKeyF=substance+abuse+research+and+treatment&s1pplacement={{placement}}",
+    "title": "The Role of Clinical Trials in Advancing Addiction Treatment",
+    "description": "Explore how clinical trials are shaping the future of addiction treatment, highlighting their impact on recovery approaches and innovative therapies.",
+    "locale": "en_US"
+  },
+  "347": {
+    "url": "https://etoptip.com/lifestyle/senior-apartments-that-fit-your-budget-en-us-3/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+senior+apartments&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments to Suit Your Budget",
+    "description": "Discover affordable senior apartments tailored to fit your budget, offering comfortable living options for those aged 62 and older. Explore various choices nearby.",
+    "locale": "en_US"
+  },
+  "348": {
+    "url": "https://etoptip.com/technology/how-can-seniors-save-on-internet-in-2026-en-us-3/?segment=rsoc.sc.etoptip.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Affordable Internet Options for Seniors in 2026\"",
+    "description": "Discover tips for seniors to save on internet costs in 2026, including no-cost plans and resources tailored to specific locations.",
+    "locale": "en_US"
+  },
+  "349": {
+    "url": "https://etoptip.com/health/what-to-know-about-non-surgical-facelifts-en-us-3/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Explore the benefits and considerations of non-surgical facelifts, including popular options like Juv?derm, for achieving a youthful appearance without surgery.",
+    "locale": "en_US"
+  },
+  "350": {
+    "url": "https://etoptip.com/education/online-high-school-diploma-programs-explained-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Understanding Online High School Diploma Programs\"",
+    "description": "Explore the benefits and details of online high school diploma programs, including flexible options and essential information for prospective students.",
+    "locale": "en_US"
+  },
+  "351": {
+    "url": "https://etoptip.com/health/how-tooth-regeneration-is-changing-dentistry-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Implant+Research&forceKeyA=1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=1950+for+dental+implants+participation+[search+now]&forceKeyE=get+1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+no+fee+dental+implants&s1pplacement={{placement}}",
+    "title": "Tooth Regeneration: A Revolution in Modern Dentistry",
+    "description": "Explore how tooth regeneration technology is revolutionizing dentistry, offering innovative solutions for dental health and treatment advancements.",
+    "locale": "en_US"
   }
 };
 
