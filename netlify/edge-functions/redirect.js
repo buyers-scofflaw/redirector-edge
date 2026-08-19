@@ -605,6 +605,66 @@ export default async (request, context) => {
     "title": "Advancements in Patient Care Through Dental Implant Trials",
     "description": "Explore how dental implant trials contribute to improved patient care, enhancing treatment options and outcomes for individuals seeking dental solutions.",
     "locale": "en_US"
+  },
+  "322": {
+    "url": "https://findfact.net/education/why-choose-online-high-school-for-your-diploma-en-us-1/?segment=rsoc.sc.findfact.001&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "Benefits of Choosing Online High School for Your Diploma",
+    "description": "Discover the benefits of choosing an online high school for earning your diploma, including flexibility, personalized learning, and unique resources.",
+    "locale": "en_US"
+  },
+  "323": {
+    "url": "https://findfact.net/health/how-clinical-trials-are-changing-dental-implants-en-us/?segment=rsoc.sc.findfact.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Discover how clinical trials are revolutionizing dental implants, enhancing treatment options and outcomes for patients seeking improved oral health solutions.",
+    "locale": "en_US"
+  },
+  "324": {
+    "url": "https://findfact.net/health/benefits-of-joining-asthma-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Asthma+Study+Some+studies+on+asthma+explore+the+condition+through+structured+monitoring.+Learn+more.&forceKeyA=start+study+asthma&forceKeyB=asthma+near+me&forceKeyC=asthma+clinical+trials&forceKeyD=asthma+research+studies+near+me&forceKeyE=asthma+clinical+trials+near+me&forceKeyF=paid+asthma+studies+near+me&s1pplacement={{placement}}",
+    "title": "Benefits of Participating in Asthma Clinical Trials",
+    "description": "Explore the benefits of participating in asthma clinical trials, including insights into structured monitoring and advancements in asthma research.",
+    "locale": "en_US"
+  },
+  "325": {
+    "url": "https://findfact.net/health/what-to-know-about-non-surgical-facelifts-en-us-1/?segment=rsoc.sc.findfact.001&headline=Non-Surgical+Facelift+Guide+Explore+facelift+options+designed+to+support+skin+firmness+and+elasticity.+Learn+more.&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Options for Skin Firmness",
+    "description": "Discover essential insights about non-surgical facelifts, including options to enhance skin firmness and elasticity for a youthful appearance.",
+    "locale": "en_US"
+  },
+  "326": {
+    "url": "https://findfact.net/health/how-clinical-trials-impact-addiction-treatment-en-us/?segment=rsoc.sc.findfact.001&headline=Substance+Abuse+Clinical+Trials&forceKeyA=$6000+in+my+city+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyB=$6000+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+substance+abuse+treatment+participation+near+my+zip+code&forceKeyD=$6000+for+substance+abuse+treatments+participation+trials+near+me&forceKeyE=$6000+for+substance+abuse+treatments+participation+near+me+{month}&forceKeyF=substance+abuse+research+and+treatment&s1pplacement={{placement}}",
+    "title": "The Role of Clinical Trials in Advancing Addiction Treatment",
+    "description": "Explore how clinical trials are shaping addiction treatment, highlighting their role in advancing research and improving outcomes for those struggling with substance abuse.",
+    "locale": "en_US"
+  },
+  "327": {
+    "url": "https://findfact.net/lifestyle/senior-apartments-that-fit-your-budget-en-us/?segment=rsoc.sc.findfact.001&headline=learn+more+about+senior+apartments&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments to Suit Your Budget",
+    "description": "Discover affordable senior apartments that cater to various budgets, ensuring comfort and suitability for independent living. Explore your options today.",
+    "locale": "en_US"
+  },
+  "328": {
+    "url": "https://findfact.net/technology/how-can-seniors-save-on-internet-in-2026-en-us/?segment=rsoc.sc.findfact.001&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "Ways for Seniors to Save on Internet Costs in 2026",
+    "description": "Discover tips and resources for seniors to save on internet costs in 2026, including no-cost plans and availability checks by zip code.",
+    "locale": "en_US"
+  },
+  "329": {
+    "url": "https://findfact.net/health/what-to-know-about-non-surgical-facelifts-en-us/?segment=rsoc.sc.findfact.001&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Discover essential information about non-surgical facelifts, including procedures, benefits, and considerations for achieving a youthful appearance without surgery.",
+    "locale": "en_US"
+  },
+  "330": {
+    "url": "https://findfact.net/education/online-high-school-programs-for-your-diploma-en-us/?segment=rsoc.sc.findfact.001&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "Exploring Online High School Programs for Earning Your Diploma",
+    "description": "Explore various online high school programs that offer flexibility and support for earning your diploma, tailored to fit your educational needs.",
+    "locale": "en_US"
+  },
+  "331": {
+    "url": "https://findfact.net/health/how-tooth-regeneration-is-changing-dentistry-en-us/?segment=rsoc.sc.findfact.001&headline=Learn+About+Implant+Research&forceKeyA=1500+for+dental+implants+participation+near+me&forceKeyB=no-fee+dental+implants&forceKeyC=participate+in+dental+implants+trial+[sign+up+now]&forceKeyD=1950+for+dental+implants+participation+[search+now]&forceKeyE=get+1500+for+dental+implants+participation+[search+now]&forceKeyF=can+i+get+no+fee+dental+implants&s1pplacement={{placement}}",
+    "title": "\"How Tooth Regeneration is Transforming Modern Dentistry\"",
+    "description": "Discover how tooth regeneration techniques are transforming dentistry, offering innovative solutions for dental health and future treatments.",
+    "locale": "en_US"
   }
 };
 
