@@ -829,7 +829,7 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "359": {
-    "url": "https://findfact.net/health/find-paid-substance-abuse-trials-in-2026-en-us/?segment=rsoc.sc.findfact.001&headline=Substance%20Abuse%20Treatment%20Participation&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation&forceKeyC=$6000+for+substance+abuse+participation+in+{state}&forceKeyD=$3000+remote+substance+abuse+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+substance+abuse+clinical+trials+for+money+near+me&forceKeyF=$6000+for+substance+abuse+participation+near+me&s1pplacement={{placement}}",
+    "url": "https://findfact.net/health/find-paid-substance-abuse-trials-in-2026-en-us/?segment=rsoc.sc.findfact.001&headline=Substance%20Abuse%20Treatment%20Participation&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation&forceKeyC=$6000+for+substance+abuse+participation+in+{state}&forceKeyD=$6000+remote+substance+abuse+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+substance+abuse+clinical+trials+for+money+near+me&forceKeyF=$6000+for+substance+abuse+participation+near+me&s1pplacement={{placement}}",
     "title": "\"Exploring Paid Substance Abuse Trials Available in 2026\"",
     "description": "Explore options for paid substance abuse treatment trials in 2026, including local and remote opportunities, with potential compensation of up to $6,000.",
     "locale": "en_US"
@@ -847,7 +847,7 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "362": {
-    "url": "https://findfact.net/health/how-to-enroll-in-depression-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$3000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "url": "https://findfact.net/health/how-to-enroll-in-depression-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$6000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
     "title": "How to Enroll in Depression Clinical Trials for Treatment Options",
     "description": "Discover how to enroll in clinical trials for depression treatment, including potential financial compensation and resources for support.",
     "locale": "en_US"
