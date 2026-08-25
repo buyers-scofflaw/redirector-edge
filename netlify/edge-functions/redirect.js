@@ -785,6 +785,72 @@ export default async (request, context) => {
     "title": "Tooth Regeneration: A Revolution in Modern Dentistry",
     "description": "Explore how tooth regeneration technology is revolutionizing dentistry, offering innovative solutions for dental health and treatment advancements.",
     "locale": "en_US"
+  },
+  "352": {
+    "url": "https://findfact.net/education/online-high-school-diplomas-what-you-should-know-en-us/?segment=rsoc.sc.findfact.001&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Online High School Diplomas: Key Insights",
+    "description": "Explore the key information about online high school diplomas, including benefits, eligibility, and important considerations for prospective students.",
+    "locale": "en_US"
+  },
+  "353": {
+    "url": "https://findfact.net/health/dental-implant-trials-how-they-advance-care-en-us/?segment=rsoc.sc.findfact.001&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental+implants+participations+in+{city}&forceKeyB=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyF=paid+dental+implant+participation+near+me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials and Their Impact on Care",
+    "description": "Explore how dental implant trials contribute to the advancement of care, enhancing patient outcomes and innovation in dental practices.",
+    "locale": "en_US"
+  },
+  "354": {
+    "url": "https://findfact.net/health/clinical-trials-paying-up-to-1500-for-dental-implants-en-us/?segment=rsoc.sc.findfact.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=get+$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Clinical Trials Offering Up to $1500 for Dental Implants\"",
+    "description": "Explore opportunities for participating in clinical trials that offer compensation of up to $1,500 for dental implants, available in your area.",
+    "locale": "en_US"
+  },
+  "355": {
+    "url": "https://findfact.net/real-estate/affordable-senior-apartments-near-you-en-us/?segment=rsoc.sc.findfact.001&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: A Guide to Options and Amenities",
+    "description": "Discover a variety of affordable senior apartment options, featuring different amenities, costs, and locations to suit your needs.",
+    "locale": "en_US"
+  },
+  "356": {
+    "url": "https://findfact.net/real-estate/affordable-senior-apartments-near-you-en-us-1/?segment=rsoc.sc.findfact.001&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: Options and Amenities Explained",
+    "description": "Explore a comprehensive guide to affordable senior apartments, featuring diverse communities with varying amenities, costs, and locations tailored for seniors.",
+    "locale": "en_US"
+  },
+  "357": {
+    "url": "https://findfact.net/health/what-to-know-about-non-surgical-facelifts-en-us-2/?segment=rsoc.sc.findfact.001&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Information",
+    "description": "Discover essential information about non-surgical facelifts, including benefits, procedures, and what to expect for a rejuvenated appearance.",
+    "locale": "en_US"
+  },
+  "358": {
+    "url": "https://findfact.net/technology/how-seniors-can-save-on-internet-in-2026-en-us/?segment=rsoc.sc.findfact.001&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Affordable Internet Options for Seniors in 2026\"",
+    "description": "Discover how seniors can save on internet costs in 2026, with insights on availability, no-cost plans, and tailored options for specific areas.",
+    "locale": "en_US"
+  },
+  "359": {
+    "url": "https://findfact.net/health/find-paid-substance-abuse-trials-in-2026-en-us/?segment=rsoc.sc.findfact.001&headline=Substance%20Abuse%20Treatment%20Participation&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation&forceKeyC=$6000+for+substance+abuse+participation+in+{state}&forceKeyD=$3000+remote+substance+abuse+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+substance+abuse+clinical+trials+for+money+near+me&forceKeyF=$6000+for+substance+abuse+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring Paid Substance Abuse Trials Available in 2026\"",
+    "description": "Explore options for paid substance abuse treatment trials in 2026, including local and remote opportunities, with potential compensation of up to $6,000.",
+    "locale": "en_US"
+  },
+  "360": {
+    "url": "https://findfact.net/health/find-paid-diabetic-neuropathy-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=learn+about+neuropathy+trials&forceKeyA=diabetes+neuropathy+trial&forceKeyB=diabetes+neuropathy+trials&forceKeyC=paid+neuropathy+trials&forceKeyD=diabetes+neuropathy+trial+{month}+2026&forceKeyE=diabetes+neuropathy+trial+near+me&forceKeyF=clinical+trials+for+neuropathy+near+me&s1pplacement={{placement}}",
+    "title": "Exploring Paid Clinical Trials for Diabetic Neuropathy",
+    "description": "Discover information about paid clinical trials for diabetic neuropathy, including eligibility criteria and locations, to help advance diabetes treatment research.",
+    "locale": "en_US"
+  },
+  "361": {
+    "url": "https://findfact.net/health/copd-early-diagnosis-and-what-research-reveals-en-us/?segment=rsoc.sc.findfact.001&headline=copd+study&forceKeyA=copd+early+diagnosis+and+treatment+to+slow+disease+progression&forceKeyB=$6000+study+for+copd+treatment+near+my+zipcode+[state]&forceKeyC=$6000+study+for+copd+treatment+near+my+zipcode&forceKeyD=$6000+for+new+copd+treatment+study+near+my+zipcode&forceKeyE=$6000+study+for+new+copd+treatment+near+my+zipcode&forceKeyF=inhaled+therapy+copd&s1pplacement={{placement}}",
+    "title": "\"Understanding COPD: Early Diagnosis Insights from Recent Research\"",
+    "description": "Explore the latest research on early diagnosis and treatment options for COPD, focusing on strategies to slow disease progression and improve patient outcomes.",
+    "locale": "en_US"
+  },
+  "362": {
+    "url": "https://findfact.net/health/how-to-enroll-in-depression-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$3000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "How to Enroll in Depression Clinical Trials for Treatment Options",
+    "description": "Discover how to enroll in clinical trials for depression treatment, including potential financial compensation and resources for support.",
+    "locale": "en_US"
   }
 };
 
