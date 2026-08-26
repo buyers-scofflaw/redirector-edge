@@ -917,6 +917,72 @@ export default async (request, context) => {
     "title": "\"Earn Up to $6000 by Participating in Depression Clinical Trials\"",
     "description": "Explore opportunities for participating in depression clinical trials, with potential compensation of up to $6,000 for eligible individuals in various locations.",
     "locale": "en_US"
+  },
+  "374": {
+    "url": "https://etoptip.com/education/online-high-school-diplomas-what-to-know-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Online High School Diplomas: Key Insights",
+    "description": "Discover essential insights about online high school diplomas, including benefits, requirements, and the impact on future opportunities.",
+    "locale": "en_US"
+  },
+  "375": {
+    "url": "https://etoptip.com/health/dental-implant-trials-advancing-patient-care-en-us/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental+implants+participations+in+{city}&forceKeyB=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyF=paid+dental+implant+participation+near+me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials for Better Patient Care",
+    "description": "Explore how dental implant trials are transforming patient care and advancing treatment options in modern dentistry.",
+    "locale": "en_US"
+  },
+  "376": {
+    "url": "https://etoptip.com/health/dental-implant-clinical-trials-get-paid-to-participate-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=get+$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "\"Participate in Dental Implant Clinical Trials for Compensation\"",
+    "description": "Explore opportunities to participate in dental implant clinical trials and receive compensation while contributing to dental health research.",
+    "locale": "en_US"
+  },
+  "377": {
+    "url": "https://etoptip.com/real-estate/affordable-senior-apartments-near-you-en-us/?segment=rsoc.sc.etoptip.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: Amenities and Locations Explored",
+    "description": "Explore a variety of affordable senior apartment options, featuring different amenities, costs, and locations tailored for seniors seeking comfortable living.",
+    "locale": "en_US"
+  },
+  "378": {
+    "url": "https://etoptip.com/real-estate/affordable-senior-apartments-near-you-en-us-2/?segment=rsoc.sc.etoptip.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: Find Your Ideal Community",
+    "description": "Discover a variety of affordable senior apartments, featuring diverse amenities and locations, tailored to meet the needs of older adults.",
+    "locale": "en_US"
+  },
+  "379": {
+    "url": "https://etoptip.com/health/what-to-know-about-non-surgical-facelifts-en-us-5/?segment=rsoc.sc.etoptip.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Discover essential insights about non-surgical facelifts, including techniques, benefits, and considerations for achieving a youthful appearance without surgery.",
+    "locale": "en_US"
+  },
+  "380": {
+    "url": "https://etoptip.com/technology/how-seniors-can-save-on-internet-in-2026-en-us/?segment=rsoc.sc.etoptip.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Cost-Effective Internet Options for Seniors in 2026\"",
+    "description": "Discover tips for seniors to save on internet costs in 2026, including available plans and resources tailored to their needs.",
+    "locale": "en_US"
+  },
+  "381": {
+    "url": "https://etoptip.com/health/earn-up-to-6000-in-substance-abuse-trials-2026-en-us/?segment=rsoc.sc.etoptip.002&headline=Substance%20Abuse%20Treatment%20Participation&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation&forceKeyC=$6000+for+substance+abuse+participation+in+{state}&forceKeyD=$6000+remote+substance+abuse+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+substance+abuse+clinical+trials+for+money+near+me&forceKeyF=$6000+for+substance+abuse+participation+near+me&s1pplacement={{placement}}",
+    "title": "Earn Up to $6,000 for Participating in Substance Abuse Trials",
+    "description": "Explore opportunities to earn up to $6,000 by participating in substance abuse trials in 2026, available in various locations including remote options.",
+    "locale": "en_US"
+  },
+  "382": {
+    "url": "https://etoptip.com/health/paid-clinical-trials-for-diabetic-neuropathy-en-us/?segment=rsoc.sc.etoptip.002&headline=learn+about+neuropathy+trials&forceKeyA=diabetes+neuropathy+trial&forceKeyB=diabetes+neuropathy+trials&forceKeyC=paid+neuropathy+trials&forceKeyD=diabetes+neuropathy+trial+{month}+2026&forceKeyE=diabetes+neuropathy+trial+near+me&forceKeyF=clinical+trials+for+neuropathy+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring Paid Clinical Trials for Diabetic Neuropathy\"",
+    "description": "Discover information on paid clinical trials for diabetic neuropathy, including eligibility, benefits, and the latest research developments.",
+    "locale": "en_US"
+  },
+  "383": {
+    "url": "https://etoptip.com/health/copd-early-diagnosis-and-research-advances-en-us/?segment=rsoc.sc.etoptip.002&headline=copd+study&forceKeyA=copd+early+diagnosis+and+treatment+to+slow+disease+progression&forceKeyB=$6000+study+for+copd+treatment+near+my+zipcode+[state]&forceKeyC=$6000+study+for+copd+treatment+near+my+zipcode&forceKeyD=$6000+for+new+copd+treatment+study+near+my+zipcode&forceKeyE=$6000+study+for+new+copd+treatment+near+my+zipcode&forceKeyF=inhaled+therapy+copd&s1pplacement={{placement}}",
+    "title": "Advancements in Early Diagnosis and Treatment of COPD",
+    "description": "Explore the latest research and advancements in early diagnosis and treatment of COPD, focusing on strategies to slow disease progression.",
+    "locale": "en_US"
+  },
+  "384": {
+    "url": "https://etoptip.com/health/earn-up-to-6000-in-depression-clinical-trials-en-us/?segment=rsoc.sc.etoptip.002&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$6000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Earn Up to $6,000 Participating in Depression Clinical Trials\"",
+    "description": "Discover opportunities to earn up to $6000 by participating in depression clinical trials, offering potential financial benefits for those seeking treatment.",
+    "locale": "en_US"
   }
 };
 
