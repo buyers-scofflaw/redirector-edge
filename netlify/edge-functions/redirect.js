@@ -851,6 +851,72 @@ export default async (request, context) => {
     "title": "How to Enroll in Depression Clinical Trials for Treatment Options",
     "description": "Discover how to enroll in clinical trials for depression treatment, including potential financial compensation and resources for support.",
     "locale": "en_US"
+  },
+  "363": {
+    "url": "https://goatdealo.online/education/online-high-school-benefits-of-earning-your-diploma-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring the Advantages of Earning Your Online High School Diploma\"",
+    "description": "Discover the advantages of earning your high school diploma online, including flexibility, accessibility, and personalized learning experiences.",
+    "locale": "en_US"
+  },
+  "364": {
+    "url": "https://goatdealo.online/health/dental-implant-trials-how-they-advance-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental+implants+participations+in+{city}&forceKeyB=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyC=get+$1500+for+dental+implants+participation+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1500+for+dental+implants+participations+in+atlantic+highlands&forceKeyF=paid+dental+implant+participation+near+me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Care Through Clinical Trials",
+    "description": "Explore how dental implant trials are advancing patient care and improving outcomes in dentistry, with insights into participation and benefits.",
+    "locale": "en_US"
+  },
+  "365": {
+    "url": "https://goatdealo.online/health/clinical-trials-changing-dental-implants-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=get+$1500+for+dental+implants+participations+in+{city}&forceKeyD=&forceKeyE=&forceKeyF=&s1pplacement={{placement}}",
+    "title": "Revolutionizing Dental Care: Advances in Implant Clinical Trials",
+    "description": "Explore how clinical trials are transforming dental implant technology and discover potential benefits for patients involved in these groundbreaking studies.",
+    "locale": "en_US"
+  },
+  "366": {
+    "url": "https://goatdealo.online/real-estate/affordable-senior-apartments-near-you-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: Find Your Ideal Community",
+    "description": "Explore a variety of affordable senior apartment options, highlighting different amenities, costs, and locations tailored for seniors.",
+    "locale": "en_US"
+  },
+  "367": {
+    "url": "https://goatdealo.online/real-estate/affordable-senior-apartments-near-you-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: A Guide to Your Options",
+    "description": "Discover a variety of affordable senior apartments, featuring diverse amenities and locations tailored to your needs in the community.",
+    "locale": "en_US"
+  },
+  "368": {
+    "url": "https://goatdealo.online/health/what-to-know-about-non-surgical-facelifts-en-us-5/?segment=rsoc.sc.goatdealoonline.002&headline=learn+more+about+non+surgical+facelifts&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Benefits",
+    "description": "Discover essential insights about non-surgical facelifts, including techniques, benefits, and what to expect during the procedure.",
+    "locale": "en_US"
+  },
+  "369": {
+    "url": "https://goatdealo.online/technology/how-seniors-can-save-on-internet-costs-in-2026-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Check%20Internet%20availability%20at%20my%20address&forceKeyA=check+internet+availability+at+my+address&forceKeyB=internet+for+seniors+in+my+area&forceKeyC=no+cost+internet+plans+by+zip+code+-+for+seniors+i&forceKeyD=get+senior+internet+plans+[at+no+cost]+(at+my+address)&forceKeyE=search+senior+internet+plans+[at+no+cost]+(at+my+address)+chart&forceKeyF=no+cost+internet+plans+by+zip+code+-+for+seniors&s1pplacement={{placement}}",
+    "title": "\"Affordable Internet Solutions for Seniors in 2026\"",
+    "description": "Discover practical tips and strategies for seniors to save on internet costs in 2026, including options for low-cost plans and availability by location.",
+    "locale": "en_US"
+  },
+  "370": {
+    "url": "https://goatdealo.online/health/how-to-find-2026-substance-abuse-trials-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Substance%20Abuse%20Treatment%20Participation&forceKeyA=$6000+in+{state}+for+substance+abuse+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+substance+abuse+treatment+participation&forceKeyC=$6000+for+substance+abuse+participation+in+{state}&forceKeyD=$6000+remote+substance+abuse+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+substance+abuse+clinical+trials+for+money+near+me&forceKeyF=$6000+for+substance+abuse+participation+near+me&s1pplacement={{placement}}",
+    "title": "Finding Substance Abuse Trials in 2026: A Guide",
+    "description": "Discover essential information on locating substance abuse trials in 2026, including potential financial compensation and participation details tailored for your location.",
+    "locale": "en_US"
+  },
+  "371": {
+    "url": "https://goatdealo.online/health/paid-clinical-trials-for-diabetic-neuropathy-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=learn+about+neuropathy+trials&forceKeyA=diabetes+neuropathy+trial&forceKeyB=diabetes+neuropathy+trials&forceKeyC=paid+neuropathy+trials&forceKeyD=diabetes+neuropathy+trial+{month}+2026&forceKeyE=diabetes+neuropathy+trial+near+me&forceKeyF=clinical+trials+for+neuropathy+near+me&s1pplacement={{placement}}",
+    "title": "\"Exploring Paid Clinical Trials for Diabetic Neuropathy\"",
+    "description": "Discover information about paid clinical trials for diabetic neuropathy, including eligibility criteria and potential benefits for participants.",
+    "locale": "en_US"
+  },
+  "372": {
+    "url": "https://goatdealo.online/health/early-copd-diagnosis-and-treatment-options-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=copd+study&forceKeyA=copd+early+diagnosis+and+treatment+to+slow+disease+progression&forceKeyB=$6000+study+for+copd+treatment+near+my+zipcode+[state]&forceKeyC=$6000+study+for+copd+treatment+near+my+zipcode&forceKeyD=$6000+for+new+copd+treatment+study+near+my+zipcode&forceKeyE=$6000+study+for+new+copd+treatment+near+my+zipcode&forceKeyF=inhaled+therapy+copd&s1pplacement={{placement}}",
+    "title": "\"Understanding Early COPD Diagnosis and Treatment Options\"",
+    "description": "Explore early COPD diagnosis and treatment options to understand how to slow disease progression and improve quality of life for patients.",
+    "locale": "en_US"
+  },
+  "373": {
+    "url": "https://goatdealo.online/health/depression-clinical-trials-enroll-and-get-paid-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$6000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Earn Up to $6000 by Participating in Depression Clinical Trials\"",
+    "description": "Explore opportunities for participating in depression clinical trials, with potential compensation of up to $6,000 for eligible individuals in various locations.",
+    "locale": "en_US"
   }
 };
 
