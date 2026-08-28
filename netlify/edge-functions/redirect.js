@@ -983,6 +983,42 @@ export default async (request, context) => {
     "title": "\"Earn Up to $6,000 Participating in Depression Clinical Trials\"",
     "description": "Discover opportunities to earn up to $6000 by participating in depression clinical trials, offering potential financial benefits for those seeking treatment.",
     "locale": "en_US"
+  },
+  "385": {
+    "url": "https://etoptip.com/health/dental-implant-trials-advancing-patient-care-en-us/?segment=rsoc.sc.etoptip.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental implants participations in {city}&forceKeyB=$1500 for dental implants participations in {city}&forceKeyC=get $1500 for dental implants participation near me&forceKeyD=best get $1950 for dental implants participation near me&forceKeyE=$1500 for dental implants participations in {city}&forceKeyF=paid dental implant participation near me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials for Improved Patient Care",
+    "description": "Explore how dental implant trials are improving patient care and advancing treatment options, offering insights into innovations in dental health.",
+    "locale": "en_US"
+  },
+  "386": {
+    "url": "https://etoptip.com/health/dental-implant-clinical-trials-get-paid-to-participate-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get $1500 for dental implants participations near me&forceKeyB=get $1500 for dental implant participation in {city}&forceKeyC=get $1500 for dental implants participations in {city}&forceKeyD=get $1500 for dental implants participations near me&forceKeyE=get $1500 for dental implant participation in {city}&forceKeyF=get $1500 for dental implants participations in {city}&s1pplacement={{placement}}",
+    "title": "\"Participate in Dental Implant Trials and Earn Up to $1500\"",
+    "description": "Discover opportunities to participate in dental implant clinical trials and receive compensation while contributing to important research in your area.",
+    "locale": "en_US"
+  },
+  "387": {
+    "url": "https://goatdealo.online/health/dental-implant-trials-how-they-advance-care-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental implants participations in {city}&forceKeyB=$1500 for dental implants participations in {city}&forceKeyC=get $1500 for dental implants participation near me&forceKeyD=best get $1950 for dental implants participation near me&forceKeyE=$1500 for dental implants participations in {city}&forceKeyF=paid dental implant participation near me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Care Through Implant Trials",
+    "description": "Explore how dental implant trials contribute to advancements in patient care and improve treatment outcomes within the dental field.",
+    "locale": "en_US"
+  },
+  "388": {
+    "url": "https://goatdealo.online/health/clinical-trials-changing-dental-implants-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get $1500 for dental implants participations near me&forceKeyB=get $1500 for dental implant participation in {city}&forceKeyC=get $1500 for dental implants participations in {city}&forceKeyD=get $1500 for dental implants participations near me&forceKeyE=get $1500 for dental implant participation in {city}&forceKeyF=get $1500 for dental implants participations in {city}&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Discover how clinical trials are revolutionizing dental implants, offering innovative solutions and potential financial incentives for participants.",
+    "locale": "en_US"
+  },
+  "389": {
+    "url": "https://findfact.net/health/dental-implant-trials-how-they-advance-care-en-us/?segment=rsoc.sc.findfact.001&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=dental implants participations in {city}&forceKeyB=$1500 for dental implants participations in {city}&forceKeyC=get $1500 for dental implants participation near me&forceKeyD=best get $1950 for dental implants participation near me&forceKeyE=$1500 for dental implants participations in {city}&forceKeyF=paid dental implant participation near me&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Care Through Implant Trials",
+    "description": "Explore how dental implant trials contribute to advancements in patient care and improve treatment outcomes in oral health.",
+    "locale": "en_US"
+  },
+  "390": {
+    "url": "https://findfact.net/health/clinical-trials-paying-up-to-1500-for-dental-implants-en-us/?segment=rsoc.sc.findfact.001&headline=Dental+Implants+Clinical+Trial&forceKeyA=get $1500 for dental implants participations near me&forceKeyB=get $1500 for dental implant participation in {city}&forceKeyC=get $1500 for dental implants participations in {city}&forceKeyD=get $1500 for dental implants participations near me&forceKeyE=get $1500 for dental implant participation in {city}&forceKeyF=get $1500 for dental implants participations in {city}&s1pplacement={{placement}}",
+    "title": "\"Clinical Trials Offering Up to $1500 for Dental Implants\"",
+    "description": "Discover opportunities to participate in clinical trials for dental implants, offering compensation of up to $1500 for eligible participants.",
+    "locale": "en_US"
   }
 };
 
