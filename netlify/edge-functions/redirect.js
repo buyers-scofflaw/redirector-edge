@@ -1019,6 +1019,54 @@ export default async (request, context) => {
     "title": "\"Clinical Trials Offering Up to $1500 for Dental Implants\"",
     "description": "Discover opportunities to participate in clinical trials for dental implants, offering compensation of up to $1500 for eligible participants.",
     "locale": "en_US"
+  },
+  "391": {
+    "url": "https://goatdealo.online/automotive/why-f-150-and-ram-trucks-are-so-versatile-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "Exploring the Versatility of F-150 and Ram Trucks",
+    "description": "Discover the versatility of F-150 and Ram trucks, exploring their features, performance, and why they stand out in the competitive pickup market.",
+    "locale": "en_US"
+  },
+  "392": {
+    "url": "https://goatdealo.online/health/asthma-clinical-trials-earn-up-to-6-000-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "\"Earn Up to $6,000 by Participating in Asthma Clinical Trials\"",
+    "description": "Discover opportunities to participate in asthma clinical trials and earn up to $6,000 for your involvement in innovative treatments.",
+    "locale": "en_US"
+  },
+  "393": {
+    "url": "https://goatdealo.online/health/how-facial-fillers-restore-and-enhance-your-look-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Botox+Treatments&forceKeyA=$1500+botox+participation+near+me&forceKeyB=$1500+in+[state]+for+botox+participation+near+my+zipcode&forceKeyC=$1500+for+botox+participation+near+my+zipcode&forceKeyD=$1500+in+[city]+for+botox+participation+near+my+zipcode&forceKeyE=$1500+for+botox+participation+in+[city]&forceKeyF=$1500+paid+for+botox+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "\"Facial Fillers: Enhancing Your Natural Beauty\"",
+    "description": "Discover how facial fillers can enhance your appearance by restoring volume and smoothing fine lines, providing a refreshed and youthful look.",
+    "locale": "en_US"
+  },
+  "394": {
+    "url": "https://goatdealo.online/education/online-high-school-earn-your-diploma-flexibly-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&s1pplacement={{placement}}",
+    "title": "Flexible Online High School: Earn Your Diploma on Your Terms",
+    "description": "Earn your high school diploma online with flexible options and unique benefits like cash and laptops to support your educational journey.",
+    "locale": "en_US"
+  },
+  "395": {
+    "url": "https://etoptip.com/automotive/what-makes-full-size-pickup-trucks-so-versatile-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the versatility of full-size pickup trucks, exploring their features and capabilities that make them ideal for various needs and lifestyles.",
+    "locale": "en_US"
+  },
+  "396": {
+    "url": "https://etoptip.com/health/asthma-clinical-trials-importance-and-benefits-en-us/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=best+$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyB=$6000+in+[state]+for+asthma+treatment+participation+near+my+zipcode&forceKeyC=$6000+for+asthma+treatments+participation+near+my+zipcode&forceKeyD=$6000+in+[city]+for+asthma+treatment+participation+near+my+zipcode&forceKeyE=$6000+for+asthma+treatment+participation+in+[city]&forceKeyF=$6000+paid+for+asthma+treatments+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "The Importance and Benefits of Asthma Clinical Trials",
+    "description": "Explore the significance and advantages of participating in asthma clinical trials, highlighting their role in advancing treatment options and improving patient outcomes.",
+    "locale": "en_US"
+  },
+  "397": {
+    "url": "https://etoptip.com/health/how-facial-fillers-enhance-your-appearance-en-us/?segment=rsoc.sc.etoptip.002&headline=Botox+Treatments&forceKeyA=$1500+botox+participation+near+me&forceKeyB=$1500+in+[state]+for+botox+participation+near+my+zipcode&forceKeyC=$1500+for+botox+participation+near+my+zipcode&forceKeyD=$1500+in+[city]+for+botox+participation+near+my+zipcode&forceKeyE=$1500+for+botox+participation+in+[city]&forceKeyF=$1500+paid+for+botox+participation+near+my+zipcode&s1pplacement={{placement}}",
+    "title": "How Facial Fillers Can Enhance Your Natural Beauty",
+    "description": "Discover how facial fillers can enhance your appearance, providing a youthful look and boosting confidence through various cosmetic treatments.",
+    "locale": "en_US"
+  },
+  "398": {
+    "url": "https://etoptip.com/education/online-high-school-earn-your-diploma-flexibly-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&s1pplacement={{placement}}",
+    "title": "Flexible Online High School Options for Earning Your Diploma",
+    "description": "Explore flexible online high school options to earn your diploma, designed to accommodate your lifestyle and educational needs.",
+    "locale": "en_US"
   }
 };
 
