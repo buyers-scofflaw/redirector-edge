@@ -1063,13 +1063,13 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "398": {
-    "url": "https://etoptip.com/education/online-high-school-earn-your-diploma-flexibly-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&s1pplacement={{placement}}",
+    "url": "https://etoptip.com/education/online-high-school-earn-your-diploma-flexibly-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&headline=Online%20School&forceKeyA=apply+for+online+schools+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+schools+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptop+in+{city}&forceKeyF=apply+for+online+schools+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
     "title": "Flexible Online High School Options for Earning Your Diploma",
     "description": "Explore flexible online high school options to earn your diploma, designed to accommodate your lifestyle and educational needs.",
     "locale": "en_US"
   },
   "399": {
-    "url": "https://etoptip.com/education/online-diplomas-that-offer-cash-and-laptops-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "url": "https://etoptip.com/education/online-diplomas-that-offer-cash-and-laptops-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+schools+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+schools+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptop+in+{city}&forceKeyF=apply+for+online+schools+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
     "title": "\"Online Diplomas with Cash and Laptop Incentives\"",
     "description": "Explore online diploma programs that offer financial incentives and laptops, enhancing your educational journey while providing valuable resources for success.",
     "locale": "en_US"
@@ -1129,7 +1129,7 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "409": {
-    "url": "https://goatdealo.online/education/online-diplomas-that-offer-cash-and-free-laptops-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "url": "https://goatdealo.online/education/online-diplomas-that-offer-cash-and-free-laptops-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Online%20School&forceKeyA=apply+for+online+schools+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+schools+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+schools+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptop+in+{city}&forceKeyF=apply+for+online+schools+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
     "title": "\"Discover Online Diplomas with Cash Rewards and Free Laptops\"",
     "description": "Discover online diploma programs that provide cash incentives and free laptops, offering an accessible path to education and skill development.",
     "locale": "en_US"
