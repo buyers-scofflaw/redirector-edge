@@ -1067,6 +1067,66 @@ export default async (request, context) => {
     "title": "Flexible Online High School Options for Earning Your Diploma",
     "description": "Explore flexible online high school options to earn your diploma, designed to accommodate your lifestyle and educational needs.",
     "locale": "en_US"
+  },
+  "399": {
+    "url": "https://etoptip.com/education/online-diplomas-that-offer-cash-and-laptops-en-us/?segment=rsoc.sc.etoptip.002&headline=Online%20School&forceKeyA=apply+for+online+school+that+gives+you+cash+and+laptops+today&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyC=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyD=best+online+school+that+gives+you+$+and+laptops+in+{city}&forceKeyE=apply+for+online+schools+that+give+you+$+and+laptops+in+{city}&forceKeyF=apply+for+online+school+that+gives+you+$+and+laptops+near+me&s1pplacement={{placement}}",
+    "title": "\"Online Diplomas with Cash and Laptop Incentives\"",
+    "description": "Explore online diploma programs that offer financial incentives and laptops, enhancing your educational journey while providing valuable resources for success.",
+    "locale": "en_US"
+  },
+  "400": {
+    "url": "https://etoptip.com/health/clinical-trials-transforming-dental-implants-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=get+$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+near+me&forceKeyE=get+$1500+for+dental+implant+participation+in+{city}&forceKeyF=get+$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "\"Advancements in Dental Implants Through Clinical Trials\"",
+    "description": "Discover how clinical trials are advancing dental implant technology, offering insights into innovative treatments and potential benefits for patients.",
+    "locale": "en_US"
+  },
+  "401": {
+    "url": "https://etoptip.com/health/dental-implant-trials-earn-1500-to-participate-en-us/?segment=rsoc.sc.etoptip.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+in+{city}&forceKeyB=get+$1500+for+dental+implant+participation+near+me&forceKeyC=get+$1500+for+dental+implant+participation+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1500+for+dental+implants+participations+in+{city}&forceKeyF=$1500+for+dental+implants+participation+{city}&s1pplacement={{placement}}",
+    "title": "Dental Implant Clinical Trials Offer $1,500 Participation Reward",
+    "description": "Discover opportunities to participate in dental implant clinical trials and earn up to $1500 while contributing to important health research in your area.",
+    "locale": "en_US"
+  },
+  "402": {
+    "url": "https://etoptip.com/health/how-asthma-studies-improve-patient-care-en-us-4/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=$4445+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyB=$3000+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyC=paid+asthma+studies+near+me&forceKeyD=practical+study+asthma&forceKeyE=asthma+clinical+trials&forceKeyF=$4445+2+night+asthma+treatments+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Advancements in Asthma Research and Their Impact on Patient Care\"",
+    "description": "Explore how recent asthma studies enhance patient care, offering insights into treatment advancements and the impact of clinical trials on health outcomes.",
+    "locale": "en_US"
+  },
+  "403": {
+    "url": "https://etoptip.com/education/online-high-schools-that-provide-free-computers-en-us/?segment=rsoc.sc.etoptip.002&headline=Learn%20More%20about%20Online%20High%20School%20Programs&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptops+near+me&forceKeyB=online+school+for+adults&forceKeyC=online+schooling+for+adults&forceKeyD=apply+for+online+school+that+gives+you+$+and+laptops+today+{month}+2026&forceKeyE=apply+for+online+school+high+school+that+give+you+a+computer&forceKeyF=apply+for+online+school+high+school+that+give+you+a+computer+and+cash&s1pplacement={{placement}}",
+    "title": "\"Top Online High Schools Offering Free Computers\"",
+    "description": "Discover online high schools that offer free computers, empowering students with the tools they need for a successful education. Explore your options today.",
+    "locale": "en_US"
+  },
+  "404": {
+    "url": "https://etoptip.com/real-estate/affordable-senior-apartments-near-you-en-us-8/?segment=rsoc.sc.etoptip.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Apartments: Find Your Ideal Community",
+    "description": "Explore a variety of affordable senior apartments, highlighting different amenities, costs, and locations to suit your needs in your area.",
+    "locale": "en_US"
+  },
+  "405": {
+    "url": "https://etoptip.com/health/paid-clinical-trials-for-diabetic-neuropathy-en-us-6/?segment=rsoc.sc.etoptip.002&headline=learn+about+neuropathy+trials&forceKeyA=diabetes+neuropathy+trial&forceKeyB=diabetes+neuropathy+trials&forceKeyC=paid+neuropathy+trials&forceKeyD=diabetes+neuropathy+trial+{month}+2026&forceKeyE=diabetes+neuropathy+trial+near+me&forceKeyF=clinical+trials+for+neuropathy+near+me&s1pplacement={{placement}}",
+    "title": "Paid Clinical Trials for Diabetic Neuropathy: What to Know",
+    "description": "Discover information about paid clinical trials for diabetic neuropathy, including eligibility and potential benefits for participants.",
+    "locale": "en_US"
+  },
+  "406": {
+    "url": "https://etoptip.com/health/non-surgical-facelifts-what-juv-derm-offers-en-us/?segment=rsoc.sc.etoptip.002&headline=Non-Surgical+Facelift+Guide+Explore+facelift+options+designed+to+support+skin+firmness+and+elasticity.+Learn+more.&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Exploring Non-Surgical Facelifts with Juv?derm Options",
+    "description": "Discover the benefits of non-surgical facelifts with Juv?derm, designed to enhance skin firmness and elasticity for a youthful appearance.",
+    "locale": "en_US"
+  },
+  "407": {
+    "url": "https://etoptip.com/health/how-asthma-studies-improve-patient-care-en-us-3/?segment=rsoc.sc.etoptip.002&headline=asthma+study&forceKeyA=$4445+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyB=$3000+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyC=paid+asthma+studies+near+me&forceKeyD=practical+study+asthma&forceKeyE=asthma+clinical+trials&forceKeyF=$4445+2+night+asthma+treatments+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Advancements in Asthma Research and Their Impact on Patient Care\"",
+    "description": "Explore how asthma studies enhance patient care, focusing on innovative treatments and research advancements that improve outcomes for individuals with asthma.",
+    "locale": "en_US"
+  },
+  "408": {
+    "url": "https://etoptip.com/health/clinical-trials-transforming-dental-implants-en-us/?segment=rsoc.sc.etoptip.002&headline=dental+implant+clinical+trials&forceKeyA=get+$1950+for+dental+implants+participations+in+{city}&forceKeyB=get+$1950+for+dental+implants+participations+in+{state}&forceKeyC=$1950+for+dental+implants+participations+in+{city}&forceKeyD=get+$1950+for+dental+implants+participations+near+me&forceKeyE=get+$1500+for+dental+implants+participations+in+{city}&forceKeyF=$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "Innovations in Dental Implants: Insights from Clinical Trials",
+    "description": "Explore how clinical trials are revolutionizing dental implants, offering innovative solutions and potential financial incentives for participants.",
+    "locale": "en_US"
   }
 };
 
