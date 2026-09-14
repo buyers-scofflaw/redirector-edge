@@ -1273,9 +1273,99 @@ export default async (request, context) => {
     "locale": "en_US"
   },
   "433": {
-    "url": "https://findfact.net/health/how-to-enroll-in-depression-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$3000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$3000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "url": "https://findfact.net/health/how-to-enroll-in-depression-clinical-trials-en-us/?segment=rsoc.sc.findfact.001&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$6000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
     "title": "How to Join Depression Clinical Trials for Treatment Options",
     "description": "Discover the process of enrolling in depression clinical trials, including eligibility criteria and potential financial compensation for participation.",
+    "locale": "en_US"
+  },
+  "434": {
+    "url": "https://goatdealo.online/health/dental-implant-trials-are-reshaping-dentistry-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implant+participation+in+{city}&forceKeyB=best+$1500+for+dental+implant+participation+near+me&forceKeyC=get+$1500+for+dental+implant+participation+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+in+{city}&forceKeyE=get+$1500+for+dental+implants+participations+in+{city}&forceKeyF=$1500+for+dental+implants+participation+{city}&s1pplacement={{placement}}",
+    "title": "\"Revolutionizing Dentistry: Insights from Dental Implant Trials\"",
+    "description": "Discover how dental implant trials are revolutionizing the field of dentistry, offering innovative solutions and insights for improved patient care.",
+    "locale": "en_US"
+  },
+  "435": {
+    "url": "https://goatdealo.online/health/how-to-join-neuropathy-clinical-trials-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Neuropathy+Research+Neuropathy+research+programs+may+involve+structured+monitoring.+Explore+more.&forceKeyA=best+diabetes+neuropathy+trial&forceKeyB=neuropathy+clinics+near+me&forceKeyC=neuropathy+treatment+centers+near+me&forceKeyD=peripheral+neuropathy+treatment+centers+near+me&forceKeyE=diabetes+neuropathy+trial&forceKeyF=top+diabetes+neuropathy+trial&s1pplacement={{placement}}",
+    "title": "Joining Neuropathy Clinical Trials: A Guide for Patients",
+    "description": "Discover how to join neuropathy clinical trials and learn about the structured monitoring involved in neuropathy research programs for better treatment options.",
+    "locale": "en_US"
+  },
+  "436": {
+    "url": "https://goatdealo.online/health/how-asthma-studies-improve-patient-care-en-us-7/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=get+$6000+for+asthma+treatment+participation+in+{city}&forceKeyB=best+$6000+for+asthma+treatment+participation+near+me&forceKeyC=get+$6000+for+asthma+treatment+participation+in+{city}&forceKeyD=get+$6000+for+asthma+treatment+participations+in+{city}&forceKeyE=get+$6000+for+asthma+treatment+participations+in+{city}&forceKeyF=$6000+for+asthma+treatment+participation+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Asthma Research Enhance Patient Care Options",
+    "description": "Explore how recent asthma studies are enhancing patient care and treatment options, highlighting key findings and advancements in the field.",
+    "locale": "en_US"
+  },
+  "437": {
+    "url": "https://goatdealo.online/health/how-asthma-studies-improve-patient-care-en-us-8/?segment=rsoc.sc.goatdealoonline.002&headline=asthma+study&forceKeyA=$4445+paid+for+2+night+asthma+treatments+participation+near+my+zipcode&forceKeyB=$4445+2+night+asthma+treatment+participations+near+me&forceKeyC=asthma+study+near+me&forceKeyD=paid+asthma+treatments+participation+near+my+zipcode&forceKeyE=start+study+asthma&forceKeyF=asthma+in+adults&s1pplacement={{placement}}",
+    "title": "\"Advancements in Asthma Research and Their Impact on Patient Care\"",
+    "description": "Explore how recent asthma studies are enhancing patient care and treatment options, providing valuable insights into improving outcomes for those affected.",
+    "locale": "en_US"
+  },
+  "438": {
+    "url": "https://goatdealo.online/health/clinical-trials-reshaping-dental-implants-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=Dental+Implants+Clinical+Trial&forceKeyA=get+$1500+for+dental+implants+participations+near+me&forceKeyB=get+$1500+for+dental+implant+participation+in+{city}&forceKeyC=get+$1500+for+dental+implants+participations+in+{city}&forceKeyD=get+$1500+for+dental+implants+participations+near+me&forceKeyE=get+$1500+for+dental+implant+participation+in+{city}&forceKeyF=get+$1500+for+dental+implants+participations+in+{city}&s1pplacement={{placement}}",
+    "title": "\"Revolutionizing Dental Implants: Insights from New Clinical Trials\"",
+    "description": "Explore how clinical trials are transforming dental implants, offering innovative solutions and advancements in dental care for patients.",
+    "locale": "en_US"
+  },
+  "439": {
+    "url": "https://goatdealo.online/real-estate/affordable-senior-apartments-on-a-fixed-income-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Senior+Apartment+Guide+Senior+apartment+communities+vary+in+amenities%2C+cost%2C+and+location.+Learn+more.&forceKeyA=seniors+residence+near+me&forceKeyB=2+bedroom+senior+apartments+near+me&forceKeyC=2+bedroom+senior+apartment+near+me&forceKeyD=senior+living+places+near+me&forceKeyE=senior+living+place+near+me&forceKeyF=62+and+older+apartments+near+me&s1pplacement={{placement}}",
+    "title": "Affordable Senior Living: Options for Fixed-Income Residents",
+    "description": "Explore a variety of affordable senior apartment options tailored for fixed-income residents, highlighting amenities, costs, and locations to suit diverse needs.",
+    "locale": "en_US"
+  },
+  "440": {
+    "url": "https://goatdealo.online/health/what-to-expect-in-a-substance-abuse-study-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=substance+abuse+study&forceKeyA=$6000+in+{city}+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyB=$6000+in+{state}+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyC=best+$6000+in+{state}+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyD=best+$6000+in+{city}+for+substance+abuse+treatment+participation+near+my+zipcode&forceKeyE=$6000+in+{city}+for+substance+abuse+treatment+participation+near+me&forceKeyF=$6000+in+{state}+for+substance+abuse+treatments+participation&s1pplacement={{placement}}",
+    "title": "Understanding What to Expect in a Substance Abuse Study",
+    "description": "Discover key insights into what to expect from a substance abuse study, including participation requirements and potential benefits for individuals seeking treatment.",
+    "locale": "en_US"
+  },
+  "441": {
+    "url": "https://goatdealo.online/real-estate/affordable-retirement-villages-in-the-us-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Affordable%20Retirement%20Villages%20in%20the%20United%20States&forceKeyA={state}:+retirement+villages+for+seniors+no+waiting+list&forceKeyB=retirement+villages+nearby&forceKeyC=senior+independent+living+nearby&forceKeyD=seniors+residences+near+me&forceKeyE=62+housing&forceKeyF=medicare+programs+for+seniors&s1pplacement={{placement}}",
+    "title": "Affordable Retirement Villages Across the U.S.",
+    "description": "Explore a selection of affordable retirement villages across the United States, designed for seniors seeking independent living options without waiting lists.",
+    "locale": "en_US"
+  },
+  "442": {
+    "url": "https://goatdealo.online/health/diabetes-studies-and-their-impact-on-treatment-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=diabetes+treatment+trial&forceKeyA=diabetes+study+testing+new+treatments&forceKeyB=diabetes+neuropathy+trial&forceKeyC=best+diabetes+neuropathy+trial&forceKeyD=best+diabetes+study+testing+new+treatments+$1500&forceKeyE=best+diabetes+study+testing+new+treatments&forceKeyF=breakthrough+diabetes+program&s1pplacement={{placement}}",
+    "title": "\"Exploring Recent Diabetes Studies and Their Treatment Impact\"",
+    "description": "Explore the latest diabetes studies and their transformative impact on treatment options, including trials focused on neuropathy and new therapies.",
+    "locale": "en_US"
+  },
+  "443": {
+    "url": "https://goatdealo.online/health/nonsurgical-facelifts-what-you-need-to-know-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Non-Surgical+Facelift+Guide+Explore+facelift+options+designed+to+support+skin+firmness+and+elasticity.+Learn+more.&forceKeyA=find+juv?derm+clinics+near+me&forceKeyB=juv?derm+clinic+near+me&forceKeyC=juv?derm+clinics+near+me&forceKeyD=participate+in+juvederm+facelift+trials+near+me&forceKeyE=see+juv?derm+clinics+near+me&forceKeyF=juvederm+specials+near+me&s1pplacement={{placement}}",
+    "title": "Understanding Non-Surgical Facelifts: Key Insights and Options",
+    "description": "Discover essential insights on non-surgical facelifts, including treatment options that enhance skin firmness and elasticity for a youthful appearance.",
+    "locale": "en_US"
+  },
+  "444": {
+    "url": "https://goatdealo.online/education/how-online-high-schools-are-reshaping-adult-education-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=How+Are+Online+High+Schools+Transforming+Education&forceKeyA=apply+for+online+school+that+gives+you+$+and+laptop+today+{month}+2026&forceKeyB=apply+for+online+school+that+gives+you+$+and+laptop+near+me&forceKeyC=apply+for+online+schools+that+give+you+$+and+laptops+today+{month}+2026&forceKeyD=apply+for+online+school+high+school+that+gives+you+a+computer+now&forceKeyE=online+schools+that+give+refund+checks+and+laptops&forceKeyF=$+grant+for+online+classes&s1pplacement={{placement}}",
+    "title": "The Impact of Online High Schools on Adult Education",
+    "description": "Explore how online high schools are transforming adult education by offering flexible learning options and innovative resources to enhance educational experiences.",
+    "locale": "en_US"
+  },
+  "445": {
+    "url": "https://goatdealo.online/health/what-is-driving-the-body-contouring-surge-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Fat+Removal+Clinical+Research&forceKeyA=get+1500+for+belly+fat+reduction+treatment+participations+near+my+zipcode+[coolsculpting]&forceKeyB=get+1500+for+belly+fat+removal+without+surgery+participation+[coolsculpting+zepbound]&forceKeyC=get+1500+for+belly+fat+removal+without+surgery+participation&forceKeyD=get+1500+for+belly+fat+reduction+treatment+participation+near+me+[+coolsculpting+]&forceKeyE=get+1500+for+belly+fat+reduction+treatment+participation&forceKeyF=get+1500+for+belly+fat+reduction+treatment+participation+near+me&s1pplacement={{placement}}",
+    "title": "The Surge in Body Contouring: Trends and Innovations Explained",
+    "description": "Explore the factors driving the rise in body contouring procedures, including advancements in fat removal technologies and their impact on aesthetics and health.",
+    "locale": "en_US"
+  },
+  "446": {
+    "url": "https://goatdealo.online/automotive/what-makes-full-size-pickup-trucks-versatile-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Learn+About+Top+Pickup+Models&forceKeyA=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyB=100+accepted+0+down+options+new+f150+and+ram+trucks+near+me+[at+low+cost]+apply+now&forceKeyC=100+accepted+0+down+options+new+f150+and+ram+trucks+-+near+me+apply+now&forceKeyD=100%+accepted+0+down+options+-+new+f150+and+ram+trucks+near+me+apply+now&forceKeyE=100+accepted+0+down+new+f150+and+ram+trucks+near+me+apply+now&forceKeyF=100%+accepted+-+0+down+options+-+new+f150+and+ram+trucks+near+me&s1pplacement={{placement}}",
+    "title": "The Versatility of Full-Size Pickup Trucks Explained",
+    "description": "Discover the versatility of full-size pickup trucks, exploring their features, capabilities, and popular models that cater to various needs and lifestyles.",
+    "locale": "en_US"
+  },
+  "447": {
+    "url": "https://goatdealo.online/health/how-are-dental-implant-trials-advancing-care-en-us-2/?segment=rsoc.sc.goatdealoonline.002&headline=How+Do+Dental+Implant+Trials+Enhance+Care&forceKeyA=get+$1950+for+dental+implant+participation+near+me&forceKeyB=$1950+for+dental+implants+participations+in+{city}&forceKeyC=get+$1950+for+dental+implants+participations+near+me&forceKeyD=best+get+$1950+for+dental+implants+participation+near+me&forceKeyE=$1950+for+dental+implants+participation+in+{city}&forceKeyF=$1950+for+dental+implant+participation+in+{city}&s1pplacement={{placement}}",
+    "title": "Advancements in Dental Implant Trials Improving Patient Care",
+    "description": "Discover how dental implant trials are improving patient care and advancing technology in the field of dentistry. Explore the latest innovations and impacts.",
+    "locale": "en_US"
+  },
+  "448": {
+    "url": "https://goatdealo.online/health/depression-clinical-trials-enroll-and-get-paid-en-us/?segment=rsoc.sc.goatdealoonline.002&headline=Depression%20Treatment%20Centers&forceKeyA=$6000+in+{state}+for+depression+treatment+participation+{month}+2026&forceKeyB=$6000+in+{city}+for+depression+treatment+participation&forceKeyC=$6000+for+depression+participation+in+{state}&forceKeyD=$6000+remote+depression+clinical+trial+for+money+near+me&forceKeyE=$6000+remote+depression+clinical+trials+for+money+near+me&forceKeyF=$6000+for+depression+participation+near+me&s1pplacement={{placement}}",
+    "title": "\"Earn Up to $6000 by Participating in Depression Clinical Trials\"",
+    "description": "Explore opportunities to participate in clinical trials for depression treatment, with compensation of up to $6,000 available in your area.",
     "locale": "en_US"
   }
 };
