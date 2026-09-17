@@ -1792,7 +1792,19 @@ export default async (request, context) => {
   // Upper-funnel events fire instantly via dedicated endpoints;
   // each receiver fires the corresponding Meta CAPI event within ~300ms
   // of the postback. Purchase (revenue) still uses the 15-min batch cron.
-  const originBase = `https://${url.hostname}`;
+  // FIXED POSTBACK HOST (changed 2026-09-17)
+  // These URLs used to be built from url.hostname, so every redirector domain
+  // received its own postbacks and each new domain needed the four receivers
+  // deployed plus the /api/* bypass above. They now always point at one host.
+  // Override with the POSTBACK_HOST env var in Netlify; the literal below is
+  // the fallback if the variable is unset or unreadable.
+  // Use the host that answers WITHOUT a redirect: postrk.com 301s to
+  // www.postrk.com, and a 301 in front of a revenue postback is a risk if
+  // S1's pinger does not follow redirects.
+  const POSTBACK_HOST =
+    (typeof Netlify !== "undefined" && Netlify.env.get("POSTBACK_HOST")) ||
+    "www.postrk.com";
+  const postbackBase = `https://${POSTBACK_HOST}`;
 
   // content_category for Lead CAPI events. Pull from the redirectMap row so
   // each campaign's vertical (insurance/loans/solar/etc.) is stamped on the
@@ -1808,7 +1820,7 @@ export default async (request, context) => {
     // impression_track_url: fires when the widget loads (Meta "PageView")
     dest.searchParams.set(
       "impression_track_url",
-      `${originBase}/api/s1-impression?click_id=${uid}`
+      `${postbackBase}/api/s1-impression?click_id=${uid}`
     );
 
     // search_track_url: fires when the user searches (Meta "Search").
@@ -1817,7 +1829,7 @@ export default async (request, context) => {
     // custom_data.search_string.
     dest.searchParams.set(
       "search_track_url",
-      `${originBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
+      `${postbackBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
     );
 
     // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
@@ -1825,7 +1837,7 @@ export default async (request, context) => {
     // &cat=... carries the ad vertical through to custom_data.content_category.
     dest.searchParams.set(
       "click_track_url",
-      `${originBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
+      `${postbackBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
     );
   }
 
@@ -1833,7 +1845,7 @@ export default async (request, context) => {
   // must remain complete. Purchase events still flow through the batch cron.
   dest.searchParams.set(
     "rev_click_track_url",
-    `${originBase}/api/s1-postback?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`
+    `${postbackBase}/api/s1-postback?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`
   );
   // ?? End S1 Postback URL Injection ??????????????????????????
 
