@@ -1,5 +1,3 @@
-
-Redirect template v2 logged capture ? JS
 export default async (request, context) => {
   // 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
   const reqUrl0 = new URL(request.url);
