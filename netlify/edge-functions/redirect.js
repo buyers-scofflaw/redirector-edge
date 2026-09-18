@@ -1,15 +1,17 @@
+
+Redirect template v2 logged capture ? JS
 export default async (request, context) => {
   // 0) Let Netlify Functions handle their own paths (don't intercept /.netlify/functions/*)
   const reqUrl0 = new URL(request.url);
   if (reqUrl0.pathname.startsWith("/.netlify/functions/")) {
     return context.next();
   }
-
+ 
   // 0a) Bypass redirects for static assets (images, CSS, etc.)
   if (reqUrl0.pathname.startsWith("/assets/")) {
     return context.next();
   }
-
+ 
   // 0b) Bypass redirects for API endpoints (S1 postback receivers live here).
   // Without this, a postback ping like /api/s1-impression?click_id=XXX would
   // be treated as a redirect request, fail the redirectMap lookup, and 302
@@ -17,11 +19,11 @@ export default async (request, context) => {
   if (reqUrl0.pathname.startsWith("/api/")) {
     return context.next();
   }
-
+ 
   // ===== V2 redirect with logging + click capture =====
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
-
+ 
   // 1) Redirect map (injected by your Sheet push)
   const redirectMap = {
   "100": {
@@ -1459,7 +1461,7 @@ export default async (request, context) => {
     "locale": "en_US"
   }
 };
-
+ 
   // 2) OG metadata map (injected from your domain_settings tab)
   const ogMetaMap = {
   "https://health-helpers.com": {
@@ -1589,20 +1591,20 @@ export default async (request, context) => {
     "type": "article"
   }
 };
-
+ 
   // 3) Detect if this is a crawler (Facebook, Twitter, Slack, etc.)
   const ua = (request.headers.get("user-agent") || "").toLowerCase();
   const isCrawler =
     /(facebookexternalhit|facebot|twitterbot|linkedinbot|slackbot|discordbot|embedly|whatsapp|telegram|preview)/i.test(ua);
-
+ 
   // 4) If it's a crawler, serve OG metadata directly (no redirect)
   if (isCrawler) {
     const host = reqUrl0.hostname.replace(/^www\./, "");
     const meta = ogMetaMap["https://" + host] || ogMetaMap[host];
-
+ 
     if (meta) {
       const row = redirectMap && id ? redirectMap[id] : null;
-
+ 
       const html = `
         <!DOCTYPE html>
         <html lang="en">
@@ -1623,47 +1625,47 @@ export default async (request, context) => {
             <p>Preview for ${meta.site_name}</p>
           </body>
         </html>`;
-
+ 
       return new Response(html, {
         status: 200,
         headers: { "Content-Type": "text/html; charset=utf-8" }
       });
     }
   }
-
+ 
   // 5) Normal redirect configuration
   const FALLBACK_URL = "https://www.facebook.com";
-
+ 
   // Post to MULTIPLE collectors (existing Apps Script + Cloud Run)
   const COLLECTORS = [
     "https://click-collector-583868590168.us-central1.run.app/collect"
   ];
-
+ 
   // 6) Helpers
   function isFbIgInApp(uaStr) {
     const u = (uaStr || "").toLowerCase();
     return u.includes("fban") || u.includes("fbav") || u.includes("fb_iab") || u.includes("instagram");
   }
-
+ 
   function isValidS1pcid(v) {
     if (!v) return false;
     const t = String(v).trim();
     if (t.startsWith("{")) return false;
     return /^[0-9]{6,}$/.test(t);
   }
-
+ 
   function makeFbcFromFbclid(fbclid) {
     if (!fbclid) return null;
     const ts = Math.floor(Date.now() / 1000);
     return `fb.1.${ts}.${fbclid}`;
   }
-
+ 
   function makeFbp() {
     const ts = Math.floor(Date.now() / 1000);
     const rand = Math.random().toString(36).slice(2);
     return `fb.1.${ts}.${rand}`;
   }
-
+ 
   function uuidv4() {
     return crypto.randomUUID
       ? crypto.randomUUID()
@@ -1673,25 +1675,25 @@ export default async (request, context) => {
           return v.toString(16);
         });
   }
-
+ 
   function appendCookie(h, name, value, maxAgeDays = 90) {
     if (!value) return;
     const maxAge = maxAgeDays * 24 * 3600;
     h.append("Set-Cookie", `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; SameSite=Lax`);
   }
-
+ 
   function redirectResponse(locationUrl, extraHeaders) {
     const h = new Headers({ Location: locationUrl });
     if (extraHeaders) for (const [k, v] of extraHeaders.entries()) h.append(k, v);
     return new Response(null, { status: 302, headers: h });
   }
-
+ 
   // Fire-and-forget POSTs (we don?t wait for them)
   function postToCollectors(payload, context) {
     for (const endpoint of COLLECTORS) {
       const controller = new AbortController();
       const kill = setTimeout(() => controller.abort(), 1500);
-
+ 
       context.waitUntil(
         fetch(endpoint, {
           method: "POST",
@@ -1706,7 +1708,7 @@ export default async (request, context) => {
       );
     }
   }
-
+ 
   // ? NEW: derive event_source_url from destination domain (search.<root>.com)
   function deriveEventSourceUrl(destUrl) {
     try {
@@ -1717,31 +1719,40 @@ export default async (request, context) => {
       return null;
     }
   }
-
+ 
   // 7) Inputs
   const uaHead = request.headers.get("user-agent") || "";
   const base = id ? redirectMap[id] : null;
-
+ 
   const inApp = isFbIgInApp(uaHead);
   const rawS1 = url.searchParams.get("s1pcid") || "";
   const s1ok = isValidS1pcid(rawS1);
-
+ 
   // 8) Handle unknown IDs
   if (!base) {
     console.log("Redirect", { id, inApp, s1ok, reason: "unknown id", dest: "https://facebook.com" });
     return redirectResponse("https://facebook.com");
   }
-
+ 
   // 9) Build final destination (preserve most params)
+  // PLACEMENT PARAMS STRIPPED (changed 2026-09-18)
+  // s1pplacement / placement / site_source_name / utm_source are no longer
+  // forwarded to S1. Per S1, nothing on their side keys off them. They are
+  // still captured internally - see the S1 placement tracking block below.
+  // fbclid added 2026-09-18 as well: it is read off the inbound url at the
+  // "const fbclid" line below, logged to BigQuery, and turned into fbc for
+  // Meta CAPI, which reads fbc/fbp from the click_events table by click_id
+  // and never from this URL. Dropping it here does not affect match quality.
   const DROP = new Set([
-    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id"
+    "utm_medium", "utm_id", "utm_content", "utm_term", "utm_campaign", "iab", "id",
+    "s1pplacement", "placement", "site_source_name", "utm_source", "fbclid"
   ]);
-
+ 
   if (!base || !base.url) {
     console.log("Redirect", { id, reason: "missing base.url", dest: "https://facebook.com" });
     return redirectResponse("https://facebook.com");
   }
-
+ 
   let dest;
   try {
     dest = new URL(base.url);
@@ -1749,19 +1760,19 @@ export default async (request, context) => {
     console.error("Invalid redirect URL", base, err);
     return redirectResponse("https://facebook.com");
   }
-
+ 
   // copy through allowed params
   url.searchParams.forEach((value, key) => {
     if (!DROP.has(key)) dest.searchParams.set(key, value);
   });
-
+ 
   // 10) Capture event
   const now = Math.floor(Date.now() / 1000);
   const uid = uuidv4();
-
+ 
   dest.searchParams.set("s1padid", uid);
   if (!s1ok) dest.searchParams.delete("s1pcid");
-
+ 
   // ?? S1 placement tracking ??????????????????????????????????
   // Meta substitutes {{site_source_name}} and {{placement}} macros into the
   // ad URL at click time, so they arrive as regular query params. We combine
@@ -1769,11 +1780,23 @@ export default async (request, context) => {
   // back to specific placements (Facebook/Instagram feed, stories, reels, etc).
   // If either is missing (direct traffic, link-preview crawlers, etc.) we use
   // "unknown" so S1 still has a categorizable value instead of a blank.
+  // INTERNAL ONLY as of 2026-09-18: the composed value is still computed and
+  // still logged to BigQuery via the collector payload below, and still drives
+  // the Audience Network check. It is no longer written to the outbound URL.
+  // Both macros are read off the INBOUND url, not off dest, so stripping dest
+  // does not affect logging.
   const siteSourceName = url.searchParams.get("site_source_name") || "unknown";
   const placement = url.searchParams.get("placement") || "unknown";
   const s1pplacement = `${siteSourceName}-${placement}`;
-  dest.searchParams.set("s1pplacement", s1pplacement);
-
+ 
+  // DROP above stops these being copied through from the inbound request.
+  // This delete loop removes the copies baked into the campaign base URLs in
+  // the Sheet: 238 of 239 rows carry a literal s1pplacement={{placement}},
+  // which would otherwise reach S1 as an unsubstituted macro string.
+  for (const p of ["s1pplacement", "placement", "site_source_name", "utm_source", "fbclid"]) {
+    dest.searchParams.delete(p);
+  }
+ 
   // ?? Audience Network detection ?????????????????????????????
   // Meta's {{site_source_name}} macro returns "an" for Audience Network
   // placements (rewarded video, interstitials in third-party apps, etc.).
@@ -1787,7 +1810,7 @@ export default async (request, context) => {
   // Purchase (rev_click_track_url) is ALWAYS injected so revenue
   // attribution remains complete regardless of placement.
   const isAudienceNetwork = siteSourceName.toLowerCase() === "an";
-
+ 
   // ?? S1 Postback URL Injection ??????????????????????????????
   // Upper-funnel events fire instantly via dedicated endpoints;
   // each receiver fires the corresponding Meta CAPI event within ~300ms
@@ -1805,14 +1828,14 @@ export default async (request, context) => {
     (typeof Netlify !== "undefined" && Netlify.env.get("POSTBACK_HOST")) ||
     "www.postrk.com";
   const postbackBase = `https://${POSTBACK_HOST}`;
-
+ 
   // content_category for Lead CAPI events. Pull from the redirectMap row so
   // each campaign's vertical (insurance/loans/solar/etc.) is stamped on the
   // Lead fire. Falls back to the campaign id if the row has no category.
   const leadCategory = encodeURIComponent(
     (base && base.category) ? base.category : (id || "unknown")
   );
-
+ 
   // Upper-funnel postback URLs: only injected for non-AN placements.
   // AN traffic still reaches the article and can earn revenue, but Meta
   // won't receive optimization signal from these low-intent clicks.
@@ -1822,7 +1845,7 @@ export default async (request, context) => {
       "impression_track_url",
       `${postbackBase}/api/s1-impression?click_id=${uid}`
     );
-
+ 
     // search_track_url: fires when the user searches (Meta "Search").
     // &q=OMKEYWORD is an S1 macro ? S1 replaces OMKEYWORD with the actual
     // search query at fire time, and our receiver forwards it to Meta as
@@ -1831,7 +1854,7 @@ export default async (request, context) => {
       "search_track_url",
       `${postbackBase}/api/s1-search?click_id=${uid}&q=OMKEYWORD`
     );
-
+ 
     // click_track_url: fires when the user clicks a monetized result (Meta "Lead").
     // This is the instant-fire event campaigns will optimize on.
     // &cat=... carries the ad vertical through to custom_data.content_category.
@@ -1840,7 +1863,7 @@ export default async (request, context) => {
       `${postbackBase}/api/s1-lead?click_id=${uid}&cat=${leadCategory}`
     );
   }
-
+ 
   // rev_click_track_url: ALWAYS injected (even for AN) ? revenue attribution
   // must remain complete. Purchase events still flow through the batch cron.
   dest.searchParams.set(
@@ -1848,7 +1871,7 @@ export default async (request, context) => {
     `${postbackBase}/api/s1-postback?click_id=${uid}&type=revenue&revenue=ESTIMATED_CONVERSION_VALUE`
   );
   // ?? End S1 Postback URL Injection ??????????????????????????
-
+ 
   const rawCookie = request.headers.get("cookie") || "";
   const cookieMap = Object.fromEntries(
     rawCookie.split(/;\s*/).filter(Boolean).map(c => {
@@ -1856,18 +1879,18 @@ export default async (request, context) => {
       return i === -1 ? [c, ""] : [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
     })
   );
-
+ 
   const fbclid = url.searchParams.get("fbclid") || null;
   const fbc = cookieMap._fbc || makeFbcFromFbclid(fbclid);
   const fbp = cookieMap._fbp || makeFbp();
-
+ 
   const ipHeader =
     request.headers.get("x-forwarded-for") ||
     request.headers.get("x-real-ip") ||
     request.headers.get("x-nf-client-connection-ip") ||
     "";
   const client_ip = ipHeader.split(",")[0].trim();
-
+ 
   // ?? Geo capture from Netlify edge context ?????????????????
   // context.geo is populated by Netlify's edge runtime from the IP
   // (MaxMind under the hood). Free, no extra API call. Used to enrich
@@ -1879,13 +1902,13 @@ export default async (request, context) => {
   const geo_region = (geo.subdivision && geo.subdivision.code) || null;       // ISO 3166-2 subdivision (e.g. "CA")
   const geo_postal_code = geo.postalCode || null;
   const geo_country = (geo.country && geo.country.code) || null;              // ISO 3166-1 alpha-2 (e.g. "US")
-
+ 
   const isFallback = !inApp && !s1ok;
   const finalLocation = isFallback ? FALLBACK_URL : dest.href;
-
+ 
   // ? ONLY CHANGE vs source-of-truth: event_source_url value
   const event_source_url = deriveEventSourceUrl(finalLocation) || request.url;
-
+ 
   // 10b) Send click data to collector(s) for BigQuery ingestion
   try {
     postToCollectors({
@@ -1909,7 +1932,7 @@ export default async (request, context) => {
       geo_country
     }, context);
   } catch {}
-
+ 
   // 11) Log fallback reason for users not sent to article
   if (isFallback) {
     const failure_reason =
@@ -1919,7 +1942,7 @@ export default async (request, context) => {
       !inApp ? "not_in_app" :
       !s1ok ? "invalid_s1pcid" :
       "other";
-
+ 
     console.log("FallbackDecision", {
       id,
       failure_reason,
@@ -1933,13 +1956,13 @@ export default async (request, context) => {
       event_source_url
     });
   }
-
+ 
   // 12) Set cookies + redirect
   const cookieHeaders = new Headers();
   appendCookie(cookieHeaders, "_fbc", fbc);
   appendCookie(cookieHeaders, "_fbp", fbp);
   appendCookie(cookieHeaders, "uid", uid);
-
+ 
   console.log("Redirect", { id, inApp, s1ok, isFallback, dest: finalLocation });
   return redirectResponse(finalLocation, cookieHeaders);
 };
