@@ -4,7 +4,10 @@ function = "redirect"
 
 [build]
   functions = "netlify/functions"   # <— make Functions directory explicit
-  command = "cd netlify/functions && npm install"
+  # Refresh Google CIDR ranges on every deploy (fail-soft: keeps the committed
+  # google-ranges.js if Google is unreachable, never fails the build).
+  # INCLUDE_CORP=false drops Google corporate ranges; INCLUDE_GCP=true adds all of GCP.
+  command = "node scripts/build-google-ranges.mjs && cd netlify/functions && npm install"
 
 [functions]
   directory = "netlify/functions"   # <— same here (being explicit helps)
