@@ -7,12 +7,21 @@
  *   - s1-search.mts       (Meta "Search" event on search_track_url)
  *
  * Architecture: S1 pings a receiver URL on each funnel event. The receiver
- * responds 200 immediately, then (via context.waitUntil) looks up the
- * FB match params for the click_id and fires a CAPI event to Meta. All
- * fires are logged to s1_capi_upper_funnel_log for auditing.
+ * responds 200 immediately and, by default (UPPER_FUNNEL_MODE=queue), appends
+ * the event to s1_capi_upper_funnel_queue. The s1-capi-upper-funnel-sender
+ * scheduled function drains the queue every 5 minutes: one BigQuery join
+ * for all pending events, then CAPI in bulk. Events reach Meta 0-5 min after
+ * S1's ping, with event_time set to when the ping arrived.
+ *
+ * Why: the previous design ran one click_events lookup per event. Each
+ * lookup was billed the full 7-day window (~110 MiB), so cost grew with
+ * volume squared and was ~99% of the project's BigQuery bill in Sept 2026.
+ *
+ * UPPER_FUNNEL_MODE=instant restores the per-event lookup + immediate fire.
+ * All fires (both modes) are logged to s1_capi_upper_funnel_log.
  *
  * Purchase events still flow through s1-postback.mts + s1-capi-sender.mts
- * on the existing 15-minute cron — this pipeline is for upper-funnel only.
+ * on the existing 15-minute cron.
  *
  * ENV VARS REQUIRED:
  *   GCP_SERVICE_ACCOUNT_KEY - Full JSON service account key
@@ -25,7 +34,10 @@ import type { Context } from "@netlify/functions";
 // ── Config ──
 const BQ_PROJECT = "carbon-storm-422904-n0";
 const BQ_DATASET = "my_dataset";
-const LOG_TABLE = "s1_capi_upper_funnel_log";
+export const BQ_PROJECT_ID = BQ_PROJECT;
+export const LOG_TABLE = "s1_capi_upper_funnel_log";
+// Receivers append here in queue mode; s1-capi-upper-funnel-sender drains it.
+export const QUEUE_TABLE = "s1_capi_upper_funnel_queue";
 const GRAPH_VERSION = "v19.0";
 
 // ── JWT / Google Auth ──
@@ -74,7 +86,7 @@ async function signJwt(
   return signingInput + "." + base64url(signature);
 }
 
-async function getAccessToken(
+export async function getAccessToken(
   saKey: { client_email: string; private_key: string },
   scopes: string
 ): Promise<string> {
@@ -151,7 +163,7 @@ async function hashCountry(value: string | null): Promise<string | null> {
 
 // ── BigQuery: look up FB match params for a click_id ──
 
-interface ClickMatchRow {
+export interface ClickMatchRow {
   fbc: string | null;
   fbp: string | null;
   client_ip_address: string | null;
@@ -257,7 +269,7 @@ async function lookupClickMatchParams(
 
 // ── BigQuery: write to unified upper-funnel log ──
 
-async function insertLogRow(
+export async function insertLogRow(
   accessToken: string,
   row: Record<string, unknown>
 ): Promise<void> {
@@ -286,7 +298,7 @@ async function insertLogRow(
 
 // ── Meta CAPI fire ──
 
-interface CapiEvent {
+export interface CapiEvent {
   event_name: string;
   event_time: number;
   event_id: string;
@@ -315,17 +327,54 @@ interface CapiEvent {
 // lookup, persisted on click_events). hashCountry() handles normalization
 // and skips the field when geo couldn't be resolved.
 
-async function fireCapiEvent(
+
+// ── BigQuery: batched streaming insert (queue + batched log writes) ──
+// insertId gives best-effort dedupe if the same row is retried within
+// BigQuery's dedupe window.
+
+export async function insertRows(
+  accessToken: string,
+  table: string,
+  rows: Array<{ insertId?: string; json: Record<string, unknown> }>
+): Promise<void> {
+  if (rows.length === 0) return;
+  const url = `https://bigquery.googleapis.com/bigquery/v2/projects/${BQ_PROJECT}/datasets/${BQ_DATASET}/tables/${table}/insertAll`;
+
+  for (let i = 0; i < rows.length; i += 500) {
+    const chunk = rows.slice(i, i + 500);
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ rows: chunk }),
+    });
+    if (!res.ok) {
+      throw new Error(`${table} insert failed (${res.status}): ${await res.text()}`);
+    }
+    const result = (await res.json()) as {
+      insertErrors?: Array<{ index: number; errors: Array<{ message: string }> }>;
+    };
+    if (result.insertErrors?.length) {
+      throw new Error(`${table} insert errors: ${JSON.stringify(result.insertErrors)}`);
+    }
+  }
+}
+
+// ── Meta CAPI fire (accepts up to 1000 events per request) ──
+
+export async function fireCapiEvents(
   pixelId: string,
   accessToken: string,
-  event: CapiEvent
+  events: CapiEvent[]
 ): Promise<{ fbtrace_id: string; events_received: number }> {
   const url = `https://graph.facebook.com/${GRAPH_VERSION}/${pixelId}/events`;
 
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ data: [event], access_token: accessToken }),
+    body: JSON.stringify({ data: events, access_token: accessToken }),
   });
 
   const body = (await res.json()) as {
@@ -346,7 +395,121 @@ async function fireCapiEvent(
   };
 }
 
-// ── Public: handle an instant-fire upper-funnel event ──
+// ── Build the CAPI event (shared by instant and queued paths) ──
+
+export interface UpperFunnelEventInput {
+  eventName: string;
+  eventId: string;
+  clickId: string;
+  rawParams: Record<string, string>;
+  /** When S1 pinged us (epoch seconds). Instant mode passes "now". */
+  receivedEpoch: number;
+}
+
+export async function buildCapiEvent(
+  ev: UpperFunnelEventInput,
+  match: ClickMatchRow
+): Promise<CapiEvent> {
+  // event_time: when S1 pinged us. Floor at click_time + 1 as a safety
+  // rail — Meta rejects events whose event_time is earlier than the click.
+  const eventTime = match.event_time_epoch
+    ? Math.max(ev.receivedEpoch, match.event_time_epoch + 1)
+    : ev.receivedEpoch;
+
+  // external_id: sha256(fbp) so repeat visitors from the same browser get a
+  // stable identifier; fall back to sha256(click_id) if fbp is missing.
+  const hashedExternalId = match.fbp
+    ? await sha256(match.fbp)
+    : await sha256(ev.clickId);
+
+  const hashedCountry = await hashCountry(match.geo_country);
+  const hashedCity    = await hashCity(match.geo_city);
+  const hashedState   = await hashState(match.geo_region);
+  const hashedZip     = await hashZip(match.geo_postal_code);
+
+  // Event-specific custom_data:
+  //   Lead   → content_category (ad vertical)
+  //   Search → search_string (the query the user typed)
+  const category = ev.rawParams.cat?.trim();
+  const searchString = ev.rawParams.q?.trim();
+  const customData: { content_category?: string; search_string?: string } = {};
+  if (ev.eventName === "Lead" && category) customData.content_category = category;
+  if (ev.eventName === "Search" && searchString) customData.search_string = searchString;
+
+  return {
+    event_name: ev.eventName,
+    event_time: eventTime,
+    event_id: ev.eventId,
+    event_source_url: match.event_source_url || "https://search.etoptip.com/",
+    action_source: "website",
+    user_data: {
+      ...(match.fbc && { fbc: match.fbc }),
+      ...(match.fbp && { fbp: match.fbp }),
+      ...(match.client_ip_address && { client_ip_address: match.client_ip_address }),
+      ...(match.client_user_agent && { client_user_agent: match.client_user_agent }),
+      external_id: hashedExternalId,
+      ...(hashedCountry && { country: hashedCountry }),
+      ...(hashedCity    && { ct: hashedCity }),
+      ...(hashedState   && { st: hashedState }),
+      ...(hashedZip     && { zp: hashedZip }),
+    },
+    // Explicit empty LDU array: "no Limited Data Use restrictions apply".
+    data_processing_options: [],
+    ...(Object.keys(customData).length > 0 && { custom_data: customData }),
+  };
+}
+
+/**
+ * Why an event can't be sent, or null if it can. Shared so instant and
+ * queued modes skip exactly the same events with the same log status.
+ */
+export function skipReason(match: ClickMatchRow | null): string | null {
+  if (!match) return "skipped_no_click";
+  if (!match.fbc && !match.fbp) return "skipped_no_match";
+  // Audience Network safety net. The edge function already strips
+  // upper-funnel postback URLs for AN traffic; this catches leaks.
+  if (match.placement && match.placement.toLowerCase().startsWith("an")) {
+    return "skipped_an_placement";
+  }
+  return null;
+}
+
+/** Log row in the s1_capi_upper_funnel_log schema. */
+export function logRow(
+  ev: UpperFunnelEventInput,
+  status: string,
+  extra: {
+    event?: CapiEvent;
+    match?: ClickMatchRow | null;
+    pixelId?: string;
+    fbtraceId?: string;
+  } = {}
+): Record<string, unknown> {
+  const base: Record<string, unknown> = {
+    sent_at: Date.now() / 1000,
+    event_date_utc: new Date(ev.receivedEpoch * 1000).toISOString().slice(0, 10),
+    event_name: ev.eventName,
+    uid: ev.clickId,
+    event_id: ev.eventId,
+    status,
+    raw_params: JSON.stringify(ev.rawParams),
+  };
+  if (status !== "sent" || !extra.event) return base;
+  const m = extra.match!;
+  return {
+    ...base,
+    event_time_epoch: extra.event.event_time,
+    fbc: m.fbc || "",
+    fbp: m.fbp || "",
+    client_ip_address: m.client_ip_address || "",
+    client_user_agent: m.client_user_agent || "",
+    event_source_url: extra.event.event_source_url,
+    pixel_id: extra.pixelId || "",
+    fbtrace_id: extra.fbtraceId || "",
+  };
+}
+
+// ── Public: receiver entry point ──
 
 export interface InstantEventConfig {
   /** Meta standard event name: "Lead" | "PageView" | "Search" */
@@ -359,12 +522,72 @@ export interface InstantEventConfig {
   rawParams: Record<string, string>;
 }
 
+/**
+ * UPPER_FUNNEL_MODE (Netlify env var):
+ *   "queue"   (default) append to s1_capi_upper_funnel_queue; the 5-minute
+ *             s1-capi-upper-funnel-sender sweep looks up clicks and fires
+ *             CAPI in bulk. One BigQuery query per sweep instead of one per
+ *             event (the per-event lookup was ~99% of the BigQuery bill).
+ *   "instant" legacy path: per-event click lookup + immediate CAPI fire.
+ *             Kept as a rollback switch.
+ */
+export async function routeInstantEvent(
+  cfg: InstantEventConfig,
+  context: Context
+): Promise<Response> {
+  const mode = (Netlify.env.get("UPPER_FUNNEL_MODE") || "queue").toLowerCase();
+  return mode === "instant"
+    ? handleInstantEvent(cfg, context)
+    : enqueueInstantEvent(cfg, context);
+}
+
+export async function enqueueInstantEvent(
+  cfg: InstantEventConfig,
+  context: Context
+): Promise<Response> {
+  const logPrefix = `s1-${cfg.eventName.toLowerCase()}`;
+  const receivedAt = new Date();
+
+  if (!cfg.clickId) {
+    console.warn(`${logPrefix}: missing click_id`, { params: cfg.rawParams });
+    return new Response("OK", { status: 200 });
+  }
+
+  context.waitUntil(
+    (async () => {
+      const row = {
+        received_at: receivedAt.toISOString(),
+        event_name: cfg.eventName,
+        uid: cfg.clickId,
+        event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
+        raw_params: JSON.stringify(cfg.rawParams),
+      };
+      try {
+        const saKeyRaw = Netlify.env.get("GCP_SERVICE_ACCOUNT_KEY");
+        if (!saKeyRaw) throw new Error("missing GCP_SERVICE_ACCOUNT_KEY");
+        const bqToken = await getAccessToken(
+          JSON.parse(saKeyRaw),
+          "https://www.googleapis.com/auth/bigquery"
+        );
+        await insertRows(bqToken, QUEUE_TABLE, [
+          { insertId: `${row.event_id}:${receivedAt.getTime()}`, json: row },
+        ]);
+      } catch (err: any) {
+        // Row is printed so a lost event can be recovered from function logs.
+        console.error(`${logPrefix}: enqueue failed:`, err?.message || err, row);
+      }
+    })()
+  );
+
+  return new Response("OK", { status: 200 });
+}
+
+/** Legacy instant path (UPPER_FUNNEL_MODE=instant). Behavior unchanged. */
 export async function handleInstantEvent(
   cfg: InstantEventConfig,
   context: Context
 ): Promise<Response> {
   const logPrefix = `s1-${cfg.eventName.toLowerCase()}`;
-  const receivedAt = new Date().toISOString();
 
   if (!cfg.clickId) {
     console.warn(`${logPrefix}: missing click_id`, { params: cfg.rawParams });
@@ -387,151 +610,39 @@ export async function handleInstantEvent(
         return;
       }
 
+      const ev: UpperFunnelEventInput = {
+        eventName: cfg.eventName,
+        eventId: `${cfg.clickId}${cfg.eventIdSuffix}`,
+        clickId: cfg.clickId,
+        rawParams: cfg.rawParams,
+        receivedEpoch: Math.floor(Date.now() / 1000),
+      };
+
       try {
-        const saKey = JSON.parse(saKeyRaw);
         const bqToken = await getAccessToken(
-          saKey,
+          JSON.parse(saKeyRaw),
           "https://www.googleapis.com/auth/bigquery"
         );
 
-        // 1. Look up the FB match params for this click
         const match = await lookupClickMatchParams(bqToken, cfg.clickId);
-
-        if (!match) {
-          console.warn(`${logPrefix}: no click_events row for ${cfg.clickId}`);
-          await insertLogRow(bqToken, {
-            sent_at: Date.now() / 1000,
-            event_name: cfg.eventName,
-            uid: cfg.clickId,
-            event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
-            status: "skipped_no_click",
-            raw_params: JSON.stringify(cfg.rawParams),
-          });
+        const skip = skipReason(match);
+        if (skip) {
+          console.warn(`${logPrefix}: ${cfg.clickId} ${skip}`);
+          await insertLogRow(bqToken, logRow(ev, skip));
           return;
         }
 
-        if (!match.fbc && !match.fbp) {
-          console.warn(
-            `${logPrefix}: ${cfg.clickId} has no fbc/fbp — skipping CAPI fire`
-          );
-          await insertLogRow(bqToken, {
-            sent_at: Date.now() / 1000,
-            event_name: cfg.eventName,
-            uid: cfg.clickId,
-            event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
-            status: "skipped_no_match",
-            raw_params: JSON.stringify(cfg.rawParams),
-          });
-          return;
-        }
-
-        // 1b. Audience Network filter (safety net)
-        // The edge function already strips upper-funnel postback URLs for
-        // AN traffic, so this should rarely fire. But if a postback slips
-        // through (macro didn't resolve, cached redirect, etc.), block it
-        // here. We still allow Purchase events via s1-postback.mts — this
-        // filter only applies to upper-funnel receivers.
-        if (match.placement && match.placement.toLowerCase().startsWith("an")) {
-          console.warn(
-            `${logPrefix}: ${cfg.clickId} is Audience Network (${match.placement}) — skipping CAPI fire`
-          );
-          await insertLogRow(bqToken, {
-            sent_at: Date.now() / 1000,
-            event_name: cfg.eventName,
-            uid: cfg.clickId,
-            event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
-            status: "skipped_an_placement",
-            placement: match.placement,
-            raw_params: JSON.stringify(cfg.rawParams),
-          });
-          return;
-        }
-
-        // 2. Build the CAPI event
-        // event_time: use NOW (the postback fired just now). Floor at
-        // click_time + 1 as a safety rail — Meta rejects events whose
-        // event_time is earlier than the associated click.
-        const now = Math.floor(Date.now() / 1000);
-        const eventTime = match.event_time_epoch
-          ? Math.max(now, match.event_time_epoch + 1)
-          : now;
-
-        // external_id: use sha256(fbp) so repeat visitors from the same browser
-        // get a stable identifier Meta can cross-reference across sessions.
-        // Fall back to sha256(click_id) only if fbp is somehow missing — still
-        // better than omitting external_id entirely.
-        const hashedExternalId = match.fbp
-          ? await sha256(match.fbp)
-          : await sha256(cfg.clickId);
-
-        // Geo from the click row — each helper returns null when input is
-        // missing/invalid, and the spread guards below skip null fields.
-        const hashedCountry = await hashCountry(match.geo_country);
-        const hashedCity    = await hashCity(match.geo_city);
-        const hashedState   = await hashState(match.geo_region);
-        const hashedZip     = await hashZip(match.geo_postal_code);
-
-        // Event-specific custom_data:
-        //   Lead   → content_category (ad vertical: insurance/loans/solar/etc.)
-        //   Search → search_string (the actual search query the user typed)
-        const category = cfg.rawParams.cat?.trim();
-        const searchString = cfg.rawParams.q?.trim();
-        const customData: { content_category?: string; search_string?: string } = {};
-        if (cfg.eventName === "Lead" && category) {
-          customData.content_category = category;
-        }
-        if (cfg.eventName === "Search" && searchString) {
-          customData.search_string = searchString;
-        }
-
-        const event: CapiEvent = {
-          event_name: cfg.eventName,
-          event_time: eventTime,
-          event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
-          event_source_url: match.event_source_url || "https://search.etoptip.com/",
-          action_source: "website",
-          user_data: {
-            ...(match.fbc && { fbc: match.fbc }),
-            ...(match.fbp && { fbp: match.fbp }),
-            ...(match.client_ip_address && { client_ip_address: match.client_ip_address }),
-            ...(match.client_user_agent && { client_user_agent: match.client_user_agent }),
-            external_id: hashedExternalId,
-            ...(hashedCountry && { country: hashedCountry }),
-            ...(hashedCity    && { ct: hashedCity }),
-            ...(hashedState   && { st: hashedState }),
-            ...(hashedZip     && { zp: hashedZip }),
-          },
-          // Explicit empty LDU array tells Meta "no Limited Data Use restrictions
-          // apply" — avoids ambiguity with CCPA-sensitive traffic.
-          data_processing_options: [],
-          ...(Object.keys(customData).length > 0 && { custom_data: customData }),
-        };
-
-        // 3. Fire to Meta
-        const fireResult = await fireCapiEvent(pixelId, metaToken, event);
+        const event = await buildCapiEvent(ev, match!);
+        const fireResult = await fireCapiEvents(pixelId, metaToken, [event]);
         console.log(
           `${logPrefix}: fired ${cfg.eventName} for ${cfg.clickId}, ` +
             `fbtrace_id=${fireResult.fbtrace_id}`
         );
 
-        // 4. Log success
-        await insertLogRow(bqToken, {
-          sent_at: Date.now() / 1000,
-          event_date_utc: receivedAt.slice(0, 10),
-          event_name: cfg.eventName,
-          uid: cfg.clickId,
-          event_id: event.event_id,
-          event_time_epoch: eventTime,
-          fbc: match.fbc || "",
-          fbp: match.fbp || "",
-          client_ip_address: match.client_ip_address || "",
-          client_user_agent: match.client_user_agent || "",
-          event_source_url: event.event_source_url,
-          pixel_id: pixelId,
-          fbtrace_id: fireResult.fbtrace_id,
-          status: "sent",
-          raw_params: JSON.stringify(cfg.rawParams),
-        });
+        await insertLogRow(
+          bqToken,
+          logRow(ev, "sent", { event, match, pixelId, fbtraceId: fireResult.fbtrace_id })
+        );
       } catch (err: any) {
         console.error(`${logPrefix}: fire/log failed:`, err?.message || err);
       }
