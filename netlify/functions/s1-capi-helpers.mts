@@ -514,12 +514,22 @@ export function logRow(
 export interface InstantEventConfig {
   /** Meta standard event name: "Lead" | "PageView" | "Search" */
   eventName: string;
-  /** Suffix appended to click_id for the event_id (ensures uniqueness across event types) */
+  /**
+   * Suffix appended to click_id for the event_id. The final event_id is
+   * `${clickId}${suffix}_${receivedMs}`: one click can produce several
+   * searches and several ad clicks, and each is its own event. A per-click
+   * ID made Meta keep only the first one (it dedupes on event_id for 48h).
+   */
   eventIdSuffix: string;
   /** S1 click_id extracted from the incoming postback URL */
   clickId: string;
   /** Pre-parsed URL so we can pass the raw params through to the log */
   rawParams: Record<string, string>;
+}
+
+/** One event_id per S1 ping. See InstantEventConfig.eventIdSuffix. */
+export function makeEventId(cfg: InstantEventConfig, receivedMs: number): string {
+  return `${cfg.clickId}${cfg.eventIdSuffix}_${receivedMs}`;
 }
 
 /**
@@ -559,7 +569,7 @@ export async function enqueueInstantEvent(
         received_at: receivedAt.toISOString(),
         event_name: cfg.eventName,
         uid: cfg.clickId,
-        event_id: `${cfg.clickId}${cfg.eventIdSuffix}`,
+        event_id: makeEventId(cfg, receivedAt.getTime()),
         raw_params: JSON.stringify(cfg.rawParams),
       };
       try {
@@ -570,7 +580,7 @@ export async function enqueueInstantEvent(
           "https://www.googleapis.com/auth/bigquery"
         );
         await insertRows(bqToken, QUEUE_TABLE, [
-          { insertId: `${row.event_id}:${receivedAt.getTime()}`, json: row },
+          { insertId: row.event_id, json: row },
         ]);
       } catch (err: any) {
         // Row is printed so a lost event can be recovered from function logs.
@@ -610,12 +620,13 @@ export async function handleInstantEvent(
         return;
       }
 
+      const receivedMs = Date.now();
       const ev: UpperFunnelEventInput = {
         eventName: cfg.eventName,
-        eventId: `${cfg.clickId}${cfg.eventIdSuffix}`,
+        eventId: makeEventId(cfg, receivedMs),
         clickId: cfg.clickId,
         rawParams: cfg.rawParams,
-        receivedEpoch: Math.floor(Date.now() / 1000),
+        receivedEpoch: Math.floor(receivedMs / 1000),
       };
 
       try {

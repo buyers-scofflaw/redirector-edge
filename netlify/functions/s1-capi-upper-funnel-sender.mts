@@ -13,9 +13,10 @@
  * Semantics vs. the old instant path:
  *   - event_time = when S1 pinged the receiver (floored at click_time + 1),
  *     so Meta sees the true event time even though delivery is batched.
- *   - Repeat pings with the same event_id (e.g. a page reload re-firing
- *     PageView) are sent once. The old path re-sent them and Meta dropped
- *     the duplicates via event_id dedupe, so what Meta counts is unchanged.
+ *   - Every S1 ping is its own event with its own event_id (click_id +
+ *     type + receive time in ms), so multiple searches / ad clicks from one
+ *     landing are each uploaded. The QUALIFY below only collapses exact
+ *     retries of the same queue row.
  *   - Clicks are matched in today's + yesterday's click_events partitions
  *     (99.85% of events in Sept 2026). Events with no click after a grace
  *     period are logged skipped_no_click, like before.
