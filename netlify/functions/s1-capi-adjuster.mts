@@ -1,12 +1,13 @@
 /**
  * S1 CAPI REVENUE ADJUSTMENT SENDER
  *
- * Netlify scheduled function that runs once daily at 16:00 UTC
+ * Netlify scheduled function that runs once daily at 15:00 UTC
  * (after the daily batch completes at ~14:46 UTC).
  *
- * Compares settled revenue (meta_capi_sent_log from the daily batch)
- * against estimated revenue (s1_capi_sent_log from the micro-batch).
- * For clicks where the settled value exceeds the estimate by 25% or more,
+ * Compares settled revenue (S1 partner report, v_ad_widget_daily_all)
+ * against the SUM of everything the micro-batch sent for the click
+ * (s1_capi_sent_log holds one row per postback since 2026-09).
+ * For clicks where the settled value exceeds that sum by ADJ_THRESHOLD or more,
  * sends an adjustment Purchase event to Meta CAPI with:
  *   - event_id = uid + "_adj"  (avoids dedup with the original event)
  *   - value = settled - estimated  (the delta only)
@@ -139,7 +140,8 @@ async function queryBigQuery(
     body: JSON.stringify({
       query,
       useLegacySql: false,
-      maxResults: 1000,
+      maxResults: 20000,
+      timeoutMs: 30000,
     }),
   });
 
@@ -294,32 +296,69 @@ export default async (req: Request) => {
       "https://www.googleapis.com/auth/bigquery"
     );
 
-    // ── 1. Find events where settled revenue exceeds micro-batch by 25%+ ──
-    // Look at yesterday's event_date_utc from the daily batch (meta_capi_sent_log)
-    // that also exist in the micro-batch log (s1_capi_sent_log).
-    // Exclude any already adjusted (anti-join on s1_capi_adj_log).
+    // ── 1. Clicks where settled revenue exceeds what was sent by ADJ_THRESHOLD+ ──
+    // settled: yesterday's partner-reported revenue per click (uid = ad_id).
+    //   Read from the report directly; meta_capi_sent_log now only holds the
+    //   daily batch's backstop sends, not every settled click.
+    // micro:   everything the micro-batch sent per click (one row per
+    //   postback, deduped by event_id; legacy rows have event_id NULL and
+    //   are one per click). Match params are identical across a click's rows.
+    // Postbacks that arrive after this runs are rare (8 of 54,514 in
+    //   Sept 5-15, $7.68) and would be sent on top of the adjustment.
     const query = `
+      WITH settled AS (
+        -- Last 3 settled days (not just yesterday) so a missed or failed run
+        -- is caught by the next ones; s1_capi_adj_log prevents a second
+        -- adjustment. Summed per click across dates, so a session whose
+        -- revenue is reported on two dates is compared in full.
+        SELECT
+          CAST(ad_id AS STRING)                          AS uid,
+          MAX(data_date)                                 AS event_date_utc,
+          SUM(SAFE_CAST(partner_net_revenue AS FLOAT64)) AS daily_value
+        FROM \`${BQ_PROJECT}.${BQ_DATASET}.v_ad_widget_daily_all\`
+        WHERE data_date BETWEEN DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 3 DAY)
+                            AND DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 1 DAY)
+        GROUP BY 1
+      ),
+      micro AS (
+        SELECT
+          uid,
+          SUM(value)                  AS micro_value,
+          ANY_VALUE(fbc)              AS fbc,
+          ANY_VALUE(fbp)              AS fbp,
+          ANY_VALUE(client_ip_address) AS client_ip_address,
+          ANY_VALUE(client_user_agent) AS client_user_agent,
+          ANY_VALUE(event_source_url) AS event_source_url,
+          MIN(event_time_epoch)       AS event_time_epoch
+        FROM (
+          SELECT *
+          FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\`
+          WHERE sent_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 10 DAY))
+          QUALIFY ROW_NUMBER() OVER (PARTITION BY COALESCE(event_id, uid) ORDER BY sent_at) = 1
+        )
+        GROUP BY uid
+      )
       SELECT
-        s.uid,
-        s.value                                     AS micro_value,
-        d.value                                     AS daily_value,
-        ROUND(d.value - s.value, 2)                 AS adj_value,
+        d.uid,
+        m.micro_value,
+        d.daily_value,
+        ROUND(d.daily_value - m.micro_value, 2)     AS adj_value,
         CAST(d.event_date_utc AS STRING)            AS event_date_utc,
-        s.fbc,
-        s.fbp,
-        s.client_ip_address,
-        s.client_user_agent,
-        s.event_source_url,
-        s.event_time_epoch
-      FROM \`${BQ_PROJECT}.${BQ_DATASET}.meta_capi_sent_log\` d
-      INNER JOIN \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\` s
-        ON d.uid = s.uid
+        m.fbc,
+        m.fbp,
+        m.client_ip_address,
+        m.client_user_agent,
+        m.event_source_url,
+        m.event_time_epoch
+      FROM settled d
+      INNER JOIN micro m ON d.uid = m.uid
       LEFT JOIN \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_adj_log\` a
         ON d.uid = a.uid
-      WHERE d.event_date_utc = DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 1 DAY)
-        AND d.value > s.value
-        AND (d.value - s.value) / d.value >= ${ADJ_THRESHOLD}
+      WHERE d.daily_value > m.micro_value
+        AND (d.daily_value - m.micro_value) / d.daily_value >= ${ADJ_THRESHOLD}
         AND a.uid IS NULL
+        -- Meta rejects the whole batch if any event is >7 days old.
+        AND m.event_time_epoch >= UNIX_SECONDS(TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 6 DAY))
     `;
 
     const rows = await queryBigQuery(bqToken, query);

@@ -14,12 +14,14 @@
  *
  * Relationship to the micro-batch:
  *   - Micro-batch (s1-capi-sender.mts) fires within ~15 min of S1
- *     postback receipt, with estimated revenue per click.
- *   - This daily batch fires the next day, with settled revenue from
- *     the partner reporting feed.
- *   - Meta dedupes on event_id within 48hrs and keeps the FIRST event,
- *     so micro-batch values "win" for overlapping clicks. The daily
- *     batch is the backstop for clicks the micro-batch missed.
+ *     postback receipt: one Purchase per postback, estimated revenue.
+ *   - This daily batch is the BACKSTOP: it sends settled revenue only for
+ *     clicks the micro-batch sent nothing for (anti-join on
+ *     s1_capi_sent_log). Since 2026-09 the micro-batch uses per-postback
+ *     event_ids, so Meta can no longer dedupe the two against each other;
+ *     sending a covered click here would double-count it.
+ *   - meta_capi_sent_log therefore holds only what this job actually sent.
+ *     The adjuster reads settled revenue from v_ad_widget_daily_all.
  *   - The adjuster (s1-capi-adjuster.mts) handles cases where settled
  *     revenue diverges materially from the micro-batch's estimate.
  *
@@ -222,18 +224,35 @@ async function queryYesterdayRows(
         event_source_url,
         value, currency, event_date_utc, redirect_ts_epoch
       FROM \`${BQ_PROJECT}.${BQ_DATASET}.${BQ_VIEW}\`
-      WHERE event_date_utc = DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 1 DAY)
+      -- Last 3 settled days, not just yesterday, so a failed or late run is
+      -- picked up by the next ones (anti-joins below prevent re-sends).
+      WHERE event_date_utc BETWEEN DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 3 DAY)
+                               AND DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 1 DAY)
         AND external_id IS NOT NULL
+        -- Meta rejects the WHOLE batch if any event is >7 days old
+        -- ("Event Timestamp Too Old"); that killed the 2026-08-31 run.
+        AND event_time_epoch >= UNIX_SECONDS(TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 6 DAY))
     ),
     already AS (
-      SELECT uid
+      -- Anything this job sent recently, regardless of settled date, so a
+      -- click reported on two dates is not sent twice.
+      SELECT DISTINCT uid
       FROM \`${BQ_PROJECT}.${BQ_DATASET}.${SENT_LOG}\`
-      WHERE event_date_utc = DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 1 DAY)
+      WHERE sent_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 10 DAY))
+    ),
+    -- Clicks the micro-batch already sent anything for. 10-day lookback
+    -- comfortably covers postbacks for yesterday's clicks.
+    micro_covered AS (
+      SELECT DISTINCT uid
+      FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\`
+      WHERE sent_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 10 DAY))
     )
     SELECT base.*
     FROM base
     LEFT JOIN already a ON a.uid = base.external_id
+    LEFT JOIN micro_covered m ON m.uid = base.external_id
     WHERE a.uid IS NULL
+      AND m.uid IS NULL
   `;
 
   const res = await fetch(url, {

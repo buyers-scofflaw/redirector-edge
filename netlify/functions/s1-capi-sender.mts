@@ -2,8 +2,20 @@
  * S1 POSTBACK → META CAPI MICRO-BATCH SENDER
  *
  * Netlify scheduled function that runs every 15 minutes.
- * Queries s1_postbacks for unsent revenue events, joins with click_events
+ * Queries s1_postbacks for unsent revenue postbacks, joins with click_events
  * for FB attribution params, and sends to Meta Conversions API.
+ *
+ * ONE PURCHASE PER POSTBACK (since 2026-09): each rev_click_track_url
+ * postback is its own Purchase, event_id = "<click_id>_rev_<our event_id>"
+ * (assigned by s1-postback.mts on arrival), value = that postback's revenue.
+ * S1 splits a session's revenue evenly across its ad clicks, so the sum per
+ * click is right and the count matches S1's monetized clicks. Postbacks that
+ * arrive after a click was first sent now go out on the next run instead of
+ * relying on the next-day adjuster.
+ *
+ * Legacy rows (inserted before event_id existed) keep the old behavior: one
+ * summed Purchase per click, event_id = click_id, only if nothing was sent
+ * for that click. That path empties itself within 2 days of the deploy.
  *
  * Writes to s1_capi_sent_log (separate from the daily batch's
  * meta_capi_sent_log) so the daily batch is unaffected and can still
@@ -109,6 +121,7 @@ async function getAccessToken(
 
 interface PostbackRow {
   click_id: string;
+  event_id: string;                   // Meta event_id (see header)
   revenue: number;
   received_at: number;
   fbc_raw: string | null;
@@ -138,7 +151,8 @@ async function queryBigQuery(
     body: JSON.stringify({
       query,
       useLegacySql: false,
-      maxResults: 500,
+      maxResults: 20000,  // one row per postback now; a burst can exceed 500
+      timeoutMs: 20000,
     }),
   });
 
@@ -163,6 +177,7 @@ async function queryBigQuery(
     });
     return {
       click_id: obj.click_id as string,
+      event_id: obj.event_id as string,
       revenue: parseFloat(obj.revenue as string),
       received_at: parseInt(obj.received_at as string, 10),
       fbc_raw: obj.fbc_raw as string | null,
@@ -192,13 +207,21 @@ async function insertSentLog(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      rows: rows.map((r) => ({ json: r })),
+      // insertId = event_id so a retried log write can't create a duplicate
+      // row (the adjuster sums these rows per click).
+      rows: rows.map((r) => ({ insertId: r.event_id as string, json: r })),
     }),
   });
 
   if (!res.ok) {
     const text = await res.text();
     throw new Error(`BigQuery sent_log insert failed (${res.status}): ${text}`);
+  }
+  const result = (await res.json()) as { insertErrors?: unknown[] };
+  if (result.insertErrors?.length) {
+    // Events already reached Meta. Unlogged ones are re-sent next run with
+    // the same event_id, which Meta dedupes.
+    throw new Error(`BigQuery sent_log insert errors: ${JSON.stringify(result.insertErrors)}`);
   }
 }
 
@@ -337,22 +360,50 @@ export default async (req: Request) => {
       "https://www.googleapis.com/auth/bigquery"
     );
 
-    // ── 1. Query for unsent revenue postbacks with FB params ──
-    // SUM revenue per click_id: S1 fires multiple rev_click_track_url
-    // postbacks when a single click generates multiple monetization events.
-    // Each postback represents real revenue, so we sum them all.
+    // ── 1. Unsent revenue postbacks with FB params ──
+    // new_rows:    one row per postback (has our event_id), not yet logged
+    //              under that event_id.
+    // legacy_rows: postbacks inserted before event_id existed. Old behavior:
+    //              SUM per click, event_id = click_id, only if the click was
+    //              never sent.
     const query = `
-      WITH summed_postbacks AS (
-        SELECT click_id, SUM(revenue) AS revenue, MAX(received_at) AS received_at
+      WITH pb AS (
+        SELECT click_id, event_id, revenue, received_at
         FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_postbacks\`
         WHERE type = 'revenue'
           AND revenue IS NOT NULL
           AND revenue > 0
           AND inserted_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 2 DAY))
-        GROUP BY click_id
+      ),
+      sent AS (
+        SELECT uid, event_id
+        FROM \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\`
+        WHERE sent_at >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
+      ),
+      new_rows AS (
+        SELECT pb.click_id, CONCAT(pb.click_id, '_rev_', pb.event_id) AS event_id,
+               pb.revenue, pb.received_at
+        FROM pb
+        LEFT JOIN sent s ON s.event_id = CONCAT(pb.click_id, '_rev_', pb.event_id)
+        WHERE pb.event_id IS NOT NULL AND s.event_id IS NULL
+        QUALIFY ROW_NUMBER() OVER (PARTITION BY pb.event_id ORDER BY pb.received_at) = 1
+      ),
+      legacy_rows AS (
+        SELECT pb.click_id, pb.click_id AS event_id,
+               SUM(pb.revenue) AS revenue, MAX(pb.received_at) AS received_at
+        FROM pb
+        LEFT JOIN (SELECT DISTINCT uid FROM sent) s ON s.uid = pb.click_id
+        WHERE pb.event_id IS NULL AND s.uid IS NULL
+        GROUP BY pb.click_id
+      ),
+      todo AS (
+        SELECT * FROM new_rows
+        UNION ALL
+        SELECT * FROM legacy_rows
       )
       SELECT
         p.click_id,
+        p.event_id,
         p.revenue,
         p.received_at,
         c.fbc       AS fbc_raw,
@@ -372,13 +423,11 @@ export default async (req: Request) => {
             ELSE TIMESTAMP_ADD(c.event_time, INTERVAL 5 MINUTE)
           END
         ) AS event_time_epoch
-      FROM summed_postbacks p
+      FROM todo p
       JOIN \`${BQ_PROJECT}.rsoc_clicks.click_events\` c
         ON p.click_id = c.uid
         AND c.event_time >= TIMESTAMP(DATE_SUB(CURRENT_DATE('UTC'), INTERVAL 7 DAY))
-      LEFT JOIN \`${BQ_PROJECT}.${BQ_DATASET}.s1_capi_sent_log\` s
-        ON p.click_id = s.uid
-      WHERE s.uid IS NULL
+      QUALIFY ROW_NUMBER() OVER (PARTITION BY p.event_id ORDER BY c.event_time DESC) = 1
     `;
 
     const rows = await queryBigQuery(bqToken, query);
@@ -414,7 +463,7 @@ export default async (req: Request) => {
       const event: CapiEvent = {
         event_name: "Purchase",
         event_time: row.event_time_epoch,
-        event_id: row.click_id,
+        event_id: row.event_id,
         event_source_url: row.event_source_url || "https://search.etoptip.com/",
         action_source: "website",
         user_data: {
@@ -465,6 +514,7 @@ export default async (req: Request) => {
       sent_at: nowEpoch,
       event_date_utc: new Date(row.received_at * 1000).toISOString().slice(0, 10),
       uid: row.click_id,
+      event_id: row.event_id,
       event_time_epoch: row.event_time_epoch,
       value: row.revenue,
       currency: "USD",
