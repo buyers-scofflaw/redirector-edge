@@ -25,8 +25,10 @@
  *
  * ENV VARS:
  *   GCP_SERVICE_ACCOUNT_KEY, META_PIXEL_ID, META_ACCESS_TOKEN (existing)
- *   UF_QUEUE_LOOKBACK_HOURS  optional, default 3. Raise temporarily to
- *                            backfill after an outage.
+ *   UF_QUEUE_LOOKBACK_HOURS  optional, default 12. Covers rows that
+ *                            s1-bq-pending-replay inserts late after a
+ *                            BigQuery/token failure. Raise temporarily to
+ *                            backfill after a longer outage.
  */
 
 import type { Config } from "@netlify/functions";
@@ -163,7 +165,7 @@ export default async () => {
     console.error("s1-capi-upper-funnel-sender: missing env vars");
     return new Response("missing env", { status: 500 });
   }
-  const lookback = Math.max(1, parseInt(Netlify.env.get("UF_QUEUE_LOOKBACK_HOURS") || "3", 10) || 3);
+  const lookback = Math.max(1, parseInt(Netlify.env.get("UF_QUEUE_LOOKBACK_HOURS") || "12", 10) || 12);
 
   try {
     const bqToken = await getAccessToken(

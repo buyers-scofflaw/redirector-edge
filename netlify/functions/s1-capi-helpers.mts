@@ -30,6 +30,7 @@
  */
 
 import type { Context } from "@netlify/functions";
+import { SCOPE_BQ, getAccessToken, insertOrPark } from "./_shared/durable-bq.mts";
 
 // ── Config ──
 const BQ_PROJECT = "carbon-storm-422904-n0";
@@ -40,81 +41,9 @@ export const LOG_TABLE = "s1_capi_upper_funnel_log";
 export const QUEUE_TABLE = "s1_capi_upper_funnel_queue";
 const GRAPH_VERSION = "v19.0";
 
-// ── JWT / Google Auth ──
-
-function base64url(input: string | ArrayBuffer): string {
-  const bytes =
-    typeof input === "string"
-      ? new TextEncoder().encode(input)
-      : new Uint8Array(input);
-  let binary = "";
-  for (const b of bytes) binary += String.fromCharCode(b);
-  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-
-async function signJwt(
-  payload: Record<string, unknown>,
-  privateKeyPem: string
-): Promise<string> {
-  const header = { alg: "RS256", typ: "JWT" };
-  const segments = [
-    base64url(JSON.stringify(header)),
-    base64url(JSON.stringify(payload)),
-  ];
-  const signingInput = segments.join(".");
-
-  const pemBody = privateKeyPem
-    .replace(/-----BEGIN PRIVATE KEY-----/, "")
-    .replace(/-----END PRIVATE KEY-----/, "")
-    .replace(/\s/g, "");
-  const keyBuffer = Uint8Array.from(atob(pemBody), (c) => c.charCodeAt(0));
-
-  const cryptoKey = await crypto.subtle.importKey(
-    "pkcs8",
-    keyBuffer,
-    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
-    false,
-    ["sign"]
-  );
-
-  const signature = await crypto.subtle.sign(
-    "RSASSA-PKCS1-v1_5",
-    cryptoKey,
-    new TextEncoder().encode(signingInput)
-  );
-
-  return signingInput + "." + base64url(signature);
-}
-
-export async function getAccessToken(
-  saKey: { client_email: string; private_key: string },
-  scopes: string
-): Promise<string> {
-  const now = Math.floor(Date.now() / 1000);
-  const jwt = await signJwt(
-    {
-      iss: saKey.client_email,
-      scope: scopes,
-      aud: "https://oauth2.googleapis.com/token",
-      iat: now,
-      exp: now + 3600,
-    },
-    saKey.private_key
-  );
-
-  const res = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${jwt}`,
-  });
-
-  if (!res.ok) {
-    throw new Error(`Google OAuth failed (${res.status}): ${await res.text()}`);
-  }
-
-  const data = (await res.json()) as { access_token: string };
-  return data.access_token;
-}
+// ── Google auth: cached token + retries (shared with s1-postback) ──
+// Re-exported so existing callers keep using getAccessToken(saKey, scope).
+export { getAccessToken } from "./_shared/durable-bq.mts";
 
 // ── SHA-256 helpers ──
 // Meta CAPI requires field-specific normalization before hashing.
@@ -572,20 +501,18 @@ export async function enqueueInstantEvent(
         event_id: makeEventId(cfg, receivedAt.getTime()),
         raw_params: JSON.stringify(cfg.rawParams),
       };
-      try {
-        const saKeyRaw = Netlify.env.get("GCP_SERVICE_ACCOUNT_KEY");
-        if (!saKeyRaw) throw new Error("missing GCP_SERVICE_ACCOUNT_KEY");
-        const bqToken = await getAccessToken(
-          JSON.parse(saKeyRaw),
-          "https://www.googleapis.com/auth/bigquery"
-        );
-        await insertRows(bqToken, QUEUE_TABLE, [
-          { insertId: row.event_id, json: row },
-        ]);
-      } catch (err: any) {
-        // Row is printed so a lost event can be recovered from function logs.
-        console.error(`${logPrefix}: enqueue failed:`, err?.message || err, row);
-      }
+      // Cached token + retries; if BigQuery still refuses, the row is parked
+      // in the pending store and s1-bq-pending-replay inserts it later
+      // (the sweep looks back UF_QUEUE_LOOKBACK_HOURS, default 12).
+      const r = await insertOrPark({
+        saKeyRaw: Netlify.env.get("GCP_SERVICE_ACCOUNT_KEY"),
+        scope: SCOPE_BQ,
+        dataset: BQ_DATASET,
+        table: QUEUE_TABLE,
+        rows: [{ insertId: row.event_id, json: row }],
+        source: logPrefix,
+      });
+      if (r !== "inserted") console.warn(`${logPrefix}: enqueue ${r}`, row.event_id);
     })()
   );
 
